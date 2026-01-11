@@ -2,7 +2,7 @@ const navBarLinks = [
   { name: "Trang chủ", url: "/" },
   { name: "Sản phẩm", url: "/products" },
   { name: "Dịch vụ", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Bài viết", url: "/blog" },
   { name: "Liên hệ", url: "/contact" },
 ];
 

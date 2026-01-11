@@ -3,67 +3,55 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
-
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  // 1. CẬP NHẬT TÊN MIỀN CỦA BẠN
+  site: "https://hahutech.me",
+  
   image: {
-    domains: [], // Removed Unsplash domain - no external images used
+    domains: ["images.unsplash.com"],
   },
-  // i18n: {
-  //   defaultLocale: "en",
-  //   locales: ["en", "fr"],
-  //   fallback: {
-  //     fr: "en",
-  //   },
-  //   routing: {
-  //     prefixDefaultLocale: false,
-  //   },
-  // },
+
   prefetch: true,
+  
   integrations: [
     sitemap({
       i18n: {
-        defaultLocale: "vn", // All urls that don't contain language prefix will be treated as default locale
+        defaultLocale: "vn", // Mặc định là tiếng Việt
         locales: {
-          vn: "vn", // The `defaultLocale` value must present in `locales` keys
+          vn: "vn",
           en: "en",
         },
       },
     }),
+
     starlight({
-      title: "ScrewFast Docs",
-      // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
-      // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
-      // If only a Starlight i18n configuration is provided, an equivalent Astro i18n configuration is generated/used.
-      // If only an Astro i18n configuration is provided, the Starlight i18n configuration is updated to match it.
-      // If both an Astro and Starlight i18n configurations are provided, an error is thrown.
+      title: "HahuTech Docs", // Đổi tên trang web hiển thị trên thanh tiêu đề
+      
+      // Cấu hình ngôn ngữ: Tiếng Việt là mặc định (root)
       locales: {
         root: {
           label: "Tiếng Việt",
           lang: "vn",
         },
         en: { label: "English", lang: "en" },
-        de: { label: "Deutsch", lang: "de" },
-        es: { label: "Español", lang: "es" },
-        fa: { label: "Persian", lang: "fa", dir: "rtl" },
-        ja: { label: "日本語", lang: "ja" },
-        "zh-cn": { label: "简体中文", lang: "zh-CN" },
+        // Các ngôn ngữ dưới đây tạm thời comment lại nếu không dùng đến
+        // de: { label: "Deutsch", lang: "de" },
+        // es: { label: "Español", lang: "es" },
+        // fa: { label: "Persian", lang: "fa", dir: "rtl" },
+        // ja: { label: "日本語", lang: "ja" },
+        // "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
+
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
           label: "Quick Start Guides",
           translations: {
-            de: "Schnellstartanleitungen",
-            es: "Guías de Inicio Rápido",
-            fa: "راهنمای شروع سریع",
             vn: "Hướng dẫn Bắt đầu Nhanh",
-            ja: "クイックスタートガイド",
-            "zh-cn": "快速入门指南",
+            // de: "Schnellstartanleitungen",
           },
           autogenerate: { directory: "guides" },
         },
@@ -83,49 +71,58 @@ export default defineConfig({
           autogenerate: { directory: "advanced" },
         },
       ],
+
       social: [
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/mearashadowfax/ScrewFast",
+          // 2. CẬP NHẬT LINK GITHUB CỦA BẠN
+          href: "https://github.com/ndh-hus-k67/ndh-hus-k67.github.io",
         },
       ],
+
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
+      
       components: {
         SiteTitle: "./src/components/ui/starlight/SiteTitle.astro",
         Head: "./src/components/ui/starlight/Head.astro",
-        MobileMenuFooter:
-          "./src/components/ui/starlight/MobileMenuFooter.astro",
+        MobileMenuFooter: "./src/components/ui/starlight/MobileMenuFooter.astro",
         ThemeSelect: "./src/components/ui/starlight/ThemeSelect.astro",
       },
+
+      // 3. CẬP NHẬT LINK ẢNH PREVIEW (OG IMAGE)
       head: [
         {
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://hahutech.me" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://hahutech.me" + "/social.webp",
           },
         },
       ],
     }),
+
     compressor({
       gzip: false,
       brotli: true,
     }),
+    
     mdx(),
   ],
+
   experimental: {
     clientPrerender: true,
   },
+  
   vite: {
     plugins: [tailwindcss()],
   },

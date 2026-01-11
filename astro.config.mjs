@@ -11,7 +11,7 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://screwfast.uk",
   image: {
-    domains: ["images.unsplash.com"],
+    domains: [], // Removed Unsplash domain - no external images used
   },
   // i18n: {
   //   defaultLocale: "en",

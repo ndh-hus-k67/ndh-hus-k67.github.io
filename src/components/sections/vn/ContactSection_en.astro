@@ -13,6 +13,9 @@ const subTitle: string =
   "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
 const formTitle: string = "Fill in the form below";
 const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+
+// Get the full URL for redirect
+const redirectUrl = new URL("/en/products", Astro.url.origin).toString();
 ---
 
 <!-- Contact Us -->
@@ -38,26 +41,31 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         </h2>
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
+        <form
+          action="https://submit-form.com/t3QkqmlGS"
+          method="POST"
+        >
+          <input type="hidden" name="_redirect" value={redirectUrl} />
+          <input type="hidden" name="_append" value="false" />
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
-                id="hs-firstname-contacts"
+                id="firstname"
                 label="First Name"
-                name="hs-firstname-contacts"
+                name="firstname"
               />
               <TextInput
-                id="hs-lastname-contacts"
+                id="lastname"
                 label="Last Name"
-                name="hs-firstname-contacts"
+                name="lastname"
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
+            <EmailContactInput id="email" />
+            <PhoneInput id="phone" />
             <TextAreaInput
-              id="hs-about-contacts"
+              id="message"
               label="Details"
-              name="hs-about-contacts"
+              name="message"
             />
           </div>
 

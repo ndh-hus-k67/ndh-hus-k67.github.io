@@ -1,4 +1,12 @@
 // Define data structures for services and success stories
+
+interface SuccessStory {
+  image: ImageMetadata;
+  alt: string;
+  description: string;
+  learnMoreUrl: string;
+}
+
 export const servicesData = [
   {
     title: "Explore Advice and Explanations",
@@ -42,6 +50,6 @@ export const servicesData = [
   },
 ];
 
-export const successStoriesData = [
+export const successStoriesData: SuccessStory[] = [
   // Images removed - add your own local images here if needed
 ];

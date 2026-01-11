@@ -94,7 +94,7 @@ const redirectUrl = new URL("/products", Astro.url.origin).toString();
           content="Khám phá toàn bộ các bài viết trong kho kiến thức của chúng tôi."
           isLinkVisible={true}
           linkTitle="Xem hướng dẫn và tài liệu"
-          linkURL="#"
+          linkURL="blog"
           isArrowVisible={true}
           ><Icon name="question" />
         </ContactIconBlock>
@@ -104,17 +104,19 @@ const redirectUrl = new URL("/products", Astro.url.origin).toString();
           content="Xem mục FAQ để nhận câu trả lời nhanh chóng và rõ ràng cho các thắc mắc phổ biến."
           isLinkVisible={true}
           linkTitle="Truy cập FAQ"
-          linkURL="#"
+          linkURL="/#faq"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
           heading="Ghé thăm văn phòng của chúng tôi"
-          content="ScrewFast UK"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
-          ><Icon name="mapPin" />
+          content="Từ Sơn, Bắc Ninh, Việt Nam"
+          isLinkVisible={true}
+          linkTitle="Địa chỉ"
+          linkURL="https://maps.app.goo.gl/BeBgbz9df2wAkHcd9"
+          isArrowVisible={true}
+          ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock

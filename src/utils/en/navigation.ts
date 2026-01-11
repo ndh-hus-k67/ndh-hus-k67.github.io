@@ -11,7 +11,6 @@ const footerLinks = [
   {
     section: "Ecosystem",
     links: [
-      { name: "Documentation", url: "/en/welcome-to-docs/" },
       { name: "Tools & Equipment", url: "/en/products" },
       { name: "Construction Services", url: "/en/services" },
     ],
@@ -21,8 +20,7 @@ const footerLinks = [
     links: [
       { name: "About us", url: "#" },
       { name: "Blog", url: "/en/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Customers", url: "/en/products/#customer" },
     ],
   },
 ];

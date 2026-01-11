@@ -14,6 +14,9 @@ const subTitle: string =
 const formTitle: string = "Vui lòng điền vào biểu mẫu bên dưới";
 const formSubTitle: string =
   "Chúng tôi sẽ phản hồi bạn trong vòng 1–2 ngày làm việc.";
+
+// Get the full URL for redirect
+const redirectUrl = new URL("/products", Astro.url.origin).toString();
 ---
 
 <!-- Contact Us -->
@@ -39,26 +42,31 @@ const formSubTitle: string =
         </h2>
 
         <!-- Form for user input with various input fields. -->
-        <form>
+        <form
+          action="https://submit-form.com/t3QkqmlGS"
+          method="POST"
+        >
+          <input type="hidden" name="_redirect" value={redirectUrl} />
+          <input type="hidden" name="_append" value="false" />
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
-                id="hs-firstname-contacts"
+                id="firstname"
                 label="Tên"
-                name="hs-firstname-contacts"
+                name="firstname"
               />
               <TextInput
-                id="hs-lastname-contacts"
+                id="lastname"
                 label="Họ"
-                name="hs-firstname-contacts"
+                name="lastname"
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
+            <EmailContactInput id="email" />
+            <PhoneInput id="phone" />
             <TextAreaInput
-              id="hs-about-contacts"
+              id="message"
               label="Nội dung chi tiết"
-              name="hs-about-contacts"
+              name="message"
             />
           </div>
 

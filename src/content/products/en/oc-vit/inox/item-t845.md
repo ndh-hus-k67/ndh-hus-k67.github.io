@@ -1,6 +1,8 @@
 ---
 title: "SF-TB T845"
 description: "Machine Screws"
+category: "oc-vit"
+subcategory: "inox"
 main:
   id: 1
   content: |
@@ -51,5 +53,5 @@ specificationsRight:
     subTitle: "Ideal for use in a wide range of industrial machinery, equipment, and assemblies that demand precise and secure fastening."
 blueprints:
   first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"   
+  second: "@/images/blueprint-2.avif"
 ---

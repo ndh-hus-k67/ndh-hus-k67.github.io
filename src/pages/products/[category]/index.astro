@@ -1,0 +1,136 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+export async function getStaticPaths() {
+  return [
+    { params: { category: "bu-long" } },
+    { params: { category: "oc-vit" } },
+    { params: { category: "san-pham-khac" } },
+  ];
+}
+
+const { category } = Astro.params;
+
+// Lấy tất cả sản phẩm thuộc category này
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id, data }) => {
+    return id.startsWith("vn/") && data.category === category;
+  }
+);
+
+// Lấy danh sách subcategories duy nhất
+const subcategories = [
+  ...new Set(allProducts.map((product) => product.data.subcategory)),
+];
+
+// Nhóm sản phẩm theo subcategory
+const productsBySubcategory = subcategories.map((subcategory) => ({
+  subcategory,
+  products: allProducts.filter(
+    (product) => product.data.subcategory === subcategory
+  ),
+}));
+
+// Định nghĩa tiêu đề cho từng category
+const categoryTitles: Record<string, string> = {
+  "bu-long": "Bu Lông",
+  "oc-vit": "Ốc Vít",
+  "san-pham-khac": "Sản Phẩm Khác",
+};
+
+const categoryDescriptions: Record<string, string> = {
+  "bu-long":
+    "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp.",
+  "oc-vit":
+    "Tìm hiểu các loại ốc vít đa dạng từ ốc vít bắn tôn đến ốc vít inox, được thiết kế để đáp ứng mọi nhu cầu cố định của bạn.",
+  "san-pham-khac":
+    "Khám phá các sản phẩm phụ kiện và công cụ bổ sung khác để hoàn thiện dự án của bạn.",
+};
+
+const title = categoryTitles[category as string] || category;
+const description = categoryDescriptions[category as string] || "";
+
+const pageTitle = `${title} | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={description}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <!-- Header -->
+    <div class="mb-8 max-w-2xl sm:mb-12">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+      >
+        {title}
+      </h1>
+      <p class="mt-4 text-pretty text-neutral-600 dark:text-neutral-400">
+        {description}
+      </p>
+    </div>
+
+    <!-- Danh sách subcategories -->
+    <div class="space-y-12">
+      {
+        productsBySubcategory.map(({ subcategory, products }) => (
+          <div>
+            <div class="mb-6 flex items-center justify-between">
+              <h2 class="text-balance text-xl font-bold capitalize text-neutral-800 md:text-2xl dark:text-neutral-200">
+                {subcategory.replace(/-/g, " ")}
+              </h2>
+              <a
+                href={`/products/${category}/${subcategory}`}
+                class="text-sm font-medium text-orange-400 hover:underline dark:text-orange-400"
+              >
+                Xem tất cả →
+              </a>
+            </div>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {products.slice(0, 4).map((product) => (
+                <a
+                  href={`/products/${category}/${subcategory}/${product.id.split("/").pop()?.replace(".md", "")}`}
+                  data-astro-prefetch
+                  class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
+                >
+                  <img
+                    src={product.data.main.imgCard.src}
+                    alt={product.data.main.imgAlt}
+                    class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+                  />
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-transparent opacity-50" />
+                  <span class="relative mb-3 ml-4 inline-block text-sm font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110 md:ml-5 md:text-lg">
+                    {product.data.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Back link -->
+    <div class="mt-12">
+      <a
+        href="/products"
+        class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+      >
+        ← Quay lại tất cả sản phẩm
+      </a>
+    </div>
+  </div>
+</MainLayout>

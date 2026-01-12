@@ -1,6 +1,8 @@
 ---
 title: "SF-AB A765"
-description: "Assorted Screw Set" 
+description: "Assorted Screw Set"
+category: "oc-vit"
+subcategory: "ban-ton"
 main:
   id: 2
   content: |

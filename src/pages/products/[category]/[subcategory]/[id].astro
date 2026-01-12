@@ -14,43 +14,57 @@ declare global {
   }
 }
 
-// This gets the static paths for all the unique products
-
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id }) =>
-    id.startsWith("en/")
+    id.startsWith("vn/")
   );
+
   return productEntries.map((product) => {
-    const idWithoutLang = product.id.replace(/^en\//, ""); // Remove the "en/" prefix
+    const category = product.data.category;
+    const subcategory = product.data.subcategory;
+    const idWithoutExt = product.id.split("/").pop()?.replace(".md", "");
+
     return {
-      params: { id: idWithoutLang },
+      params: { category, subcategory, id: idWithoutExt },
       props: { product },
     };
   });
 }
 
 const { product } = Astro.props;
+const { category, subcategory } = Astro.params;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
+const ogTitle = `${product.data.title} | Dụng cụ phần cứng | ScrewFast`;
+
+// Định nghĩa tiêu đề
+const categoryTitles: Record<string, string> = {
+  "bu-long": "Bu Lông",
+  "oc-vit": "Ốc Vít",
+  "san-pham-khac": "Sản Phẩm Khác",
+};
+
+const categoryTitle = categoryTitles[category as string] || category;
+const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
 ---
 
 <MainLayout
   title={pageTitle}
-  lang="en"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `https://screwfast.uk/en/products/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
+    "@id": `https://screwfast.uk/products/${category}/${subcategory}/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
     name: product.data.title,
     description: product.data.description,
+    category: categoryTitle,
     brand: {
       "@type": "Brand",
       name: "ScrewFast",
     },
+    inLanguage: "vn",
   }}
 >
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
@@ -59,6 +73,52 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
   <section
     class="mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
+    <!-- Breadcrumb -->
+    <nav class="mb-8 flex" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+          <a
+            href="/products"
+            class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+          >
+            Sản phẩm
+          </a>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <span class="mx-2 text-neutral-400">/</span>
+            <a
+              href={`/products/${category}`}
+              class="text-sm font-medium capitalize text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+            >
+              {categoryTitle}
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <span class="mx-2 text-neutral-400">/</span>
+            <a
+              href={`/products/${category}/${subcategory}`}
+              class="text-sm font-medium capitalize text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+            >
+              {subcategoryTitle}
+            </a>
+          </div>
+        </li>
+        <li aria-current="page">
+          <div class="flex items-center">
+            <span class="mx-2 text-neutral-400">/</span>
+            <span
+              class="text-sm font-medium text-neutral-500 dark:text-neutral-500"
+            >
+              {product.data.title}
+            </span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
     <div>
       <p
         id="fadeText"

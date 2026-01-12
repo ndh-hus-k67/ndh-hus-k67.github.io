@@ -1,6 +1,8 @@
 ---
 title: "SF-BN B203"
 description: "Tap Bolts and Nuts Set"
+category: "bu-long"
+subcategory: "inox"
 main:
   id: 3
   content: |
@@ -51,5 +53,5 @@ specificationsRight:
     subTitle: "Ideal for a wide array of uses, from construction environments to mechanical assemblies that demand strong and secure joints."
 blueprints:
   first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"  
+  second: "@/images/blueprint-2.avif"
 ---

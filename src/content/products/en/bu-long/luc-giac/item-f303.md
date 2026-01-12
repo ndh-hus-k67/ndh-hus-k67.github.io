@@ -1,6 +1,8 @@
 ---
 title: "SF-FN F303"
 description: "Hex Bolts"
+category: "bu-long"
+subcategory: "luc-giac"
 main:
   id: 4
   content: |
@@ -51,5 +53,5 @@ specificationsRight:
     subTitle: "Ideal for use in construction, machinery, automotive, and other heavy-duty applications that demand strong and reliable fastening."
 blueprints:
   first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"  
+  second: "@/images/blueprint-2.avif"
 ---

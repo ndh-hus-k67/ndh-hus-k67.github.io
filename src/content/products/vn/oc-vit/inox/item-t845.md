@@ -1,6 +1,8 @@
 ---
 title: "SF-TB T845"
 description: "Vít máy"
+category: "oc-vit"
+subcategory: "inox"
 main:
   id: 1
   content: |
@@ -51,5 +53,5 @@ specificationsRight:
     subTitle: "Lý tưởng cho việc sử dụng trong nhiều loại máy móc công nghiệp, thiết bị và các cụm lắp ráp đòi hỏi độ cố định chính xác và an toàn."
 blueprints:
   first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"  
+  second: "@/images/blueprint-2.avif"
 ---

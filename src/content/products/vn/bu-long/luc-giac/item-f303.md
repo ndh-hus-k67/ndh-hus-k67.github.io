@@ -1,6 +1,8 @@
 ---
 title: "SF-FN F303"
 description: "Bu lông lục giác"
+category: "bu-long"
+subcategory: "luc-giac"
 main:
   id: 4
   content: |
@@ -51,5 +53,5 @@ specificationsRight:
     subTitle: "Lý tưởng cho xây dựng, máy móc, ô tô và các ứng dụng hạng nặng khác đòi hỏi liên kết chắc chắn và đáng tin cậy."
 blueprints:
   first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"    
+  second: "@/images/blueprint-2.avif"
 ---

@@ -22,9 +22,20 @@ const allProducts: CollectionEntry<"products">[] = await getCollection(
   }
 );
 
+// Hide specific subcategories in English
+const hiddenSubcategoriesByCategory: Record<string, Set<string>> = {
+  "bu-long": new Set(["inox", "luc-giac"]),
+};
+
+const hiddenSubcategories = hiddenSubcategoriesByCategory[category as string] ?? new Set();
+
 // Get unique subcategories
 const subcategories = [
-  ...new Set(allProducts.map((product) => product.data.subcategory)),
+  ...new Set(
+    allProducts
+      .map((product) => product.data.subcategory)
+      .filter((subcategory) => !hiddenSubcategories.has(subcategory))
+  ),
 ];
 
 // Group products by subcategory

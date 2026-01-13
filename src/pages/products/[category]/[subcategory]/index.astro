@@ -56,11 +56,38 @@ const categoryTitles: Record<string, string> = {
   "san-pham-khac": "Sản Phẩm Khác",
 };
 
+const subcategoryTitles: Record<string, string> = {
+  "bu-long-inox": "Bu Lông Inox",
+  "bu-long-luc-giac": "Bu Lông Lục Giác",
+  "bu-long-luc-giac-chim": "Bu Lông Lục Giác Chìm",
+  "oc-vit-inox": "Ốc Vít Inox",
+  "oc-vit-thep": "Ốc Vít Thép",
+};
+
+const subcategoryDescriptions: Record<string, string> = {
+  "bu-long-luc-giac-chim":
+    "Bu lông lục giác chìm (Allen bolt) dùng lục lăng để siết, phù hợp lắp ráp cơ khí và thiết bị cần bề mặt gọn gàng. Phổ biến với các biến thể như đầu trụ (DIN 912/GB70), đầu dẹt, hoặc liền long đen.",
+};
+
+const subcategoryIntroParagraphs: Record<string, string[]> = {
+  "bu-long-luc-giac-chim": [
+    "Nhóm sản phẩm này thường có cấp bền 8.8 / 10.9 / 12.9 (đối với thép) và các lựa chọn vật liệu inox SUS 201 / 304 / 316 / 316L tùy môi trường sử dụng.",
+    "Kích thước phổ biến từ M2–M30, chiều dài tham khảo 4–200 mm (tùy theo tiêu chuẩn và nhu cầu đặt hàng).",
+  ],
+};
+
 const categoryTitle = categoryTitles[category as string] || category;
-const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
+const subcategoryTitle =
+  subcategoryTitles[subcategory as string] ||
+  (subcategory as string).replace(/-/g, " ");
 
 const title = `${subcategoryTitle} - ${categoryTitle}`;
-const description = `Khám phá bộ sưu tập ${subcategoryTitle.toLowerCase()} chất lượng cao của chúng tôi.`;
+const description =
+  subcategoryDescriptions[subcategory as string] ||
+  `Khám phá bộ sưu tập ${subcategoryTitle.toLowerCase()} chất lượng cao của chúng tôi.`;
+
+const introParagraphs =
+  subcategoryIntroParagraphs[subcategory as string] || [];
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---
@@ -123,6 +150,16 @@ const pageTitle = `${title} | ${SITE.title}`;
       <p class="mt-4 text-pretty text-neutral-600 dark:text-neutral-400">
         {description}
       </p>
+
+      {
+        introParagraphs.length > 0 && (
+          <div class="mt-4 space-y-3 text-pretty text-neutral-600 dark:text-neutral-400">
+            {introParagraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        )
+      }
     </div>
 
     <!-- Products Grid -->

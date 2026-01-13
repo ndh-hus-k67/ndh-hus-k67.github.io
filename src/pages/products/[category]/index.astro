@@ -43,6 +43,14 @@ const categoryTitles: Record<string, string> = {
   "san-pham-khac": "Sản Phẩm Khác",
 };
 
+const subcategoryTitles: Record<string, string> = {
+  "bu-long-inox": "Bu Lông Inox",
+  "bu-long-luc-giac": "Bu Lông Lục Giác",
+  "bu-long-luc-giac-chim": "Bu Lông Lục Giác Chìm",
+  "oc-vit-inox": "Ốc Vít Inox",
+  "oc-vit-thep": "Ốc Vít Thép",
+};
+
 const categoryDescriptions: Record<string, string> = {
   "bu-long":
     "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp.",
@@ -90,7 +98,7 @@ const pageTitle = `${title} | ${SITE.title}`;
           <div>
             <div class="mb-6 flex items-center justify-between">
               <h2 class="text-balance text-xl font-bold capitalize text-neutral-800 md:text-2xl dark:text-neutral-200">
-                {subcategory.replace(/-/g, " ")}
+                {subcategoryTitles[subcategory] || subcategory.replace(/-/g, " ")}
               </h2>
               <a
                 href={`/products/${category}/${subcategory}`}

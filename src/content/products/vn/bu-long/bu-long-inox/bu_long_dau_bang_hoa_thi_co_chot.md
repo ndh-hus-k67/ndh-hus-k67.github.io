@@ -7,8 +7,8 @@ main:
   id: 2
   content: |
     Bu lông đầu bằng hoa thị có chốt (Flat socket TORX+PIN Anti-theft) là loại bu lông được chế tạo đặc biệt sử dụng ở những vị trí cần sự an toàn cho thiết bị được lắp đặt, tránh tình trạng tháo lắp tùy tiện. Sản phẩm còn được gọi là bu lông chống trộm đầu bằng, vít chống trộm đầu bằng với thiết kế đầu hoa thị có chốt an toàn.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/bu-long-dau-bang-hoa-thi-co-chot.avif"
+  imgMain: "@/images/bu-long-dau-bang-hoa-thi-co-chot.avif"
   imgAlt: "Bu lông đầu bằng hoa thị có chốt"
 tabs:
   - id: "tabs-with-card-item-1"

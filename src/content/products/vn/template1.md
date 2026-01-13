@@ -2,7 +2,7 @@
 title: "SF-AB A765"
 description: "Bộ Vít Tổng Hợp"
 category: "oc-vit"
-subcategory: "ban-ton"
+subcategory: "oc-vit-ban-ton"
 main:
   id: 2
   content: |

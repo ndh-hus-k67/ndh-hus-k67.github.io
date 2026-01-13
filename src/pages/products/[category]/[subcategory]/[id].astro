@@ -45,8 +45,15 @@ const categoryTitles: Record<string, string> = {
   "san-pham-khac": "Sản Phẩm Khác",
 };
 
+const subcategoryTitles: Record<string, string> = {
+  "bu-long-inox": "Bu Lông Inox",
+  "bu-long-luc-giac": "Bu Lông Lục Giác",
+  "oc-vit-inox": "Ốc Vít Inox",
+  "oc-vit-thep": "Ốc Vít Thép",
+};
+
 const categoryTitle = categoryTitles[category as string] || category;
-const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
+const subcategoryTitle = subcategoryTitles[subcategory as string] || (subcategory as string).replace(/-/g, " ");
 ---
 
 <MainLayout

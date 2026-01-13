@@ -2,7 +2,7 @@
 title: "SF-BN B203"
 description: "Bộ bu lông, vít và đai ốc"
 category: "bu-long"
-subcategory: "inox"
+subcategory: "bu-long-inox"
 main:
   id: 3
   content: |

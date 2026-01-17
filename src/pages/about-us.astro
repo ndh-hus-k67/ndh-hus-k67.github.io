@@ -1,0 +1,436 @@
+---
+// Import necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import MainSection from "@components/ui/blocks/MainSection.astro";
+import LeftSection from "@components/ui/blocks/LeftSection.astro";
+import RightSection from "@components/ui/blocks/RightSection.astro";
+import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+
+// Import necessary images
+import blueprints from "@images/blueprints-image.avif";
+import personWorking from "@images/person-working.avif";
+import beforeAfter from "@images/before-after.avif";
+import constructionWorkers from "@images/construction-workers.avif";
+import aerialView from "@images/aerial-view.avif";
+import usingTools from "@images/using-tools.avif";
+import progressBuilding from "@images/progress-building.avif";
+import underConstruction from "@images/under-construction.avif";
+
+interface Article {
+  isRightSection: boolean;
+  title: string;
+  subTitle: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  img?: any;
+  imgAlt?: string;
+  imgOne?: any;
+  imgOneAlt?: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+}
+
+const articles: Article[] = [
+  {
+    isRightSection: true,
+    title: "Tư vấn lựa chọn sản phẩm phù hợp",
+    subTitle:
+      "HAHUTECH hiểu rằng việc lựa chọn đúng loại bu lông, ốc vít cho từng ứng dụng là vô cùng quan trọng. Đội ngũ chuyên gia của chúng tôi sẵn sàng tư vấn chi tiết về vật liệu (thép carbon, thép không gỉ, hợp kim), cấp độ bền (4.8, 8.8, 10.9, 12.9), kích thước, và loại mạ bảo vệ phù hợp với yêu cầu kỹ thuật và môi trường làm việc của dự án. Chúng tôi hỗ trợ cả khách hàng công nghiệp lẫn nhà phân phối.",
+    single: false,
+    imgOne: blueprints,
+    imgOneAlt: "Bản vẽ kỹ thuật và các loại bu lông ốc vít chuyên dụng",
+    imgTwo: personWorking,
+    imgTwoAlt: "Chuyên gia đang tư vấn sản phẩm",
+  },
+  {
+    isRightSection: false,
+    title: "Sản xuất bu lông ốc vít theo yêu cầu",
+    subTitle:
+      "Với dây chuyền sản xuất hiện đại và đội ngũ kỹ thuật giàu kinh nghiệm, HAHUTECH cung cấp dịch vụ gia công sản xuất bu lông, ốc vít, vít tự taro, đinh tán và các chi tiết lắp ráp theo bản vẽ kỹ thuật của khách hàng. Chúng tôi đáp ứng đơn hàng từ số lượng nhỏ đến hàng loạt, với cam kết về độ chính xác kích thước, chất lượng ren, và đáp ứng các tiêu chuẩn DIN, ISO, ANSI, JIS. Quy trình kiểm soát chất lượng nghiêm ngặt đảm bảo mỗi sản phẩm đều đạt yêu cầu kỹ thuật.",
+    img: beforeAfter,
+    imgAlt: "Quy trình sản xuất bu lông ốc vít chất lượng cao",
+    // Đã xóa nút "Tìm hiểu thêm" ở đây
+  },
+  {
+    isRightSection: true,
+    title: "Cung cấp & phân phối nhanh chóng",
+    subTitle:
+      "HAHUTECH duy trì kho hàng lớn với hơn 5.000 mặt hàng bu lông, ốc vít, đai ốc, vòng đệm các loại luôn sẵn có để đáp ứng nhu cầu cấp bách của khách hàng. Hệ thống logistics được tối ưu hóa đảm bảo giao hàng nhanh chóng trong vòng 24-48h cho khu vực nội thành và 3-5 ngày cho các tỉnh thành. Chúng tôi hỗ trợ đặt hàng qua nhiều kênh: trực tuyến, điện thoại, email, và có chính sách giá ưu đãi cho đơn hàng số lượng lớn và khách hàng thường xuyên.",
+    single: false,
+    imgOne: constructionWorkers,
+    imgOneAlt: "Đội ngũ vận hành kho hàng chuyên nghiệp",
+    imgTwo: aerialView,
+    imgTwoAlt: "Hệ thống kho bãi tổ chức khoa học",
+  },
+  {
+    isRightSection: false,
+    title: "Kiểm định chất lượng & Chứng nhận",
+    subTitle:
+      "Mỗi lô hàng của HAHUTECH đều được kiểm tra kỹ lưỡng về kích thước, độ cứng, độ bền kéo, và lớp mạ bảo vệ trước khi xuất xưởng. Chúng tôi cung cấp đầy đủ giấy chứng nhận chất lượng (CO, C/O), phiếu kiểm định vật liệu, và hồ sơ truy xuất nguồn gốc theo yêu cầu. Sản phẩm của chúng tôi tuân thủ các tiêu chuẩn quốc tế như ISO 898-1, ASTM, và đạt chứng nhận ISO 9001:2015 trong quản lý chất lượng. Dịch vụ hậu mãi chu đáo với chính sách đổi trả và bảo hành rõ ràng.",
+    img: usingTools,
+    imgAlt:
+      "Kỹ thuật viên đang kiểm tra chất lượng sản phẩm bu lông",
+  },
+  {
+    isRightSection: true,
+    title: "Giải pháp tổng thể cho doanh nghiệp",
+    subTitle:
+      "HAHUTECH cung cấp giải pháp cung ứng bu lông ốc vít toàn diện cho các doanh nghiệp sản xuất, lắp ráp ô tô, xe máy, điện tử, đóng tàu, xây dựng và cơ khí chế tạo. Chúng tôi thiết lập hợp đồng cung ứng dài hạn với điều khoản linh hoạt, hỗ trợ dự trữ kho VMI (Vendor Managed Inventory), và tư vấn tối ưu hóa chi phí vật tư. Với khả năng cung cấp ổn định và đa dạng sản phẩm, HAHUTECH là đối tác tin cậy giúp doanh nghiệp của bạn duy trì sản xuất liên tục và nâng cao năng suất.",
+    single: false,
+    imgOne: progressBuilding,
+    imgOneAlt: "Ứng dụng bu lông trong ngành công nghiệp",
+    imgTwo: underConstruction,
+    imgTwoAlt: "Giải pháp lắp ráp công nghiệp",
+    // Đã xóa nút "Đọc thêm" ở đây
+  },
+];
+
+// Testimonials từ khách hàng thực tế
+const testimonials = [
+  {
+    content: "HAHUTECH là nhà cung cấp bu lông ốc vít tin cậy cho các dây chuyền sản xuất của chúng tôi. Sản phẩm luôn đạt chuẩn chất lượng, giao hàng nhanh chóng và giá cả cạnh tranh. Đội ngũ hỗ trợ chuyên nghiệp, luôn sẵn sàng giải quyết vấn đề kịp thời.",
+    company: "Công ty TNHH Cơ khí Minh Phát",
+    industry: "Chế tạo cơ khí"
+  },
+  {
+    content: "Dịch vụ sản xuất bu lông theo yêu cầu đáp ứng hoàn hảo nhu cầu của chúng tôi. Sản phẩm giao đúng bản vẽ kỹ thuật, tiến độ sản xuất đúng hẹn. Đây là đối tác đáng tin cậy cho các dự án lớn của chúng tôi.",
+    company: "Nhà máy Đóng tàu Sài Gòn",
+    industry: "Công nghiệp đóng tàu"
+  },
+  {
+    content: "Kho hàng phong phú, hệ thống đặt hàng tiện lợi, giao hàng tận nơi nhanh chóng. Đặc biệt cảm kích dịch vụ giao hàng khẩn cấp trong 24h, giúp chúng tôi không bị gián đoạn sản xuất.",
+    company: "Công ty Cổ phần Công nghiệp Ô tô",
+    industry: "Sản xuất lắp ráp ô tô"
+  },
+  {
+    content: "Chất lượng sản phẩm ổn định, giấy tờ chứng nhận đầy đủ, hỗ trợ xuất hóa đơn VAT nhanh chóng. Đội ngũ tư vấn kỹ thuật giúp chúng tôi lựa chọn đúng loại bu lông cho từng ứng dụng.",
+    company: "Nhà máy Thép POSCO Việt Nam",
+    industry: "Sản xuất thép"
+  },
+  {
+    content: "Hợp tác lâu dài với HAHUTECH, chúng tôi rất hài lòng về chất lượng sản phẩm và dịch vụ chăm sóc khách hàng. Giá cả hợp lý, chính sách thanh toán linh hoạt, đáp ứng tốt nhu cầu doanh nghiệp.",
+    company: "Tập đoàn Cơ điện lạnh Nagakawa",
+    industry: "Sản xuất điện tử"
+  },
+  {
+    content: "Dịch vứ VMI giúp chúng tôi tối ưu hóa quản lý kho vật tư, giảm thiểu vốn đông. HAHUTECH luôn chủ động theo dõi và bổ sung vật tư kịp thời, giúp sản xuất liên tục không bị gian đoạn.",
+    company: "Nhà máy Honda Việt Nam",
+    industry: "Sản xuất xe máy"
+  }
+];
+
+// Câu hỏi thường gặp
+const faqs = {
+  subTitle: "Giải đáp các thắc mắc phổ biến về sản phẩm và dịch vụ",
+  faqs: [
+    {
+      question: "HAHUTECH cung cấp những loại bu lông ốc vít nào?",
+      answer: "Chúng tôi cung cấp đầy đủ các loại bu lông (lục giác, chữ T, chữ U, nở, neo), ốc vít (ốc lục giác, ốc vuông, ốc bướm), vít (vít máy, vít tự taro, vít gỗ), đinh tán, vòng đệm, đai ốc và các chi tiết lắp ráp khác. Vật liệu bao gồm thép carbon, thép không gỉ (304, 316), thép hợp kim, đồng thau. Cấp độ bền từ 4.8 đến 12.9."
+    },
+    {
+      question: "Thời gian giao hàng và phạm vi vận chuyển như thế nào?",
+      answer: "Với hàng sẵn kho: 24-48h cho khu vực nội thành TP.HCM, Hà Nội, Đà Nẵng và 3-5 ngày cho các tỉnh thành khác. Với hàng sản xuất theo yêu cầu: 7-15 ngày tùy theo số lượng và độ phức tạp. Chúng tôi vận chuyển toàn quốc và hỗ trợ xuất khẩu."
+    },
+    {
+      question: "HAHUTECH có sản xuất bu lông theo bản vẽ riêng không?",
+      answer: "Có, chúng tôi nhận gia công sản xuất bu lông, ốc vít và các chi tiết lắp ráp theo bản vẽ kỹ thuật 2D/3D của khách hàng. Chúng tôi có thể sản xuất theo tiêu chuẩn DIN, ISO, ANSI, JIS hoặc bản vẽ tự thiết kế. Đơn hàng tối thiểu từ 100 chiếc, phù hợp cho cả sản xuất thử nghiệm và sản xuất hàng loạt."
+    },
+    {
+      question: "Làm thế nào để đặt hàng và thanh toán?",
+      answer: "Bạn có thể đặt hàng qua: (1) Điện thoại/Zalo: liên hệ trực tiếp với sale, (2) Email: gửi danh sách sản phẩm cần đặt, (3) Website: đặt hàng online 24/7. Chúng tôi chấp nhận thanh toán chuyển khoản, tiền mặt, công nợ (cho khách hàng thường xuyên có hợp đồng). Xuất hóa đơn VAT đầy đủ."
+    },
+    {
+      question: "Chính sách bảo hành và đổi trả ra sao?",
+      answer: "Sản phẩm lỗi do nhà sản xuất được đổi trả 100% trong vòng 7 ngày. Đối với hàng sản xuất theo yêu cầu, chúng tôi cam kết bồi thường nếu sản phẩm không đúng bản vẽ kỹ thuật đã thỏa thuận. Mọi lô hàng đều có phiếu kiểm định chất lượng và giấy chứng nhận nguồn gốc xuất xứ."
+    },
+    {
+      question: "Có hỗ trợ tư vấn kỹ thuật không?",
+      answer: "Có, đội ngũ kỹ sư của chúng tôi sẵn sàng tư vấn miễn phí về lựa chọn loại bu lông, cấp độ bền, vật liệu, mạ bảo vệ phù hợp với ứng dụng cụ thể của bạn. Chúng tôi cũng hỗ trợ review bản vẽ, đề xuất tối ưu thiết kế để giảm chi phí sản xuất."
+    }
+  ]
+};
+
+// Đối tác tin cậy (có thể dùng SVG hoặc hình ảnh logo)
+const partners = [
+  {
+    icon: `<svg class="h-auto w-16 text-neutral-600 dark:text-neutral-400" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><text x="5" y="25" font-size="14" font-weight="bold" fill="currentColor">VINFAST</text></svg>`,
+    name: "VinFast",
+    href: "#"
+  },
+  {
+    icon: `<svg class="h-auto w-16 text-neutral-600 dark:text-neutral-400" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><text x="5" y="25" font-size="14" font-weight="bold" fill="currentColor">HONDA</text></svg>`,
+    name: "Honda",
+    href: "#"
+  },
+  {
+    icon: `<svg class="h-auto w-16 text-neutral-600 dark:text-neutral-400" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><text x="5" y="25" font-size="14" font-weight="bold" fill="currentColor">THACO</text></svg>`,
+    name: "Thaco",
+    href: "#"
+  },
+  {
+    icon: `<svg class="h-auto w-16 text-neutral-600 dark:text-neutral-400" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><text x="5" y="25" font-size="14" font-weight="bold" fill="currentColor">POSCO</text></svg>`,
+    name: "Posco",
+    href: "#"
+  }
+];
+---
+
+<MainLayout
+  title="Dịch vụ | HAHUTECH"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://hahutech.vn/services",
+    url: "https://hahutech.vn/services",
+    name: "Dịch vụ Cung cấp & Sản xuất Bu lông Ốc vít | HAHUTECH",
+    description:
+      "HAHUTECH - Đối tác tin cậy trong lĩnh vực thương mại và sản xuất bu lông, ốc vít chất lượng cao. Cung cấp giải pháp toàn diện từ tư vấn, sản xuất theo yêu cầu đến phân phối nhanh chóng cho các doanh nghiệp công nghiệp.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://hahutech.vn",
+      name: "HAHUTECH",
+      description:
+        "HAHUTECH chuyên cung cấp và sản xuất bu lông, ốc vít, vật tư lắp ráp chất lượng cao phục vụ đa ngành công nghiệp.",
+    },
+    inLanguage: "vn",
+  }}
+>
+  {/* MainSection is the introductory section of the page, it also contains a CTA button */}
+  <MainSection
+    title="Đối tác tin cậy trong lĩnh vực bu lông ốc vít"
+    subTitle="HAHUTECH chuyên cung cấp và sản xuất bu lông, ốc vít, vật tư lắp ráp chất lượng cao phục vụ đa ngành công nghiệp. Với kinh nghiệm lâu năm và cam kết về chất lượng, chúng tôi mang đến giải pháp toàn diện từ tư vấn kỹ thuật, sản xuất theo yêu cầu, đến phân phối nhanh chóng - đáp ứng mọi nhu cầu của doanh nghiệp bạn."
+    btnExists={false}
+  />
+
+  {
+    articles.map((article) => {
+      return article.isRightSection ? (
+        <RightSection
+          title={article.title}
+          subTitle={article.subTitle}
+          single={article.single}
+          imgOne={article.imgOne}
+          imgOneAlt={article.imgOneAlt}
+          imgTwo={article.imgTwo}
+          imgTwoAlt={article.imgTwoAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      ) : (
+        <LeftSection
+          title={article.title}
+          subTitle={article.subTitle}
+          img={article.img}
+          imgAlt={article.imgAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      );
+    })
+  }
+
+  <FeaturesStats
+    title="Hiệu quả của HAHUTECH"
+    subTitle="Uy tín và chất lượng của HAHUTECH được khẳng định qua những con số thực tế. Chúng tôi không ngừng nỗ lực để trở thành nhà cung cấp bu lông ốc vít hàng đầu, mang lại giá trị tốt nhất cho khách hàng trong mọi ngành công nghiệp."
+    mainStatTitle="98%"
+    mainStatSubTitle="khách hàng hài lòng và tiếp tục hợp tác lâu dài với HAHUTECH"
+    stats={[
+      {
+        stat: "5.000+",
+        description: "mặt hàng trong kho",
+      },
+      {
+        stat: "500+",
+        description: "doanh nghiệp tin dùng",
+      },
+      {
+        stat: "24-48h",
+        description: "thời gian giao hàng nhanh",
+      },
+    ]}
+  />
+
+
+
+  {/* Quy trình làm việc chuyên nghiệp */}
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="mb-10 text-center">
+      <h2 class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+        Quy trình làm việc 5 bước
+      </h2>
+      <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+        Đơn giản, nhanh chóng và minh bạch
+      </p>
+    </div>
+    <div class="relative">
+      {/* Đường kẻ nối giữa các bước - chỉ hiện trên màn hình lớn */}
+      <div class="absolute top-8 left-0 right-0 hidden h-0.5 bg-gradient-to-r from-orange-200 via-orange-400 to-orange-200 dark:from-orange-800 dark:via-orange-600 dark:to-orange-800 lg:block" style="width: 85%; margin: 0 auto;"></div>
+
+      <div class="relative z-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg dark:from-orange-500 dark:to-orange-700">
+            <span class="text-3xl font-bold text-white">1</span>
+          </div>
+          <h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            Tiếp nhận yêu cầu
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Liên hệ qua hotline, email hoặc website với thông tin chi tiết
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg dark:from-orange-500 dark:to-orange-700">
+            <span class="text-3xl font-bold text-white">2</span>
+          </div>
+          <h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            Tư vấn & báo giá
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Chuyên gia tư vấn giải pháp tối ưu và báo giá chi tiết trong 2h
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg dark:from-orange-500 dark:to-orange-700">
+            <span class="text-3xl font-bold text-white">3</span>
+          </div>
+          <h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            Xác nhận đơn hàng
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Ký hợp đồng/đơn hàng và thanh toán theo thỏa thuận
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg dark:from-orange-500 dark:to-orange-700">
+            <span class="text-3xl font-bold text-white">4</span>
+          </div>
+          <h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            Sản xuất/Xuất kho
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Kiểm tra chất lượng nghiêm ngặt trước khi đóng gói
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg dark:from-orange-500 dark:to-orange-700">
+            <span class="text-3xl font-bold text-white">5</span>
+          </div>
+          <h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            Giao hàng & hỗ trợ
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Giao hàng tận nơi và hỗ trợ hậu mãi chu đáo
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Testimonials từ khách hàng */}
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full" id="testimonials">
+    <div class="mb-10 text-center">
+      <h2 class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+        Được tin tưởng bởi các doanh nghiệp hàng đầu
+      </h2>
+      <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+        Những phản hồi thực tế từ các khách hàng doanh nghiệp của HAHUTECH
+      </p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {testimonials.map((testimonial) => (
+        <div class="group relative flex h-full">
+          <div class="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
+            {/* Quote Icon */}
+            <div class="mb-4">
+              <svg class="h-10 w-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+
+            {/* Content */}
+            <div class="mb-6 flex-grow">
+              <p class="text-pretty text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                {testimonial.content}
+              </p>
+            </div>
+
+            {/* Company Info */}
+            <div class="mt-auto border-t border-neutral-200 pt-4 dark:border-neutral-700">
+              <p class="font-semibold text-neutral-800 dark:text-neutral-200">
+                {testimonial.company}
+              </p>
+              <p class="mt-1 text-xs font-medium text-orange-600 dark:text-orange-400">
+                {testimonial.industry}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Cam kết chất lượng */}
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 p-8 dark:from-neutral-800 dark:to-neutral-900 md:p-12">
+      <div class="text-center">
+        <h2 class="mb-6 text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+          Cam kết của HAHUTECH
+        </h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md dark:bg-neutral-800">
+            <svg class="h-10 w-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">Chất lượng đảm bảo</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">100% sản phẩm được kiểm định đạt chuẩn quốc tế</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md dark:bg-neutral-800">
+            <svg class="h-10 w-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">Giao hàng đúng hẹn</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">Cam kết giao hàng theo đúng thời gian đã thỏa thuận</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md dark:bg-neutral-800">
+            <svg class="h-10 w-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">Giá cả cạnh tranh</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">Giá tốt nhất thị trường với chất lượng tương đương</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md dark:bg-neutral-800">
+            <svg class="h-10 w-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">Hỗ trợ 24/7</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">Đội ngũ kỹ thuật sẵn sàng tư vấn mọi lúc mọi nơi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* FAQ */}
+  <FAQ
+    title="Câu hỏi <br />thường gặp"
+    faqs={faqs}
+  />
+</MainLayout>

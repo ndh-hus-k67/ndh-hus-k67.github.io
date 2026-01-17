@@ -7,6 +7,9 @@ import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 
+import { getSubcategoryTitleVN } from "@/utils/productTitles";
+import { SITE } from "@data/constants";
+
 // Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -43,18 +46,10 @@ const categories = [
   }
 ];
 
-// Nhóm sản phẩm theo subcategory
-const subcategoryNames: Record<string, string> = {
-  "bu-long-inox": "Bu Lông Inox",
-  "bu-long-luc-giac": "Bu Lông Lục Giác",
-  "bu-long-luc-giac-chim": "Bu Lông Lục Giác Chìm",
-  "bu-long-no": "Bu Lông Nở",
-  "oc-vit-ban-ton": "Ốc Vít Bắn Tôn",
-  "oc-vit-inox": "Ốc Vít Inox",
-};
-
 const productsByCategory = categories.map(category => {
   const categoryProducts = allProducts.filter(p => p.data.category === category.slug);
+
+  const previewCount = 3;
 
   // Lấy danh sách subcategories với số lượng sản phẩm
   const subcategoriesMap = new Map<string, { name: string; count: number; products: CollectionEntry<"products">[] }>();
@@ -63,14 +58,14 @@ const productsByCategory = categories.map(category => {
     const subcat = product.data.subcategory;
     if (!subcategoriesMap.has(subcat)) {
       subcategoriesMap.set(subcat, {
-        name: subcategoryNames[subcat] || subcat,
+        name: getSubcategoryTitleVN(subcat),
         count: 0,
         products: []
       });
     }
     const subcatData = subcategoriesMap.get(subcat)!;
     subcatData.count++;
-    if (subcatData.products.length < 4) {
+    if (subcatData.products.length < previewCount) {
       subcatData.products.push(product);
     }
   });
@@ -84,7 +79,7 @@ const productsByCategory = categories.map(category => {
 
   return {
     ...category,
-    products: categoryProducts.slice(0, 4),
+    products: categoryProducts.slice(0, previewCount),
     count: categoryProducts.length,
     subcategories
   };
@@ -128,7 +123,7 @@ const testimonials = [
   },
 ];
 
-const pageTitle = "Sản phẩm | ScrewFast";
+const pageTitle = `${title} | ${SITE.title}`;
 const metaDescription =
   "Khám phá độ bền và độ chính xác của các công cụ ScrewFast, được thiết kế dành cho cả chuyên gia lẫn người đam mê.";
 const ogTitle = "Dụng cụ phần cứng | ScrewFast";
@@ -301,7 +296,11 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
                             class="group relative flex h-64 items-end overflow-hidden rounded-xl shadow-md outline-hidden ring-zinc-500 transition-shadow hover:shadow-xl focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
                           >
                             <img
-                              src={product.data.main.imgCard.src}
+                              src={
+                                typeof product.data.main.imgCard === "string"
+                                  ? product.data.main.imgCard
+                                  : product.data.main.imgCard.src
+                              }
                               alt={product.data.main.imgAlt}
                               class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
                             />
@@ -326,7 +325,11 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
                       class="group relative flex h-64 items-end overflow-hidden rounded-xl shadow-md outline-hidden ring-zinc-500 transition-shadow hover:shadow-xl focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
                     >
                       <img
-                        src={product.data.main.imgCard.src}
+                        src={
+                          typeof product.data.main.imgCard === "string"
+                            ? product.data.main.imgCard
+                            : product.data.main.imgCard.src
+                        }
                         alt={product.data.main.imgAlt}
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
                       />

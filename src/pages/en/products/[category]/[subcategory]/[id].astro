@@ -6,6 +6,7 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
+import { resolveLocalImageOrFallback } from "@/utils/resolveLocalImage";
 
 // Global declaration for gsap animation library
 declare global {
@@ -33,6 +34,25 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const { category, subcategory } = Astro.params;
+
+const imgMainResolved = await resolveLocalImageOrFallback(
+  product.data.main.imgMain,
+  "@/images/product-image-main-1.avif"
+);
+
+const blueprintFirstResolved = product.data.blueprints?.first
+  ? await resolveLocalImageOrFallback(
+      product.data.blueprints.first,
+      "@/images/blueprint-1.avif"
+    )
+  : undefined;
+
+const blueprintSecondResolved = product.data.blueprints?.second
+  ? await resolveLocalImageOrFallback(
+      product.data.blueprints.second,
+      "@/images/blueprint-2.avif"
+    )
+  : undefined;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.description;
@@ -143,7 +163,7 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
       <div>
         <Image
           id="fadeInMoveRight"
-          src={product.data.main.imgMain}
+          src={imgMainResolved}
           class="w-[600px]"
           alt={product.data.main.imgAlt}
           format={"avif"}
@@ -302,9 +322,9 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
         class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0"
       >
         {
-          product.data.blueprints.first && (
+          blueprintFirstResolved && (
             <Image
-              src={product.data.blueprints.first}
+              src={blueprintFirstResolved}
               class="h-full w-full object-cover object-center"
               alt="Blueprint Illustration"
               format={"avif"}
@@ -315,9 +335,9 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
 
       <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
         {
-          product.data.blueprints.second && (
+          blueprintSecondResolved && (
             <Image
-              src={product.data.blueprints.second}
+              src={blueprintSecondResolved}
               class="h-full w-full object-cover object-center"
               alt="Blueprint Illustration"
               format={"avif"}

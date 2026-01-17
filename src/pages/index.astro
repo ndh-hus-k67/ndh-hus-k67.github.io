@@ -10,23 +10,98 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import ProductCategoriesSection from "@components/sections/landing/ProductCategoriesSection.astro";
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import productImage1 from "@images/product-image-main-1.avif";
+import productImage2 from "@images/product-image-main-2.avif";
+import productImage3 from "@images/product-image-main-3.avif";
 import { partnersData } from "@/data_files/constants";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Lấy tất cả sản phẩm để đếm số lượng theo danh mục
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) => id.startsWith("vn/")
+);
+
+// Định nghĩa các danh mục sản phẩm
+const productCategories = [
+  {
+    slug: "bu-long",
+    name: "Bu Lông",
+    description: "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác và nhiều loại khác. Sản phẩm được sản xuất theo tiêu chuẩn quốc tế, đảm bảo độ bền và chất lượng tốt nhất.",
+    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+    image: productImage1,
+    imageAlt: "Bộ sưu tập bu lông chất lượng cao",
+    count: allProducts.filter(p => p.data.category === "bu-long").length,
+    features: [
+      "Chất liệu inox 304, 316 chống gỉ sét",
+      "Đa dạng kích thước từ M6 đến M42",
+      "Cấp bền 4.8, 8.8, 10.9, 12.9",
+      "Ứng dụng rộng rãi trong xây dựng & công nghiệp"
+    ],
+    highlights: [
+      { label: "Tiêu chuẩn", value: "DIN, ASTM, JIS" },
+      { label: "Xuất xứ", value: "Việt Nam, Nhật Bản" },
+      { label: "Bảo hành", value: "12 tháng" }
+    ]
+  },
+  {
+    slug: "oc-vit",
+    name: "Ốc Vít",
+    description: "Tìm hiểu các loại ốc vít đa dạng từ ốc vít bắn tôn đến ốc vít inox, được thiết kế để đáp ứng mọi nhu cầu cố định. Với nhiều kích thước và cấp bền khác nhau phù hợp cho mọi dự án.",
+    icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+    image: productImage2,
+    imageAlt: "Các loại ốc vít đa dạng",
+    count: allProducts.filter(p => p.data.category === "oc-vit").length,
+    features: [
+      "Ốc vít tự khoan, tự taro tiện lợi",
+      "Đầu chìm, đầu trụ, đầu lục giác",
+      "Phủ kẽm trắng, kẽm vàng chống ăn mòn",
+      "Phù hợp kim loại, gỗ, nhựa"
+    ],
+    highlights: [
+      { label: "Loại phổ biến", value: "Pan Head, Flat Head" },
+      { label: "Kích thước", value: "M2.5 - M12" },
+      { label: "Giao hàng", value: "24h nội thành" }
+    ]
+  },
+  {
+    slug: "san-pham-khac",
+    name: "Sản Phẩm Khác",
+    description: "Khám phá các sản phẩm phụ kiện và công cụ bổ sung khác để hoàn thiện dự án của bạn. Bao gồm đai ốc, vòng đệm và các phụ kiện cần thiết cho lắp đặt.",
+    icon: "M20 7h-7M20 12h-7M20 17h-7M3 7h4M3 12h4M3 17h4",
+    image: productImage3,
+    imageAlt: "Sản phẩm phụ kiện và công cụ",
+    count: allProducts.filter(p => p.data.category === "san-pham-khac").length,
+    features: [
+      "Đai ốc lục giác, đai ốc tròn",
+      "Vòng đệm lò xo, vòng đệm phẳng",
+      "Chốt định vị, chốt cài",
+      "Phụ kiện lắp ráp chuyên dụng"
+    ],
+    highlights: [
+      { label: "Chất lượng", value: "100% kiểm định" },
+      { label: "Đa dạng", value: "500+ mã sản phẩm" },
+      { label: "Tư vấn", value: "Miễn phí 24/7" }
+    ]
+  }
+];
 ---
 
 <MainLayout>
 
 
   <HeroSection
-    title=`Trang bị cho dự án của bạn với <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Công cụ phần cứng chất lượng cao và dịch vụ xây dựng chuyên nghiệp cho mọi nhu cầu dự án."
+    title=`Giải pháp bu lông ốc vít chất lượng cao từ <span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>`
+    subTitle="Chuyên thương mại và sản xuất bu lông, ốc vít, đai ốc chất lượng cao cho mọi nhu cầu công nghiệp và xây dựng."
     primaryBtn="Bắt đầu khám phá"
     primaryBtnURL="/products"
     secondaryBtn="Liên hệ đội ngũ kinh doanh"
@@ -36,7 +111,7 @@ import { partnersData } from "@/data_files/constants";
     starCount={4}
     reviews=`Dựa trên hơn <span class="font-bold">12,8k</span> đánh giá`
     src={heroImage}
-    alt="Chồng hộp sản phẩm ScrewFast chứa các công cụ phần cứng đa dạng"
+    alt="Sản phẩm bu lông ốc vít chất lượng cao của HAHUTECH"
   />
 
   <ClientsSection
@@ -45,84 +120,88 @@ import { partnersData } from "@/data_files/constants";
     partners={partnersData}
   />
 
+  <ProductCategoriesSection
+    title="Khám phá danh mục sản phẩm"
+    subTitle="HAHUTECH cung cấp đa dạng các loại bu lông, ốc vít và phụ kiện chất lượng cao cho mọi nhu cầu công nghiệp và xây dựng."
+    categories={productCategories}
+  />
+
   <FeaturesGeneral
     title="Đáp ứng các yêu cầu của ngành"
-    subTitle="Tại ScrewFast, chúng tôi giải quyết những thách thức đặc thù trong lĩnh vực phần cứng và xây dựng. Từ các công cụ tiên tiến đến dịch vụ chuyên gia, chúng tôi cam kết giúp bạn vượt qua trở ngại và đạt được mục tiêu."
-    src={featureImage}
-    alt="Sản phẩm ScrewFast trong các hộp nổi"
+    subTitle="Tại HAHUTECH, chúng tôi chuyên cung cấp và sản xuất các sản phẩm bu lông, ốc vít, đai ốc chất lượng cao. Với kinh nghiệm nhiều năm và công nghệ hiện đại, chúng tôi cam kết mang đến giải pháp tối ưu cho mọi dự án công nghiệp và xây dựng."
     features={features}
   />
 
   <FeaturesNavs
-    title=`Tùy chỉnh các giải pháp của <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> để phù hợp hoàn hảo với nhu cầu phần cứng và xây dựng của bạn.`
+    title=`Giải pháp bu lông ốc vít của <span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span> đáp ứng hoàn hảo mọi nhu cầu công nghiệp và xây dựng của bạn.`
     tabs={[
       {
-        heading: "Công cụ tiên tiến",
+        heading: "Sản xuất chất lượng cao",
         content:
-          "Tối ưu hóa dự án của bạn với các công cụ hiện đại của ScrewFast. Trải nghiệm hiệu quả vượt trội trong quản lý xây dựng với các giải pháp tự động hóa tinh vi của chúng tôi.",
+          "Sản xuất bu lông ốc vít với tiêu chuẩn chất lượng quốc tế. HAHUTECH sử dụng công nghệ hiện đại và quy trình sản xuất nghiêm ngặt để đảm bảo độ bền và độ chính xác cao nhất cho từng sản phẩm.",
         svg: "tools",
         src: tools,
-        alt: "Thiết bị hạng nặng màu vàng và đen trên bãi cỏ nâu",
+        alt: "Quy trình sản xuất bu lông ốc vít chất lượng cao",
         first: true,
       },
       {
-        heading: "Bảng điều khiển trực quan",
+        heading: "Đa dạng sản phẩm",
         content:
-          "Điều hướng dễ dàng với các bảng điều khiển trực quan của ScrewFast. Thiết lập và giám sát dự án một cách liền mạch với giao diện thân thiện, được thiết kế cho việc quản lý quy trình nhanh chóng và hiệu quả.",
+          "Cung cấp đa dạng các loại bu lông, ốc vít, đai ốc với nhiều kích thước và cấp độ bền khác nhau. HAHUTECH có sẵn kho hàng phong phú để đáp ứng nhanh chóng mọi yêu cầu từ dự án nhỏ đến công trình lớn.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Ảnh chụp màn hình hoặc minh họa bảng điều khiển trực quan",
+        alt: "Kho hàng đa dạng các sản phẩm bu lông ốc vít",
         second: true,
       },
       {
-        heading: "Tính năng mạnh mẽ",
+        heading: "Dịch vụ chuyên nghiệp",
         content:
-          "Giảm thiểu độ phức tạp, tối đa hóa năng suất. Các tính năng mạnh mẽ của ScrewFast được thiết kế để tinh giản quy trình xây dựng của bạn, mang lại kết quả vượt trội và khác biệt.",
+          "Tư vấn kỹ thuật chuyên sâu và hỗ trợ khách hàng tận tâm. Đội ngũ HAHUTECH luôn sẵn sàng tư vấn lựa chọn sản phẩm phù hợp và cung cấp giải pháp tối ưu cho từng dự án cụ thể của bạn.",
         svg: "house",
         src: construction,
-        alt: "Khung kim loại màu xám của một tòa nhà gần cần cẩu tháp vào ban ngày",
+        alt: "Dịch vụ tư vấn và hỗ trợ kỹ thuật chuyên nghiệp",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Tăng tốc dự án của bạn"
-    subTitle="Tại ScrewFast, chúng tôi đảm bảo khởi đầu nhanh chóng với việc thiết lập tài khoản tức thì. Trải nghiệm tốc độ xây dựng được tái định nghĩa."
+    title="Đối tác tin cậy cho dự án của bạn"
+    subTitle="Tại HAHUTECH, chúng tôi cam kết cung cấp sản phẩm chất lượng cao và giao hàng nhanh chóng. Trải nghiệm dịch vụ thương mại bu lông ốc vít chuyên nghiệp."
 
     testimonials={[
       {
         content:
-          "ScrewFast đã nâng cao đáng kể hiệu quả dự án của chúng tôi. Việc thiết lập diễn ra ngay lập tức và thời gian phản hồi nhanh chóng của họ thực sự ấn tượng. Một bước ngoặt thực sự trong hỗ trợ phần cứng và xây dựng!",
-        author: "Samantha Ruiz",
-        role: "Giám đốc vận hành | ConstructIt Inc.",
+          "HAHUTECH đã cung cấp cho chúng tôi các sản phẩm bu lông ốc vít chất lượng cao với giá cả hợp lý. Sản phẩm đạt tiêu chuẩn, giao hàng đúng hạn và dịch vụ hỗ trợ rất tận tâm. Chúng tôi rất hài lòng với sự hợp tác này!",
+        author: "Nguyễn Văn An",
+        role: "Giám đốc kỹ thuật | Công ty Xây dựng Việt Nam",
         avatarSrc: "",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
+        count: "500+",
         description:
-          "khách hàng được trang bị — từ người tự làm đến các doanh nghiệp xây dựng lớn",
+          "khách hàng tin tưởng — từ xưởng cơ khí nhỏ đến các tập đoàn xây dựng lớn",
       },
       {
-        count: "35%",
+        count: "50+",
         description:
-          "gia tăng hiệu quả dự án nhờ các công cụ và dịch vụ của ScrewFast",
+          "loại sản phẩm bu lông ốc vít với đa dạng kích thước và cấp bền",
       },
       {
-        count: "15,3%",
+        count: "99%",
         description:
-          "giảm chi phí bảo trì được báo cáo bởi các khách hàng dài hạn",
+          "sản phẩm đạt tiêu chuẩn chất lượng quốc tế được khách hàng xác nhận",
       },
       {
-        count: "2x",
+        count: "24h",
         description:
-          "lắp ráp nhanh hơn nhờ các giải pháp cố định sáng tạo",
+          "giao hàng nhanh chóng trong nội thành cho đơn hàng sẵn có",
       },
     ]}
   />
 
-  <PricingSection pricing={pricing} />
+  <!-- <PricingSection pricing={pricing} /> -->
 
   <div id = "faq">
 
@@ -130,5 +209,5 @@ import { partnersData } from "@/data_files/constants";
 
   </div>
 
-  
+
 </MainLayout>

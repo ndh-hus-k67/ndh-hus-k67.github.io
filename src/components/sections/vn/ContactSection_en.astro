@@ -1,0 +1,49 @@
+---
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
+import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+
+const title = "Contact";
+const subTitle =
+  "Have questions or want to discuss a project? Send us your details and we’ll get back to you soon.";
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+  <div class="grid gap-10 lg:grid-cols-2">
+    <div>
+      <h1 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        {title}
+      </h1>
+      <p class="max-w-prose text-pretty text-base text-neutral-600 dark:text-neutral-400 sm:text-lg">
+        {subTitle}
+      </p>
+
+      <div class="mt-8 space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+        <p><span class="font-semibold text-neutral-800 dark:text-neutral-200">Email:</span> contact@screwfast.uk</p>
+        <p><span class="font-semibold text-neutral-800 dark:text-neutral-200">Phone:</span> +84 000 000 000</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs dark:border-neutral-700 dark:bg-neutral-900/40 sm:p-8">
+      <form class="space-y-4" method="post" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <TextInput label="Full name" name="name" id="contact-name" />
+          <PhoneInput label="Phone" id="contact-phone" />
+        </div>
+
+        <EmailContactInput label="Email" id="contact-email" />
+        <TextAreaInput label="Message" name="message" id="contact-message" />
+
+        <div class="pt-2">
+          <button
+            type="submit"
+            class="group inline-flex w-full items-center justify-center gap-x-2 rounded-lg bg-orange-400 px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 hover:bg-orange-500 active:bg-orange-500 focus-visible:ring-3 outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 sm:w-auto"
+          >
+            Send message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

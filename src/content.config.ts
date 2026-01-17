@@ -5,7 +5,7 @@ import { docsSchema } from '@astrojs/starlight/schema';
 import { glob } from 'astro/loaders';
 
 const productsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/products" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/products/', import.meta.url) }),
     schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
@@ -63,11 +63,13 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/blog/', import.meta.url) }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
-  contents: z.array(z.string()),
+  // `contents` is optional to allow writing full Markdown in the file body.
+  // If provided, pages will render it as paragraph strings (legacy format).
+  contents: z.array(z.string()).optional(),
   author: z.string(),
   role: z.string().optional(),
   authorImage: image(),
@@ -81,7 +83,7 @@ const blogCollection = defineCollection({
 });
 
 const insightsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/insights" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/insights/', import.meta.url) }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),

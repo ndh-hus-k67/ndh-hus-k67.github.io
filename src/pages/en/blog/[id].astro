@@ -8,7 +8,7 @@ import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
 import { Image } from "astro:assets";
 import { capitalize, formatDate } from "@utils/utils";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
@@ -21,13 +21,19 @@ export async function getStaticPaths() {
     const idWithoutLang = post.id.replace(/^en\//, ""); // Remove the "en/" prefix
     return {
       params: { id: idWithoutLang },
-      props: { post },
     };
   });
 }
 
-// Get the current post's data
-const { post } = Astro.props;
+const { id } = Astro.params;
+if (!id) {
+  throw new Error("Missing blog id param");
+}
+
+const post = await getEntry("blog", `en/${id}`);
+if (!post) {
+  throw new Error(`Blog post not found: en/${id}`);
+}
 
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
@@ -45,8 +51,10 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 // For the meta description, use the first paragraph of content if available
 const metaDescription =
-  post.data.contents[0] || `Read ${post.data.title} on ScrewFast's blog`;
+  post.data.contents?.[0] || post.data.description || `Read ${post.data.title} on our blog`;
 const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
+
+const markdownHtml = post.rendered?.html ?? "";
 ---
 
 <MainLayout
@@ -115,8 +123,8 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       </h2>
       {/* Blog post contents */}
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {
-          post.data.contents.map((content: string, index: any) =>
+        {post.data.contents?.length ? (
+          post.data.contents.map((content: string, index: number) =>
             index === 1 ? (
               <>
                 <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
@@ -136,7 +144,20 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
               </p>
             )
           )
-        }
+        ) : (
+          <>
+            <Image
+              class="w-full rounded-xl object-cover"
+              src={post.data.cardImage}
+              alt={post.data.cardImageAlt}
+              draggable={"false"}
+              format={"avif"}
+            />
+            <div class="[&_p]:text-lg [&_p]:text-pretty [&_p]:text-neutral-700 dark:[&_p]:text-neutral-300 [&_p]:leading-relaxed [&_a]:underline">
+              <Fragment set:html={markdownHtml} />
+            </div>
+          </>
+        )}
       </div>
       <div
         class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"

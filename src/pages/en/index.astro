@@ -10,15 +10,90 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import ProductCategoriesSection from "@components/sections/landing/ProductCategoriesSection.astro";
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/en/faqs.json";
 import features from "@data/en/features.json";
 import pricing from "@data/en/pricing.json";
-import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import productImage1 from "@images/product-image-main-1.avif";
+import productImage2 from "@images/product-image-main-2.avif";
+import productImage3 from "@images/product-image-main-3.avif";
 import { partnersData } from "@/data_files/constants";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Get all products to count by category
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) => id.startsWith("en/")
+);
+
+// Define product categories
+const productCategories = [
+  {
+    slug: "bu-long",
+    name: "Bolts",
+    description: "Explore our collection of high-quality bolts, including stainless steel bolts, hex bolts and many other types. Products are manufactured to international standards, ensuring the best durability and quality.",
+    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+    image: productImage1,
+    imageAlt: "High-quality bolt collection",
+    count: allProducts.filter(p => p.data.category === "bu-long").length,
+    features: [
+      "Stainless steel 304, 316 rust-resistant",
+      "Various sizes from M6 to M42",
+      "Strength grades 4.8, 8.8, 10.9, 12.9",
+      "Wide applications in construction & industry"
+    ],
+    highlights: [
+      { label: "Standards", value: "DIN, ASTM, JIS" },
+      { label: "Origin", value: "Vietnam, Japan" },
+      { label: "Warranty", value: "12 months" }
+    ]
+  },
+  {
+    slug: "oc-vit",
+    name: "Screws",
+    description: "Discover our diverse range of screws from self-drilling screws to stainless steel screws, designed to meet all fastening needs. Available in various sizes and strength grades suitable for all projects.",
+    icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+    image: productImage2,
+    imageAlt: "Diverse screw collection",
+    count: allProducts.filter(p => p.data.category === "oc-vit").length,
+    features: [
+      "Self-drilling, self-tapping convenience",
+      "Pan head, flat head, hex head",
+      "Zinc plating for corrosion resistance",
+      "Suitable for metal, wood, plastic"
+    ],
+    highlights: [
+      { label: "Popular Types", value: "Pan Head, Flat Head" },
+      { label: "Size Range", value: "M2.5 - M12" },
+      { label: "Delivery", value: "24h in city" }
+    ]
+  },
+  {
+    slug: "san-pham-khac",
+    name: "Other Products",
+    description: "Explore other accessory products and additional tools to complete your project. Including nuts, washers and necessary accessories for installation.",
+    icon: "M20 7h-7M20 12h-7M20 17h-7M3 7h4M3 12h4M3 17h4",
+    image: productImage3,
+    imageAlt: "Accessory products and tools",
+    count: allProducts.filter(p => p.data.category === "san-pham-khac").length,
+    features: [
+      "Hex nuts, round nuts",
+      "Spring washers, flat washers",
+      "Dowel pins, cotter pins",
+      "Specialized assembly accessories"
+    ],
+    highlights: [
+      { label: "Quality", value: "100% inspected" },
+      { label: "Variety", value: "500+ products" },
+      { label: "Support", value: "Free 24/7" }
+    ]
+  }
+];
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -36,9 +111,9 @@ const avatarSrcs: Array<string> = [
   /> -->
 
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
+    title=`High-Quality Bolts & Fasteners Solutions from <span
+        class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>`
+    subTitle="Specialized in trading and manufacturing high-quality bolts, screws, and nuts for all industrial and construction needs."
     primaryBtn="Start Exploring"
     primaryBtnURL="/en/products"
     secondaryBtn="Contact Sales Team"
@@ -49,7 +124,7 @@ const avatarSrcs: Array<string> = [
     starCount={4}
     reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
     src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    alt="High-quality bolts and fasteners products from HAHUTECH"
   />
 
   <ClientsSection
@@ -58,86 +133,91 @@ const avatarSrcs: Array<string> = [
     partners={partnersData}
   />
 
+  <ProductCategoriesSection
+    title="Explore Product Categories"
+    subTitle="HAHUTECH offers a wide range of high-quality bolts, screws, and accessories for all industrial and construction needs."
+    categories={productCategories}
+    lang="en"
+  />
+
   <FeaturesGeneral
     title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    subTitle="At HAHUTECH, we specialize in supplying and manufacturing high-quality bolts, screws, and nuts. With years of experience and modern technology, we are committed to providing optimal solutions for all industrial and construction projects."
     features={features}
   />
 
   <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+    title=`<span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>'s bolts and fasteners solutions perfectly meet all your industrial and construction needs.`
     tabs={[
       {
-        heading: "Cutting-Edge Tools",
+        heading: "High-Quality Manufacturing",
         content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
+          "Manufacturing bolts and fasteners with international quality standards. HAHUTECH uses modern technology and strict production processes to ensure the highest durability and precision for each product.",
         svg: "tools",
         src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        alt: "High-quality bolt and fastener manufacturing process",
         first: true,
       },
       {
-        heading: "Intuitive Dashboards",
+        heading: "Diverse Product Range",
         content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
+          "Supplying a wide variety of bolts, screws, and nuts in various sizes and strength grades. HAHUTECH maintains a rich inventory to quickly meet all requirements from small projects to large constructions.",
         svg: "dashboard",
         src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        alt: "Diverse inventory of bolts and fasteners products",
         second: true,
       },
       {
-        heading: "Robust Features",
+        heading: "Professional Services",
         content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
+          "In-depth technical consultation and dedicated customer support. HAHUTECH's team is always ready to advise on the right product selection and provide optimal solutions for your specific project needs.",
         svg: "house",
         src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+        alt: "Professional technical consulting and support services",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
+    title="Trusted Partner for Your Projects"
+    subTitle="At HAHUTECH, we are committed to providing high-quality products and fast delivery. Experience professional bolts and fasteners trading services."
     testimonials={[
       {
         content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+          "HAHUTECH has provided us with high-quality bolts and fasteners at reasonable prices. Products meet standards, on-time delivery, and very dedicated support services. We are extremely satisfied with this partnership!",
+        author: "Nguyen Van An",
+        role: "Technical Director | Vietnam Construction Company",
+        avatarSrc: "",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
+        count: "500+",
         description:
-          "customers equipped — from DIY to major construction firms",
+          "trusted customers — from small workshops to large construction corporations",
       },
       {
-        count: "35%",
+        count: "50+",
         description:
-          "uptick in project efficiency with ScrewFast tools and services",
+          "types of bolts and fasteners in various sizes and strength grades",
       },
       {
-        count: "15.3%",
+        count: "99%",
         description:
-          "reduction in maintenance costs reported by long-term clients",
+          "products meet international quality standards confirmed by customers",
       },
       {
-        count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
+        count: "24h",
+        description:
+          "fast delivery within city limits for in-stock orders",
       },
     ]}
   />
 
-  <PricingSection pricing={pricing} />
+  <!-- <PricingSection pricing={pricing} /> -->
 
 <div id="faq">
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 </div>
-  
+
 </MainLayout>

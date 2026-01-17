@@ -1,8 +1,8 @@
 const navBarLinks = [
   { name: "Trang chủ", url: "/" },
   { name: "Sản phẩm", url: "/products" },
-  { name: "Dịch vụ", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Về chúng tôi", url: "/about-us" },
+  { name: "Bài viết", url: "/blog" },
   { name: "Liên hệ", url: "/contact" },
 ];
 
@@ -11,7 +11,7 @@ const footerLinks = [
     section: "Hệ sinh thái",
     links: [
       { name: "Công cụ & Thiết bị", url: "/products" },
-      { name: "Dịch vụ xây dựng", url: "/services" },
+      { name: "Về chúng tôi", url: "/about-us" },
     ],
   },
   {

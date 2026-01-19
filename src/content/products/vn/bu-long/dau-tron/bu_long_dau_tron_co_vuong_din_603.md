@@ -7,8 +7,8 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "dau-tron"
-  name: "Đầu tròn"
+  slug: "bu-long-dau-tron"
+  name: "Bu lông đầu tròn"
 filters:
   material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
   diameter: ["M5", "M6", "M8", "M10", "M12", "M16", "M20"]

@@ -16,7 +16,7 @@ declare global {
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "oc-vit";
   });
 
   return productEntries.map((product) => {
@@ -54,7 +54,7 @@ const blueprintSecondResolved = product.data.blueprints?.second
 
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Ốc Vít | ${SITE.title}`;
 const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 
@@ -65,10 +65,10 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/bu-long/${productType}/${product.data.slug}`,
+    "@id": `${SITE.url}/oc-vit/${productType}/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
-    category: "Bu lông",
+    category: "Ốc vít",
     brand: {
       "@type": "Brand",
       name: SITE.title,
@@ -132,17 +132,17 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
             <>
               <li class="inline-flex items-center">
                 <a
-                  href="/bu-long"
+                  href="/oc-vit"
                   class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                 >
-                  Bu lông
+                  Ốc vít
                 </a>
               </li>
               <li>
                 <div class="flex items-center">
                   <span class="mx-2 text-neutral-400">/</span>
                   <a
-                    href={`/bu-long/${productType}`}
+                    href={`/oc-vit/${productType}`}
                     class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                   >
                     {product.data.productType?.name || productType}

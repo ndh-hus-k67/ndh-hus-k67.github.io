@@ -7,8 +7,8 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "dau-bang"
-  name: "Đầu bằng"
+  slug: "bu-long-dau-bang"
+  name: "Bu lông đầu bằng"
 filters:
   material: ["inox-304", "inox-316", "thep-carbon"]
   diameter: ["M3", "M4", "M5", "M6", "M8", "M10"]

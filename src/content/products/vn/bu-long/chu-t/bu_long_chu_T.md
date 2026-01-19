@@ -7,8 +7,8 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "chu-t"
-  name: "Chữ T"
+  slug: "bu-long-chu-t"
+  name: "Bu lông chữ T"
 filters:
   material: ["inox-304", "inox-316", "thep-ma-kem", "thep-ma-niken"]
   diameter: ["M6", "M8"]

@@ -1,8 +1,43 @@
 ---
 title: "VÍT BẮN TÔN INOX"
 description: "Vít bắn tôn inox (vít tự khoan) dùng để lắp ghép tôn/xà gồ khi chưa có lỗ chờ, thi công nhanh và chắc chắn."
-category: "oc-vit"
-subcategory: "vit-ban-ton"
+slug: "vit-ban-ton-inox"
+updatedAt: 2026-01-19
+category:
+  slug: "oc-vit"
+  name: "Ốc vít"
+productType:
+  slug: "vit-ban-ton"
+  name: "Vít bắn tôn"
+filters:
+  material: ["inox-201", "inox-304", "inox-316", "thep-ma-kem"]
+  diameter: ["4.8x19", "4.8x25", "5.5x19", "5.5x25", "6.3x38"]
+  surface: ["ma-kem", "ma-niken", "khong-xu-ly"]
+  application: ["xay-dung", "lap-mai-ton", "ket-cau-thep"]
+tags: ["vit-ban-ton", "vit-tu-khoan", "lap-ton", "vit-inox"]
+seo:
+  title: "VÍT BẮN TÔN INOX - Vít bắn tôn chất lượng cao"
+  description: "Vít bắn tôn inox (vít tự khoan) dùng để lắp ghép tôn/xà gồ khi chưa có lỗ chờ, thi công nhanh và chắc chắn."
+  keywords: ["vit ban ton", "vit tu khoan", "vit lap ton", "vit inox"]
+variants:
+  - sku: "VBT-INOX-201-4.8X19"
+    name: "Vít bắn tôn Inox 201 4.8×19"
+  - sku: "VBT-INOX-304-4.8X25"
+    name: "Vít bắn tôn Inox 304 4.8×25"
+breadcrumbs:
+  - name: "Trang chủ"
+    url: "/"
+  - name: "Ốc vít"
+    url: "/oc-vit"
+  - name: "Vít bắn tôn"
+    url: "/oc-vit/vit-ban-ton"
+  - name: "VÍT BẮN TÔN INOX"
+    url: "/oc-vit/vit-ban-ton/vit-ban-ton-inox"
+relatedCategory:
+  - slug: "vit-tu-khoan"
+    name: "Vít tự khoan"
+  - slug: "bu-long"
+    name: "Bu lông"
 main:
   id: 3
   content: |

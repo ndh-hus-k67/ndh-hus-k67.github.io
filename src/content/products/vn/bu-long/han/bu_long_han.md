@@ -7,8 +7,8 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "han"
-  name: "Hàn"
+  slug: "bu-long-han"
+  name: "Bu lông hàn"
 filters:
   material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
   diameter: ["M4", "M5", "M6", "M8"]

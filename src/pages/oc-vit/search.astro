@@ -15,12 +15,12 @@ const surfaceFilter = url.searchParams.get("surface");
 const applicationFilter = url.searchParams.get("application");
 const productTypeFilter = url.searchParams.get("productType");
 
-// Lấy tất cả sản phẩm bu lông
+// Lấy tất cả sản phẩm ốc vít
 const allProducts: CollectionEntry<"products">[] = await getCollection(
   "products",
   ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "oc-vit";
   }
 );
 
@@ -128,9 +128,9 @@ const productTypeNames: Record<string, string> = {
   "chuyen-dung": "Chuyên dụng",
 };
 
-const title = "Tìm kiếm Bu Lông";
+const title = "Tìm kiếm Ốc Vít";
 const pageTitle = `${title} | ${SITE.title}`;
-const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của bạn.";
+const description = "Tìm kiếm sản phẩm ốc vít theo tiêu chí của bạn.";
 ---
 
 <MainLayout title={pageTitle} customDescription={description}>
@@ -294,7 +294,7 @@ const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của b�
         const productTypeSlug = product.data.productType?.slug || 'chuyen-dung';
         return (
         <a
-          href={`/bu-long/${productTypeSlug}/${productSlug}`}
+          href={`/oc-vit/${productTypeSlug}/${productSlug}`}
           data-astro-prefetch
           data-material={JSON.stringify(product.data.filters?.material || [])}
           data-diameter={JSON.stringify(product.data.filters?.diameter || [])}
@@ -323,7 +323,7 @@ const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của b�
         Không tìm thấy sản phẩm nào phù hợp với bộ lọc của bạn.
       </p>
       <button
-        onclick="window.location.href = '/bu-long'"
+        onclick="window.location.href = '/oc-vit'"
         class="mt-4 text-orange-400 hover:underline"
       >
         Xem tất cả sản phẩm →
@@ -413,7 +413,7 @@ const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của b�
       (document.getElementById("applicationFilter") as HTMLSelectElement).value = "";
       (document.getElementById("productTypeFilter") as HTMLSelectElement).value = "";
       
-      window.history.pushState({}, "", "/bu-long/search");
+      window.history.pushState({}, "", "/oc-vit/search");
       filterProducts();
     });
   });

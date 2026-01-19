@@ -8,7 +8,7 @@ import { SITE } from "@data/constants";
 export async function getStaticPaths() {
   const allProducts = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "oc-vit";
   });
 
   // Lấy danh sách productType duy nhất
@@ -28,7 +28,7 @@ const products: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     return (
-      categorySlug === "bu-long" &&
+      categorySlug === "oc-vit" &&
       data.productType?.slug === productType
     );
   })
@@ -38,30 +38,22 @@ const products: CollectionEntry<"products">[] = (
 );
 
 const productTypeDescriptions: Record<string, string> = {
-  "chu-t":
-    "Bu lông chữ T là loại sản phẩm thuộc danh mục phụ kiện nhôm định hình, thường được sử dụng nhiều trong sản xuất lắp ráp các sản phẩm tự động hóa công nghiệp, chế tạo máy. Với thiết kế hình dáng giống như chữ \"T\", sản phẩm mang đến sự ổn định cao và độ bền cao.",
-  "luc-giac":
-    "Bu lông lục giác là loại bu lông có đầu lục giác (6 cạnh đều), dễ dàng siết chặt bằng cờ lê hoặc tuýp. Được sản xuất theo nhiều tiêu chuẩn như DIN 931, DIN 933, DIN 912 với đa dạng kích thước và vật liệu.",
-  "dau-bang":
-    "Bu lông đầu bằng hoa thị có chốt (TORX+PIN) là loại bu lông chống trộm, được thiết kế đặc biệt để sử dụng ở những vị trí cần sự an toàn cho thiết bị được lắp đặt, tránh tình trạng tháo lắp tùy tiện.",
-  "dau-cau":
-    "Bu lông đầu cầu hoa thị có chốt là loại bu lông chống trộm với thiết kế đầu cầu đặc biệt, giúp ngăn chặn việc tháo lắp tùy tiện và đảm bảo an toàn cho thiết bị.",
-  "dau-tron":
-    "Bu lông đầu tròn cổ vuông DIN 603 là loại bu lông có đầu tròn và cổ vuông chống xoay, thường được sử dụng trong kết cấu gỗ, kim loại và các ứng dụng cần tính thẩm mỹ.",
-  "han":
-    "Bu lông hàn inox (vít hàn, đinh hàn có ren) là loại bu lông được hàn trực tiếp lên bề mặt tấm kim loại phẳng bằng máy hàn chuyên dụng. Được sản xuất theo tiêu chuẩn GB/T 902.3 hoặc ISO 13918.",
-  "chuyen-dung":
-    "Bu lông chuyên dụng bao gồm các loại bu lông đặc biệt như bu lông hóa chất, bu lông neo móng, bu lông tải hồng, bu lông nổ và các loại bu lông khác cho ứng dụng chuyên biệt.",
+  "vit-ban-ton":
+    "Vít bắn tôn tự khoan (vít tự khoan) là loại ốc vít dùng để lắp ghép các chi tiết chưa có sẵn lỗ. Khi thi công, phần mũi khoan của vít có thể xuyên thủng bề mặt tiếp xúc và tạo liên kết chắc chắn. Thường dùng để bắn tôn lợp mái, liên kết tôn với xà gồ/khung thép.",
+  "vit-tu-khoan":
+    "Vít tự khoan inox theo tiêu chuẩn DIN 7504 dùng để liên kết kim loại, gỗ, kết cấu thép. Có mũi khoan giúp xuyên bề mặt mà không cần khoan mồi, thao tác nhanh và hiệu quả.",
 };
 
 const productTypeIntros: Record<string, string[]> = {
-  "luc-giac": [
-    "Nhóm sản phẩm này thường có cấp bền 8.8 / 10.9 / 12.9 (đối với thép) và các lựa chọn vật liệu inox SUS 201 / 304 / 316 / 316L tùy môi trường sử dụng.",
-    "Kích thước phổ biến từ M3–M36, chiều dài tham khảo 16–200 mm (tùy theo tiêu chuẩn và nhu cầu đặt hàng).",
+  "vit-ban-ton": [
+    "Sản phẩm thường đi kèm long đen (cao su/nhựa dẻo) giúp tăng độ kín và giảm thấm nước tại điểm bắn.",
+    "Kích thước phổ biến: 4.8×19, 4.8×25, 5.5×19, 5.5×25, 6.3×38 mm.",
+    "Vật liệu: Inox 201, 304, 316, Thép mạ kẽm.",
   ],
-  "chu-t": [
-    "Sản phẩm được chế tạo từ nhiều vật liệu như thép mạ kẽm, mạ niken, inox 304, inox 316 để phù hợp với từng môi trường làm việc.",
-    "Kích thước phổ biến: M6×20, M6×25, M6×30, M8×16, M8×20, M8×25, M8×30 mm.",
+  "vit-tu-khoan": [
+    "Vít tự khoan DIN 7504 có mũ lục giác, dễ dàng thao tác bằng máy/súng bắn vít chuyên dụng.",
+    "Kích thước phổ biến: 3.5mm–6.3mm đường kính, chiều dài từ 13–38mm.",
+    "Vật liệu: Inox 304, 316, Thép mạ kẽm.",
   ],
 };
 
@@ -120,10 +112,10 @@ const applicationNames: Record<string, string> = {
   "moi-truong-am": "Môi trường ẩm",
 };
 
-const title = `Bu Lông ${productTypeName}`;
+const title = `${productTypeName}`;
 const description =
   productTypeDescriptions[productType as string] ||
-  `Khám phá bộ sưu tập bu lông ${(productTypeName || productType || '').toLowerCase()} chất lượng cao của chúng tôi.`;
+  `Khám phá bộ sưu tập ${(productTypeName || productType || '').toLowerCase()} chất lượng cao của chúng tôi.`;
 
 const introParagraphs = productTypeIntros[productType as string] || [];
 
@@ -227,8 +219,8 @@ const pageTitle = `${title} | ${SITE.title}`;
           <div class="flex flex-wrap gap-2">
             {Array.from(availableDiameters)
               .sort((a, b) => {
-                const aNum = parseInt(a.replace("M", ""));
-                const bNum = parseInt(b.replace("M", ""));
+                const aNum = parseFloat(a.replace("M", "").replace("x", "."));
+                const bNum = parseFloat(b.replace("M", "").replace("x", "."));
                 return aNum - bNum;
               })
               .map((diameter) => (
@@ -308,7 +300,7 @@ const pageTitle = `${title} | ${SITE.title}`;
           const productSlug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
           return (
           <a
-            href={`/bu-long/${productType}/${productSlug}`}
+            href={`/oc-vit/${productType}/${productSlug}`}
             data-astro-prefetch
             data-material={JSON.stringify(product.data.filters?.material || [])}
             data-diameter={JSON.stringify(product.data.filters?.diameter || [])}

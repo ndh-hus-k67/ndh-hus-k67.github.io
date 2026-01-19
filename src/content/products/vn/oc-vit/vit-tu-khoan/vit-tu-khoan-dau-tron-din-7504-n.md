@@ -1,8 +1,44 @@
 ---
 title: "VÍT TỰ KHOAN ĐẦU TRÒN DIN 7504 – N"
 description: "Vít tự khoan đầu tròn DIN 7504-N (vít đuôi cá) dùng để liên kết với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh."
-category: "oc-vit"
-subcategory: "vit-tu-khoan"
+slug: "vit-tu-khoan-dau-tron-din-7504-n"
+updatedAt: 2026-01-19
+category:
+  slug: "oc-vit"
+  name: "Ốc vít"
+productType:
+  slug: "vit-tu-khoan"
+  name: "Vít tự khoan"
+filters:
+  material: ["inox-304", "inox-316", "thep-ma-kem"]
+  diameter: ["3.5", "4.2", "4.8", "5.5", "6.3"]
+  length_mm: [13, 16, 19, 25, 32, 38]
+  surface: ["ma-kem", "khong-xu-ly"]
+  application: ["xay-dung", "che-tao-may", "ket-cau-thep", "go"]
+tags: ["vit-tu-khoan", "vit-inox", "vit-khoan-go", "vit-khoan-sat"]
+seo:
+  title: "VÍT TỰ KHOAN ĐẦU TRÒN DIN 7504 – N - Vít tự khoan chất lượng cao"
+  description: "Vít tự khoan đầu tròn DIN 7504-N (vít đuôi cá) dùng để liên kết với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh."
+  keywords: ["vit tu khoan", "vit inox", "vit khoan sat", "vit khoan go"]
+variants:
+  - sku: "VIT-TK-DAU-TRON-01"
+    name: "Vít tự khoan đầu tròn 3.5mm"
+  - sku: "VIT-TK-DAU-TRON-02"
+    name: "Vít tự khoan đầu tròn 4.2mm"
+breadcrumbs:
+  - name: "Trang chủ"
+    url: "/"
+  - name: "Ốc vít"
+    url: "/oc-vit"
+  - name: "Vít tự khoan"
+    url: "/oc-vit/vit-tu-khoan"
+  - name: "VÍT TỰ KHOAN ĐẦU TRÒN DIN 7504 – N"
+    url: "/oc-vit/vit-tu-khoan/vit-tu-khoan-dau-tron-din-7504-n"
+relatedCategory:
+  - slug: "vit-ban-ton"
+    name: "Vít bắn tôn"
+  - slug: "bu-long"
+    name: "Bu lông"
 main:
   id: 3
   content: |

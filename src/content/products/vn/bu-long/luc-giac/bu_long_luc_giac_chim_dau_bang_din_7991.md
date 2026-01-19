@@ -7,8 +7,8 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "luc-giac"
-  name: "Lục giác"
+  slug: "bu-long-luc-giac"
+  name: "Bu lông lục giác"
 filters:
   material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
   diameter: ["M3", "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20", "M24", "M30"]

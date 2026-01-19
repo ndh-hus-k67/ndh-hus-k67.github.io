@@ -28,7 +28,7 @@ const products: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     return (
-      id.startsWith("vn/") &&
+
       categorySlug === "bu-long" &&
       data.productType?.slug === productType
     );

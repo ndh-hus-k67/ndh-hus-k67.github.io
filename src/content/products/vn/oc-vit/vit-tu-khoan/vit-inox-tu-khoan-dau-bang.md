@@ -1,8 +1,44 @@
 ---
 title: "VÍT INOX TỰ KHOAN ĐẦU BẰNG"
 description: "Vít inox tự khoan đầu bằng dùng để liên kết kết cấu với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh bằng súng bắn vít."
-category: "oc-vit"
-subcategory: "vit-tu-khoan"
+slug: "vit-inox-tu-khoan-dau-bang"
+updatedAt: 2026-01-19
+category:
+  slug: "oc-vit"
+  name: "Ốc vít"
+productType:
+  slug: "vit-tu-khoan"
+  name: "Vít tự khoan"
+filters:
+  material: ["inox-304", "inox-316", "thep-ma-kem"]
+  diameter: ["3.5", "4.2", "4.8", "5.5", "6.3"]
+  length_mm: [13, 16, 19, 25, 32, 38]
+  surface: ["ma-kem", "khong-xu-ly"]
+  application: ["xay-dung", "che-tao-may", "ket-cau-thep", "go"]
+tags: ["vit-tu-khoan", "vit-inox", "vit-khoan-go", "vit-khoan-sat"]
+seo:
+  title: "VÍT INOX TỰ KHOAN ĐẦU BẰNG - Vít tự khoan chất lượng cao"
+  description: "Vít inox tự khoan đầu bằng dùng để liên kết kết cấu với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh bằng súng bắn vít."
+  keywords: ["vit tu khoan", "vit inox", "vit khoan sat", "vit khoan go"]
+variants:
+  - sku: "VIT-TK-DAU-BANG-01"
+    name: "Vít inox tự khoan đầu bằng 3.5mm"
+  - sku: "VIT-TK-DAU-BANG-02"
+    name: "Vít inox tự khoan đầu bằng 4.2mm"
+breadcrumbs:
+  - name: "Trang chủ"
+    url: "/"
+  - name: "Ốc vít"
+    url: "/oc-vit"
+  - name: "Vít tự khoan"
+    url: "/oc-vit/vit-tu-khoan"
+  - name: "VÍT INOX TỰ KHOAN ĐẦU BẰNG"
+    url: "/oc-vit/vit-tu-khoan/vit-inox-tu-khoan-dau-bang"
+relatedCategory:
+  - slug: "vit-ban-ton"
+    name: "Vít bắn tôn"
+  - slug: "bu-long"
+    name: "Bu lông"
 main:
   id: 1
   content: |

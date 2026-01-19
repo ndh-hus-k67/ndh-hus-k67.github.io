@@ -40,9 +40,9 @@ const productsCollection = defineCollection({
       z.object({
         sku: z.string(),
         name: z.string(),
-        material: z.string(),
-        diameter: z.string(),
-        length_mm: z.number(),
+        material: z.string().optional(),
+        diameter: z.string().optional(),
+        length_mm: z.number().optional(),
       })
     ).optional(),
     breadcrumbs: z.array(

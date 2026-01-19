@@ -34,7 +34,7 @@ const subcategories = [
   ...new Set(
     allProducts
       .map((product) => product.data.subcategory)
-      .filter((subcategory) => !hiddenSubcategories.has(subcategory))
+      .filter((subcategory): subcategory is string => subcategory !== undefined && !hiddenSubcategories.has(subcategory))
   ),
 ];
 

@@ -152,23 +152,23 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
   }}
 >
   <!-- Header Section -->
-  <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full">
-    <div class="mb-8 flex items-center justify-between gap-8">
-      <div>
-        <h1 class="text-balance text-3xl font-bold tracking-tight text-neutral-800 md:text-4xl dark:text-neutral-200">
-          {title}
-        </h1>
-        {subTitle && (
-          <p class="mt-3 max-w-3xl text-pretty text-neutral-600 dark:text-neutral-400">
-            {subTitle}
-          </p>
-        )}
+  <div class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 2xl:max-w-full">
+    <div class="mb-12 text-center">
+      <h1 class="text-balance text-4xl font-bold tracking-tight text-neutral-800 md:text-5xl dark:text-neutral-200">
+        {title}
+      </h1>
+      {subTitle && (
+        <p class="mx-auto mt-4 max-w-3xl text-pretty text-lg text-neutral-600 dark:text-neutral-400">
+          {subTitle}
+        </p>
+      )}
+      <div class="mt-8">
+        <PrimaryCTA
+          title="Câu chuyện khách hàng"
+          url="#customer"
+          noArrow={true}
+        />
       </div>
-      <PrimaryCTA
-        title="Câu chuyện khách hàng"
-        url="#customer"
-        noArrow={true}
-      />
     </div>
   </div>
 
@@ -176,52 +176,46 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
   <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 2xl:max-w-full">
     <div class="flex flex-col gap-8 lg:flex-row lg:gap-12">
       <!-- Sidebar - Categories Navigation -->
-      <aside class="lg:w-80 lg:shrink-0">
-        <div class="sticky top-24 space-y-6">
-          <div class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
-            <h2 class="mb-4 text-lg font-semibold text-neutral-800 dark:text-neutral-200">
+      <aside class="lg:w-72 lg:shrink-0">
+        <div class="sticky top-24 space-y-5">
+          <div class="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-800/50">
+            <h2 class="mb-5 text-base font-bold uppercase tracking-wide text-neutral-700 dark:text-neutral-300">
               Danh mục sản phẩm
             </h2>
-            <nav class="space-y-3">
+            <nav class="space-y-2">
               {productsByCategory.map((category) => (
                 <div class="space-y-1">
                   <a
                     href={`#category-${category.slug}`}
                     data-category={category.slug}
-                    class="category-link group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700"
+                    class="category-link group flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors"
                   >
-                    <div class="mt-0.5 flex-shrink-0">
-                      <svg
-                        class="h-5 w-5 text-orange-500"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" d={category.icon} />
-                      </svg>
-                    </div>
+                    <svg
+                      class="h-5 w-5 text-orange-500"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d={category.icon} />
+                    </svg>
                     <div class="min-w-0 flex-1">
-                      <h3 class="font-medium text-neutral-800 group-hover:text-orange-500 dark:text-neutral-200 dark:group-hover:text-orange-400">
+                      <h3 class="font-semibold text-neutral-800 dark:text-neutral-200">
                         {category.name}
                       </h3>
-                      <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                        {category.count} sản phẩm
-                      </p>
                     </div>
                   </a>
 
                   {/* Subcategories */}
                   {category.subcategories && category.subcategories.length > 0 && (
-                    <div class="ml-8 space-y-1 border-l-2 border-neutral-200 pl-3 dark:border-neutral-700">
+                    <div class="ml-8 space-y-0.5 pl-4">
                       {category.subcategories.map((subcat) => (
                         <a
                           href={`#subcat-${category.slug}-${subcat.slug}`}
                           data-subcategory={subcat.slug}
-                          class="subcategory-link block rounded px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-orange-500 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-orange-400"
+                          class="subcategory-link block rounded-md px-3 py-1.5 text-sm text-neutral-600 transition-colors dark:text-neutral-400"
                         >
-                          <span class="font-medium">{subcat.name}</span>
-                          <span class="ml-1 text-xs text-neutral-500 dark:text-neutral-500">({subcat.count})</span>
+                          {subcat.name}
                         </a>
                       ))}
                     </div>
@@ -232,16 +226,16 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
           </div>
 
           <!-- Quick Info Card -->
-          <div class="rounded-2xl border border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100 p-6 dark:border-orange-900 dark:from-orange-950 dark:to-orange-900">
-            <h3 class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
+          <div class="rounded-xl bg-orange-50 p-5 dark:bg-orange-950/50">
+            <h3 class="mb-2 text-base font-bold text-neutral-800 dark:text-neutral-200">
               Cần tư vấn?
             </h3>
-            <p class="mb-4 text-sm text-neutral-600 dark:text-neutral-300">
+            <p class="mb-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
               Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn chọn sản phẩm phù hợp.
             </p>
             <a
               href="/contact"
-              class="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300"
+              class="inline-flex items-center text-sm font-semibold text-orange-600 dark:text-orange-400"
             >
               Liên hệ ngay →
             </a>
@@ -251,49 +245,49 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
 
       <!-- Products Grid -->
       <main class="min-w-0 flex-1">
-        <div class="space-y-16">
+        <div class="space-y-20">
           {productsByCategory.map((category) => (
             <section id={`category-${category.slug}`} class="scroll-mt-24">
-              <div class="mb-8 flex items-start justify-between">
-                <div>
-                  <h2 class="text-balance text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
+              <div class="mb-8">
+                <div class="flex items-end justify-between">
+                  <h2 class="text-balance text-3xl font-bold text-neutral-800 md:text-4xl dark:text-neutral-200">
                     {category.name}
                   </h2>
-                  <p class="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-400">
-                    {category.description}
-                  </p>
+                  <a
+                    href={`/products/${category.slug}`}
+                    class="shrink-0 text-sm font-medium text-orange-500 dark:text-orange-400"
+                  >
+                    Khám phá thêm →
+                  </a>
                 </div>
-                <a
-                  href={`/products/${category.slug}`}
-                  class="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-medium text-orange-400 transition-colors hover:text-orange-500 dark:text-orange-400 dark:hover:text-orange-300"
-                >
-                  Xem tất cả ({category.count}) →
-                </a>
+                <p class="mt-3 max-w-3xl text-base text-neutral-600 dark:text-neutral-400">
+                  {category.description}
+                </p>
               </div>
 
               {/* Subcategories sections */}
               {category.subcategories && category.subcategories.length > 0 ? (
-                <div class="space-y-12">
+                <div class="space-y-14">
                   {category.subcategories.map((subcat) => (
                     <div id={`subcat-${category.slug}-${subcat.slug}`} class="scroll-mt-24">
-                      <div class="mb-4 flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+                      <div class="mb-5 flex items-baseline justify-between">
+                        <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
                           {subcat.name}
                         </h3>
                         <a
                           href={`/products/${category.slug}/${subcat.slug}`}
-                          class="text-sm text-orange-400 hover:text-orange-500 dark:text-orange-400 dark:hover:text-orange-300"
+                          class="text-sm font-medium text-orange-500 dark:text-orange-400"
                         >
-                          Xem thêm ({subcat.count}) →
+                          Xem thêm loại khác →
                         </a>
                       </div>
 
-                      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+                      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {subcat.products.map((product) => (
                           <a
                             href={`/products/${product.data.category}/${product.data.subcategory}/${product.id.split("/").pop()?.replace(".md", "")}`}
                             data-astro-prefetch
-                            class="group relative flex h-64 items-end overflow-hidden rounded-xl shadow-md outline-hidden ring-zinc-500 transition-shadow hover:shadow-xl focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
+                            class="group relative flex h-72 items-end overflow-hidden rounded-lg"
                           >
                             <img
                               src={
@@ -302,11 +296,11 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
                                   : product.data.main.imgCard.src
                               }
                               alt={product.data.main.imgAlt}
-                              class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+                              class="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
                             />
-                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
-                            <div class="relative w-full p-4">
-                              <span class="inline-block text-base font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-105 md:text-lg">
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/30 to-transparent" />
+                            <div class="relative w-full p-5">
+                              <span class="inline-block text-lg font-bold text-white">
                                 {product.data.title}
                               </span>
                             </div>
@@ -317,12 +311,12 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
                   ))}
                 </div>
               ) : (
-                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {category.products.map((product) => (
                     <a
                       href={`/products/${product.data.category}/${product.data.subcategory}/${product.id.split("/").pop()?.replace(".md", "")}`}
                       data-astro-prefetch
-                      class="group relative flex h-64 items-end overflow-hidden rounded-xl shadow-md outline-hidden ring-zinc-500 transition-shadow hover:shadow-xl focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
+                      class="group relative flex h-72 items-end overflow-hidden rounded-lg"
                     >
                       <img
                         src={
@@ -331,11 +325,11 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
                             : product.data.main.imgCard.src
                         }
                         alt={product.data.main.imgAlt}
-                        class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+                        class="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
                       />
-                      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
-                      <div class="relative w-full p-4">
-                        <span class="inline-block text-base font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-105 md:text-lg">
+                      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/30 to-transparent" />
+                      <div class="relative w-full p-5">
+                        <span class="inline-block text-lg font-bold text-white">
                           {product.data.title}
                         </span>
                       </div>
@@ -406,18 +400,18 @@ const ogTitle = "Dụng cụ phần cứng | ScrewFast";
               categoryLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href === `#${id}`) {
-                  link.classList.add('bg-orange-50', 'dark:bg-orange-900/30');
+                  link.classList.add('bg-white', 'dark:bg-neutral-700');
                 } else {
-                  link.classList.remove('bg-orange-50', 'dark:bg-orange-900/30');
+                  link.classList.remove('bg-white', 'dark:bg-neutral-700');
                 }
               });
             } else if (id?.startsWith('subcat-')) {
               subcategoryLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href === `#${id}`) {
-                  link.classList.add('bg-orange-50', 'dark:bg-orange-900/30', 'font-semibold');
+                  link.classList.add('bg-white', 'dark:bg-neutral-700', 'font-semibold');
                 } else {
-                  link.classList.remove('bg-orange-50', 'dark:bg-orange-900/30', 'font-semibold');
+                  link.classList.remove('bg-white', 'dark:bg-neutral-700', 'font-semibold');
                 }
               });
             }

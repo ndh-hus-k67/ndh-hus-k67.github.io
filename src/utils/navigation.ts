@@ -1,6 +1,6 @@
 const navBarLinks = [
   { name: "Trang chủ", url: "/" },
-  { name: "Sản phẩm", url: "/products" },
+  { name: "Bu lông", url: "/bu-long" },
   { name: "Về chúng tôi", url: "/about-us" },
   { name: "Bài viết", url: "/blog" },
   { name: "Liên hệ", url: "/contact" },
@@ -8,9 +8,9 @@ const navBarLinks = [
 
 const footerLinks = [
   {
-    section: "Hệ sinh thái",
+    section: "Sản phẩm",
     links: [
-      { name: "Công cụ & Thiết bị", url: "/products" },
+      { name: "Bu lông", url: "/bu-long" },
       { name: "Về chúng tôi", url: "/about-us" },
     ],
   },
@@ -19,7 +19,7 @@ const footerLinks = [
     links: [
       { name: "Về chúng tôi", url: "#" },
       { name: "Blog", url: "/blog" },
-      { name: "Khách hàng", url: "/products/#customer" },
+      { name: "Liên hệ", url: "/contact" },
     ],
   },
 ];

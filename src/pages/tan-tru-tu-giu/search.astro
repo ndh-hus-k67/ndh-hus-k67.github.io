@@ -1,0 +1,420 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Lấy các query params từ URL
+const url = new URL(Astro.request.url);
+const materialFilter = url.searchParams.get("material");
+const diameterFilter = url.searchParams.get("diameter");
+const surfaceFilter = url.searchParams.get("surface");
+const applicationFilter = url.searchParams.get("application");
+const productTypeFilter = url.searchParams.get("productType");
+
+// Lấy tất cả sản phẩm bu lông
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id, data }) => {
+    const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
+    return categorySlug === "bu-long";
+  }
+);
+
+// Filter sản phẩm dựa trên các filters
+let filteredProducts = allProducts;
+
+if (materialFilter) {
+  filteredProducts = filteredProducts.filter((p) =>
+    p.data.filters?.material?.includes(materialFilter)
+  );
+}
+
+if (diameterFilter) {
+  filteredProducts = filteredProducts.filter((p) =>
+    p.data.filters?.diameter?.includes(diameterFilter)
+  );
+}
+
+if (surfaceFilter) {
+  filteredProducts = filteredProducts.filter((p) =>
+    p.data.filters?.surface?.includes(surfaceFilter)
+  );
+}
+
+if (applicationFilter) {
+  filteredProducts = filteredProducts.filter((p) =>
+    p.data.filters?.application?.includes(applicationFilter)
+  );
+}
+
+if (productTypeFilter) {
+  console.log("Filtering by productType:", productTypeFilter);
+  filteredProducts = filteredProducts.filter(
+    (p) => {
+      console.log("Product:", p.data.title, "ProductType:", p.data.productType?.slug, "Match:", p.data.productType?.slug === productTypeFilter);
+      return p.data.productType?.slug === productTypeFilter;
+    }
+  );
+  console.log("Filtered products count:", filteredProducts.length);
+}
+
+// Lấy danh sách các giá trị filter có sẵn
+const availableMaterials = new Set<string>();
+const availableDiameters = new Set<string>();
+const availableSurfaces = new Set<string>();
+const availableApplications = new Set<string>();
+const availableProductTypes = new Set<string>();
+
+allProducts.forEach((product) => {
+  product.data.filters?.material?.forEach((m: string) => availableMaterials.add(m));
+  product.data.filters?.diameter?.forEach((d: string) => availableDiameters.add(d));
+  product.data.filters?.surface?.forEach((s: string) => availableSurfaces.add(s));
+  product.data.filters?.application?.forEach((a: string) => availableApplications.add(a));
+  if (product.data.productType?.slug) {
+    availableProductTypes.add(product.data.productType.slug);
+  }
+});
+
+// Mapping tên hiển thị
+const materialNames: Record<string, string> = {
+  "inox-304": "Inox 304",
+  "inox-316": "Inox 316",
+  "inox-201": "Inox 201",
+  "inox-316l": "Inox 316L",
+  "thep-carbon": "Thép carbon",
+  "thep-ma-kem": "Thép mạ kẽm",
+  "thep-ma-niken": "Thép mạ niken",
+};
+
+const surfaceNames: Record<string, string> = {
+  "ma-kem": "Mạ kẽm",
+  "ma-niken": "Mạ niken",
+  "ma-dong": "Mạ đồng",
+  "xi-den": "Xi đen",
+  "ma-dacromet": "Mạ dacromet",
+  "khong-xu-ly": "Không xử lý",
+};
+
+const applicationNames: Record<string, string> = {
+  "tu-dong-hoa-cong-nghiep": "Tự động hóa công nghiệp",
+  "che-tao-may": "Chế tạo máy",
+  "nhom-dinh-hinh": "Nhôm định hình",
+  "xay-dung": "Xây dựng",
+  "ket-cau-thep": "Kết cấu thép",
+  "co-khi-chung": "Cơ khí chung",
+  "han-chap": "Hàn chập",
+  "dong-tau": "Đóng tàu",
+  "dien-dien-tu": "Điện - điện tử",
+  "bao-mat": "Bảo mật",
+  "chong-trom": "Chống trộm",
+  "thiet-bi-cong-cong": "Thiết bị công cộng",
+  "hoa-chat": "Hóa chất",
+  "dau-khi": "Dầu khí",
+  "bien": "Gần biển",
+  "moi-truong-am": "Môi trường ẩm",
+};
+
+const productTypeNames: Record<string, string> = {
+  "chu-t": "Chữ T",
+  "luc-giac": "Lục giác",
+  "dau-bang": "Đầu bằng",
+  "dau-cau": "Đầu cầu",
+  "dau-tron": "Đầu tròn",
+  "han": "Hàn",
+  "chuyen-dung": "Chuyên dụng",
+};
+
+const title = "Tìm kiếm Bu Lông";
+const pageTitle = `${title} | ${SITE.title}`;
+const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của bạn.";
+---
+
+<MainLayout title={pageTitle} customDescription={description}>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <!-- Header -->
+    <div class="mb-8">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+      >
+        {title}
+      </h1>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-400">
+        {description}
+      </p>
+    </div>
+
+    <!-- Filters -->
+    <div class="mb-8 rounded-lg border border-neutral-200 p-6 dark:border-neutral-700">
+      <h2 class="mb-4 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+        Bộ lọc
+      </h2>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <!-- Product Type Filter -->
+        <div>
+          <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Loại sản phẩm
+          </label>
+          <select
+            id="productTypeFilter"
+            class="block w-full rounded-lg border-neutral-300 py-2 px-3 text-sm focus:border-orange-500 focus:ring-orange-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+          >
+            <option value="">Tất cả</option>
+            {
+              Array.from(availableProductTypes)
+                .sort()
+                .map((type) => (
+                  <option value={type}>
+                    {productTypeNames[type] || type}
+                  </option>
+                ))
+            }
+          </select>
+        </div>
+
+        <!-- Material Filter -->
+        <div>
+          <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Vật liệu
+          </label>
+          <select
+            id="materialFilter"
+            class="block w-full rounded-lg border-neutral-300 py-2 px-3 text-sm focus:border-orange-500 focus:ring-orange-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+          >
+            <option value="">Tất cả</option>
+            {
+              Array.from(availableMaterials)
+                .sort()
+                .map((material) => (
+                  <option value={material}>
+                    {materialNames[material] || material}
+                  </option>
+                ))
+            }
+          </select>
+        </div>
+
+        <!-- Diameter Filter -->
+        <div>
+          <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Kích thước
+          </label>
+          <select
+            id="diameterFilter"
+            class="block w-full rounded-lg border-neutral-300 py-2 px-3 text-sm focus:border-orange-500 focus:ring-orange-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+          >
+            <option value="">Tất cả</option>
+            {
+              Array.from(availableDiameters)
+                .sort((a, b) => {
+                  const aNum = parseInt(a.replace("M", ""));
+                  const bNum = parseInt(b.replace("M", ""));
+                  return aNum - bNum;
+                })
+                .map((diameter) => (
+                  <option value={diameter}>
+                    {diameter}
+                  </option>
+                ))
+            }
+          </select>
+        </div>
+
+        <!-- Surface Filter -->
+        <div>
+          <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Bề mặt
+          </label>
+          <select
+            id="surfaceFilter"
+            class="block w-full rounded-lg border-neutral-300 py-2 px-3 text-sm focus:border-orange-500 focus:ring-orange-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+          >
+            <option value="">Tất cả</option>
+            {
+              Array.from(availableSurfaces)
+                .sort()
+                .map((surface) => (
+                  <option value={surface}>
+                    {surfaceNames[surface] || surface}
+                  </option>
+                ))
+            }
+          </select>
+        </div>
+
+        <!-- Application Filter -->
+        <div>
+          <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Ứng dụng
+          </label>
+          <select
+            id="applicationFilter"
+            class="block w-full rounded-lg border-neutral-300 py-2 px-3 text-sm focus:border-orange-500 focus:ring-orange-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+          >
+            <option value="">Tất cả</option>
+            {
+              Array.from(availableApplications)
+                .sort()
+                .map((application) => (
+                  <option value={application}>
+                    {applicationNames[application] || application}
+                  </option>
+                ))
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-4 flex gap-3">
+        <button
+          id="applyFilters"
+          class="rounded-lg bg-orange-400 px-4 py-2 text-sm font-medium text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+        >
+          Áp dụng
+        </button>
+        <button
+          id="clearFilters"
+          class="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+        >
+          Xóa bộ lọc
+        </button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="productsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {allProducts.map((product) => {
+        const productSlug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
+        const productTypeSlug = product.data.productType?.slug || 'chuyen-dung';
+        return (
+        <a
+          href={`/bu-long/${productTypeSlug}/${productSlug}`}
+          data-astro-prefetch
+          data-material={JSON.stringify(product.data.filters?.material || [])}
+          data-diameter={JSON.stringify(product.data.filters?.diameter || [])}
+          data-surface={JSON.stringify(product.data.filters?.surface || [])}
+          data-application={JSON.stringify(product.data.filters?.application || [])}
+          data-producttype={product.data.productType?.slug || ''}
+          class="product-card group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
+        >
+          <Image
+            src={product.data.main.imgCard}
+            alt={product.data.main.imgAlt}
+            class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+            format={"avif"}
+            loading="lazy"
+          />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-transparent opacity-50"></div>
+          <span class="relative mb-3 ml-4 inline-block text-sm font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110 md:ml-5 md:text-lg">
+            {product.data.title}
+          </span>
+        </a>
+      )})}
+    </div>
+
+    <div id="noResults" class="hidden py-12 text-center">
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Không tìm thấy sản phẩm nào phù hợp với bộ lọc của bạn.
+      </p>
+      <button
+        onclick="window.location.href = '/bu-long'"
+        class="mt-4 text-orange-400 hover:underline"
+      >
+        Xem tất cả sản phẩm →
+      </button>
+    </div>
+  </div>
+</MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const applyButton = document.getElementById("applyFilters");
+    const clearButton = document.getElementById("clearFilters");
+    const productsGrid = document.getElementById("productsGrid");
+    const noResults = document.getElementById("noResults");
+    const allCards = document.querySelectorAll(".product-card");
+
+    function filterProducts() {
+      const material = (document.getElementById("materialFilter") as HTMLSelectElement).value;
+      const diameter = (document.getElementById("diameterFilter") as HTMLSelectElement).value;
+      const surface = (document.getElementById("surfaceFilter") as HTMLSelectElement).value;
+      const application = (document.getElementById("applicationFilter") as HTMLSelectElement).value;
+      const productType = (document.getElementById("productTypeFilter") as HTMLSelectElement).value;
+
+      let visibleCount = 0;
+
+      allCards.forEach((card) => {
+        const cardMaterials = JSON.parse(card.getAttribute("data-material") || "[]");
+        const cardDiameters = JSON.parse(card.getAttribute("data-diameter") || "[]");
+        const cardSurfaces = JSON.parse(card.getAttribute("data-surface") || "[]");
+        const cardApplications = JSON.parse(card.getAttribute("data-application") || "[]");
+        const cardProductType = card.getAttribute("data-producttype") || "";
+
+        const matchMaterial = !material || cardMaterials.includes(material);
+        const matchDiameter = !diameter || cardDiameters.includes(diameter);
+        const matchSurface = !surface || cardSurfaces.includes(surface);
+        const matchApplication = !application || cardApplications.includes(application);
+        const matchProductType = !productType || cardProductType === productType;
+
+        const shouldShow = matchMaterial && matchDiameter && matchSurface && matchApplication && matchProductType;
+
+        if (shouldShow) {
+          (card as HTMLElement).style.display = "";
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = "none";
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults?.classList.remove("hidden");
+        productsGrid?.classList.add("hidden");
+      } else {
+        noResults?.classList.add("hidden");
+        productsGrid?.classList.remove("hidden");
+      }
+    }
+
+    // Apply filters from URL on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("material")) {
+      (document.getElementById("materialFilter") as HTMLSelectElement).value = urlParams.get("material") || "";
+    }
+    if (urlParams.has("diameter")) {
+      (document.getElementById("diameterFilter") as HTMLSelectElement).value = urlParams.get("diameter") || "";
+    }
+    if (urlParams.has("surface")) {
+      (document.getElementById("surfaceFilter") as HTMLSelectElement).value = urlParams.get("surface") || "";
+    }
+    if (urlParams.has("application")) {
+      (document.getElementById("applicationFilter") as HTMLSelectElement).value = urlParams.get("application") || "";
+    }
+    if (urlParams.has("productType")) {
+      (document.getElementById("productTypeFilter") as HTMLSelectElement).value = urlParams.get("productType") || "";
+    }
+
+    // Apply filters immediately if there are URL params
+    if (window.location.search) {
+      filterProducts();
+    }
+
+    applyButton?.addEventListener("click", filterProducts);
+
+    clearButton?.addEventListener("click", () => {
+      (document.getElementById("materialFilter") as HTMLSelectElement).value = "";
+      (document.getElementById("diameterFilter") as HTMLSelectElement).value = "";
+      (document.getElementById("surfaceFilter") as HTMLSelectElement).value = "";
+      (document.getElementById("applicationFilter") as HTMLSelectElement).value = "";
+      (document.getElementById("productTypeFilter") as HTMLSelectElement).value = "";
+      
+      window.history.pushState({}, "", "/bu-long/search");
+      filterProducts();
+    });
+  });
+</script>

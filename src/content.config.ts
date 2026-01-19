@@ -8,9 +8,55 @@ const productsCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/products/', import.meta.url) }),
     schema: ({ image }) => z.object({
     title: z.string(),
+    slug: z.string().optional(),
     description: z.string(),
-    category: z.enum(['bu-long', 'oc-vit', 'san-pham-khac']),
-    subcategory: z.string(),
+    updatedAt: z.coerce.date().optional(),
+    category: z.union([
+      z.enum(['bu-long', 'oc-vit', 'san-pham-khac']),
+      z.object({
+        slug: z.string(),
+        name: z.string(),
+      })
+    ]),
+    subcategory: z.string().optional(),
+    productType: z.object({
+      slug: z.string(),
+      name: z.string(),
+    }).optional(),
+    filters: z.object({
+      material: z.array(z.string()).optional(),
+      diameter: z.array(z.string()).optional(),
+      length_mm: z.array(z.number()).optional(),
+      surface: z.array(z.string()).optional(),
+      application: z.array(z.string()).optional(),
+    }).optional(),
+    tags: z.array(z.string()).optional(),
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+      keywords: z.array(z.string()).optional(),
+    }).optional(),
+    variants: z.array(
+      z.object({
+        sku: z.string(),
+        name: z.string(),
+        material: z.string(),
+        diameter: z.string(),
+        length_mm: z.number(),
+      })
+    ).optional(),
+    breadcrumbs: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string(),
+      })
+    ).optional(),
+    relatedCategory: z.array(
+      z.object({
+        slug: z.string(),
+        name: z.string(),
+      })
+    ).optional(),
     main: z.object({
       id: z.number(),
       content: z.string(),

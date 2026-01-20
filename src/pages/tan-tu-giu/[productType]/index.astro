@@ -8,7 +8,7 @@ import { SITE } from "@data/constants";
 export async function getStaticPaths() {
   const allProducts = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tu-giu";
   });
 
   // Lấy danh sách productType duy nhất
@@ -29,7 +29,7 @@ const products: CollectionEntry<"products">[] = (
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     return (
 
-      categorySlug === "bu-long" &&
+      categorySlug === "tan-tu-giu" &&
       data.productType?.slug === productType
     );
   })
@@ -39,20 +39,12 @@ const products: CollectionEntry<"products">[] = (
 );
 
 const productTypeDescriptions: Record<string, string> = {
-  "chu-t":
-    "Bu lông chữ T là loại sản phẩm thuộc danh mục phụ kiện nhôm định hình, thường được sử dụng nhiều trong sản xuất lắp ráp các sản phẩm tự động hóa công nghiệp, chế tạo máy. Với thiết kế hình dáng giống như chữ \"T\", sản phẩm mang đến sự ổn định cao và độ bền cao.",
-  "luc-giac":
-    "Bu lông lục giác là loại bu lông có đầu lục giác (6 cạnh đều), dễ dàng siết chặt bằng cờ lê hoặc tuýp. Được sản xuất theo nhiều tiêu chuẩn như DIN 931, DIN 933, DIN 912 với đa dạng kích thước và vật liệu.",
-  "dau-bang":
-    "Bu lông đầu bằng hoa thị có chốt (TORX+PIN) là loại bu lông chống trộm, được thiết kế đặc biệt để sử dụng ở những vị trí cần sự an toàn cho thiết bị được lắp đặt, tránh tình trạng tháo lắp tùy tiện.",
-  "dau-cau":
-    "Bu lông đầu cầu hoa thị có chốt là loại bu lông chống trộm với thiết kế đầu cầu đặc biệt, giúp ngăn chặn việc tháo lắp tùy tiện và đảm bảo an toàn cho thiết bị.",
-  "dau-tron":
-    "Bu lông đầu tròn cổ vuông DIN 603 là loại bu lông có đầu tròn và cổ vuông chống xoay, thường được sử dụng trong kết cấu gỗ, kim loại và các ứng dụng cần tính thẩm mỹ.",
-  "han":
-    "Bu lông hàn inox (vít hàn, đinh hàn có ren) là loại bu lông được hàn trực tiếp lên bề mặt tấm kim loại phẳng bằng máy hàn chuyên dụng. Được sản xuất theo tiêu chuẩn GB/T 902.3 hoặc ISO 13918.",
+  "tieu-chuan":
+    "Tán tự giữ tiêu chuẩn là loại tán được thiết kế để tự giữ chắc chắn trên bulông hoặc trục, thường dùng trong các kết cấu cơ khí, xây dựng, lắp ráp thiết bị công nghiệp.",
+  "chong-trom":
+    "Tán tự giữ chống trộm có thiết kế đặc biệt giúp tăng độ an toàn, ngăn ngừa việc tháo lắp trái phép, phù hợp cho các thiết bị yêu cầu bảo mật cao.",
   "chuyen-dung":
-    "Bu lông chuyên dụng bao gồm các loại bu lông đặc biệt như bu lông hóa chất, bu lông neo móng, bu lông tải hồng, bu lông nổ và các loại bu lông khác cho ứng dụng chuyên biệt.",
+    "Tán tự giữ chuyên dụng dành cho các ứng dụng đặc biệt trong công nghiệp, xây dựng, nơi yêu cầu tính năng kỹ thuật riêng biệt và độ bền cao.",
 };
 
 const productTypeIntros: Record<string, string[]> = {

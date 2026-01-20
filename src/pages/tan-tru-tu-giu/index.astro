@@ -5,53 +5,28 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm bu lông
+// Lấy tất cả sản phẩm tán trụ tự giữ
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tru-tu-giu";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
 
-// Nhóm sản phẩm theo productType
+// Nhóm sản phẩm theo productType cho tán trụ tự giữ
 const productTypes = [
   {
-    slug: "chu-t",
-    name: "Chữ T",
-    description: "Bu lông chữ T dùng cho nhôm định hình, tự động hóa công nghiệp"
+    slug: "tan-tru-tu-giu-xuyen-lo",
+    name: "Tán trụ tự giữ xuyên lỗ",
+    description: "Tán trụ tự giữ xuyên lỗ cho liên kết chắc chắn."
   },
   {
-    slug: "luc-giac",
-    name: "Lục giác",
-    description: "Bu lông lục giác với nhiều tiêu chuẩn DIN 931, DIN 933, DIN 7991"
-  },
-  {
-    slug: "dau-bang",
-    name: "Đầu bằng",
-    description: "Bu lông đầu bằng, vít chống trộm hoa thị có chốt"
-  },
-  {
-    slug: "dau-cau",
-    name: "Đầu cầu",
-    description: "Bu lông đầu cầu hoa thị có chốt, thiết kế chống trộm"
-  },
-  {
-    slug: "dau-tron",
-    name: "Đầu tròn",
-    description: "Bu lông đầu tròn cổ vuông DIN 603"
-  },
-  {
-    slug: "han",
-    name: "Hàn",
-    description: "Bu lông hàn inox, vít hàn chập theo tiêu chuẩn GB/T 902.3"
-  },
-  {
-    slug: "chuyen-dung",
-    name: "Chuyên dụng",
-    description: "Bu lông chuyên dụng cho hóa chất, neo móng, tai hồng, nổ"
+    slug: "tan-tru-tu-giu-bit",
+    name: "Tán trụ tự giữ bit",
+    description: "Tán trụ tự giữ bit cho các ứng dụng đặc biệt."
   }
 ];
 
@@ -64,9 +39,8 @@ const productsByType = productTypes.map(type => {
   };
 }).filter(type => type.count > 0);
 
-const title = "Bu Lông";
-const description = "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác, bu lông chữ T và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp cơ khí.";
-
+const title = "Tán trụ tự giữ";
+const description = "Khám phá bộ sưu tập tán trụ tự giữ chất lượng cao, đa dạng chủng loại, phù hợp cho các ứng dụng cơ khí, lắp ráp, chế tạo máy và nhiều lĩnh vực khác.";
 const pageTitle = `${title} | ${SITE.title}`;
 ---
 
@@ -110,7 +84,7 @@ const pageTitle = `${title} | ${SITE.title}`;
                 </p>
               </div>
               <a
-                href={`/bu-long/${slug}`}
+                href={`/tan-tru-tu-giu/${slug}`}
                 class="text-sm font-medium text-orange-400 hover:underline dark:text-orange-400"
               >
                 Xem tất cả {count} →
@@ -122,7 +96,7 @@ const pageTitle = `${title} | ${SITE.title}`;
                 const productTypeSlug = product.data.productType?.slug || slug;
                 return (
                 <a
-                  href={`/bu-long/${productTypeSlug}/${productSlug}`}
+                  href={`/tan-tru-tu-giu/${productTypeSlug}/${productSlug}`}
                   data-astro-prefetch
                   class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
                 >

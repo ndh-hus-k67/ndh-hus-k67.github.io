@@ -16,7 +16,7 @@ declare global {
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tru-tu-giu";
   });
 
   return productEntries.map((product) => {
@@ -65,7 +65,7 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/bu-long/${productType}/${product.data.slug}`,
+    "@id": `${SITE.url}/tan-tru-tu-giu/${productType}/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
     category: "Bu lông",
@@ -132,17 +132,17 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
             <>
               <li class="inline-flex items-center">
                 <a
-                  href="/bu-long"
+                  href="/tan-tru-tu-giu"
                   class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                 >
-                  Bu lông
+                  Tán trụ tự giữ
                 </a>
               </li>
               <li>
                 <div class="flex items-center">
                   <span class="mx-2 text-neutral-400">/</span>
                   <a
-                    href={`/bu-long/${productType}`}
+                    href={`/tan-tru-tu-giu/${productType}`}
                     class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                   >
                     {product.data.productType?.name || productType}

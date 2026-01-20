@@ -5,53 +5,33 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm bu lông
+// Lấy tất cả sản phẩm tán tự giữ
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tu-giu";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
 
-// Nhóm sản phẩm theo productType
+// Nhóm sản phẩm theo productType (cập nhật cho tán tự giữ)
 const productTypes = [
   {
-    slug: "chu-t",
-    name: "Chữ T",
-    description: "Bu lông chữ T dùng cho nhôm định hình, tự động hóa công nghiệp"
+    slug: "tieu-chuan",
+    name: "Tiêu chuẩn",
+    description: "Tán tự giữ tiêu chuẩn dùng trong các kết cấu cơ khí, xây dựng, lắp ráp."
   },
   {
-    slug: "luc-giac",
-    name: "Lục giác",
-    description: "Bu lông lục giác với nhiều tiêu chuẩn DIN 931, DIN 933, DIN 7991"
-  },
-  {
-    slug: "dau-bang",
-    name: "Đầu bằng",
-    description: "Bu lông đầu bằng, vít chống trộm hoa thị có chốt"
-  },
-  {
-    slug: "dau-cau",
-    name: "Đầu cầu",
-    description: "Bu lông đầu cầu hoa thị có chốt, thiết kế chống trộm"
-  },
-  {
-    slug: "dau-tron",
-    name: "Đầu tròn",
-    description: "Bu lông đầu tròn cổ vuông DIN 603"
-  },
-  {
-    slug: "han",
-    name: "Hàn",
-    description: "Bu lông hàn inox, vít hàn chập theo tiêu chuẩn GB/T 902.3"
+    slug: "chong-trom",
+    name: "Chống trộm",
+    description: "Tán tự giữ chống trộm với thiết kế đặc biệt, tăng độ an toàn cho thiết bị."
   },
   {
     slug: "chuyen-dung",
     name: "Chuyên dụng",
-    description: "Bu lông chuyên dụng cho hóa chất, neo móng, tai hồng, nổ"
+    description: "Tán tự giữ chuyên dụng cho các ứng dụng đặc biệt trong công nghiệp, xây dựng."
   }
 ];
 

@@ -15,12 +15,12 @@ const surfaceFilter = url.searchParams.get("surface");
 const applicationFilter = url.searchParams.get("application");
 const productTypeFilter = url.searchParams.get("productType");
 
-// Lấy tất cả sản phẩm bu lông
+// Lấy tất cả sản phẩm tán tự giữ
 const allProducts: CollectionEntry<"products">[] = await getCollection(
   "products",
   ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tu-giu";
   }
 );
 
@@ -52,12 +52,8 @@ if (applicationFilter) {
 }
 
 if (productTypeFilter) {
-  console.log("Filtering by productType:", productTypeFilter);
   filteredProducts = filteredProducts.filter(
-    (p) => {
-      console.log("Product:", p.data.title, "ProductType:", p.data.productType?.slug, "Match:", p.data.productType?.slug === productTypeFilter);
-      return p.data.productType?.slug === productTypeFilter;
-    }
+    (p) => p.data.productType?.slug === productTypeFilter
   );
   console.log("Filtered products count:", filteredProducts.length);
 }

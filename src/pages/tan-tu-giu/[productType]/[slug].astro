@@ -16,7 +16,7 @@ declare global {
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tu-giu";
   });
 
   return productEntries.map((product) => {
@@ -35,7 +35,7 @@ const { productType } = Astro.params;
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
-  "@/images/bu_long_chu_T.avif"
+  "@/images/tan_tu_giu.avif"
 );
 
 const blueprintFirstResolved = product.data.blueprints?.first
@@ -54,7 +54,7 @@ const blueprintSecondResolved = product.data.blueprints?.second
 
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Tán Tự Giữ | ${SITE.title}`;
 const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 

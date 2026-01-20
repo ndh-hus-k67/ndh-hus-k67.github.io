@@ -15,12 +15,12 @@ const surfaceFilter = url.searchParams.get("surface");
 const applicationFilter = url.searchParams.get("application");
 const productTypeFilter = url.searchParams.get("productType");
 
-// Lấy tất cả sản phẩm bu lông
+// Lấy tất cả sản phẩm tán trụ tự giữ
 const allProducts: CollectionEntry<"products">[] = await getCollection(
   "products",
   ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "bu-long";
+    return categorySlug === "tan-tru-tu-giu";
   }
 );
 
@@ -119,18 +119,13 @@ const applicationNames: Record<string, string> = {
 };
 
 const productTypeNames: Record<string, string> = {
-  "chu-t": "Chữ T",
-  "luc-giac": "Lục giác",
-  "dau-bang": "Đầu bằng",
-  "dau-cau": "Đầu cầu",
-  "dau-tron": "Đầu tròn",
-  "han": "Hàn",
-  "chuyen-dung": "Chuyên dụng",
+  "tan-tru-tu-giu-xuyen-lo": "Tán trụ tự giữ xuyên lỗ",
+  "tan-tru-tu-giu-bit": "Tán trụ tự giữ bit",
 };
 
-const title = "Tìm kiếm Bu Lông";
+const title = "Tìm kiếm Tán trụ tự giữ";
 const pageTitle = `${title} | ${SITE.title}`;
-const description = "Tìm kiếm sản phẩm bu lông theo tiêu chí của bạn.";
+const description = "Tìm kiếm sản phẩm tán trụ tự giữ theo tiêu chí của bạn.";
 ---
 
 <MainLayout title={pageTitle} customDescription={description}>

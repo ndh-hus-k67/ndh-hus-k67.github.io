@@ -1,8 +1,43 @@
 ---
 title: "VÍT BẮN TÔN MẠ KẼM NHÚNG NÓNG"
 description: "Vít bắn tôn mạ kẽm nhúng nóng cho môi trường ăn mòn cao, phù hợp thi công ngoài trời và khu vực gần biển."
-category: "oc-vit"
-subcategory: "vit-ban-ton"
+slug: "vit-ban-ton-ma-kem-nhung-nong"
+updatedAt: 2026-01-19
+category:
+  slug: "oc-vit"
+  name: "Ốc vít"
+productType:
+  slug: "vit-ban-ton"
+  name: "Vít bắn tôn"
+filters:
+  material: ["inox-201", "inox-304", "inox-316", "thep-ma-kem"]
+  diameter: ["4.8x19", "4.8x25", "5.5x19", "5.5x25", "6.3x38"]
+  surface: ["ma-kem", "ma-niken", "khong-xu-ly"]
+  application: ["xay-dung", "lap-mai-ton", "ket-cau-thep"]
+tags: ["vit-ban-ton", "vit-tu-khoan", "lap-ton", "vit-inox"]
+seo:
+  title: "VÍT BẮN TÔN MẠ KẼM NHÚNG NÓNG - Vít bắn tôn chất lượng cao"
+  description: "Vít bắn tôn mạ kẽm nhúng nóng cho môi trường ăn mòn cao, phù hợp thi công ngoài trời và khu vực gần biển."
+  keywords: ["vit ban ton", "vit tu khoan", "vit lap ton", "vit inox"]
+variants:
+  - sku: "VBT-MAKEM-4.8X19"
+    name: "Vít bắn tôn mạ kẽm nhúng nóng 4.8×19"
+  - sku: "VBT-MAKEM-4.8X25"
+    name: "Vít bắn tôn mạ kẽm nhúng nóng 4.8×25"
+breadcrumbs:
+  - name: "Trang chủ"
+    url: "/"
+  - name: "Ốc vít"
+    url: "/oc-vit"
+  - name: "Vít bắn tôn"
+    url: "/oc-vit/vit-ban-ton"
+  - name: "VÍT BẮN TÔN MẠ KẼM NHÚNG NÓNG"
+    url: "/oc-vit/vit-ban-ton/vit-ban-ton-ma-kem-nhung-nong"
+relatedCategory:
+  - slug: "vit-tu-khoan"
+    name: "Vít tự khoan"
+  - slug: "bu-long"
+    name: "Bu lông"
 main:
   id: 4
   content: |

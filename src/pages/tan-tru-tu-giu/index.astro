@@ -1,0 +1,122 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Lấy tất cả sản phẩm tán trụ tự giữ
+const allProducts: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id, data }) => {
+    const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
+    return categorySlug === "tan-tru-tu-giu";
+  })
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id
+);
+
+// Nhóm sản phẩm theo productType cho tán trụ tự giữ
+const productTypes = [
+  {
+    slug: "tan-tru-tu-giu-xuyen-lo",
+    name: "Tán trụ tự giữ xuyên lỗ",
+    description: "Tán trụ tự giữ xuyên lỗ cho liên kết chắc chắn."
+  },
+  {
+    slug: "tan-tru-tu-giu-bit",
+    name: "Tán trụ tự giữ bit",
+    description: "Tán trụ tự giữ bit cho các ứng dụng đặc biệt."
+  }
+];
+
+const productsByType = productTypes.map(type => {
+  const typeProducts = allProducts.filter(p => p.data.productType?.slug === type.slug);
+  return {
+    ...type,
+    products: typeProducts.slice(0, 3),
+    count: typeProducts.length
+  };
+}).filter(type => type.count > 0);
+
+const title = "Tán trụ tự giữ";
+const description = "Khám phá bộ sưu tập tán trụ tự giữ chất lượng cao, đa dạng chủng loại, phù hợp cho các ứng dụng cơ khí, lắp ráp, chế tạo máy và nhiều lĩnh vực khác.";
+const pageTitle = `${title} | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={description}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <!-- Header -->
+    <div class="mb-8 max-w-2xl sm:mb-12">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+      >
+        {title}
+      </h1>
+      <p class="mt-4 text-pretty text-neutral-600 dark:text-neutral-400">
+        {description}
+      </p>
+    </div>
+
+    <!-- Danh sách productTypes -->
+    <div class="space-y-12">
+      {
+        productsByType.map(({ slug, name, description, products, count }) => (
+          <div>
+            <div class="mb-6 flex items-center justify-between">
+              <div>
+                <h2 class="text-balance text-xl font-bold text-neutral-800 md:text-2xl dark:text-neutral-200">
+                  {name}
+                </h2>
+                <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                  {description}
+                </p>
+              </div>
+              <a
+                href={`/tan-tru-tu-giu/${slug}`}
+                class="text-sm font-medium text-orange-400 hover:underline dark:text-orange-400"
+              >
+                Xem tất cả {count} →
+              </a>
+            </div>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+              {products.map((product) => {
+                const productSlug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
+                const productTypeSlug = product.data.productType?.slug || slug;
+                return (
+                <a
+                  href={`/tan-tru-tu-giu/${productTypeSlug}/${productSlug}`}
+                  data-astro-prefetch
+                  class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
+                >
+                  <Image
+                    src={product.data.main.imgCard}
+                    alt={product.data.main.imgAlt}
+                    class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+                    format={"avif"}
+                    loading="lazy"
+                  />
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-transparent opacity-50"></div>
+                  <span class="relative mb-3 ml-4 inline-block text-sm font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110 md:ml-5 md:text-lg">
+                    {product.data.title}
+                  </span>
+                </a>
+              )})}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

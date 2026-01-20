@@ -26,71 +26,71 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 // Lấy tất cả sản phẩm để đếm số lượng theo danh mục
-const allProducts: CollectionEntry<"products">[] = await getCollection(
-  "products",
-  ({ id }) => id.startsWith("vn/")
-);
+const allProducts: CollectionEntry<"products">[] = await getCollection("products");
 
 // Định nghĩa các danh mục sản phẩm
 const productCategories = [
   {
     slug: "bu-long",
     name: "Bu Lông",
-    description: "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác và nhiều loại khác. Sản phẩm được sản xuất theo tiêu chuẩn quốc tế, đảm bảo độ bền và chất lượng tốt nhất.",
+    description: "Đa dạng bu lông inox, lục giác, chữ T với nhiều kích thước và cấp bền. Đảm bảo chất lượng theo tiêu chuẩn quốc tế.",
     icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
     image: productImage1,
     imageAlt: "Bộ sưu tập bu lông chất lượng cao",
-    count: allProducts.filter(p => p.data.category === "bu-long").length,
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "bu-long";
+    }).length,
     features: [
-      "Chất liệu inox 304, 316 chống gỉ sét",
-      "Đa dạng kích thước từ M6 đến M42",
-      "Cấp bền 4.8, 8.8, 10.9, 12.9",
-      "Ứng dụng rộng rãi trong xây dựng & công nghiệp"
+      "Inox 304, 316 chống gỉ",
+      "Kích thước M6 - M42",
+      "Cấp bền 8.8, 10.9, 12.9"
     ],
     highlights: [
-      { label: "Tiêu chuẩn", value: "DIN, ASTM, JIS" },
-      { label: "Xuất xứ", value: "Việt Nam, Nhật Bản" },
-      { label: "Bảo hành", value: "12 tháng" }
+      { label: "Tiêu chuẩn", value: "DIN, ASTM" },
+      { label: "Giao hàng", value: "24h" }
     ]
   },
   {
     slug: "oc-vit",
     name: "Ốc Vít",
-    description: "Tìm hiểu các loại ốc vít đa dạng từ ốc vít bắn tôn đến ốc vít inox, được thiết kế để đáp ứng mọi nhu cầu cố định. Với nhiều kích thước và cấp bền khác nhau phù hợp cho mọi dự án.",
+    description: "Vít bắn tôn, vít tự khoan inox với đầu chìm, đầu trụ, đầu lục giác. Phù hợp kim loại, gỗ, nhựa.",
     icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
     image: productImage2,
     imageAlt: "Các loại ốc vít đa dạng",
-    count: allProducts.filter(p => p.data.category === "oc-vit").length,
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "oc-vit";
+    }).length,
     features: [
-      "Ốc vít tự khoan, tự taro tiện lợi",
-      "Đầu chìm, đầu trụ, đầu lục giác",
-      "Phủ kẽm trắng, kẽm vàng chống ăn mòn",
-      "Phù hợp kim loại, gỗ, nhựa"
+      "Tự khoan, tự taro",
+      "Phủ kẽm chống ăn mòn",
+      "Đa dạng đầu vít"
     ],
     highlights: [
-      { label: "Loại phổ biến", value: "Pan Head, Flat Head" },
       { label: "Kích thước", value: "M2.5 - M12" },
-      { label: "Giao hàng", value: "24h nội thành" }
+      { label: "Giao hàng", value: "24h" }
     ]
   },
   {
-    slug: "san-pham-khac",
-    name: "Sản Phẩm Khác",
-    description: "Khám phá các sản phẩm phụ kiện và công cụ bổ sung khác để hoàn thiện dự án của bạn. Bao gồm đai ốc, vòng đệm và các phụ kiện cần thiết cho lắp đặt.",
+    slug: "tan-tu-giu",
+    name: "Tán Tự Giữ",
+    description: "Tán tự giữ inox và thép, lắp đặt nhanh không cần ren. Độ bền cao cho môi trường khắc nghiệt.",
     icon: "M20 7h-7M20 12h-7M20 17h-7M3 7h4M3 12h4M3 17h4",
     image: productImage3,
-    imageAlt: "Sản phẩm phụ kiện và công cụ",
-    count: allProducts.filter(p => p.data.category === "san-pham-khac").length,
+    imageAlt: "Tán tự giữ chất lượng cao",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tan-tu-giu";
+    }).length,
     features: [
-      "Đai ốc lục giác, đai ốc tròn",
-      "Vòng đệm lò xo, vòng đệm phẳng",
-      "Chốt định vị, chốt cài",
-      "Phụ kiện lắp ráp chuyên dụng"
+      "Đầu tròn, đầu lục giác",
+      "Inox 304, 316",
+      "Lắp nhanh không ren"
     ],
     highlights: [
-      { label: "Chất lượng", value: "100% kiểm định" },
-      { label: "Đa dạng", value: "500+ mã sản phẩm" },
-      { label: "Tư vấn", value: "Miễn phí 24/7" }
+      { label: "Kích thước", value: "M3 - M12" },
+      { label: "Tư vấn", value: "24/7" }
     ]
   }
 ];
@@ -100,78 +100,77 @@ const productCategories = [
 
 
   <HeroSection
-    title=`Giải pháp bu lông ốc vít chất lượng cao từ <span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>`
-    subTitle="Chuyên thương mại và sản xuất bu lông, ốc vít, đai ốc chất lượng cao cho mọi nhu cầu công nghiệp và xây dựng."
-    primaryBtn="Bắt đầu khám phá"
-    primaryBtnURL="/products"
-    secondaryBtn="Liên hệ đội ngũ kinh doanh"
+    title=`Bu lông ốc vít chất lượng cao <span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>`
+    subTitle="Giải pháp liên kết cho công nghiệp và xây dựng"
+    primaryBtn="Về chúng tôi"
+    primaryBtnURL="/about-us"
+    secondaryBtn="Liên hệ"
     secondaryBtnURL="/contact"
     withReview={true}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
-    reviews=`Dựa trên hơn <span class="font-bold">12,8k</span> đánh giá`
+    reviews=`Hơn <span class="font-bold">500+</span> khách hàng tin dùng`
     src={heroImage}
-    alt="Sản phẩm bu lông ốc vít chất lượng cao của HAHUTECH"
+    alt="Sản phẩm bu lông ốc vít HAHUTECH"
   />
 
-  <ClientsSection
-    title="Được các nhà lãnh đạo ngành tin tưởng"
-    subTitle="Khám phá độ tin cậy được lựa chọn bởi các ông lớn trong ngành."
+  <!-- <ClientsSection
+    title="Được tin tưởng bởi các doanh nghiệp hàng đầu"
+    subTitle="Đối tác của các công ty xây dựng và sản xuất lớn tại Việt Nam"
     partners={partnersData}
-  />
+  /> -->
 
   <ProductCategoriesSection
-    title="Khám phá danh mục sản phẩm"
-    subTitle="HAHUTECH cung cấp đa dạng các loại bu lông, ốc vít và phụ kiện chất lượng cao cho mọi nhu cầu công nghiệp và xây dựng."
+    title="Danh mục sản phẩm"
+    subTitle="Đa dạng sản phẩm bu lông, ốc vít và phụ kiện chất lượng cao"
     categories={productCategories}
   />
 
   <FeaturesGeneral
-    title="Đáp ứng các yêu cầu của ngành"
-    subTitle="Tại HAHUTECH, chúng tôi chuyên cung cấp và sản xuất các sản phẩm bu lông, ốc vít, đai ốc chất lượng cao. Với kinh nghiệm nhiều năm và công nghệ hiện đại, chúng tôi cam kết mang đến giải pháp tối ưu cho mọi dự án công nghiệp và xây dựng."
+    title="Tại sao chọn HAHUTECH?"
+    subTitle="Chuyên cung cấp và sản xuất bu lông, ốc vít với tiêu chuẩn chất lượng quốc tế, công nghệ hiện đại và cam kết mang đến giải pháp tối ưu cho mọi dự án."
     features={features}
   />
 
   <FeaturesNavs
-    title=`Giải pháp bu lông ốc vít của <span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span> đáp ứng hoàn hảo mọi nhu cầu công nghiệp và xây dựng của bạn.`
+    title=`<span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span> - Giải pháp hoàn hảo cho dự án của bạn`
     tabs={[
       {
-        heading: "Sản xuất chất lượng cao",
+        heading: "Chất lượng đảm bảo",
         content:
-          "Sản xuất bu lông ốc vít với tiêu chuẩn chất lượng quốc tế. HAHUTECH sử dụng công nghệ hiện đại và quy trình sản xuất nghiêm ngặt để đảm bảo độ bền và độ chính xác cao nhất cho từng sản phẩm.",
+          "Sản xuất theo tiêu chuẩn quốc tế với công nghệ hiện đại, quy trình kiểm soát chất lượng nghiêm ngặt đảm bảo độ bền và độ chính xác cao.",
         svg: "tools",
         src: tools,
-        alt: "Quy trình sản xuất bu lông ốc vít chất lượng cao",
+        alt: "Sản xuất bu lông ốc vít chất lượng cao",
         first: true,
       },
       {
         heading: "Đa dạng sản phẩm",
         content:
-          "Cung cấp đa dạng các loại bu lông, ốc vít, đai ốc với nhiều kích thước và cấp độ bền khác nhau. HAHUTECH có sẵn kho hàng phong phú để đáp ứng nhanh chóng mọi yêu cầu từ dự án nhỏ đến công trình lớn.",
+          "Kho hàng phong phú với nhiều kích thước và cấp độ bền khác nhau, sẵn sàng đáp ứng nhanh chóng mọi yêu cầu từ dự án nhỏ đến công trình lớn.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Kho hàng đa dạng các sản phẩm bu lông ốc vít",
+        alt: "Kho hàng đa dạng sản phẩm",
         second: true,
       },
       {
         heading: "Dịch vụ chuyên nghiệp",
         content:
-          "Tư vấn kỹ thuật chuyên sâu và hỗ trợ khách hàng tận tâm. Đội ngũ HAHUTECH luôn sẵn sàng tư vấn lựa chọn sản phẩm phù hợp và cung cấp giải pháp tối ưu cho từng dự án cụ thể của bạn.",
+          "Tư vấn kỹ thuật chuyên sâu và hỗ trợ tận tâm. Đội ngũ luôn sẵn sàng tư vấn lựa chọn sản phẩm phù hợp và cung cấp giải pháp tối ưu.",
         svg: "house",
         src: construction,
-        alt: "Dịch vụ tư vấn và hỗ trợ kỹ thuật chuyên nghiệp",
+        alt: "Dịch vụ tư vấn chuyên nghiệp",
       },
     ]}
   />
 
-  <TestimonialsSection
-    title="Đối tác tin cậy cho dự án của bạn"
-    subTitle="Tại HAHUTECH, chúng tôi cam kết cung cấp sản phẩm chất lượng cao và giao hàng nhanh chóng. Trải nghiệm dịch vụ thương mại bu lông ốc vít chuyên nghiệp."
-
+  <!-- <TestimonialsSection
+    title="Khách hàng nói gì về chúng tôi"
+    subTitle="Sản phẩm chất lượng cao, giao hàng nhanh chóng và dịch vụ chuyên nghiệp"
     testimonials={[
       {
         content:
-          "HAHUTECH đã cung cấp cho chúng tôi các sản phẩm bu lông ốc vít chất lượng cao với giá cả hợp lý. Sản phẩm đạt tiêu chuẩn, giao hàng đúng hạn và dịch vụ hỗ trợ rất tận tâm. Chúng tôi rất hài lòng với sự hợp tác này!",
+          "HAHUTECH cung cấp sản phẩm bu lông ốc vít chất lượng cao với giá hợp lý. Sản phẩm đạt tiêu chuẩn, giao hàng đúng hạn. Chúng tôi rất hài lòng!",
         author: "Nguyễn Văn An",
         role: "Giám đốc kỹ thuật | Công ty Xây dựng Việt Nam",
         avatarSrc: "",
@@ -181,33 +180,29 @@ const productCategories = [
       {
         count: "500+",
         description:
-          "khách hàng tin tưởng — từ xưởng cơ khí nhỏ đến các tập đoàn xây dựng lớn",
+          "khách hàng tin tưởng",
       },
       {
         count: "50+",
         description:
-          "loại sản phẩm bu lông ốc vít với đa dạng kích thước và cấp bền",
+          "loại sản phẩm đa dạng",
       },
       {
         count: "99%",
         description:
-          "sản phẩm đạt tiêu chuẩn chất lượng quốc tế được khách hàng xác nhận",
+          "đạt tiêu chuẩn chất lượng",
       },
       {
         count: "24h",
         description:
-          "giao hàng nhanh chóng trong nội thành cho đơn hàng sẵn có",
+          "giao hàng nội thành",
       },
     ]}
-  />
+  /> -->
 
   <!-- <PricingSection pricing={pricing} /> -->
 
-  <div id = "faq">
-
-  <FAQ title="Câu hỏi<br />thường gặp" faqs={faqs} />
-
-  </div>
+  <FAQ title="Câu hỏi thường gặp" faqs={faqs} />
 
 
 </MainLayout>

@@ -1,8 +1,44 @@
 ---
 title: "VÍT INOX TỰ KHOAN ĐẦU DÙ DIN 7504T"
 description: "Vít inox tự khoan đầu dù DIN 7504T dùng cho các mối ghép chưa có lỗ chờ, thi công nhanh trong xây dựng và cơ khí."
-category: "oc-vit"
-subcategory: "vit-tu-khoan"
+slug: "vit-inox-tu-khoan-dau-du-din-7504t"
+updatedAt: 2026-01-19
+category:
+  slug: "oc-vit"
+  name: "Ốc vít"
+productType:
+  slug: "vit-tu-khoan"
+  name: "Vít tự khoan"
+filters:
+  material: ["inox-304", "inox-316", "thep-ma-kem"]
+  diameter: ["3.5", "4.2", "4.8", "5.5", "6.3"]
+  length_mm: [13, 16, 19, 25, 32, 38]
+  surface: ["ma-kem", "khong-xu-ly"]
+  application: ["xay-dung", "che-tao-may", "ket-cau-thep", "go"]
+tags: ["vit-tu-khoan", "vit-inox", "vit-khoan-go", "vit-khoan-sat"]
+seo:
+  title: "VÍT INOX TỰ KHOAN ĐẦU DÙ DIN 7504T - Vít tự khoan chất lượng cao"
+  description: "Vít inox tự khoan đầu dù DIN 7504T dùng cho các mối ghép chưa có lỗ chờ, thi công nhanh trong xây dựng và cơ khí."
+  keywords: ["vit tu khoan", "vit inox", "vit khoan sat", "vit khoan go"]
+variants:
+  - sku: "VIT-TK-DAU-DU-01"
+    name: "Vít inox tự khoan đầu dù 3.5mm"
+  - sku: "VIT-TK-DAU-DU-02"
+    name: "Vít inox tự khoan đầu dù 4.2mm"
+breadcrumbs:
+  - name: "Trang chủ"
+    url: "/"
+  - name: "Ốc vít"
+    url: "/oc-vit"
+  - name: "Vít tự khoan"
+    url: "/oc-vit/vit-tu-khoan"
+  - name: "VÍT INOX TỰ KHOAN ĐẦU DÙ DIN 7504T"
+    url: "/oc-vit/vit-tu-khoan/vit-inox-tu-khoan-dau-du-din-7504t"
+relatedCategory:
+  - slug: "vit-ban-ton"
+    name: "Vít bắn tôn"
+  - slug: "bu-long"
+    name: "Bu lông"
 main:
   id: 2
   content: |

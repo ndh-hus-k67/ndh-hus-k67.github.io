@@ -1,0 +1,171 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+export async function getStaticPaths() {
+  const allProducts = await getCollection("products", ({ id, data }) => {
+    const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
+    return categorySlug === "tan-tu-giu";
+  });
+
+  // Lấy danh sách productType duy nhất
+  const productTypes = [
+    ...new Set(allProducts.map((product) => product.data.productType?.slug).filter(Boolean)),
+  ];
+
+  return productTypes.map(productType => ({
+    params: { productType }
+  }));
+}
+
+const { productType } = Astro.params;
+
+// Lấy tất cả sản phẩm thuộc productType này
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id, data }) => {
+    const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
+    return (
+
+      categorySlug === "tan-tu-giu" &&
+      data.productType?.slug === productType
+    );
+  })
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id
+);
+
+const productTypeDescriptions: Record<string, string> = {
+  "tieu-chuan":
+    "Tán tự giữ tiêu chuẩn là loại tán được thiết kế để tự giữ chắc chắn trên bulông hoặc trục, thường dùng trong các kết cấu cơ khí, xây dựng, lắp ráp thiết bị công nghiệp.",
+  "chong-trom":
+    "Tán tự giữ chống trộm có thiết kế đặc biệt giúp tăng độ an toàn, ngăn ngừa việc tháo lắp trái phép, phù hợp cho các thiết bị yêu cầu bảo mật cao.",
+  "chuyen-dung":
+    "Tán tự giữ chuyên dụng dành cho các ứng dụng đặc biệt trong công nghiệp, xây dựng, nơi yêu cầu tính năng kỹ thuật riêng biệt và độ bền cao.",
+};
+
+const productTypeIntros: Record<string, string[]> = {
+  "luc-giac": [
+    "Nhóm sản phẩm này thường có cấp bền 8.8 / 10.9 / 12.9 (đối với thép) và các lựa chọn vật liệu inox SUS 201 / 304 / 316 / 316L tùy môi trường sử dụng.",
+    "Kích thước phổ biến từ M3–M36, chiều dài tham khảo 16–200 mm (tùy theo tiêu chuẩn và nhu cầu đặt hàng).",
+  ],
+  "chu-t": [
+    "Sản phẩm được chế tạo từ nhiều vật liệu như thép mạ kẽm, mạ niken, inox 304, inox 316 để phù hợp với từng môi trường làm việc.",
+    "Kích thước phổ biến: M6×20, M6×25, M6×30, M8×16, M8×20, M8×25, M8×30 mm.",
+  ],
+};
+
+// Lấy thông tin productType từ sản phẩm đầu tiên
+const productTypeName = products[0]?.data.productType?.name || productType;
+
+const title = `Bu Lông ${productTypeName}`;
+const description =
+  productTypeDescriptions[productType as string] ||
+  `Khám phá bộ sưu tập bu lông ${(productTypeName || productType || '').toLowerCase()} chất lượng cao của chúng tôi.`;
+
+const introParagraphs = productTypeIntros[productType as string] || [];
+
+const pageTitle = `${title} | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={description}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <!-- Breadcrumb -->
+    <nav class="mb-8 flex" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+          <a
+            href="/bu-long"
+            class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+          >
+            Bu lông
+          </a>
+        </li>
+        <li aria-current="page">
+          <div class="flex items-center">
+            <span class="mx-2 text-neutral-400">/</span>
+            <span
+              class="text-sm font-medium text-neutral-500 dark:text-neutral-500"
+            >
+              {productTypeName}
+            </span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8 max-w-3xl">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+      >
+        {title}
+      </h1>
+      <p class="mt-4 text-pretty text-neutral-600 dark:text-neutral-400">
+        {description}
+      </p>
+      {
+        introParagraphs.length > 0 && (
+          <div class="mt-4 space-y-2">
+            {introParagraphs.map((paragraph) => (
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Danh sách sản phẩm -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {
+        products.map((product) => {
+          const productSlug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
+          return (
+          <a
+            href={`/bu-long/${productType}/${productSlug}`}
+            data-astro-prefetch
+            class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
+          >
+            <Image
+              src={product.data.main.imgCard}
+              alt={product.data.main.imgAlt}
+              class="absolute inset-0 h-full w-full object-cover object-center transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110"
+              format={"avif"}
+              loading="lazy"
+            />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-transparent opacity-50"></div>
+            <span class="relative mb-3 ml-4 inline-block text-sm font-bold text-neutral-50 transition duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:scale-110 md:ml-5 md:text-lg">
+              {product.data.title}
+            </span>
+          </a>
+        )})
+      }
+    </div>
+
+    {
+      products.length === 0 && (
+        <div class="py-12 text-center">
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Chưa có sản phẩm nào trong danh mục này.
+          </p>
+        </div>
+      )
+    }
+  </div>
+</MainLayout>

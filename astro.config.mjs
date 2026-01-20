@@ -10,6 +10,8 @@ export default defineConfig({
   // 1. CẬP NHẬT TÊN MIỀN CỦA BẠN
   site: "https://hahutech.me",
   
+  output: "static",
+  
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -28,7 +30,7 @@ export default defineConfig({
     }),
 
     starlight({
-      title: "HahuTech Docs", // Đổi tên trang web hiển thị trên thanh tiêu đề
+      title: "HahuTech", // Đổi tên trang web hiển thị trên thanh tiêu đề
       
       // Cấu hình ngôn ngữ: Tiếng Việt là mặc định (root)
       locales: {

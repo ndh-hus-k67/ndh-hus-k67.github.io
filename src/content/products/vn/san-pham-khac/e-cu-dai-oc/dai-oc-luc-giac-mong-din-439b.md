@@ -1,67 +1,89 @@
 ---
-title: "ĐAI ỐC LỤC GIÁC MỎNG DIN 439B"
-description: "Đai ốc lục giác mỏng DIN 439B (hex thin nut/jam nut) dùng kèm bu lông để kẹp chặt; thiết kế mỏng gọn, ứng dụng rộng rãi trong nhiều ngành công nghiệp."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC LỤC GIÁC MỎNG DIN 439B
+description: >-
+  Đai ốc lục giác mỏng DIN 439B (hex thin nut/jam nut) dùng kèm bu lông để kẹp
+  chặt; thiết kế mỏng gọn, ứng dụng rộng rãi trong nhiều ngành công nghiệp.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 13
-  content: |
-    Đai ốc lục giác mỏng DIN 439B là chi tiết cơ khí dạng lục giác có lỗ ren trong, được sử dụng rất rộng rãi trong nhiều ngành công nghiệp như: công nghiệp hoá chất, đóng tàu, ô tô, dầu khí, cầu đường và các thiết bị máy móc công nghiệp.
+  content: >
+    Đai ốc lục giác mỏng DIN 439B là chi tiết cơ khí dạng lục giác có lỗ ren
+    trong, được sử dụng rất rộng rãi trong nhiều ngành công nghiệp như: công
+    nghiệp hoá chất, đóng tàu, ô tô, dầu khí, cầu đường và các thiết bị máy móc
+    công nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-1.avif"
-  imgMain: "../../../../../images/product-image-main-1.avif"
-  imgAlt: "Đai ốc lục giác mỏng DIN 439B"
+  imgCard: ../../../../../images/product-image-1.avif
+  imgMain: ../../../../../images/product-image-main-1.avif
+  imgAlt: Đai ốc lục giác mỏng DIN 439B
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Đai Ốc Lục Giác Mỏng DIN 439B – Gọn Nhẹ, Phù Hợp Nhiều Mối Ghép"
-  subTitle: |
-    DIN 439B là đai ốc lục giác dạng mỏng, phù hợp các vị trí có không gian lắp đặt hạn chế hoặc cần kết hợp như ê-cu hãm (jam nut). Có thể chọn inox 304/316 để tăng chống ăn mòn tuỳ môi trường.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Lục Giác Mỏng DIN 439B – Gọn Nhẹ, Phù Hợp Nhiều Mối Ghép'
+  subTitle: >
+    DIN 439B là đai ốc lục giác dạng mỏng, phù hợp các vị trí có không gian lắp
+    đặt hạn chế hoặc cần kết hợp như ê-cu hãm (jam nut). Có thể chọn inox
+    304/316 để tăng chống ăn mòn tuỳ môi trường.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Thiết kế mỏng gọn"
-    subTitle: "Phù hợp vị trí không gian hẹp hoặc cần dùng ê-cu hãm." 
-  - title: "Ứng dụng đa ngành"
-    subTitle: "Hóa chất, đóng tàu, ô tô, dầu khí, cầu đường, thiết bị công nghiệp." 
-  - title: "Tuỳ chọn vật liệu inox"
-    subTitle: "Inox 201/304/316/316L hoặc thép theo yêu cầu kỹ thuật." 
-
+  - title: Thiết kế mỏng gọn
+    subTitle: Phù hợp vị trí không gian hẹp hoặc cần dùng ê-cu hãm.
+  - title: Ứng dụng đa ngành
+    subTitle: 'Hóa chất, đóng tàu, ô tô, dầu khí, cầu đường, thiết bị công nghiệp.'
+  - title: Tuỳ chọn vật liệu inox
+    subTitle: Inox 201/304/316/316L hoặc thép theo yêu cầu kỹ thuật.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc lục giác mỏng DIN 439B"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 439B"
-  - title: "Kích thước ren (tham khảo)"
-    subTitle: "M2–M36 (tùy loại)"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox 201/304/316 (có thể có 316L) hoặc thép"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc lục giác mỏng DIN 439B
+  - title: Tiêu chuẩn
+    subTitle: DIN 439B
+  - title: Kích thước ren (tham khảo)
+    subTitle: M2–M36 (tùy loại)
+  - title: Vật liệu (tham khảo)
+    subTitle: Inox 201/304/316 (có thể có 316L) hoặc thép
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc lục giác mỏng DIN 439B"]
-      - ["Dạng", "Lục giác mỏng + lỗ ren hệ mét"]
-      - ["Ứng dụng", "Lắp ghép với bu lông/ty ren; phù hợp vị trí cần đai ốc mỏng"]
-      - ["Kích thước", "M2–M36 (phổ biến, tùy loại)"]
-      - ["Tiêu chuẩn tham khảo", "DIN, JIS, ASTM, ISO, KS, GB, TCVN"]
-      - ["Cấp bền (tham khảo)", "4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc lục giác mỏng DIN 439B
+      - - Dạng
+        - Lục giác mỏng + lỗ ren hệ mét
+      - - Ứng dụng
+        - Lắp ghép với bu lông/ty ren; phù hợp vị trí cần đai ốc mỏng
+      - - Kích thước
+        - 'M2–M36 (phổ biến, tùy loại)'
+      - - Tiêu chuẩn tham khảo
+        - 'DIN, JIS, ASTM, ISO, KS, GB, TCVN'
+      - - Cấp bền (tham khảo)
+        - '4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox 201
+  - Inox 304
+  - 316 (có thể có 316L) hoặc thép
+tagSizes:
+  - M2
+  - M36
 ---
 
 ## ĐAI ỐC LỤC GIÁC MỎNG DIN 439B

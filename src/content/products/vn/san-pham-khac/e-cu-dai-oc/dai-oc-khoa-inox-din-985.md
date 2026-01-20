@@ -1,66 +1,90 @@
 ---
-title: "ĐAI ỐC KHÓA INOX DIN 985"
-description: "Đai ốc khóa inox DIN 985 (nyloc nut) có vòng nhựa tạo lực đàn hồi giúp chống tự xoay/tự nới lỏng; dùng phổ biến trong cơ khí, hoá chất, dầu khí, đóng tàu, cầu đường và thiết bị công nghiệp."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC KHÓA INOX DIN 985
+description: >-
+  Đai ốc khóa inox DIN 985 (nyloc nut) có vòng nhựa tạo lực đàn hồi giúp chống
+  tự xoay/tự nới lỏng; dùng phổ biến trong cơ khí, hoá chất, dầu khí, đóng tàu,
+  cầu đường và thiết bị công nghiệp.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 10
-  content: |
-    Đai ốc khóa inox DIN 985 là loại đai ốc sản xuất theo tiêu chuẩn DIN 985, vừa có công dụng lắp xiết vừa có khả năng hãm chống hiện tượng tự xoay của đai ốc trong quá trình làm việc nhờ vòng nhựa ở phần đầu. Sản phẩm được ứng dụng rộng rãi trong ngành công nghiệp hoá chất, cơ khí chế tạo, dầu khí, đóng tàu, cầu đường và máy móc thiết bị công nghiệp.
+  content: >
+    Đai ốc khóa inox DIN 985 là loại đai ốc sản xuất theo tiêu chuẩn DIN 985,
+    vừa có công dụng lắp xiết vừa có khả năng hãm chống hiện tượng tự xoay của
+    đai ốc trong quá trình làm việc nhờ vòng nhựa ở phần đầu. Sản phẩm được ứng
+    dụng rộng rãi trong ngành công nghiệp hoá chất, cơ khí chế tạo, dầu khí,
+    đóng tàu, cầu đường và máy móc thiết bị công nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-2.avif"
-  imgMain: "../../../../../images/product-image-main-2.avif"
-  imgAlt: "Đai ốc khóa inox DIN 985"
+  imgCard: ../../../../../images/product-image-2.avif
+  imgMain: ../../../../../images/product-image-main-2.avif
+  imgAlt: Đai ốc khóa inox DIN 985
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Thi công"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Thi công
 longDescription:
-  title: "Đai Ốc Khóa Inox DIN 985 – Chống Tự Nới Lỏng Nhờ Vòng Nhựa"
-  subTitle: |
-    DIN 985 là đai ốc khóa có vòng nhựa (nylon insert) tạo lực đàn hồi, giúp tăng ma sát với ren bu lông/ty ren và hạn chế tự xoay do rung động. Có thể chọn inox 304/316 để tăng chống ăn mòn tuỳ môi trường làm việc.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Đai Ốc Khóa Inox DIN 985 – Chống Tự Nới Lỏng Nhờ Vòng Nhựa
+  subTitle: >
+    DIN 985 là đai ốc khóa có vòng nhựa (nylon insert) tạo lực đàn hồi, giúp
+    tăng ma sát với ren bu lông/ty ren và hạn chế tự xoay do rung động. Có thể
+    chọn inox 304/316 để tăng chống ăn mòn tuỳ môi trường làm việc.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Chống tự xoay/tự nới lỏng"
-    subTitle: "Vòng nhựa tạo lực đàn hồi, tăng ma sát và giữ liên kết ổn định." 
-  - title: "Dạng lục giác dễ thao tác"
-    subTitle: "Dễ lắp xiết bằng cờ lê/tuýp, phù hợp nhiều ứng dụng." 
-  - title: "Vật liệu inox phổ biến"
-    subTitle: "Inox 201/304/316 tuỳ yêu cầu chịu lực và chống ăn mòn." 
-
+  - title: Chống tự xoay/tự nới lỏng
+    subTitle: 'Vòng nhựa tạo lực đàn hồi, tăng ma sát và giữ liên kết ổn định.'
+  - title: Dạng lục giác dễ thao tác
+    subTitle: 'Dễ lắp xiết bằng cờ lê/tuýp, phù hợp nhiều ứng dụng.'
+  - title: Vật liệu inox phổ biến
+    subTitle: Inox 201/304/316 tuỳ yêu cầu chịu lực và chống ăn mòn.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc khóa inox DIN 985 (nyloc nut)"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 985"
-  - title: "Dạng"
-    subTitle: "Lục giác + vòng nhựa chống tự xoay"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox 201/304/316 (hoặc thép tuỳ nhu cầu)"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc khóa inox DIN 985 (nyloc nut)
+  - title: Tiêu chuẩn
+    subTitle: DIN 985
+  - title: Dạng
+    subTitle: Lục giác + vòng nhựa chống tự xoay
+  - title: Vật liệu (tham khảo)
+    subTitle: Inox 201/304/316 (hoặc thép tuỳ nhu cầu)
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc khóa inox DIN 985"]
-      - ["Cấu tạo", "Đai ốc lục giác + vòng nhựa tạo lực đàn hồi"]
-      - ["Công dụng", "Lắp xiết và chống tự xoay trong quá trình làm việc"]
-      - ["Ứng dụng", "Cơ khí chế tạo, hoá chất, dầu khí, đóng tàu, cầu đường, thiết bị công nghiệp"]
-      - ["Vật liệu", "Inox 201/304/316 (phổ biến)"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc khóa inox DIN 985
+      - - Cấu tạo
+        - Đai ốc lục giác + vòng nhựa tạo lực đàn hồi
+      - - Công dụng
+        - Lắp xiết và chống tự xoay trong quá trình làm việc
+      - - Ứng dụng
+        - >-
+          Cơ khí chế tạo, hoá chất, dầu khí, đóng tàu, cầu đường, thiết bị công
+          nghiệp
+      - - Vật liệu
+        - Inox 201/304/316 (phổ biến)
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox 201
+  - Inox 304
+  - 316 (hoặc thép tuỳ nhu cầu)
+  - Inox
+tagSizes: []
 ---
 
 ## ĐAI ỐC KHÓA INOX DIN 985

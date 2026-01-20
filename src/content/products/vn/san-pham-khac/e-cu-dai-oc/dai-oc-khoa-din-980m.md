@@ -1,66 +1,94 @@
 ---
-title: "ĐAI ỐC KHÓA DIN 980M"
-description: "Đai ốc tự khóa DIN 980M (lock nut) dùng cho các cụm lắp ráp có rung lắc cao, có lá kim loại tạo lực cản khóa ren."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC KHÓA DIN 980M
+description: >-
+  Đai ốc tự khóa DIN 980M (lock nut) dùng cho các cụm lắp ráp có rung lắc cao,
+  có lá kim loại tạo lực cản khóa ren.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 2
-  content: |
-    Đai ốc khóa DIN 980M (self-locking nut) là dòng ê-cu tự khóa bằng lá kim loại, giúp chống tự tháo trong môi trường rung lắc. Sản phẩm thường dùng trong lắp ráp máy móc/thiết bị công nghiệp.
+  content: >
+    Đai ốc khóa DIN 980M (self-locking nut) là dòng ê-cu tự khóa bằng lá kim
+    loại, giúp chống tự tháo trong môi trường rung lắc. Sản phẩm thường dùng
+    trong lắp ráp máy móc/thiết bị công nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-2.avif"
-  imgMain: "../../../../../images/product-image-main-2.avif"
-  imgAlt: "Đai ốc khóa DIN 980M"
+  imgCard: ../../../../../images/product-image-2.avif
+  imgMain: ../../../../../images/product-image-main-2.avif
+  imgAlt: Đai ốc khóa DIN 980M
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Tiêu chuẩn"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Tiêu chuẩn
 longDescription:
-  title: "Đai Ốc Tự Khóa DIN 980M Cho Môi Trường Rung Lắc"
-  subTitle: |
-    Đai ốc khóa DIN 980M phù hợp cho các cụm lắp ráp có độ rung cao, nơi cần tăng khả năng chống tự tháo của liên kết bulông–ê-cu. Cơ cấu tự khóa bằng lá kim loại tạo lực cản trên ren, giúp mối ghép ổn định hơn trong vận hành.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Đai Ốc Tự Khóa DIN 980M Cho Môi Trường Rung Lắc
+  subTitle: >
+    Đai ốc khóa DIN 980M phù hợp cho các cụm lắp ráp có độ rung cao, nơi cần
+    tăng khả năng chống tự tháo của liên kết bulông–ê-cu. Cơ cấu tự khóa bằng lá
+    kim loại tạo lực cản trên ren, giúp mối ghép ổn định hơn trong vận hành.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Chống Tự Tháo Hiệu Quả"
-    subTitle: "Thiết kế lá kim loại tạo lực cản trên ren, phù hợp cho máy móc có rung lắc cao."
-  - title: "Vật Liệu Đa Dạng"
-    subTitle: "Có thể sản xuất bằng thép hoặc inox (201/304/316/316L) theo môi trường làm việc."
-  - title: "Đúng Tiêu Chuẩn DIN 980M"
-    subTitle: "Phù hợp tiêu chuẩn DIN 980M, dễ thay thế và đồng bộ trong hệ thống lắp ráp."
+  - title: Chống Tự Tháo Hiệu Quả
+    subTitle: >-
+      Thiết kế lá kim loại tạo lực cản trên ren, phù hợp cho máy móc có rung lắc
+      cao.
+  - title: Vật Liệu Đa Dạng
+    subTitle: >-
+      Có thể sản xuất bằng thép hoặc inox (201/304/316/316L) theo môi trường làm
+      việc.
+  - title: Đúng Tiêu Chuẩn DIN 980M
+    subTitle: >-
+      Phù hợp tiêu chuẩn DIN 980M, dễ thay thế và đồng bộ trong hệ thống lắp
+      ráp.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc khóa / ê-cu khóa DIN 980M (Lock Nut / Self-locking Nut)"
-  - title: "Cơ chế tự khóa"
-    subTitle: "Lá kim loại nằm ở phần trên đai ốc, tạo lực cản trên ren bulông khi lắp"
-  - title: "Ứng dụng"
-    subTitle: "Lắp ráp máy móc/thiết bị công nghiệp có rung lắc cao"
-  - title: "Vật liệu"
-    subTitle: "Thép; Inox 201/304/316/316L (tùy nhu cầu)"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc khóa / ê-cu khóa DIN 980M (Lock Nut / Self-locking Nut)
+  - title: Cơ chế tự khóa
+    subTitle: 'Lá kim loại nằm ở phần trên đai ốc, tạo lực cản trên ren bulông khi lắp'
+  - title: Ứng dụng
+    subTitle: Lắp ráp máy móc/thiết bị công nghiệp có rung lắc cao
+  - title: Vật liệu
+    subTitle: Thép; Inox 201/304/316/316L (tùy nhu cầu)
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature:
+      - Thông số
+      - Giá trị
     description:
-      - ["Tiêu chuẩn", "DIN 980M"]
-      - ["Tên gọi khác", "Ê-cu khóa sắt, ecu khóa vành, đai ốc hãm sắt, lock nuts"]
-      - ["Cơ chế khóa", "Tự khóa bằng lá kim loại"]
-      - ["Vật liệu phổ biến", "Thép; Inox 304/316 (tham khảo)" ]
-      - ["Xử lý bề mặt (tùy chọn)", "Mạ kẽm, mạ niken, mạ điện phân, mạ nhúng nóng, dacromet (tùy yêu cầu)"]
-      - ["Kích thước", "Đa dạng theo quy cách và nhu cầu đặt hàng"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tiêu chuẩn
+        - DIN 980M
+      - - Tên gọi khác
+        - 'Ê-cu khóa sắt, ecu khóa vành, đai ốc hãm sắt, lock nuts'
+      - - Cơ chế khóa
+        - Tự khóa bằng lá kim loại
+      - - Vật liệu phổ biến
+        - Thép; Inox 304/316 (tham khảo)
+      - - Xử lý bề mặt (tùy chọn)
+        - 'Mạ kẽm, mạ niken, mạ điện phân, mạ nhúng nóng, dacromet (tùy yêu cầu)'
+      - - Kích thước
+        - Đa dạng theo quy cách và nhu cầu đặt hàng
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Thép
+  - Inox 201
+  - Inox 304
+  - Inox 316
+  - 316L (tùy nhu cầu)
+tagSizes: []
 ---
 
 ## ĐAI ỐC KHÓA DIN 980M

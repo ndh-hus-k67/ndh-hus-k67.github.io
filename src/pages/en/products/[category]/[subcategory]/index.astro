@@ -3,6 +3,11 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import {
+  buildFacetOptions,
+  getProductMaterials,
+  getProductSizes,
+} from "@/utils/productFacets";
 
 export async function getStaticPaths() {
   const allProducts = await getCollection("products", ({ id }) =>
@@ -47,6 +52,9 @@ const products: CollectionEntry<"products">[] = (
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
+
+const materialOptions = buildFacetOptions(products.flatMap(getProductMaterials));
+const sizeOptions = buildFacetOptions(products.flatMap(getProductSizes));
 
 // Define titles
 const categoryTitles: Record<string, string> = {
@@ -124,13 +132,77 @@ const pageTitle = `${title} | ${SITE.title}`;
       </p>
     </div>
 
+    <!-- Filters -->
+    <div class="mb-6 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+      <div class="grid gap-4 md:grid-cols-3">
+        <div>
+          <label for="product-filter-name" class="mb-1 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Product name
+          </label>
+          <input
+            id="product-filter-name"
+            type="search"
+            placeholder="Search by name…"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-800 outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200 dark:focus:ring-orange-900"
+          />
+        </div>
+
+        <div>
+          <label for="product-filter-material" class="mb-1 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Material
+          </label>
+          <select
+            id="product-filter-material"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-800 outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200 dark:focus:ring-orange-900"
+          >
+            <option value="">All</option>
+            {materialOptions.map((m) => (
+              <option value={m}>{m}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label for="product-filter-size" class="mb-1 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Size
+          </label>
+          <select
+            id="product-filter-size"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-800 outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200 dark:focus:ring-orange-900"
+          >
+            <option value="">All</option>
+            {sizeOptions.map((s) => (
+              <option value={s}>{s}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">
+          Showing <span id="product-filter-count" class="font-medium text-neutral-800 dark:text-neutral-200">{products.length}</span> / {products.length} products
+        </p>
+        <button
+          id="product-filter-reset"
+          type="button"
+          class="inline-flex items-center rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800"
+        >
+          Clear filters
+        </button>
+      </div>
+    </div>
+
     <!-- Products Grid -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div id="product-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {
         products.map((product) => (
           <a
             href={`/en/products/${category}/${subcategory}/${product.id.split("/").pop()?.replace(".md", "")}`}
             data-astro-prefetch
+            data-product-item
+            data-title={product.data.title}
+            data-materials={getProductMaterials(product).join("|")}
+            data-sizes={getProductSizes(product).join("|")}
             class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
           >
             <img
@@ -149,6 +221,12 @@ const pageTitle = `${title} | ${SITE.title}`;
           </a>
         ))
       }
+    </div>
+
+    <div id="product-filter-empty" class="hidden py-12 text-center">
+      <p class="text-neutral-600 dark:text-neutral-400">
+        No matching products.
+      </p>
     </div>
 
     {
@@ -172,3 +250,73 @@ const pageTitle = `${title} | ${SITE.title}`;
     </div>
   </div>
 </MainLayout>
+
+<script is:inline>
+  (function () {
+    const nameInput = document.getElementById("product-filter-name");
+    const materialSelect = document.getElementById("product-filter-material");
+    const sizeSelect = document.getElementById("product-filter-size");
+    const resetBtn = document.getElementById("product-filter-reset");
+    const countEl = document.getElementById("product-filter-count");
+    const emptyEl = document.getElementById("product-filter-empty");
+    const items = Array.from(document.querySelectorAll("[data-product-item]"));
+
+    if (!nameInput || !materialSelect || !sizeSelect || !resetBtn || !countEl || !emptyEl) return;
+
+    const stripDiacritics = (s) =>
+      (s || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+    const splitTokens = (value) =>
+      (value || "")
+        .split("|")
+        .map((x) => stripDiacritics(x))
+        .filter(Boolean);
+
+    const cache = items.map((el) => {
+      return {
+        el,
+        title: stripDiacritics(el.dataset.title),
+        materials: splitTokens(el.dataset.materials),
+        sizes: splitTokens(el.dataset.sizes),
+      };
+    });
+
+    function applyFilters() {
+      const q = stripDiacritics(nameInput.value);
+      const mat = stripDiacritics(materialSelect.value);
+      const size = stripDiacritics(sizeSelect.value);
+
+      let visible = 0;
+
+      for (const item of cache) {
+        const matchName = !q || (item.title && item.title.includes(q));
+        const matchMat = !mat || item.materials.includes(mat);
+        const matchSize = !size || item.sizes.includes(size);
+        const ok = matchName && matchMat && matchSize;
+
+        item.el.hidden = !ok;
+        if (ok) visible++;
+      }
+
+      countEl.textContent = String(visible);
+      emptyEl.classList.toggle("hidden", visible !== 0);
+    }
+
+    nameInput.addEventListener("input", applyFilters);
+    materialSelect.addEventListener("change", applyFilters);
+    sizeSelect.addEventListener("change", applyFilters);
+    resetBtn.addEventListener("click", function () {
+      nameInput.value = "";
+      materialSelect.value = "";
+      sizeSelect.value = "";
+      applyFilters();
+      nameInput.focus();
+    });
+
+    applyFilters();
+  })();
+</script>

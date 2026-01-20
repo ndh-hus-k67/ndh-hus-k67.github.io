@@ -1,67 +1,90 @@
 ---
-title: "ĐAI ỐC HÀN 3 CHÂN DIN 929"
-description: "Đai ốc hàn 3 chân DIN 929 (weld nut 3 chân) dùng để chống rung làm lỏng liên kết; dễ hàn cố định lên bề mặt và tạo ren lắp ghép với bu lông."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC HÀN 3 CHÂN DIN 929
+description: >-
+  Đai ốc hàn 3 chân DIN 929 (weld nut 3 chân) dùng để chống rung làm lỏng liên
+  kết; dễ hàn cố định lên bề mặt và tạo ren lắp ghép với bu lông.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 8
-  content: |
-    Đai ốc hàn 3 chân DIN 929 là loại đai ốc đặc biệt có 3 chân (tai hàn) giúp cố định bằng phương pháp hàn, hạn chế rung động làm lỏng liên kết trong quá trình sử dụng. Sản phẩm được ứng dụng rộng rãi trong công nghiệp hoá chất, đóng tàu, cầu đường, dầu khí, và các máy móc thiết bị công nghiệp.
+  content: >
+    Đai ốc hàn 3 chân DIN 929 là loại đai ốc đặc biệt có 3 chân (tai hàn) giúp
+    cố định bằng phương pháp hàn, hạn chế rung động làm lỏng liên kết trong quá
+    trình sử dụng. Sản phẩm được ứng dụng rộng rãi trong công nghiệp hoá chất,
+    đóng tàu, cầu đường, dầu khí, và các máy móc thiết bị công nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-4.avif"
-  imgMain: "../../../../../images/product-image-main-4.avif"
-  imgAlt: "Đai ốc hàn 3 chân DIN 929"
+  imgCard: ../../../../../images/product-image-4.avif
+  imgMain: ../../../../../images/product-image-main-4.avif
+  imgAlt: Đai ốc hàn 3 chân DIN 929
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Đai Ốc Hàn 3 Chân DIN 929 – Chống Rung, Cố Định Bằng Hàn"
-  subTitle: |
-    DIN 929 là đai ốc hàn dạng tứ giác, có lỗ ren và 3 chân hàn ở các góc để hàn cố định lên chi tiết. Khi đã hàn, đai ốc tạo điểm ren chắc chắn cho lắp ghép bu lông, giúp tăng độ ổn định và giảm nguy cơ tự nới lỏng do rung động.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Hàn 3 Chân DIN 929 – Chống Rung, Cố Định Bằng Hàn'
+  subTitle: >
+    DIN 929 là đai ốc hàn dạng tứ giác, có lỗ ren và 3 chân hàn ở các góc để hàn
+    cố định lên chi tiết. Khi đã hàn, đai ốc tạo điểm ren chắc chắn cho lắp ghép
+    bu lông, giúp tăng độ ổn định và giảm nguy cơ tự nới lỏng do rung động.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Chống rung làm lỏng liên kết"
-    subTitle: "Giữ liên kết ổn định nhờ đai ốc được hàn cố định lên bề mặt." 
-  - title: "Thi công thuận tiện"
-    subTitle: "Tạo điểm ren nhanh cho kết cấu/chi tiết mỏng hoặc vị trí khó thao tác." 
-  - title: "Đa dạng vật liệu"
-    subTitle: "Có thể chọn inox 201/304/316/316L hoặc thép theo môi trường làm việc." 
-
+  - title: Chống rung làm lỏng liên kết
+    subTitle: Giữ liên kết ổn định nhờ đai ốc được hàn cố định lên bề mặt.
+  - title: Thi công thuận tiện
+    subTitle: Tạo điểm ren nhanh cho kết cấu/chi tiết mỏng hoặc vị trí khó thao tác.
+  - title: Đa dạng vật liệu
+    subTitle: Có thể chọn inox 201/304/316/316L hoặc thép theo môi trường làm việc.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc hàn 3 chân DIN 929"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 929"
-  - title: "Kích thước ren (tham khảo)"
-    subTitle: "M3–M16 (tùy loại)"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox 201/304/316/316L hoặc thép"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc hàn 3 chân DIN 929
+  - title: Tiêu chuẩn
+    subTitle: DIN 929
+  - title: Kích thước ren (tham khảo)
+    subTitle: M3–M16 (tùy loại)
+  - title: Vật liệu (tham khảo)
+    subTitle: Inox 201/304/316/316L hoặc thép
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc hàn 3 chân DIN 929"]
-      - ["Dạng", "Tứ giác + 3 chân (tai) hàn"]
-      - ["Công dụng", "Tạo điểm ren cố định, hạn chế tự nới lỏng do rung"]
-      - ["Kích thước ren", "M3–M16 (phổ biến, tùy loại)"]
-      - ["Tiêu chuẩn tham khảo", "DIN, JIS, ASTM, ISO, KS, GB, TCVN"]
-      - ["Cấp bền (tham khảo)", "4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc hàn 3 chân DIN 929
+      - - Dạng
+        - Tứ giác + 3 chân (tai) hàn
+      - - Công dụng
+        - 'Tạo điểm ren cố định, hạn chế tự nới lỏng do rung'
+      - - Kích thước ren
+        - 'M3–M16 (phổ biến, tùy loại)'
+      - - Tiêu chuẩn tham khảo
+        - 'DIN, JIS, ASTM, ISO, KS, GB, TCVN'
+      - - Cấp bền (tham khảo)
+        - '4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox 201
+  - Inox 304
+  - Inox 316
+  - 316L hoặc thép
+tagSizes:
+  - M3
+  - M16
 ---
 
 ## ĐAI ỐC HÀN 3 CHÂN DIN 929

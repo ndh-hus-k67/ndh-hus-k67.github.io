@@ -1,65 +1,100 @@
 ---
-title: "ECU MẮT INOX – MÓC CẨU REN ÂM INOX"
-description: "Ecu mắt inox (móc cẩu ren âm inox) tiêu chuẩn DIN 582, dùng làm điểm móc trung gian để nâng hạ kết cấu/máy móc."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ECU MẮT INOX – MÓC CẨU REN ÂM INOX
+description: >-
+  Ecu mắt inox (móc cẩu ren âm inox) tiêu chuẩn DIN 582, dùng làm điểm móc trung
+  gian để nâng hạ kết cấu/máy móc.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 5
-  content: |
-    Ecu mắt inox hay còn gọi là móc cẩu ren âm inox (Stainless Steel Eyenut) được sản xuất theo tiêu chuẩn DIN 582. Sản phẩm có dạng vòng tròn hình mắt, phần thân có lỗ ren âm hệ mét để lắp với bu lông/ty ren, tạo điểm móc trung gian phục vụ nâng hạ.
+  content: >
+    Ecu mắt inox hay còn gọi là móc cẩu ren âm inox (Stainless Steel Eyenut)
+    được sản xuất theo tiêu chuẩn DIN 582. Sản phẩm có dạng vòng tròn hình mắt,
+    phần thân có lỗ ren âm hệ mét để lắp với bu lông/ty ren, tạo điểm móc trung
+    gian phục vụ nâng hạ.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-1.avif"
-  imgMain: "../../../../../images/product-image-main-1.avif"
-  imgAlt: "Ecu mắt inox – móc cẩu ren âm inox DIN 582"
+  imgCard: ../../../../../images/product-image-1.avif
+  imgMain: ../../../../../images/product-image-main-1.avif
+  imgAlt: Ecu mắt inox – móc cẩu ren âm inox DIN 582
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Tiêu chuẩn"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Tiêu chuẩn
 longDescription:
-  title: "Móc Cẩu Ren Âm Inox DIN 582 – Điểm Móc Nâng Hạ An Toàn"
-  subTitle: |
-    Móc cẩu ren âm inox DIN 582 là chi tiết trung gian dùng để móc cẩu, hỗ trợ nâng hạ kết cấu hoặc máy móc. Thiết kế vòng mắt giúp thao tác treo/móc nhanh chóng, phần ren âm hệ mét đảm bảo lắp ghép thuận tiện với bu lông/ty ren.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Móc Cẩu Ren Âm Inox DIN 582 – Điểm Móc Nâng Hạ An Toàn
+  subTitle: >
+    Móc cẩu ren âm inox DIN 582 là chi tiết trung gian dùng để móc cẩu, hỗ trợ
+    nâng hạ kết cấu hoặc máy móc. Thiết kế vòng mắt giúp thao tác treo/móc nhanh
+    chóng, phần ren âm hệ mét đảm bảo lắp ghép thuận tiện với bu lông/ty ren.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Đúng tiêu chuẩn DIN 582"
-    subTitle: "Kích thước/thiết kế theo DIN 582, phù hợp đồng bộ trong lắp ghép." 
-  - title: "Ứng dụng nâng hạ"
-    subTitle: "Dùng làm điểm móc trung gian để nâng hạ kết cấu, máy móc, thiết bị." 
-  - title: "Vật liệu phổ biến SUS304/SUS316"
-    subTitle: "Thường sản xuất từ inox 304/316 để tăng khả năng chống ăn mòn (tùy môi trường)."
-
+  - title: Đúng tiêu chuẩn DIN 582
+    subTitle: 'Kích thước/thiết kế theo DIN 582, phù hợp đồng bộ trong lắp ghép.'
+  - title: Ứng dụng nâng hạ
+    subTitle: 'Dùng làm điểm móc trung gian để nâng hạ kết cấu, máy móc, thiết bị.'
+  - title: Vật liệu phổ biến SUS304/SUS316
+    subTitle: >-
+      Thường sản xuất từ inox 304/316 để tăng khả năng chống ăn mòn (tùy môi
+      trường).
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Ecu mắt inox / Móc cẩu ren âm inox (Stainless Steel Eyenut)"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 582"
-  - title: "Ren"
-    subTitle: "Ren âm hệ mét (tham khảo: M8–M100x6)"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox SUS304 hoặc SUS316; ngoài ra có thể có thép carbon mạ kẽm"
-
+  - title: Tên sản phẩm
+    subTitle: Ecu mắt inox / Móc cẩu ren âm inox (Stainless Steel Eyenut)
+  - title: Tiêu chuẩn
+    subTitle: DIN 582
+  - title: Ren
+    subTitle: 'Ren âm hệ mét (tham khảo: M8–M100x6)'
+  - title: Vật liệu (tham khảo)
+    subTitle: Inox SUS304 hoặc SUS316; ngoài ra có thể có thép carbon mạ kẽm
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature:
+      - Thông số
+      - Giá trị
     description:
-      - ["Tên gọi", "Ecu mắt inox / Móc cẩu ren âm inox"]
-      - ["Tiêu chuẩn", "DIN 582"]
-      - ["Ứng dụng", "Móc cẩu, nâng hạ kết cấu/máy móc"]
-      - ["Vật liệu", "Inox 304/316 (phổ biến); tùy chọn theo nhu cầu"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Ecu mắt inox / Móc cẩu ren âm inox
+      - - Tiêu chuẩn
+        - DIN 582
+      - - Ứng dụng
+        - 'Móc cẩu, nâng hạ kết cấu/máy móc'
+      - - Vật liệu
+        - Inox 304/316 (phổ biến); tùy chọn theo nhu cầu
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox SUS304 hoặc SUS316
+  - ngoài ra có thể có thép carbon mạ kẽm
+  - Inox
+tagSizes:
+  - M8
+  - M100X6
+  - M10
+  - M12
+  - M16
+  - M20
+  - M24
+  - M30
+  - M36
+  - M42
+  - M48
+  - M56
+  - M64
+  - M72X6
+  - M80X6
 ---
 
 ## ECU MẮT INOX – MÓC CẨU REN ÂM INOX INOX

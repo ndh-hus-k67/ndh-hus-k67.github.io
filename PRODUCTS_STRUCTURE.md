@@ -80,6 +80,14 @@ src/content/products/vn/bu-long/inox/item-xyz123.md
 ---
 title: "Tên sản phẩm"
 description: "Mô tả ngắn gọn"
+# (Tuỳ chọn) Phục vụ lọc/tìm kiếm trên trang listing
+material: "Inox 304"          # hoặc vật liệu khác
+materials: ["Inox 304", "Inox 316"]
+size: "M6"                   # hoặc dạng "M6–M12"
+sizes: ["M6", "M8", "M10"]
+# (Tuỳ chọn) Tag chia rõ 2 nhóm: vật liệu + kích thước
+tagMaterials: ["Inox 304", "Inox 316"]
+tagSizes: ["M6", "M8", "M10"]
 category: "bu-long"           # Phải là: bu-long, oc-vit, hoặc san-pham-khac
 subcategory: "inox"           # Tên subcategory (slug format: chu-thuong-khong-dau)
 main:

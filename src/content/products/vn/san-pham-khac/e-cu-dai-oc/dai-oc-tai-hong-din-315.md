@@ -1,67 +1,90 @@
 ---
-title: "ĐAI ỐC TAI HỒNG DIN 315"
-description: "Đai ốc tai hồng DIN 315 (tai chuồn/wing nut) thao tác tháo lắp nhanh bằng tay, phù hợp các mối ghép cần lắp-rá thường xuyên trong cầu đường, thiết bị và công nghiệp."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC TAI HỒNG DIN 315
+description: >-
+  Đai ốc tai hồng DIN 315 (tai chuồn/wing nut) thao tác tháo lắp nhanh bằng tay,
+  phù hợp các mối ghép cần lắp-rá thường xuyên trong cầu đường, thiết bị và công
+  nghiệp.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 16
-  content: |
-    Đai ốc tai hồng (tai chuồn) DIN 315 được sản xuất theo tiêu chuẩn DIN 315 – ren hệ mét thông dụng. Nhờ thiết kế 2 cánh (tai), sản phẩm giúp thao tác tháo lắp nhanh gọn bằng tay, thường dùng cho các vị trí cần lắp-rá thường xuyên.
+  content: >
+    Đai ốc tai hồng (tai chuồn) DIN 315 được sản xuất theo tiêu chuẩn DIN 315 –
+    ren hệ mét thông dụng. Nhờ thiết kế 2 cánh (tai), sản phẩm giúp thao tác
+    tháo lắp nhanh gọn bằng tay, thường dùng cho các vị trí cần lắp-rá thường
+    xuyên.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-4.avif"
-  imgMain: "../../../../../images/product-image-main-4.avif"
-  imgAlt: "Đai ốc tai hồng DIN 315"
+  imgCard: ../../../../../images/product-image-4.avif
+  imgMain: ../../../../../images/product-image-main-4.avif
+  imgAlt: Đai ốc tai hồng DIN 315
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Đai Ốc Tai Hồng DIN 315 – Tháo Lắp Nhanh, Không Cần Dụng Cụ"
-  subTitle: |
-    Thiết kế tai chuồn giúp tăng mô-men vặn bằng tay, thuận tiện cho các ứng dụng cần thao tác nhanh hoặc không tiện dùng cờ lê. Có thể chọn inox 304/316 để tăng chống ăn mòn tuỳ môi trường.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Tai Hồng DIN 315 – Tháo Lắp Nhanh, Không Cần Dụng Cụ'
+  subTitle: >
+    Thiết kế tai chuồn giúp tăng mô-men vặn bằng tay, thuận tiện cho các ứng
+    dụng cần thao tác nhanh hoặc không tiện dùng cờ lê. Có thể chọn inox 304/316
+    để tăng chống ăn mòn tuỳ môi trường.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Thao tác nhanh bằng tay"
-    subTitle: "Phù hợp mối ghép cần lắp-rá thường xuyên." 
-  - title: "Thiết kế 2 cánh (tai)"
-    subTitle: "Dễ vặn/siết mà không cần dụng cụ." 
-  - title: "Đa dạng vật liệu"
-    subTitle: "Inox 201/304/316/316L hoặc thép theo yêu cầu." 
-
+  - title: Thao tác nhanh bằng tay
+    subTitle: Phù hợp mối ghép cần lắp-rá thường xuyên.
+  - title: Thiết kế 2 cánh (tai)
+    subTitle: Dễ vặn/siết mà không cần dụng cụ.
+  - title: Đa dạng vật liệu
+    subTitle: Inox 201/304/316/316L hoặc thép theo yêu cầu.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc tai hồng DIN 315 (tai chuồn/wing nut)"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 315"
-  - title: "Ứng dụng"
-    subTitle: "Lắp-rá nhanh, thiết bị công nghiệp, cầu đường, cơ khí" 
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox SUS201, SUS304, SUS316 (có thể có 316L) hoặc thép"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc tai hồng DIN 315 (tai chuồn/wing nut)
+  - title: Tiêu chuẩn
+    subTitle: DIN 315
+  - title: Ứng dụng
+    subTitle: 'Lắp-rá nhanh, thiết bị công nghiệp, cầu đường, cơ khí'
+  - title: Vật liệu (tham khảo)
+    subTitle: 'Inox SUS201, SUS304, SUS316 (có thể có 316L) hoặc thép'
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc tai hồng DIN 315"]
-      - ["Dạng", "Đai ốc ren trong + 2 cánh (tai) vặn tay"]
-      - ["Công dụng", "Tháo lắp nhanh, hãm/siết bằng tay"]
-      - ["Kích thước", "M4–M24 (phổ biến, tùy loại)"]
-      - ["Tiêu chuẩn tham khảo", "DIN, JIS, ASTM, ISO, KS, GB, TCVN"]
-      - ["Cấp bền (tham khảo)", "4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc tai hồng DIN 315
+      - - Dạng
+        - Đai ốc ren trong + 2 cánh (tai) vặn tay
+      - - Công dụng
+        - 'Tháo lắp nhanh, hãm/siết bằng tay'
+      - - Kích thước
+        - 'M4–M24 (phổ biến, tùy loại)'
+      - - Tiêu chuẩn tham khảo
+        - 'DIN, JIS, ASTM, ISO, KS, GB, TCVN'
+      - - Cấp bền (tham khảo)
+        - '4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox SUS201
+  - SUS304
+  - SUS316 (có thể có 316L) hoặc thép
+tagSizes:
+  - M4
+  - M24
 ---
 
 ## ĐAI ỐC TAI HỒNG DIN 315

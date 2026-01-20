@@ -2,6 +2,7 @@
 const navBarLinks = [
   { name: "Home", url: "/en" },
   { name: "Products", url: "/en/products" },
+  { name: "Search", url: "/en/tim-san-pham" },
   { name: "About Us", url: "/en/about-us" },
   { name: "Blog", url: "/en/blog" },
   { name: "Contact", url: "/en/contact" },

@@ -1,65 +1,93 @@
 ---
-title: "ECU RÚT INOX – TÁN RÚT INOX"
-description: "Ecu rút inox (tán rút inox/đai ốc rút) chuyên dùng tạo ren trên vật liệu mỏng như tấm thép, vỏ máy, ống thép; lắp đặt nhanh và chịu lực tốt."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ECU RÚT INOX – TÁN RÚT INOX
+description: >-
+  Ecu rút inox (tán rút inox/đai ốc rút) chuyên dùng tạo ren trên vật liệu mỏng
+  như tấm thép, vỏ máy, ống thép; lắp đặt nhanh và chịu lực tốt.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 6
-  content: |
-    Ecu rút inox – tán rút inox (đai ốc rút) là giải pháp tạo ren cho các vật liệu mỏng như tấm thép, vỏ máy, ống thép… nhờ cơ chế “rút” để kẹp chặt vào thành vật liệu. Sản phẩm có ưu điểm lắp đặt nhanh, chịu lực tốt, tăng tốc độ thi công trong sản xuất và lắp ráp.
+  content: >
+    Ecu rút inox – tán rút inox (đai ốc rút) là giải pháp tạo ren cho các vật
+    liệu mỏng như tấm thép, vỏ máy, ống thép… nhờ cơ chế “rút” để kẹp chặt vào
+    thành vật liệu. Sản phẩm có ưu điểm lắp đặt nhanh, chịu lực tốt, tăng tốc độ
+    thi công trong sản xuất và lắp ráp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-2.avif"
-  imgMain: "../../../../../images/product-image-main-2.avif"
-  imgAlt: "Ecu rút inox – tán rút inox"
+  imgCard: ../../../../../images/product-image-2.avif
+  imgMain: ../../../../../images/product-image-main-2.avif
+  imgAlt: Ecu rút inox – tán rút inox
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Ecu Rút Inox (Tán Rút Inox) – Tạo Ren Trên Vật Liệu Mỏng"
-  subTitle: |
-    Ecu rút/tán rút giúp tạo ren chắc chắn trên các chi tiết mỏng (tấm kim loại, vỏ máy, ống…) nơi taro trực tiếp khó hoặc dễ bị phá ren. Cơ cấu rút làm thân ecu phì ra kẹp chặt, tạo liên kết ổn định cho lắp ghép.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Ecu Rút Inox (Tán Rút Inox) – Tạo Ren Trên Vật Liệu Mỏng
+  subTitle: >
+    Ecu rút/tán rút giúp tạo ren chắc chắn trên các chi tiết mỏng (tấm kim loại,
+    vỏ máy, ống…) nơi taro trực tiếp khó hoặc dễ bị phá ren. Cơ cấu rút làm thân
+    ecu phì ra kẹp chặt, tạo liên kết ổn định cho lắp ghép.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Tạo ren cho vật liệu mỏng"
-    subTitle: "Giải pháp hiệu quả khi tấm kim loại mỏng khó taro hoặc dễ hỏng ren." 
-  - title: "Lắp đặt nhanh"
-    subTitle: "Thi công nhanh, phù hợp sản xuất hàng loạt và lắp ráp công nghiệp." 
-  - title: "Chịu lực tốt, liên kết ổn định"
-    subTitle: "Sau khi rút, thân ecu kẹp chặt bề mặt giúp tăng độ bền liên kết." 
-
+  - title: Tạo ren cho vật liệu mỏng
+    subTitle: Giải pháp hiệu quả khi tấm kim loại mỏng khó taro hoặc dễ hỏng ren.
+  - title: Lắp đặt nhanh
+    subTitle: 'Thi công nhanh, phù hợp sản xuất hàng loạt và lắp ráp công nghiệp.'
+  - title: 'Chịu lực tốt, liên kết ổn định'
+    subTitle: 'Sau khi rút, thân ecu kẹp chặt bề mặt giúp tăng độ bền liên kết.'
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Ecu rút inox / Tán rút inox / Đai ốc rút"
-  - title: "Ren"
-    subTitle: "Ren trong hệ mét: M3, M4, M5, M6, M8, M10, M12…"
-  - title: "Ứng dụng"
-    subTitle: "Tạo ren cho tấm thép mỏng, vỏ máy, ống thép, khung/vỏ thiết bị…"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox SUS201, SUS304, SUS316, SUS316L; có thể có thép"
-
+  - title: Tên sản phẩm
+    subTitle: Ecu rút inox / Tán rút inox / Đai ốc rút
+  - title: Ren
+    subTitle: 'Ren trong hệ mét: M3, M4, M5, M6, M8, M10, M12…'
+  - title: Ứng dụng
+    subTitle: 'Tạo ren cho tấm thép mỏng, vỏ máy, ống thép, khung/vỏ thiết bị…'
+  - title: Vật liệu (tham khảo)
+    subTitle: 'Inox SUS201, SUS304, SUS316, SUS316L; có thể có thép'
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature:
+      - Thông số
+      - Giá trị
     description:
-      - ["Tên gọi", "Ecu rút inox / Tán rút inox (đai ốc rút)"]
-      - ["Cỡ ren phổ biến", "M3–M12 (tùy loại)"]
-      - ["Ứng dụng", "Tạo ren trên vật liệu mỏng, lắp ghép nhanh"]
-      - ["Vật liệu", "Inox 201/304/316/316L; tùy chọn theo nhu cầu"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Ecu rút inox / Tán rút inox (đai ốc rút)
+      - - Cỡ ren phổ biến
+        - M3–M12 (tùy loại)
+      - - Ứng dụng
+        - 'Tạo ren trên vật liệu mỏng, lắp ghép nhanh'
+      - - Vật liệu
+        - Inox 201/304/316/316L; tùy chọn theo nhu cầu
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox SUS201
+  - SUS304
+  - SUS316
+  - SUS316L
+  - có thể có thép
+  - Inox
+tagSizes:
+  - M3
+  - M4
+  - M5
+  - M6
+  - M8
+  - M10
+  - M12
 ---
 
 ## ECU RÚT INOX – TÁN RÚT INOX

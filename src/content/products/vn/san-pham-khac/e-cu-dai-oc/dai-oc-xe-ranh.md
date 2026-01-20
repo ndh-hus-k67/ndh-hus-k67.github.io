@@ -1,66 +1,97 @@
 ---
-title: "ĐAI ỐC XẺ RÃNH"
-description: "Đai ốc xẻ rãnh (castle/slotted nut) dùng với bu lông để kẹp chặt chi tiết, phù hợp vị trí chịu tải trọng động; phổ biến theo tiêu chuẩn DIN 935."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC XẺ RÃNH
+description: >-
+  Đai ốc xẻ rãnh (castle/slotted nut) dùng với bu lông để kẹp chặt chi tiết, phù
+  hợp vị trí chịu tải trọng động; phổ biến theo tiêu chuẩn DIN 935.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 4
-  content: |
-    Đai ốc xẻ rãnh (đai ốc rãnh / ê-cu xẻ rãnh) là loại đai ốc có các rãnh trên phần đỉnh, thường dùng cùng bu lông để kẹp chặt hai hay nhiều chi tiết. Liên kết làm việc nhờ ma sát giữa các ren, sức căng của bu lông và sức nén của chi tiết.
+  content: >
+    Đai ốc xẻ rãnh (đai ốc rãnh / ê-cu xẻ rãnh) là loại đai ốc có các rãnh trên
+    phần đỉnh, thường dùng cùng bu lông để kẹp chặt hai hay nhiều chi tiết. Liên
+    kết làm việc nhờ ma sát giữa các ren, sức căng của bu lông và sức nén của
+    chi tiết.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-4.avif"
-  imgMain: "../../../../../images/product-image-main-4.avif"
-  imgAlt: "Đai ốc xẻ rãnh"
+  imgCard: ../../../../../images/product-image-4.avif
+  imgMain: ../../../../../images/product-image-main-4.avif
+  imgAlt: Đai ốc xẻ rãnh
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Tiêu chuẩn"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Tiêu chuẩn
 longDescription:
-  title: "Đai Ốc Xẻ Rãnh – Giải Pháp Chống Tự Tháo Cho Tải Trọng Động"
-  subTitle: |
-    Với hình dạng xẻ rãnh đặc trưng, đai ốc xẻ rãnh thường được sử dụng tại các vị trí chịu tải trọng động như máy móc công nghiệp, xe cộ, tàu/thuyền công suất lớn... Sản phẩm có nhiều quy cách và thường đặt theo tiêu chuẩn; Nam Hải hiện có sẵn một số mã hàng theo DIN 935.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Đai Ốc Xẻ Rãnh – Giải Pháp Chống Tự Tháo Cho Tải Trọng Động
+  subTitle: >
+    Với hình dạng xẻ rãnh đặc trưng, đai ốc xẻ rãnh thường được sử dụng tại các
+    vị trí chịu tải trọng động như máy móc công nghiệp, xe cộ, tàu/thuyền công
+    suất lớn... Sản phẩm có nhiều quy cách và thường đặt theo tiêu chuẩn; Nam
+    Hải hiện có sẵn một số mã hàng theo DIN 935.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Phù hợp tải trọng động"
-    subTitle: "Ứng dụng tốt cho vị trí rung lắc/tải động trong công nghiệp và phương tiện."
-  - title: "Đa dạng quy cách"
-    subTitle: "Có nhiều hình dáng/kích thước, thường đặt theo tiêu chuẩn hoặc theo bản vẽ."
-  - title: "Vật liệu linh hoạt"
-    subTitle: "Thép hoặc inox (201/304/316/316L) tùy môi trường làm việc và yêu cầu chống gỉ."
-
+  - title: Phù hợp tải trọng động
+    subTitle: >-
+      Ứng dụng tốt cho vị trí rung lắc/tải động trong công nghiệp và phương
+      tiện.
+  - title: Đa dạng quy cách
+    subTitle: >-
+      Có nhiều hình dáng/kích thước, thường đặt theo tiêu chuẩn hoặc theo bản
+      vẽ.
+  - title: Vật liệu linh hoạt
+    subTitle: >-
+      Thép hoặc inox (201/304/316/316L) tùy môi trường làm việc và yêu cầu chống
+      gỉ.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc xẻ rãnh (Slotted/Castle Nut)"
-  - title: "Tên gọi khác"
-    subTitle: "Đai ốc rãnh, con tán xẻ rãnh, ê-cu xẻ rãnh"
-  - title: "Ứng dụng"
-    subTitle: "Kẹp chặt chi tiết với bu lông; dùng trong môi trường rung lắc/tải trọng động"
-  - title: "Vật liệu"
-    subTitle: "Thép; Inox 201/304/316/316L (tùy nhu cầu)"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc xẻ rãnh (Slotted/Castle Nut)
+  - title: Tên gọi khác
+    subTitle: 'Đai ốc rãnh, con tán xẻ rãnh, ê-cu xẻ rãnh'
+  - title: Ứng dụng
+    subTitle: >-
+      Kẹp chặt chi tiết với bu lông; dùng trong môi trường rung lắc/tải trọng
+      động
+  - title: Vật liệu
+    subTitle: Thép; Inox 201/304/316/316L (tùy nhu cầu)
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature:
+      - Thông số
+      - Giá trị
     description:
-      - ["Tiêu chuẩn phổ biến", "DIN 935"]
-      - ["Tiêu chuẩn tham khảo", "GOST 5919, DIN 937, BS 3692, BS 7764, BS 1083..."]
-      - ["Kích thước", "Đa dạng theo quy cách và nhu cầu đặt hàng"]
-      - ["Xử lý bề mặt (tùy chọn)", "Xi đen, mạ kẽm nhúng nóng, mạ kẽm điện phân, mạ dacromet..."]
-      - ["MOQ", "Tối thiểu 10pcs ~ 10,000pcs tùy từng loại size"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tiêu chuẩn phổ biến
+        - DIN 935
+      - - Tiêu chuẩn tham khảo
+        - 'GOST 5919, DIN 937, BS 3692, BS 7764, BS 1083...'
+      - - Kích thước
+        - Đa dạng theo quy cách và nhu cầu đặt hàng
+      - - Xử lý bề mặt (tùy chọn)
+        - 'Xi đen, mạ kẽm nhúng nóng, mạ kẽm điện phân, mạ dacromet...'
+      - - MOQ
+        - 'Tối thiểu 10pcs ~ 10,000pcs tùy từng loại size'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Thép
+  - Inox 201
+  - Inox 304
+  - Inox 316
+  - 316L (tùy nhu cầu)
+tagSizes:
+  - M10
 ---
 
 ## ĐAI ỐC XẺ RÃNH

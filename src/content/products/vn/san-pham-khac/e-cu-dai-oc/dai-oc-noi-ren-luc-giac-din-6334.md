@@ -1,65 +1,85 @@
 ---
-title: "ĐAI ỐC NỐI REN LỤC GIÁC DIN 6334"
-description: "Đai ốc nối ren lục giác DIN 6334 (hex coupling nut) dạng lục giác thân dài, dùng để nối bu lông hoặc thanh ren với nhau; ứng dụng rộng rãi trong nhiều ngành công nghiệp."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC NỐI REN LỤC GIÁC DIN 6334
+description: >-
+  Đai ốc nối ren lục giác DIN 6334 (hex coupling nut) dạng lục giác thân dài,
+  dùng để nối bu lông hoặc thanh ren với nhau; ứng dụng rộng rãi trong nhiều
+  ngành công nghiệp.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 15
-  content: |
-    Đai ốc nối ren lục giác DIN 6334 là loại đai ốc hình lục giác thân dài, có lỗ ren trong để nối các sản phẩm bu lông hoặc thanh ren với nhau. Sản phẩm được sử dụng rộng rãi trong: công nghiệp hoá chất, ô tô, đóng tàu biển, cầu đường, dầu khí và các máy móc thiết bị công nghiệp.
+  content: >
+    Đai ốc nối ren lục giác DIN 6334 là loại đai ốc hình lục giác thân dài, có
+    lỗ ren trong để nối các sản phẩm bu lông hoặc thanh ren với nhau. Sản phẩm
+    được sử dụng rộng rãi trong: công nghiệp hoá chất, ô tô, đóng tàu biển, cầu
+    đường, dầu khí và các máy móc thiết bị công nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-3.avif"
-  imgMain: "../../../../../images/product-image-main-3.avif"
-  imgAlt: "Đai ốc nối ren lục giác DIN 6334"
+  imgCard: ../../../../../images/product-image-3.avif
+  imgMain: ../../../../../images/product-image-main-3.avif
+  imgAlt: Đai ốc nối ren lục giác DIN 6334
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Đai Ốc Nối Ren Lục Giác DIN 6334 – Nối Bu Lông/Ty Ren Nhanh Chóng"
-  subTitle: |
-    DIN 6334 là tiêu chuẩn đai ốc nối ren thân dài, phù hợp các mối ghép cần nối dài ty ren hoặc liên kết các đoạn ren. Thiết kế lục giác giúp thao tác bằng cờ lê/tuýp thuận tiện.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Đai Ốc Nối Ren Lục Giác DIN 6334 – Nối Bu Lông/Ty Ren Nhanh Chóng
+  subTitle: >
+    DIN 6334 là tiêu chuẩn đai ốc nối ren thân dài, phù hợp các mối ghép cần nối
+    dài ty ren hoặc liên kết các đoạn ren. Thiết kế lục giác giúp thao tác bằng
+    cờ lê/tuýp thuận tiện.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Nối ty ren/bu lông thuận tiện"
-    subTitle: "Dùng để nối các đoạn ren, tạo liên kết dài hơn." 
-  - title: "Dạng lục giác thân dài"
-    subTitle: "Dễ thao tác siết bằng dụng cụ phổ biến." 
-  - title: "Đa dạng vật liệu"
-    subTitle: "Thép mạ kẽm, inox 201/304/316 theo môi trường làm việc." 
-
+  - title: Nối ty ren/bu lông thuận tiện
+    subTitle: 'Dùng để nối các đoạn ren, tạo liên kết dài hơn.'
+  - title: Dạng lục giác thân dài
+    subTitle: Dễ thao tác siết bằng dụng cụ phổ biến.
+  - title: Đa dạng vật liệu
+    subTitle: 'Thép mạ kẽm, inox 201/304/316 theo môi trường làm việc.'
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc nối ren lục giác DIN 6334 (hex coupling nut)"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 6334"
-  - title: "Kiểu"
-    subTitle: "Lục giác thân dài, ren trong"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Thép mạ kẽm, inox SUS201, SUS304, SUS316"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc nối ren lục giác DIN 6334 (hex coupling nut)
+  - title: Tiêu chuẩn
+    subTitle: DIN 6334
+  - title: Kiểu
+    subTitle: 'Lục giác thân dài, ren trong'
+  - title: Vật liệu (tham khảo)
+    subTitle: 'Thép mạ kẽm, inox SUS201, SUS304, SUS316'
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc nối ren lục giác DIN 6334"]
-      - ["Dạng", "Lục giác thân dài + lỗ ren trong"]
-      - ["Công dụng", "Nối bu lông/thanh ren (ty ren) với nhau"]
-      - ["Vật liệu", "Thép mạ kẽm / Inox 201 / Inox 304 / Inox 316"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc nối ren lục giác DIN 6334
+      - - Dạng
+        - Lục giác thân dài + lỗ ren trong
+      - - Công dụng
+        - Nối bu lông/thanh ren (ty ren) với nhau
+      - - Vật liệu
+        - Thép mạ kẽm / Inox 201 / Inox 304 / Inox 316
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Thép mạ kẽm
+  - inox SUS201
+  - SUS304
+  - SUS316
+tagSizes: []
 ---
 
 ## ĐAI ỐC NỐI REN LỤC GIÁC DIN 6334

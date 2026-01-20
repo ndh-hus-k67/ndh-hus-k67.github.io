@@ -1,58 +1,81 @@
 ---
-title: "Đai Ốc Cài Tủ Rack"
-description: "Đai ốc cài cho các liên kết trong tủ rack"
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: Đai Ốc Cài Tủ Rack
+description: Đai ốc cài cho các liên kết trong tủ rack
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 1
-  content: |
-    Đai ốc cài là một chi tiết quan trọng để cố định các kết cấu lại với nhau, đặc biệt là trong ngành chế tạo tủ rack. Loại đai ốc này thường được sử dụng trong các liên kết không yêu cầu chịu lực cao, trong những công trình viễn thông và mạng.
-  imgCard: "../../../../../images/product-image-2.avif"
-  imgMain: "../../../../../images/product-image-main-2.avif"
-  imgAlt: "Đai Ốc Cài Tủ Rack"
+  content: >
+    Đai ốc cài là một chi tiết quan trọng để cố định các kết cấu lại với nhau,
+    đặc biệt là trong ngành chế tạo tủ rack. Loại đai ốc này thường được sử dụng
+    trong các liên kết không yêu cầu chịu lực cao, trong những công trình viễn
+    thông và mạng.
+  imgCard: ../../../../../images/product-image-2.avif
+  imgMain: ../../../../../images/product-image-main-2.avif
+  imgAlt: Đai Ốc Cài Tủ Rack
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Tiêu chuẩn"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Tiêu chuẩn
 longDescription:
-  title: "Giải Pháp Cố Định Hiệu Quả Cho Tủ Rack"
-  subTitle: |
-    Đai ốc cài được thiết kế để đáp ứng nhu cầu cố định kết cấu trong các tủ rack. Với các đặc tính kỹ thuật phù hợp theo tiêu chuẩn, sản phẩm đảm bảo độ tin cậy và hiệu quả trong sử dụng.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Giải Pháp Cố Định Hiệu Quả Cho Tủ Rack
+  subTitle: >
+    Đai ốc cài được thiết kế để đáp ứng nhu cầu cố định kết cấu trong các tủ
+    rack. Với các đặc tính kỹ thuật phù hợp theo tiêu chuẩn, sản phẩm đảm bảo độ
+    tin cậy và hiệu quả trong sử dụng.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Ứng Dụng Rộng Rãi"
-    subTitle: "Phù hợp cho các liên kết trong tủ rack và mạng viễn thông."
-  - title: "Chất Liệu Đa Dạng"
-    subTitle: "Được chế tạo từ nhiều loại inox chất lượng như 201, 304, 316, đảm bảo độ bền và độ tin cậy."
-  - title: "Tiêu Chuẩn Rõ Ràng"
-    subTitle: "Đáp ứng đầy đủ các tiêu chuẩn kỹ thuật về cấp bền, độ bền kéo và giới hạn chảy."
+  - title: Ứng Dụng Rộng Rãi
+    subTitle: Phù hợp cho các liên kết trong tủ rack và mạng viễn thông.
+  - title: Chất Liệu Đa Dạng
+    subTitle: >-
+      Được chế tạo từ nhiều loại inox chất lượng như 201, 304, 316, đảm bảo độ
+      bền và độ tin cậy.
+  - title: Tiêu Chuẩn Rõ Ràng
+    subTitle: >-
+      Đáp ứng đầy đủ các tiêu chuẩn kỹ thuật về cấp bền, độ bền kéo và giới hạn
+      chảy.
 specificationsLeft:
-  - title: "Cấp bền"
-    subTitle: "M6 - phù hợp cho các ứng dụng không yêu cầu chịu lực cao"
-  - title: "Chất liệu"
-    subTitle: "Inox 201, 304, 316"
-  - title: "Độ bền đứt kéo"
-    subTitle: "400 MPa (tối thiểu)"
-  - title: "Giới hạn chảy"
-    subTitle: "240 MPa (tối thiểu)"
+  - title: Cấp bền
+    subTitle: M6 - phù hợp cho các ứng dụng không yêu cầu chịu lực cao
+  - title: Chất liệu
+    subTitle: 'Inox 201, 304, 316'
+  - title: Độ bền đứt kéo
+    subTitle: 400 MPa (tối thiểu)
+  - title: Giới hạn chảy
+    subTitle: 240 MPa (tối thiểu)
 tableData:
-  - feature: ["Thông số kỹ thuật", "Giá trị"]
+  - feature:
+      - Thông số kỹ thuật
+      - Giá trị
     description:
-      - ["Cấp bền", "M6"]
-      - ["Chất liệu", "Inox 201 / 304 / 316"]
-      - ["Độ bền đứt kéo (min)", "400 MPa"]
-      - ["Giới hạn chảy (min)", "240 MPa"]
-      - ["Ứng dụng", "Liên kết trong tủ rack"]
+      - - Cấp bền
+        - M6
+      - - Chất liệu
+        - Inox 201 / 304 / 316
+      - - Độ bền đứt kéo (min)
+        - 400 MPa
+      - - Giới hạn chảy (min)
+        - 240 MPa
+      - - Ứng dụng
+        - Liên kết trong tủ rack
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials: []
+tagSizes:
+  - M6
+  - M4
+  - M5
+  - M8
+  - M10
 ---
 
 ## ĐAI ỐC CÀI TỦ RACK

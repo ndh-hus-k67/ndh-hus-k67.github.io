@@ -1,66 +1,85 @@
 ---
-title: "ĐAI ỐC KHÓA NFE25-411"
-description: "Đai ốc khóa NF E25-411 tự khóa ren khi siết vào bu lông, có thiết kế rãnh (đơn/kép) giúp tăng khả năng hãm chống tự xoay trong quá trình làm việc."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC KHÓA NFE25-411
+description: >-
+  Đai ốc khóa NF E25-411 tự khóa ren khi siết vào bu lông, có thiết kế rãnh
+  (đơn/kép) giúp tăng khả năng hãm chống tự xoay trong quá trình làm việc.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 11
-  content: |
-    Đai ốc khóa NF E25-411 là loại đai ốc sản xuất theo tiêu chuẩn NF E25-411, có tác dụng tự khóa ren khi siết chặt vào bu lông. Ngoài ra, đai ốc này còn có khả năng hãm chống hiện tượng tự xoay của đai ốc trong quá trình làm việc.
+  content: >
+    Đai ốc khóa NF E25-411 là loại đai ốc sản xuất theo tiêu chuẩn NF E25-411,
+    có tác dụng tự khóa ren khi siết chặt vào bu lông. Ngoài ra, đai ốc này còn
+    có khả năng hãm chống hiện tượng tự xoay của đai ốc trong quá trình làm
+    việc.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-3.avif"
-  imgMain: "../../../../../images/product-image-main-3.avif"
-  imgAlt: "Đai ốc khóa NF E25-411"
+  imgCard: ../../../../../images/product-image-3.avif
+  imgMain: ../../../../../images/product-image-main-3.avif
+  imgAlt: Đai ốc khóa NF E25-411
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Thi công"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Thi công
 longDescription:
-  title: "Đai Ốc Khóa NF E25-411 – Tự Khóa Ren, Hãm Chống Tự Xoay"
-  subTitle: |
-    NF E25-411 thuộc nhóm đai ốc hãm/đai ốc khóa với ưu điểm tự khóa ren khi siết. Một số biến thể có rãnh đơn hoặc rãnh kép ở phần trên giúp tăng khả năng kẹp ren ở sườn bu lông, phù hợp các mối ghép dễ rung động.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Khóa NF E25-411 – Tự Khóa Ren, Hãm Chống Tự Xoay'
+  subTitle: >
+    NF E25-411 thuộc nhóm đai ốc hãm/đai ốc khóa với ưu điểm tự khóa ren khi
+    siết. Một số biến thể có rãnh đơn hoặc rãnh kép ở phần trên giúp tăng khả
+    năng kẹp ren ở sườn bu lông, phù hợp các mối ghép dễ rung động.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Tự khóa ren khi siết"
-    subTitle: "Giữ liên kết ổn định, hạn chế tự xoay trong quá trình làm việc." 
-  - title: "Thiết kế rãnh (đơn/kép)"
-    subTitle: "Phần trên phay rãnh giúp tăng khả năng hãm/kẹp ren." 
-  - title: "Đa dạng vật liệu"
-    subTitle: "Có thép mạ và inox 304/316 tùy yêu cầu chống ăn mòn." 
-
+  - title: Tự khóa ren khi siết
+    subTitle: 'Giữ liên kết ổn định, hạn chế tự xoay trong quá trình làm việc.'
+  - title: Thiết kế rãnh (đơn/kép)
+    subTitle: Phần trên phay rãnh giúp tăng khả năng hãm/kẹp ren.
+  - title: Đa dạng vật liệu
+    subTitle: Có thép mạ và inox 304/316 tùy yêu cầu chống ăn mòn.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc khóa NF E25-411 (đai ốc 2 rãnh kép/ê-cu bậc/đai ốc xẻ rãnh)"
-  - title: "Tiêu chuẩn"
-    subTitle: "NF E25-411"
-  - title: "Phiên bản"
-    subTitle: "Rãnh đôi (rãnh kép) / Rãnh đơn"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Thép mạ, inox SUS304, inox SUS316"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc khóa NF E25-411 (đai ốc 2 rãnh kép/ê-cu bậc/đai ốc xẻ rãnh)
+  - title: Tiêu chuẩn
+    subTitle: NF E25-411
+  - title: Phiên bản
+    subTitle: Rãnh đôi (rãnh kép) / Rãnh đơn
+  - title: Vật liệu (tham khảo)
+    subTitle: 'Thép mạ, inox SUS304, inox SUS316'
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc khóa NF E25-411"]
-      - ["Cơ chế khóa", "Tự khóa ren, hãm chống tự xoay"]
-      - ["Đặc điểm", "Phần trên có rãnh (đơn/kép) giúp tăng khả năng kẹp ren"]
-      - ["Vật liệu", "Thép mạ / Inox 304 / Inox 316"]
-      - ["Ghi chú", "Bảng thông số có thể thay đổi theo nhà sản xuất"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc khóa NF E25-411
+      - - Cơ chế khóa
+        - 'Tự khóa ren, hãm chống tự xoay'
+      - - Đặc điểm
+        - Phần trên có rãnh (đơn/kép) giúp tăng khả năng kẹp ren
+      - - Vật liệu
+        - Thép mạ / Inox 304 / Inox 316
+      - - Ghi chú
+        - Bảng thông số có thể thay đổi theo nhà sản xuất
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Thép mạ
+  - inox SUS304
+  - inox SUS316
+tagSizes: []
 ---
 
 ## ĐAI ỐC KHÓA NFE25-411

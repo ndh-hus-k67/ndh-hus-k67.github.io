@@ -1,65 +1,87 @@
 ---
-title: "ỐNG NỐI TY REN DÀI TRÒN INOX"
-description: "Ống nối ty ren dài tròn inox (ống nối ren/đai ốc nối ren inox) dạng tròn thân dài, ren trong hệ mét, dùng để nối và tăng chiều dài ty ren theo nhu cầu thi công."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ỐNG NỐI TY REN DÀI TRÒN INOX
+description: >-
+  Ống nối ty ren dài tròn inox (ống nối ren/đai ốc nối ren inox) dạng tròn thân
+  dài, ren trong hệ mét, dùng để nối và tăng chiều dài ty ren theo nhu cầu thi
+  công.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 18
-  content: |
-    Ống nối ty ren dài tròn inox (còn gọi: ống nối ren, ống nối ty ren, đai ốc nối ren inox, ecu nối ren inox, ống nối thanh ren inox...) được sử dụng để tăng chiều dài ty ren inox theo yêu cầu thi công. Sản phẩm dạng tròn thân dài, ren trong hệ mét, giúp nối các đoạn ty ren/bu lông lại với nhau.
+  content: >
+    Ống nối ty ren dài tròn inox (còn gọi: ống nối ren, ống nối ty ren, đai ốc
+    nối ren inox, ecu nối ren inox, ống nối thanh ren inox...) được sử dụng để
+    tăng chiều dài ty ren inox theo yêu cầu thi công. Sản phẩm dạng tròn thân
+    dài, ren trong hệ mét, giúp nối các đoạn ty ren/bu lông lại với nhau.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-2.avif"
-  imgMain: "../../../../../images/product-image-main-2.avif"
-  imgAlt: "Ống nối ty ren dài tròn inox"
+  imgCard: ../../../../../images/product-image-2.avif
+  imgMain: ../../../../../images/product-image-main-2.avif
+  imgAlt: Ống nối ty ren dài tròn inox
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Ống Nối Ty Ren Dài Tròn Inox – Nối Và Tăng Chiều Dài Ty Ren"
-  subTitle: |
-    Thiết kế thân tròn dài với ren trong giúp nối nhanh các đoạn ty ren/bu lông, thuận tiện khi cần kéo dài liên kết theo thực tế thi công. Có thể lựa chọn inox 304/316/316L để tăng khả năng chống ăn mòn trong môi trường khắc nghiệt.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: Ống Nối Ty Ren Dài Tròn Inox – Nối Và Tăng Chiều Dài Ty Ren
+  subTitle: >
+    Thiết kế thân tròn dài với ren trong giúp nối nhanh các đoạn ty ren/bu lông,
+    thuận tiện khi cần kéo dài liên kết theo thực tế thi công. Có thể lựa chọn
+    inox 304/316/316L để tăng khả năng chống ăn mòn trong môi trường khắc
+    nghiệt.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Nối và tăng chiều dài ty ren"
-    subTitle: "Giải pháp đơn giản để nối các đoạn ty ren/bu lông." 
-  - title: "Dạng tròn thân dài"
-    subTitle: "Gọn, dễ lắp trong không gian hẹp hoặc theo thiết kế." 
-  - title: "Đa dạng mác inox"
-    subTitle: "Inox 201/304/316/316L tuỳ yêu cầu chịu lực và chống ăn mòn." 
-
+  - title: Nối và tăng chiều dài ty ren
+    subTitle: Giải pháp đơn giản để nối các đoạn ty ren/bu lông.
+  - title: Dạng tròn thân dài
+    subTitle: 'Gọn, dễ lắp trong không gian hẹp hoặc theo thiết kế.'
+  - title: Đa dạng mác inox
+    subTitle: Inox 201/304/316/316L tuỳ yêu cầu chịu lực và chống ăn mòn.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Ống nối ty ren dài tròn inox (ống nối ren/đai ốc nối ren inox)"
-  - title: "Dạng"
-    subTitle: "Tròn thân dài, ren trong hệ mét"
-  - title: "Ứng dụng"
-    subTitle: "Nối, tăng chiều dài ty ren inox theo yêu cầu thi công"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox SUS201, SUS304, SUS316, SUS316L (có thể có thép)"
-
+  - title: Tên sản phẩm
+    subTitle: Ống nối ty ren dài tròn inox (ống nối ren/đai ốc nối ren inox)
+  - title: Dạng
+    subTitle: 'Tròn thân dài, ren trong hệ mét'
+  - title: Ứng dụng
+    subTitle: 'Nối, tăng chiều dài ty ren inox theo yêu cầu thi công'
+  - title: Vật liệu (tham khảo)
+    subTitle: 'Inox SUS201, SUS304, SUS316, SUS316L (có thể có thép)'
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Ống nối ty ren dài tròn inox"]
-      - ["Dạng", "Ống tròn thân dài + lỗ ren trong hệ mét"]
-      - ["Công dụng", "Nối ty ren/bu lông, tăng chiều dài liên kết"]
-      - ["Vật liệu", "Inox 201/304/316/316L"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Ống nối ty ren dài tròn inox
+      - - Dạng
+        - Ống tròn thân dài + lỗ ren trong hệ mét
+      - - Công dụng
+        - 'Nối ty ren/bu lông, tăng chiều dài liên kết'
+      - - Vật liệu
+        - Inox 201/304/316/316L
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox SUS201
+  - SUS304
+  - SUS316
+  - SUS316L (có thể có thép)
+  - Inox
+tagSizes: []
 ---
 
 ## ỐNG NỐI TY REN DÀI TRÒN INOX

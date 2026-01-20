@@ -9,6 +9,18 @@ const productsCollection = defineCollection({
     schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
+    // Optional facets used for filtering/searching in listing pages.
+    // If omitted, pages may infer values from specifications/content.
+    material: z.string().optional(),
+    materials: z.array(z.string()).optional(),
+    size: z.string().optional(),
+    sizes: z.array(z.string()).optional(),
+    // Explicit tag buckets used by filters:
+    // - tagMaterials: only material values
+    // - tagSizes: only size values
+    tagMaterials: z.array(z.string()).optional(),
+    tagSizes: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
     category: z.enum(['bu-long', 'oc-vit', 'san-pham-khac']),
     subcategory: z.string(),
     main: z.object({

@@ -1,67 +1,93 @@
 ---
-title: "ĐAI ỐC HÀN 4 CHÂN DIN 928"
-description: "Đai ốc hàn 4 chân DIN 928 dạng vuông, có 4 chân hàn giúp cố định sau khi siết, hạn chế rung động làm lỏng liên kết; dùng kèm bu lông để kẹp chặt chi tiết."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC HÀN 4 CHÂN DIN 928
+description: >-
+  Đai ốc hàn 4 chân DIN 928 dạng vuông, có 4 chân hàn giúp cố định sau khi siết,
+  hạn chế rung động làm lỏng liên kết; dùng kèm bu lông để kẹp chặt chi tiết.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 9
-  content: |
-    Đai ốc hàn 4 chân DIN 928 là loại đai ốc hàn dạng vuông, có lỗ ren trong và 4 chân hàn ở các góc. Sau khi siết đủ lực, 4 chân được hàn cố định để chống rung động làm lỏng liên kết. Sản phẩm được dùng nhiều trong công nghiệp hoá chất, ô tô, đóng tàu, dầu khí, cầu đường và các máy móc thiết bị công nghiệp.
+  content: >
+    Đai ốc hàn 4 chân DIN 928 là loại đai ốc hàn dạng vuông, có lỗ ren trong và
+    4 chân hàn ở các góc. Sau khi siết đủ lực, 4 chân được hàn cố định để chống
+    rung động làm lỏng liên kết. Sản phẩm được dùng nhiều trong công nghiệp hoá
+    chất, ô tô, đóng tàu, dầu khí, cầu đường và các máy móc thiết bị công
+    nghiệp.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-1.avif"
-  imgMain: "../../../../../images/product-image-main-1.avif"
-  imgAlt: "Đai ốc hàn 4 chân DIN 928"
+  imgCard: ../../../../../images/product-image-1.avif
+  imgMain: ../../../../../images/product-image-main-1.avif
+  imgAlt: Đai ốc hàn 4 chân DIN 928
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Vật liệu"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Vật liệu
 longDescription:
-  title: "Đai Ốc Hàn 4 Chân DIN 928 – Cố Định Bằng Hàn, Chống Rung"
-  subTitle: |
-    DIN 928 là đai ốc hàn hình vuông, thiết kế 4 chân ở 4 góc để hàn cố định lên chi tiết sau khi lắp. Khi đã hàn, đai ốc tạo điểm ren ổn định cho bu lông, giúp tăng độ bền liên kết và giảm nguy cơ tự nới lỏng do rung động.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Hàn 4 Chân DIN 928 – Cố Định Bằng Hàn, Chống Rung'
+  subTitle: >
+    DIN 928 là đai ốc hàn hình vuông, thiết kế 4 chân ở 4 góc để hàn cố định lên
+    chi tiết sau khi lắp. Khi đã hàn, đai ốc tạo điểm ren ổn định cho bu lông,
+    giúp tăng độ bền liên kết và giảm nguy cơ tự nới lỏng do rung động.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Chống rung hiệu quả"
-    subTitle: "4 chân hàn giúp cố định, hạn chế tự nới lỏng trong vận hành." 
-  - title: "Tạo điểm ren chắc chắn"
-    subTitle: "Phù hợp cho kết cấu/chi tiết cần liên kết ren ổn định." 
-  - title: "Tuỳ chọn vật liệu theo môi trường"
-    subTitle: "Có thể dùng inox 201/304/316/316L hoặc thép, tuỳ yêu cầu chống ăn mòn/chi phí." 
-
+  - title: Chống rung hiệu quả
+    subTitle: '4 chân hàn giúp cố định, hạn chế tự nới lỏng trong vận hành.'
+  - title: Tạo điểm ren chắc chắn
+    subTitle: Phù hợp cho kết cấu/chi tiết cần liên kết ren ổn định.
+  - title: Tuỳ chọn vật liệu theo môi trường
+    subTitle: >-
+      Có thể dùng inox 201/304/316/316L hoặc thép, tuỳ yêu cầu chống ăn mòn/chi
+      phí.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc hàn 4 chân DIN 928"
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 928"
-  - title: "Kích thước ren (tham khảo)"
-    subTitle: "M4–M16 (tùy loại)"
-  - title: "Vật liệu (tham khảo)"
-    subTitle: "Inox 201/304/316/316L hoặc thép"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc hàn 4 chân DIN 928
+  - title: Tiêu chuẩn
+    subTitle: DIN 928
+  - title: Kích thước ren (tham khảo)
+    subTitle: M4–M16 (tùy loại)
+  - title: Vật liệu (tham khảo)
+    subTitle: Inox 201/304/316/316L hoặc thép
 tableData:
-  - feature: ["Thông tin", "Chi tiết"]
+  - feature:
+      - Thông tin
+      - Chi tiết
     description:
-      - ["Tên gọi", "Đai ốc hàn 4 chân DIN 928"]
-      - ["Dạng", "Vuông + 4 chân (tai) hàn"]
-      - ["Công dụng", "Cố định bằng hàn, chống rung làm lỏng liên kết"]
-      - ["Kích thước ren", "M4–M16 (phổ biến, tùy loại)"]
-      - ["Tiêu chuẩn tham khảo", "DIN 928, JIS, ASTM, ISO, KS, GB, TCVN"]
-      - ["Cấp bền (tham khảo)", "4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tên gọi
+        - Đai ốc hàn 4 chân DIN 928
+      - - Dạng
+        - Vuông + 4 chân (tai) hàn
+      - - Công dụng
+        - 'Cố định bằng hàn, chống rung làm lỏng liên kết'
+      - - Kích thước ren
+        - 'M4–M16 (phổ biến, tùy loại)'
+      - - Tiêu chuẩn tham khảo
+        - 'DIN 928, JIS, ASTM, ISO, KS, GB, TCVN'
+      - - Cấp bền (tham khảo)
+        - '4, 5, 6, 8, 10, 12 (theo ISO 898-2, tùy vật liệu)'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Inox 201
+  - Inox 304
+  - Inox 316
+  - 316L hoặc thép
+tagSizes:
+  - M4
+  - M16
 ---
 
 ## ĐAI ỐC HÀN 4 CHÂN DIN 928

@@ -1,65 +1,99 @@
 ---
-title: "ĐAI ỐC VUÔNG DIN 557"
-description: "Đai ốc vuông DIN 557 (square nut) có bề mặt tiếp xúc lớn, tăng khả năng chống nới lỏng và phân phối lực tốt hơn trong nhiều ứng dụng lắp ráp."
-category: "san-pham-khac"
-subcategory: "e-cu-dai-oc"
+title: ĐAI ỐC VUÔNG DIN 557
+description: >-
+  Đai ốc vuông DIN 557 (square nut) có bề mặt tiếp xúc lớn, tăng khả năng chống
+  nới lỏng và phân phối lực tốt hơn trong nhiều ứng dụng lắp ráp.
+category: san-pham-khac
+subcategory: e-cu-dai-oc
 main:
   id: 3
-  content: |
-    Đai ốc vuông DIN 557 (square nut) hay còn gọi là ecu vuông/tán vuông/đai ốc 4 cạnh. So với đai ốc lục giác tiêu chuẩn, đai ốc vuông có bề mặt tiếp xúc lớn hơn, giúp chống nới lỏng tốt hơn và phân phối lực đều hơn.
+  content: >
+    Đai ốc vuông DIN 557 (square nut) hay còn gọi là ecu vuông/tán vuông/đai ốc
+    4 cạnh. So với đai ốc lục giác tiêu chuẩn, đai ốc vuông có bề mặt tiếp xúc
+    lớn hơn, giúp chống nới lỏng tốt hơn và phân phối lực đều hơn.
+
 
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
+
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "../../../../../images/product-image-3.avif"
-  imgMain: "../../../../../images/product-image-main-3.avif"
-  imgAlt: "Đai ốc vuông DIN 557"
+  imgCard: ../../../../../images/product-image-3.avif
+  imgMain: ../../../../../images/product-image-main-3.avif
+  imgAlt: Đai ốc vuông DIN 557
 tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Tiêu chuẩn"
+  - id: tabs-with-card-item-1
+    dataTab: '#tabs-with-card-1'
+    title: Mô tả
+  - id: tabs-with-card-item-2
+    dataTab: '#tabs-with-card-2'
+    title: Thông số kỹ thuật
+  - id: tabs-with-card-item-3
+    dataTab: '#tabs-with-card-3'
+    title: Tiêu chuẩn
 longDescription:
-  title: "Đai Ốc Vuông DIN 557 – Bề Mặt Tiếp Xúc Lớn, Chống Nới Lỏng Tốt"
-  subTitle: |
-    Đai ốc vuông DIN 557 được sử dụng khi cần tăng diện tích tỳ/tiếp xúc với bề mặt kẹp chặt, hoặc khi cần hạn chế khả năng xoay của đai ốc trong quá trình siết. Sản phẩm phù hợp cho nhiều hạng mục lắp ghép cơ khí, kết cấu, đồ gỗ/thiết bị và các vị trí có tải lệch.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
+  title: 'Đai Ốc Vuông DIN 557 – Bề Mặt Tiếp Xúc Lớn, Chống Nới Lỏng Tốt'
+  subTitle: >
+    Đai ốc vuông DIN 557 được sử dụng khi cần tăng diện tích tỳ/tiếp xúc với bề
+    mặt kẹp chặt, hoặc khi cần hạn chế khả năng xoay của đai ốc trong quá trình
+    siết. Sản phẩm phù hợp cho nhiều hạng mục lắp ghép cơ khí, kết cấu, đồ
+    gỗ/thiết bị và các vị trí có tải lệch.
+  btnTitle: Liên hệ bộ phận kinh doanh để được tư vấn
+  btnURL: /contact
 descriptionList:
-  - title: "Bề mặt tiếp xúc lớn"
-    subTitle: "Tăng khả năng chống nới lỏng so với đai ốc lục giác trong nhiều trường hợp."
-  - title: "Phân phối lực tốt"
-    subTitle: "Giúp phân phối áp lực đều hơn trên bề mặt, phù hợp các ứng dụng có tải lệch."
-  - title: "Vật liệu linh hoạt"
-    subTitle: "Có thể sản xuất từ thép hoặc inox (201/304/316/316L) theo môi trường làm việc."
-
+  - title: Bề mặt tiếp xúc lớn
+    subTitle: >-
+      Tăng khả năng chống nới lỏng so với đai ốc lục giác trong nhiều trường
+      hợp.
+  - title: Phân phối lực tốt
+    subTitle: >-
+      Giúp phân phối áp lực đều hơn trên bề mặt, phù hợp các ứng dụng có tải
+      lệch.
+  - title: Vật liệu linh hoạt
+    subTitle: >-
+      Có thể sản xuất từ thép hoặc inox (201/304/316/316L) theo môi trường làm
+      việc.
 specificationsLeft:
-  - title: "Tên sản phẩm"
-    subTitle: "Đai ốc vuông DIN 557 (Square Nut)"
-  - title: "Tên gọi khác"
-    subTitle: "Ecu vuông, tán vuông, đai ốc 4 cạnh"
-  - title: "Vật liệu"
-    subTitle: "Thép; Inox 201/304/316/316L (tùy nhu cầu)"
-  - title: "Ứng dụng"
-    subTitle: "Lắp ghép cơ khí/kết cấu; các vị trí cần bề mặt tỳ lớn hoặc hạn chế xoay khi siết"
-
+  - title: Tên sản phẩm
+    subTitle: Đai ốc vuông DIN 557 (Square Nut)
+  - title: Tên gọi khác
+    subTitle: 'Ecu vuông, tán vuông, đai ốc 4 cạnh'
+  - title: Vật liệu
+    subTitle: Thép; Inox 201/304/316/316L (tùy nhu cầu)
+  - title: Ứng dụng
+    subTitle: >-
+      Lắp ghép cơ khí/kết cấu; các vị trí cần bề mặt tỳ lớn hoặc hạn chế xoay
+      khi siết
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature:
+      - Thông số
+      - Giá trị
     description:
-      - ["Tiêu chuẩn", "DIN 557"]
-      - ["Hình dạng", "Đai ốc 4 cạnh (vuông)"]
-      - ["Kích thước", "M4, M5, M6, M8, M10, M12... (theo yêu cầu)"]
-      - ["Xử lý bề mặt (tùy chọn)", "Xi đen, mạ kẽm nhúng nóng, mạ kẽm điện phân, mạ dacromet..."]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
-
+      - - Tiêu chuẩn
+        - DIN 557
+      - - Hình dạng
+        - Đai ốc 4 cạnh (vuông)
+      - - Kích thước
+        - 'M4, M5, M6, M8, M10, M12... (theo yêu cầu)'
+      - - Xử lý bề mặt (tùy chọn)
+        - 'Xi đen, mạ kẽm nhúng nóng, mạ kẽm điện phân, mạ dacromet...'
+      - - Giá
+        - Liên hệ để có giá tốt nhất
 blueprints:
-  first: "../../../../../images/blueprint-1.avif"
-  second: "../../../../../images/blueprint-2.avif"
+  first: ../../../../../images/blueprint-1.avif
+  second: ../../../../../images/blueprint-2.avif
+tagMaterials:
+  - Thép
+  - Inox 201
+  - Inox 304
+  - Inox 316
+  - 316L (tùy nhu cầu)
+tagSizes:
+  - M4
+  - M5
+  - M6
+  - M8
+  - M10
+  - M12
 ---
 
 ## ĐAI ỐC VUÔNG DIN 557

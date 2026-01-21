@@ -63,8 +63,8 @@ main:
     Bu lông hàn inox (còn gọi là vít hàn inox, bulong hàn chập, đinh hàn có ren) là loại bu lông được hàn trực tiếp lên bề mặt tấm kim loại phẳng bằng máy hàn chuyên dụng.
 
     Sản phẩm có thể có ren hoặc không có ren; phần chân thường có chốt/đinh định vị giúp cố định vị trí hàn, khi hàn nhiệt nóng chảy giúp liên kết bám chắc vào tấm kim loại.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-main-1.avif"
+  imgCard: "@/images/products/bu-long/han/bu-long-han.avif"
+  imgMain: "@/images/products/bu-long/han/bu-long-han.avif"
   imgAlt: "Bu lông hàn inox"
 
 tabs:

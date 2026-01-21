@@ -63,8 +63,8 @@ main:
     Bu lông inox đầu tròn cổ vuông DIN 603 (thường gọi là bu lông chống xoay) là loại bu lông có đầu tròn dạng chỏm cầu và phần cổ vuông ngay dưới đầu.
 
     Khi lắp vào lỗ khoan phù hợp, phần cổ vuông sẽ “ăn” vào vật liệu nền để hạn chế bu lông bị xoay theo khi siết đai ốc, giúp thi công thuận tiện mà không cần giữ đầu bu lông bằng cờ lê.
-  imgCard: "@/images/product-image-3.avif"
-  imgMain: "@/images/product-image-main-3.avif"
+  imgCard: "@/images/products/bu-long/dau-tron/bu-long-dau-tron-co-vuong.avif"
+  imgMain: "@/images/products/bu-long/dau-tron/bu-long-dau-tron-co-vuong.avif"
   imgAlt: "Bu lông inox đầu tròn cổ vuông DIN 603"
 
 tabs:

@@ -64,8 +64,8 @@ main:
     Nhờ lựa chọn vật liệu inox (thường là SUS304/SUS316/SUS316L), sản phẩm phù hợp môi trường ẩm ướt, gần biển hoặc môi trường có hóa chất ăn mòn.
 
     Ứng dụng phổ biến gồm neo chân cột, chân đế máy, kết cấu thép, giá đỡ, lan can… tại các hạng mục cần độ bám và độ tin cậy cao.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-main-1.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-hoa-chat.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-hoa-chat.avif"
   imgAlt: "Bu lông hóa chất inox (neo cấy hóa chất)"
 
 tabs:

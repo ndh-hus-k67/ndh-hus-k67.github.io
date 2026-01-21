@@ -64,8 +64,8 @@ main:
     Sản phẩm phù hợp các ứng dụng cần neo móc, treo, hoặc làm điểm liên kết để di chuyển/giữ các chi tiết, thiết bị.
 
     Bu lông mắt DIN 444-B thường được sản xuất từ inox (201/304/316/316L) để tăng khả năng chống ăn mòn; ngoài ra cũng có thể dùng các vật liệu khác (tùy yêu cầu tải trọng và môi trường làm việc).
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-mat-inox.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-mat-inox.avif"
   imgAlt: "Bu lông mắt inox DIN 444-B (Eyebolt)"
 
 tabs:

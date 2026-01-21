@@ -35,7 +35,7 @@ const { productType } = Astro.params;
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
-  "@/images/bu_long_chu_T.avif"
+  "@/images/product-default.avif"
 );
 
 const blueprintFirstResolved = product.data.blueprints?.first

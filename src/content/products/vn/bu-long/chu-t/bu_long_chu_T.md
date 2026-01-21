@@ -107,7 +107,7 @@ tableData:
       - ["Ứng dụng", "Nhôm định hình 30, 40"]
       - ["Khả năng chống ăn mòn", "Cao (Inox), Trung bình (Thép mạ)"]
       - ["Đặt hàng", "Theo yêu cầu/bản vẽ"]
-blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+# blueprints:
+#   first: "@/images/blueprint-1.avif"
+#   second: "@/images/blueprint-2.avif"
 ---

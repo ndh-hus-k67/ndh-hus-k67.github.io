@@ -18,9 +18,11 @@ import pricing from "@data/en/pricing.json";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
-import productImage1 from "@images/product-image-main-1.avif";
-import productImage2 from "@images/product-image-main-2.avif";
-import productImage3 from "@images/product-image-main-3.avif";
+import bulongImage from "@images/bu-long-category.avif";
+import ocvitImage from "@images/oc-vit-category.avif";
+import tantugiuImage from "@images/tan-tu-giu-category.avif";
+import tantrutugiuImage from "@images/tan-tru-tu-giu-category.avif";
+import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -36,61 +38,106 @@ const productCategories = [
   {
     slug: "bu-long",
     name: "Bolts",
-    description: "Explore our collection of high-quality bolts, including stainless steel bolts, hex bolts and many other types. Products are manufactured to international standards, ensuring the best durability and quality.",
+    description: "High-quality bolts including stainless, hex, and specialty bolts manufactured to international standards for durability and precision.",
     icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-    image: productImage1,
-    imageAlt: "High-quality bolt collection",
-    count: allProducts.filter(p => p.data.category === "bu-long").length,
+    image: bulongImage,
+    imageAlt: "Collection of high-quality bolts",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "bu-long";
+    }).length,
     features: [
-      "Stainless steel 304, 316 rust-resistant",
-      "Various sizes from M6 to M42",
-      "Strength grades 4.8, 8.8, 10.9, 12.9",
-      "Wide applications in construction & industry"
+      "Stainless steel 304, 316 corrosion resistant",
+      "Sizes M6 - M42",
+      "Strength grades 8.8, 10.9, 12.9"
     ],
     highlights: [
-      { label: "Standards", value: "DIN, ASTM, JIS" },
-      { label: "Origin", value: "Vietnam, Japan" },
-      { label: "Warranty", value: "12 months" }
+      { label: "Standards", value: "DIN, ASTM" },
+      { label: "Delivery", value: "24h" }
     ]
   },
   {
     slug: "oc-vit",
     name: "Screws",
-    description: "Discover our diverse range of screws from self-drilling screws to stainless steel screws, designed to meet all fastening needs. Available in various sizes and strength grades suitable for all projects.",
+    description: "Self-drilling, self-tapping and stainless screws with various head types suitable for metal, wood and plastic applications.",
     icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
-    image: productImage2,
-    imageAlt: "Diverse screw collection",
-    count: allProducts.filter(p => p.data.category === "oc-vit").length,
+    image: ocvitImage,
+    imageAlt: "Various screw types",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "oc-vit";
+    }).length,
     features: [
-      "Self-drilling, self-tapping convenience",
-      "Pan head, flat head, hex head",
-      "Zinc plating for corrosion resistance",
-      "Suitable for metal, wood, plastic"
+      "Self-drilling & self-tapping",
+      "Zinc plated for corrosion resistance",
+      "Multiple head styles"
     ],
     highlights: [
-      { label: "Popular Types", value: "Pan Head, Flat Head" },
       { label: "Size Range", value: "M2.5 - M12" },
-      { label: "Delivery", value: "24h in city" }
+      { label: "Delivery", value: "24h" }
     ]
   },
   {
-    slug: "san-pham-khac",
-    name: "Other Products",
-    description: "Explore other accessory products and additional tools to complete your project. Including nuts, washers and necessary accessories for installation.",
+    slug: "tan-tu-giu",
+    name: "Rivets (Blind)",
+    description: "Blind rivets for quick installation without threading. Durable for harsh environments and industrial applications.",
     icon: "M20 7h-7M20 12h-7M20 17h-7M3 7h4M3 12h4M3 17h4",
-    image: productImage3,
-    imageAlt: "Accessory products and tools",
-    count: allProducts.filter(p => p.data.category === "san-pham-khac").length,
+    image: tantugiuImage,
+    imageAlt: "High-quality blind rivets",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tan-tu-giu";
+    }).length,
     features: [
-      "Hex nuts, round nuts",
-      "Spring washers, flat washers",
-      "Dowel pins, cotter pins",
-      "Specialized assembly accessories"
+      "Round and hex head options",
+      "Stainless steel 304, 316",
+      "Quick installation without threads"
     ],
     highlights: [
-      { label: "Quality", value: "100% inspected" },
-      { label: "Variety", value: "500+ products" },
-      { label: "Support", value: "Free 24/7" }
+      { label: "Sizes", value: "M3 - M12" },
+      { label: "Support", value: "24/7" }
+    ]
+  },
+  {
+    slug: "tan-tru-tu-giu",
+    name: "Structural Blind Rivets",
+    description: "Structural blind rivets for industrial and residential applications with anti-vibration properties and easy installation.",
+    icon: "M10 2v4M2 12h20M2 17h20M5 7v10",
+    image: tantrutugiuImage,
+    imageAlt: "Structural blind rivets",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tan-tru-tu-giu";
+    }).length,
+    features: [
+      "Quick installation without threads",
+      "Good anti-vibration performance",
+      "Available in stainless and steel"
+    ],
+    highlights: [
+      { label: "Sizes", value: "M3 - M16" },
+      { label: "Delivery", value: "24h" }
+    ]
+  },
+  {
+    slug: "tru-ren-tu-giu",
+    name: "Threaded Standoffs",
+    description: "Threaded standoffs with high strength for load-bearing connections and corrosion-resistant surface treatments.",
+    icon: "M12 2L2 7l10 5 10-5-10-5z",
+    image: trurentugiuImage,
+    imageAlt: "Threaded standoffs",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tru-ren-tu-giu";
+    }).length,
+    features: [
+      "Forged surface treatments",
+      "High strength",
+      "Suitable for load-bearing structures"
+    ],
+    highlights: [
+      { label: "Standards", value: "DIN" },
+      { label: "Support", value: "24/7" }
     ]
   }
 ];

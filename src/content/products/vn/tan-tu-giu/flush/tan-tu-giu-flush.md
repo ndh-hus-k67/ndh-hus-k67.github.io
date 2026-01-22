@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ flush (đầu chìm) là giải pháp liên kết cao cấp với thiết kế đầu chìm hoàn toàn vào bề mặt, tạo ra bề mặt phẳng mịn hoàn hảo. Sản phẩm được gia công từ Inox 303 và Inox 400 Series, đảm bảo độ bền cao và khả năng chống ăn mòn tuyệt vời, phù hợp cho các ứng dụng đòi hỏi tính thẩm mỹ cao trong điện tử, hàng không và y tế.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-2.avif"
+  imgCard: "@/images/products/tan-tu-giu/flush/tan-tu-giu-flush.avif"
+  imgMain: "@/images/products/tan-tu-giu/flush/tan-tu-giu-flush.avif"
   imgAlt: "Tán tự giữ flush"
 
 tabs:

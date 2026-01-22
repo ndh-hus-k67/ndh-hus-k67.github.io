@@ -47,8 +47,8 @@ main:
     Chất liệu: Inox 201, 304, 316, 316L, 410, Thép.
 
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
+  imgCard: "@/images/products/oc-vit/vit-tu-khoan/vit-tu-khoan-dau-tron.avif"
+  imgMain: "@/images/products/oc-vit/vit-tu-khoan/vit-tu-khoan-dau-tron.avif"
   imgAlt: "Vít tự khoan đầu tròn DIN 7504-N"
 tabs:
   - id: "tabs-with-card-item-1"

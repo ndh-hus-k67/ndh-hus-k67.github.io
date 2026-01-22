@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Trụ ren tự giữ Flush Head Studs là giải pháp liên kết chắc chắn với thiết kế đầu chìm, tạo bề mặt phẳng hoàn hảo sau khi lắp đặt. Sản phẩm được sản xuất từ nhôm, SUS304 và thép, phù hợp cho các ứng dụng cơ khí, tự động hóa, chế tạo máy và điện tử. Đa dạng kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt cụ thể.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tru-ren-tu-giu/tru-ren-tu-giu-flush-1.avif"
+  imgMain: "@/images/products/tru-ren-tu-giu/tru-ren-tu-giu-flush-1.avif"
   imgAlt: "Trụ ren tự giữ Flush Head Studs"
 
 tabs:

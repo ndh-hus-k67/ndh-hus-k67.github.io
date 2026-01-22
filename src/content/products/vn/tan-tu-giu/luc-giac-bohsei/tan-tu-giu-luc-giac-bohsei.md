@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ lục giác Bohsei Nut là dòng sản phẩm cao cấp với thiết kế đầu lục giác đặc biệt, mang lại khả năng chống xoay vượt trội. Hình dạng lục giác bên ngoài giúp tán ăn chặt vào vật liệu, ngăn chặn hiện tượng xoay khi siết chặt bu lông. Sản phẩm được sản xuất từ Inox 304, Inox 410 và Thép, đảm bảo độ bền cao và khả năng chống ăn mòn tốt, phù hợp cho nhiều ứng dụng công nghiệp.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei.avif"
+  imgMain: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei.avif"
   imgAlt: "Tán tự giữ lục giác Bohsei"
 
 tabs:

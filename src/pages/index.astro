@@ -93,6 +93,49 @@ const productCategories = [
       { label: "Tư vấn", value: "24/7" }
     ]
   }
+  ,
+  {
+    slug: "tan-tru-tu-giu",
+    name: "Tán Trù Tự Giữ",
+    description: "Tán trù tự giữ cho ứng dụng công nghiệp và dân dụng, lắp nhanh, chống rung.",
+    icon: "M10 2v4M2 12h20M2 17h20M5 7v10",
+    image: productImage1,
+    imageAlt: "Tán trù tự giữ chất lượng",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tan-tru-tu-giu";
+    }).length,
+    features: [
+      "Lắp nhanh không cần ren",
+      "Chống rung tốt",
+      "Vật liệu inox và thép"
+    ],
+    highlights: [
+      { label: "Kích thước", value: "M3 - M16" },
+      { label: "Giao hàng", value: "24h" }
+    ]
+  },
+  {
+    slug: "tru-ren-tu-giu",
+    name: "Trụ Rèn Tự Giữ",
+    description: "Trụ rèn tự giữ với độ bền cao, dùng cho kết cấu chịu tải, xử lý bề mặt chống ăn mòn.",
+    icon: "M12 2L2 7l10 5 10-5-10-5z",
+    image: productImage2,
+    imageAlt: "Trụ rèn tự giữ",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "tru-ren-tu-giu";
+    }).length,
+    features: [
+      "Rèn phủ bề mặt",
+      "Độ bền cao",
+      "Phù hợp kết cấu chịu tải"
+    ],
+    highlights: [
+      { label: "Tiêu chuẩn", value: "DIN" },
+      { label: "Tư vấn", value: "24/7" }
+    ]
+  }
 ];
 ---
 

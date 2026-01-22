@@ -63,8 +63,8 @@ main:
     Bu lông đầu cầu hoa thị có chốt (tên tiếng Anh: Hexalobular socket TORX+PIN Anti-theft) là loại vật tư liên kết đặc biệt, thường được gọi là vít chống trộm hay vít chốt an toàn. 
     
     Đặc điểm nổi bật là phần đầu mũ có dập hình hoa thị với một chốt trụ nhỏ ở giữa, ngăn cản việc sử dụng các tuốc nơ vít thông thường. Sản phẩm được sử dụng ở những vị trí cần sự an toàn cao, tránh tình trạng tháo lắp tùy tiện. Tuy nhiên, do quy trình gia công đầu mũ phức tạp nên giá thành thường cao hơn các loại vít thông dụng.
-  imgCard: "@/images/product-image-3.avif"
-  imgMain: "@/images/product-image-main-3.avif"
+  imgCard: "@/images/products/bu-long/dau-cau/bu-long-dau-cau-hoa-thi.avif"
+  imgMain: "@/images/products/bu-long/dau-cau/bu-long-dau-cau-hoa-thi.avif"
   imgAlt: "Bu lông đầu cầu hoa thị có chốt (Vít chống trộm)"
 
 tabs:

@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ floating (nổi) là giải pháp liên kết tiên tiến cho phép điều chỉnh vị trí linh hoạt trong quá trình lắp đặt. Thiết kế đặc biệt của sản phẩm cho phép bù trừ sai lệch nhỏ giữa các lỗ khoan, giúp quá trình lắp ráp dễ dàng hơn, đặc biệt trong các ứng dụng robot, tự động hóa và hàng không nơi yêu cầu độ chính xác cao nhưng cần tính linh hoạt trong lắp đặt.
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-4.avif"
+  imgCard: "@/images/products/tan-tu-giu/floating/tan-tu-giu-floating.avif"
+  imgMain: "@/images/products/tan-tu-giu/floating/tan-tu-giu-floating.avif"
   imgAlt: "Tán tự giữ floating"
 
 tabs:

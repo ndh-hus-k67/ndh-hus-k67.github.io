@@ -61,8 +61,8 @@ main:
   id: 1
   content: |
     Bu lông chữ T là loại sản phẩm thuộc danh mục phụ kiện nhôm định hình, thường được sử dụng nhiều trong sản xuất lắp ráp các sản phẩm tự động hóa công nghiệp, chế tạo máy. Với thiết kế hình dáng giống như chữ "T", sản phẩm mang đến sự ổn định cao và độ bền cao trong quá trình lắp đặt và tháo dỡ.
-  imgCard: "@/images/bu_long_chu_T.avif"
-  imgMain: "@/images/bu_long_chu_T.avif"
+  imgCard: "@/images/products/bu-long/chu-t/bu_long_chu_T.avif"
+  imgMain: "@/images/products/bu-long/chu-t/bu_long_chu_T.avif"
   imgAlt: "Bu lông chữ T inox"
 
 tabs:
@@ -107,7 +107,7 @@ tableData:
       - ["Ứng dụng", "Nhôm định hình 30, 40"]
       - ["Khả năng chống ăn mòn", "Cao (Inox), Trung bình (Thép mạ)"]
       - ["Đặt hàng", "Theo yêu cầu/bản vẽ"]
-blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+# blueprints:
+#   first: "@/images/blueprint-1.avif"
+#   second: "@/images/blueprint-2.avif"
 ---

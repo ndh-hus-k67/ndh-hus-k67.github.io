@@ -1,5 +1,5 @@
 ---
-title: "VÍT BẮN TÔN INOX"
+title: "VÍT BẮN TÔN "
 description: "Vít bắn tôn inox (vít tự khoan) dùng để lắp ghép tôn/xà gồ khi chưa có lỗ chờ, thi công nhanh và chắc chắn."
 slug: "vit-ban-ton-inox"
 updatedAt: 2026-01-19
@@ -46,8 +46,8 @@ main:
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-main-1.avif"
+  imgCard: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ton.avif"
+  imgMain: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ton.avif"
   imgAlt: "Vít bắn tôn inox"
 tabs:
   - id: "tabs-with-card-item-1"

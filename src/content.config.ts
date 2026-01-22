@@ -104,7 +104,7 @@ const productsCollection = defineCollection({
     blueprints: z.object({
       first: image().optional(),
       second: image().optional(),
-    }),
+    }).optional(),
   }),
 });
 
@@ -140,7 +140,6 @@ const insightsCollection = defineCollection({
 });
 
 export const collections = {
-  docs: defineCollection({ schema: docsSchema() }),
   'products': productsCollection,
   'blog': blogCollection,
   'insights': insightsCollection,

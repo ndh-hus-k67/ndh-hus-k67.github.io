@@ -63,8 +63,8 @@ main:
     Bu lông neo móng inox (bu lông móng inox/anchor bolt) là loại bu lông neo dùng để liên kết chân cột, chân đế máy hoặc kết cấu thép với nền bê tông.
 
     Sản phẩm thường gồm phần thân ren theo tiêu chuẩn ren hệ mét và phần đuôi được uốn/bẻ theo bản vẽ thiết kế (các dạng như I, L, J, U, V, LA, JA…). Với vật liệu inox, bu lông neo móng phù hợp các hạng mục có yêu cầu chống ăn mòn cao.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-neo.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-neo.avif"
   imgAlt: "Bu lông neo móng inox"
 
 tabs:

@@ -63,8 +63,8 @@ main:
     Bu lông inox liền long đen DIN 6921 là loại bu lông có đầu lục giác ngoài và phần bích/long đen được gắn liền ngay dưới đầu bu lông.
 
     Thiết kế bích liền giúp tăng diện tích tiếp xúc, phân bố lực tốt hơn và hỗ trợ chống lỏng trong một số ứng dụng. Thân bu lông thường được tiện ren theo hệ mét (phổ biến là ren suốt).
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
   imgAlt: "Bu lông inox liền long đen DIN 6921"
 
 tabs:

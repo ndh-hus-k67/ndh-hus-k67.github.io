@@ -82,8 +82,8 @@ main:
     Bộ cáp giữ Cable Tie Mounts là giải pháp chuyên nghiệp giúp cố định dây cáp gọn gàng, an toàn trong các hệ thống điện tử,
     tự động hóa và chế tạo máy. Sản phẩm được sản xuất từ SUS304 và Thép, đảm bảo độ bền cao, chống ăn mòn tốt, phù hợp với
     nhiều môi trường làm việc khác nhau. Đa dạng kích thước, dễ dàng lựa chọn cho từng nhu cầu quản lý dây cáp.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tu-giu/cable-tie-mount/tan-tu-giu-cable-tie-mounts.avif"
+  imgMain: "@/images/products/tan-tu-giu/cable-tie-mount/tan-tu-giu-cable-tie-mounts.avif"
   imgAlt: "Bộ cáp giữ Cable Tie Mounts"
 
 tabs:

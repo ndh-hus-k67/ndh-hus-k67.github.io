@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ tròn là giải pháp liên kết hiện đại, được thiết kế để tạo ren trên các tấm kim loại mỏng. Với đầu tròn phẳng, sản phẩm mang lại vẻ ngoài thẩm mỹ và khả năng chịu lực cao, phù hợp cho nhiều ứng dụng trong điện tử, cơ khí chính xác, tự động hóa công nghiệp và hàng không.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-1.avif"
+  imgMain: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-1.avif"
   imgAlt: "Tán tự giữ tròn"
 
 tabs:

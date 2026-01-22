@@ -16,24 +16,20 @@ const allProducts: CollectionEntry<"products">[] = (
     a.data.main.id - b.data.main.id
 );
 
-// Nhóm sản phẩm theo productType (cập nhật cho tán tự giữ)
-const productTypes = [
-  {
-    slug: "tieu-chuan",
-    name: "Tiêu chuẩn",
-    description: "Tán tự giữ tiêu chuẩn dùng trong các kết cấu cơ khí, xây dựng, lắp ráp."
-  },
-  {
-    slug: "chong-trom",
-    name: "Chống trộm",
-    description: "Tán tự giữ chống trộm với thiết kế đặc biệt, tăng độ an toàn cho thiết bị."
-  },
-  {
-    slug: "chuyen-dung",
-    name: "Chuyên dụng",
-    description: "Tán tự giữ chuyên dụng cho các ứng dụng đặc biệt trong công nghiệp, xây dựng."
+// Nhóm sản phẩm theo productType (động) — lấy từ frontmatter `productType` của các sản phẩm
+const typeMap = new Map<string, { slug: string; name: string; description?: string }>();
+allProducts.forEach((p) => {
+  const pt = p.data.productType;
+  const slug = pt?.slug || "other";
+  if (!typeMap.has(slug)) {
+    typeMap.set(slug, {
+      slug,
+      name: pt?.name || slug,
+    });
   }
-];
+});
+
+const productTypes = Array.from(typeMap.values());
 
 const productsByType = productTypes.map(type => {
   const typeProducts = allProducts.filter(p => p.data.productType?.slug === type.slug);
@@ -44,8 +40,8 @@ const productsByType = productTypes.map(type => {
   };
 }).filter(type => type.count > 0);
 
-const title = "Bu Lông";
-const description = "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác, bu lông chữ T và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp cơ khí.";
+const title = "Tán tự giữ";
+const description = "Khám phá bộ sưu tập tán tự giữ chất lượng cao của chúng tôi — đa dạng loại, vật liệu và kích thước, phù hợp cho công nghiệp và xây dựng.";
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---
@@ -90,7 +86,7 @@ const pageTitle = `${title} | ${SITE.title}`;
                 </p>
               </div>
               <a
-                href={`/bu-long/${slug}`}
+                href={`/tan-tu-giu/${slug}`}
                 class="text-sm font-medium text-orange-400 hover:underline dark:text-orange-400"
               >
                 Xem tất cả {count} →
@@ -102,7 +98,7 @@ const pageTitle = `${title} | ${SITE.title}`;
                 const productTypeSlug = product.data.productType?.slug || slug;
                 return (
                 <a
-                  href={`/bu-long/${productTypeSlug}/${productSlug}`}
+                  href={`/tan-tu-giu/${productTypeSlug}/${productSlug}`}
                   data-astro-prefetch
                   class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
                 >

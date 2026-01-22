@@ -64,8 +64,8 @@ main:
     Khi siết đai ốc, áo nở sẽ giãn ra và bám chặt vào vật liệu nền (thường là bê tông hoặc kết cấu thép), giúp tăng khả năng liên kết và chịu tải.
 
     Tùy môi trường sử dụng, có thể lựa chọn inox 201/304/316/316L hoặc thép để tối ưu chi phí và khả năng chống ăn mòn.
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-no.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-no.avif"
   imgAlt: "Bu lông nở inox (tắc kê inox)"
 
 tabs:

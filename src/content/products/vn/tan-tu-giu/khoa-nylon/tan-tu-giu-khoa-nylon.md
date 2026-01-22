@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ khóa nylon là giải pháp liên kết cao cấp với tính năng chống xoay đặc biệt nhờ vào vòng khóa nylon bên trong. Sản phẩm được thiết kế để chống rung động, chống lỏng trong quá trình sử dụng, đặc biệt phù hợp cho các ứng dụng có rung động cao như ô tô, xe máy, máy móc công nghiệp. Được sản xuất từ thép và inox 303 đảm bảo độ bền cao và khả năng chống ăn mòn tốt.
-  imgCard: "@/images/product-image-3.avif"
-  imgMain: "@/images/product-image-3.avif"
+  imgCard: "@/images/products/tan-tu-giu/khoa-nylon/tan-tu-giu-khoa-nylon.avif"
+  imgMain: "@/images/products/tan-tu-giu/khoa-nylon/tan-tu-giu-khoa-nylon.avif"
   imgAlt: "Tán tự giữ khóa nylon"
 
 tabs:

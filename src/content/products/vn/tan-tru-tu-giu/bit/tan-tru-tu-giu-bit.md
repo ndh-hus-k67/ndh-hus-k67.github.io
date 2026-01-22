@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán trụ tự giữ bit là giải pháp liên kết chắc chắn cho các vị trí bit, giúp tăng độ bền và ổn định cho kết cấu. Sản phẩm được sản xuất từ nhôm, SUS410, SUS303 và thép, phù hợp cho các ứng dụng cơ khí, tự động hóa, chế tạo máy và điện tử. Đa dạng kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt cụ thể.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tru-tu-giu/bit/tan-tru-tu-giu-bit.avif"
+  imgMain: "@/images/products/tan-tru-tu-giu/bit/tan-tru-tu-giu-bit.avif"
   imgAlt: "Tán trụ tự giữ bit"
 
 tabs:

@@ -55,8 +55,8 @@ main:
   id: 1
   content: |
     Tán tự giữ Right Angle (góc vuông) là giải pháp liên kết chuyên dụng cho các vị trí góc, giúp tối ưu hóa không gian lắp đặt và tăng độ chắc chắn cho kết cấu. Sản phẩm được sản xuất từ nhôm và thép, phù hợp cho các ứng dụng cơ khí, tự động hóa, chế tạo máy và điện tử. Đa dạng kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt cụ thể.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle.avif"
+  imgMain: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle.avif"
   imgAlt: "Tán tự giữ Right Angle"
 
 tabs:

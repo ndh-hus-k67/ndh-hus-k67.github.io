@@ -63,8 +63,8 @@ main:
     Bu lông inox tai hồng (tai chuồn/cánh chuồn) DIN 316 là loại bu lông có phần đầu dạng 2 cánh, cho phép thao tác siết bằng tay nhanh chóng, thuận tiện trong các vị trí cần tháo lắp thường xuyên.
 
     Thân bu lông được tiện ren theo hệ mét; tùy yêu cầu có thể là ren suốt hoặc ren lửng (phổ biến là ren suốt). Vật liệu thường dùng gồm inox 201/304/316/316L hoặc thép tùy môi trường làm việc.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-main-1.avif"
+  imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-tai-hong.avif"
+  imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-tai-hong.avif"
   imgAlt: "Bu lông inox tai hồng DIN 316"
 
 tabs:

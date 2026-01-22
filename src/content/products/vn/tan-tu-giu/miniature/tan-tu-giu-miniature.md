@@ -59,8 +59,8 @@ main:
   id: 1
   content: |
     Tán tự giữ Miniature Nuts là dòng sản phẩm chuyên dụng cho các ứng dụng yêu cầu kích thước siêu nhỏ và độ chính xác cao như điện tử, cơ khí tinh xảo, y tế và hàng không. Sản phẩm được sản xuất từ Inox 304, đảm bảo độ bền và khả năng chống ăn mòn vượt trội, phù hợp cho các bảng mạch, thiết bị điện tử, máy móc mini và các chi tiết cơ khí nhỏ.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-1.avif"
+  imgCard: "@/images/products/tan-tu-giu/miniature/tan-tu-giu-miniature.avif"
+  imgMain: "@/images/products/tan-tu-giu/miniature/tan-tu-giu-miniature.avif"
   imgAlt: "Tán tự giữ Miniature Nuts"
 
 tabs:

@@ -46,8 +46,8 @@ main:
     Chất liệu: Inox 201, 304, 316, 316L, Thép.
 
     Giá sản phẩm: Liên hệ để có giá tốt nhất.
-  imgCard: "@/images/product-image-3.avif"
-  imgMain: "@/images/product-image-main-3.avif"
+  imgCard: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ngoi.avif"
+  imgMain: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ngoi.avif"
   imgAlt: "Vít bắn ngói inox"
 tabs:
   - id: "tabs-with-card-item-1"

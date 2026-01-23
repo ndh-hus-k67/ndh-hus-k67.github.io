@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Chuyên dụng"
-    url: "/bu-long/chuyen-dung"
+    url: "/bu-long/bu-long-chuyen-dung"
   - name: "Bu lông inox liền long đen DIN 6921"
-    url: "/bu-long/luc-giac/bu-long-inox-lien-long-den-din-6921"
+    url: "/bu-long/bu-long-chuyen-dung/bu-long-inox-lien-long-den-din-6921"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"

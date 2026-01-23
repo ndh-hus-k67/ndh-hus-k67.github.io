@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Chuyên dụng"
-    url: "/bu-long/chuyen-dung"
+    url: "/bu-long/bu-long-chuyen-dung"
   - name: "Bu lông neo móng Inox"
-    url: "/bu-long/chuyen-dung/bu-long-neo-mong-inox"
+    url: "/bu-long/bu-long-chuyen-dung/bu-long-neo-mong-inox"
 relatedCategory:
   - slug: "hoa-chat"
     name: "Hóa chất"

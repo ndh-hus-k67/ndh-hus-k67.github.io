@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Chuyên dụng"
-    url: "/bu-long/chuyen-dung"
+    url: "/bu-long/bu-long-chuyen-dung"
   - name: "Bu lông mắt Inox DIN 444-B"
-    url: "/bu-long/chuyen-dung/bu-long-mat-inox-din-444-b"
+    url: "/bu-long/bu-long-chuyen-dung/bu-long-mat-inox-din-444-b"
 relatedCategory:
   - slug: "tai-hong"
     name: "Tai hồng"

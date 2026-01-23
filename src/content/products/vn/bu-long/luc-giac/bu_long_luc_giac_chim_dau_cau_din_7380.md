@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Lục giác"
-    url: "/bu-long/luc-giac"
+    url: "/bu-long/bu-long-luc-giac"
   - name: "Bu lông lục giác chìm đầu cầu DIN 7380"
-    url: "/bu-long/luc-giac/bu-long-inox-luc-giac-chim-dau-cau-din-7380"
+    url: "/bu-long/bu-long-luc-giac/bu-long-inox-luc-giac-chim-dau-cau-din-7380"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"
@@ -63,8 +63,8 @@ main:
     Bu lông inox lục giác chìm đầu cầu DIN 7380 là loại bu lông có đầu dạng cầu (tròn bo), ở giữa có lỗ lục giác chìm để siết bằng lục lăng.
 
     Sản phẩm được sản xuất theo tiêu chuẩn DIN 7380, có dải kích thước đa dạng. Vật liệu thường dùng gồm inox (201/304/316/316L) hoặc thép tùy theo yêu cầu chống ăn mòn và chịu lực.
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
+  imgCard: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-cau.avif"
+  imgMain: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-cau.avif"
   imgAlt: "Bu lông inox lục giác chìm đầu cầu DIN 7380"
 
 tabs:

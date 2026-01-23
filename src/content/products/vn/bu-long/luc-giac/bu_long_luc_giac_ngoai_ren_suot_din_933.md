@@ -7,7 +7,7 @@ category:
   slug: "bu-long"
   name: "Bu lông"
 productType:
-  slug: "luc-giac"
+  slug: "bu-long-luc-giac"
   name: "Lục giác"
 filters:
   material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
@@ -42,9 +42,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Lục giác"
-    url: "/bu-long/luc-giac"
+    url: "/bu-long/bu-long-luc-giac"
   - name: "Bu lông lục giác ngoài ren suốt DIN 933"
-    url: "/bu-long/luc-giac/bu-long-luc-giac-ngoai-ren-suot-din-933"
+    url: "/bu-long/bu-long-luc-giac/bu-long-luc-giac-ngoai-ren-suot-din-933"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"
@@ -59,8 +59,8 @@ main:
     Sản phẩm được sản xuất theo tiêu chuẩn DIN 933, phổ biến trong lắp ráp kết cấu và liên kết cơ khí nhờ độ bền cao, dễ thi công bằng cờ lê/tuýp.
 
     Vật liệu thường dùng gồm inox 201/304/316/316L hoặc thép; tùy vật liệu sẽ có đặc tính chịu lực và chống ăn mòn khác nhau.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
+  imgCard: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-ngoai-ren-suot.avif"
+  imgMain: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-ngoai-ren-suot.avif"
   imgAlt: "Bu lông inox lục giác ngoài ren suốt DIN 933"
 
 tabs:

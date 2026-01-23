@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Chuyên dụng"
-    url: "/bu-long/chuyen-dung"
+    url: "/bu-long/bu-long-chuyen-dung"
   - name: "Bu lông inox tai hồng DIN 316"
-    url: "/bu-long/chuyen-dung/bu-long-inox-tai-hong-din-316"
+    url: "/bu-long/bu-long-chuyen-dung/bu-long-inox-tai-hong-din-316"
 relatedCategory:
   - slug: "dai-oc-tai-hong"
     name: "Đai ốc tai hồng"

@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Lục giác"
-    url: "/bu-long/luc-giac"
+    url: "/bu-long/bu-long-luc-giac"
   - name: "Bu lông lục giác chìm đầu bằng DIN 7991"
-    url: "/bu-long/luc-giac/bu-long-inox-luc-giac-chim-dau-bang-din-7991"
+    url: "/bu-long/bu-long-luc-giac/bu-long-inox-luc-giac-chim-dau-bang-din-7991"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"
@@ -63,8 +63,8 @@ main:
     Bu lông inox lục giác chìm đầu bằng DIN 7991 (còn gọi là bu lông lục giác chìm đầu côn/countersunk) là loại bu lông có phần đầu dạng côn, khi lắp sẽ gần như phẳng với bề mặt chi tiết.
 
     Phần đầu được dập lỗ lục giác chìm để siết bằng lục lăng. Thân bu lông được tiện ren theo DIN 7991, thường là ren suốt (tùy kích thước/đặt hàng có thể có biến thể khác).
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
+  imgCard: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-bang.avif"
+  imgMain: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-bang.avif"
   imgAlt: "Bu lông inox lục giác chìm đầu bằng DIN 7991"
 
 tabs:

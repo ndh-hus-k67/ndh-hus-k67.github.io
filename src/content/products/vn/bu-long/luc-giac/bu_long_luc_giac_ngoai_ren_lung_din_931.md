@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Lục giác"
-    url: "/bu-long/luc-giac"
+    url: "/bu-long/bu-long-luc-giac"
   - name: "Bu lông lục giác ngoài ren lửng DIN 931"
-    url: "/bu-long/luc-giac/bu-long-inox-luc-giac-ngoai-ren-lung-din-931"
+    url: "/bu-long/bu-long-luc-giac/bu-long-inox-luc-giac-ngoai-ren-lung-din-931"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"
@@ -64,8 +64,8 @@ main:
     Sản phẩm được sản xuất theo tiêu chuẩn DIN 931, thường dùng trong lắp ráp cơ khí, kết cấu và các mối ghép cần phần thân trơn để định vị/đỡ lực cắt.
 
     Tùy yêu cầu, có thể lựa chọn vật liệu inox 201/304/316/316L để tăng khả năng chống ăn mòn hoặc dùng thép để tối ưu chi phí.
-  imgCard: "@/images/product-image-1.avif"
-  imgMain: "@/images/product-image-main-1.avif"
+  imgCard: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-ngoai-ren-lung.avif"
+  imgMain: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-ngoai-ren-lung.avif"
   imgAlt: "Bu lông inox lục giác ngoài ren lửng DIN 931"
 
 tabs:

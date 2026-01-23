@@ -47,9 +47,9 @@ breadcrumbs:
   - name: "Bu lông"
     url: "/bu-long"
   - name: "Lục giác"
-    url: "/bu-long/luc-giac"
+    url: "/bu-long/bu-long-luc-giac"
   - name: "Bu lông lục giác chìm đầu trụ DIN 912"
-    url: "/bu-long/luc-giac/bu-long-luc-giac-chim-dau-tru-inox-din-912"
+    url: "/bu-long/bu-long-luc-giac/bu-long-luc-giac-chim-dau-tru-inox-din-912"
 relatedCategory:
   - slug: "dai-oc"
     name: "Đai ốc"
@@ -64,8 +64,8 @@ main:
     Sản phẩm được sản xuất theo tiêu chuẩn DIN 912, dùng nhiều trong lắp ráp máy móc công nghiệp và các cụm chi tiết cần bề mặt gọn, thẩm mỹ.
 
     Bu lông DIN 912 có dải kích thước rộng, phổ biến từ M3 đến M30; chiều dài thường gặp từ 3 mm đến 200 mm (tùy theo nhu cầu đặt hàng).
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
+  imgCard: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-tru.avif"
+  imgMain: "@/images/products/bu-long/luc-giac/bu-long-luc-giac-chim-dau-tru.avif"
   imgAlt: "Bu lông lục giác chìm đầu trụ inox DIN 912"
 
 tabs:

@@ -4,24 +4,45 @@ slug: "hex-bolt-full-thread-din-933"
 description: "Hex bolts with full thread to DIN 933; external hex head and full threaded shank for structural and industrial applications."
 updatedAt: 2026-01-19
 category:
-category:
   slug: "bu-long"
   name: "Bolts"
-productType:
 productType:
   slug: "hex-bolts"
   name: "Hex Bolts"
 filters:
   material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
-  diameter: ["M3", "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20", "M24", "M30", "M36"]
+  diameter:
+    [
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M8",
+      "M10",
+      "M12",
+      "M16",
+      "M20",
+      "M24",
+      "M30",
+      "M36",
+    ]
   length_mm: []
   surface: ["khong-xu-ly", "ma-kem", "ma-niken"]
   application: ["ket-cau-thep", "co-khi-chung", "xay-dung"]
-tags: ["bu-long-luc-giac", "din-933", "ren-suot", "bu-long-inox", "luc-giac-ngoai"]
+tags:
+  ["bu-long-luc-giac", "din-933", "ren-suot", "bu-long-inox", "luc-giac-ngoai"]
 seo:
   title: "Bu lông lục giác ngoài ren suốt DIN 933 - Inox 304/316 chất lượng cao"
   description: "Bu lông lục giác ngoài ren suốt DIN 933, vật liệu inox 201/304/316/316L và thép. Kích thước M3-M36, ứng dụng rộng rãi trong kết cấu và cơ khí."
-  keywords: ["bu lông lục giác", "DIN 933", "bu lông ren suốt", "bu lông inox 304", "bu lông inox 316", "lục giác ngoài"]
+  keywords:
+    [
+      "bu lông lục giác",
+      "DIN 933",
+      "bu lông ren suốt",
+      "bu lông inox 304",
+      "bu lông inox 316",
+      "lục giác ngoài",
+    ]
 variants:
   - sku: "BL-LG-M8-30-INOX304"
     name: "Bu lông lục giác M8×30 DIN 933 Inox 304"
@@ -39,7 +60,6 @@ variants:
     diameter: "M12"
     length_mm: 50
 breadcrumbs:
-breadcrumbs:
   - name: "Home"
     url: "/"
   - name: "Bolts"
@@ -55,7 +75,6 @@ relatedCategory:
     name: "Vòng đệm"
   - slug: "chu-t"
     name: "Bu lông chữ T"
-main:
 main:
   id: 11
   content: |
@@ -87,11 +106,11 @@ longDescription:
 
 descriptionList:
   - title: "Tiêu Chuẩn DIN 933"
-    subTitle: "Kích thước và cấu trúc theo tiêu chuẩn DIN 933, phù hợp các ứng dụng lắp ghép thông dụng." 
+    subTitle: "Kích thước và cấu trúc theo tiêu chuẩn DIN 933, phù hợp các ứng dụng lắp ghép thông dụng."
   - title: "Ren Suốt, Dễ Lắp Ráp"
-    subTitle: "Thân bu lông được tiện ren suốt giúp linh hoạt khi lắp kèm đai ốc và long đen." 
+    subTitle: "Thân bu lông được tiện ren suốt giúp linh hoạt khi lắp kèm đai ốc và long đen."
   - title: "Đa Dạng Vật Liệu"
-    subTitle: "Tùy chọn inox 201/304/316/316L để tăng chống ăn mòn hoặc thép để tối ưu chi phí." 
+    subTitle: "Tùy chọn inox 201/304/316/316L để tăng chống ăn mòn hoặc thép để tối ưu chi phí."
 
 specificationsLeft:
   - title: "Tiêu chuẩn"

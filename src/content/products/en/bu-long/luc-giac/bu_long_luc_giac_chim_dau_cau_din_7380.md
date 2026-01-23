@@ -15,11 +15,26 @@ filters:
   length_mm: []
   surface: ["khong-xu-ly"]
   application: ["tham-my", "noi-that", "co-khi", "lap-rap"]
-tags: ["bu-long-dau-cau", "din-7380", "button-head", "bu-long-luc-giac-chim", "bu-long-inox-7380", "dau-cau-tham-my"]
+tags:
+  [
+    "bu-long-dau-cau",
+    "din-7380",
+    "button-head",
+    "bu-long-luc-giac-chim",
+    "bu-long-inox-7380",
+    "dau-cau-tham-my",
+  ]
 seo:
   title: "Bu lông lục giác chìm đầu cầu DIN 7380 - Button head socket Inox"
   description: "Bu lông lục giác chìm đầu cầu DIN 7380 inox 201/304/316/316L. Đầu cầu bo tròn thẩm mỹ, siết bằng lục lăng. Kích thước M3-M20, phù hợp nội thất, cơ khí."
-  keywords: ["bu lông din 7380", "button head socket", "bu lông đầu cầu", "bu lông lục giác chìm đầu cầu", "bu lông inox 7380"]
+  keywords:
+    [
+      "bu lông din 7380",
+      "button head socket",
+      "bu lông đầu cầu",
+      "bu lông lục giác chìm đầu cầu",
+      "bu lông inox 7380",
+    ]
 variants:
   - sku: "BL7380-M6-20-INOX304"
     name: "Bu lông lục giác chìm đầu cầu M6×20 Inox 304"
@@ -84,16 +99,14 @@ longDescription:
     DIN 7380 screws produce a smooth rounded finish and are preferred where aesthetics and reduced snagging are important. Choose stainless materials (304/316) for corrosive environments.
   btnTitle: "Contact sales for consultation"
   btnURL: "/contact"
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
 
 descriptionList:
   - title: "Đầu Cầu Thẩm Mỹ"
-    subTitle: "Bề mặt bo tròn giúp tổng thể mối ghép gọn, phù hợp các vị trí cần độ hoàn thiện cao." 
+    subTitle: "Bề mặt bo tròn giúp tổng thể mối ghép gọn, phù hợp các vị trí cần độ hoàn thiện cao."
   - title: "Siết Bằng Lục Lăng"
-    subTitle: "Lỗ lục giác chìm giúp thao tác thuận tiện trong không gian hẹp." 
+    subTitle: "Lỗ lục giác chìm giúp thao tác thuận tiện trong không gian hẹp."
   - title: "Vật Liệu Linh Hoạt"
-    subTitle: "Tùy chọn inox 201/304/316/316L hoặc thép để cân bằng chống ăn mòn và chi phí." 
+    subTitle: "Tùy chọn inox 201/304/316/316L hoặc thép để cân bằng chống ăn mòn và chi phí."
 
 specificationsLeft:
   - title: "Tiêu chuẩn"
@@ -116,12 +129,98 @@ tableData:
       - ["Vật liệu", "Inox 201/304/316/316L; Thép"]
       - ["Giá", "Liên hệ để nhận báo giá tốt nhất"]
 
-  - feature: ["d", "M3", "M4", "M5", "M6", "M8", "M10", "M12", "M14", "M16", "M18", "M20", "M22", "M24", "M27", "M30"]
+  - feature:
+      [
+        "d",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M8",
+        "M10",
+        "M12",
+        "M14",
+        "M16",
+        "M18",
+        "M20",
+        "M22",
+        "M24",
+        "M27",
+        "M30",
+      ]
     description:
-      - ["P (bước ren)", "0,5", "0,7", "0,8", "1", "1,25", "1,5", "1,75", "–", "2", "–", "–", "–", "–", "–", "–"]
-      - ["dk", "5,7", "7,6", "9,5", "10,5", "14", "17,5", "21", "–", "28", "–", "–", "–", "–", "–", "–"]
-      - ["k", "1,65", "2,2", "2,75", "3,3", "4,4", "5,5", "6,6", "–", "8,8", "–", "–", "–", "–", "–", "–"]
-      - ["s", "2", "2,5", "3", "4", "5", "6", "8", "–", "10", "–", "–", "–", "–", "–", "–"]
+      - [
+          "P (bước ren)",
+          "0,5",
+          "0,7",
+          "0,8",
+          "1",
+          "1,25",
+          "1,5",
+          "1,75",
+          "–",
+          "2",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+        ]
+      - [
+          "dk",
+          "5,7",
+          "7,6",
+          "9,5",
+          "10,5",
+          "14",
+          "17,5",
+          "21",
+          "–",
+          "28",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+        ]
+      - [
+          "k",
+          "1,65",
+          "2,2",
+          "2,75",
+          "3,3",
+          "4,4",
+          "5,5",
+          "6,6",
+          "–",
+          "8,8",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+        ]
+      - [
+          "s",
+          "2",
+          "2,5",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "–",
+          "10",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+          "–",
+        ]
 
 blueprints:
   first: "@/images/blueprint-1.avif"

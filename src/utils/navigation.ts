@@ -9,25 +9,25 @@ const footerLinks = [
   {
     section: "Sản phẩm",
     links: [
-      { name: "Về chúng tôi", url: "/about-us" },
+      { name: "Bu lông", url: "/bu-long" },
+      { name: "Ốc Vít", url: "/oc-vit" },
+      { name: "Tán Tự Giữ", url: "/tan-tu-giu" },
+      { name: "Trụ Ren Tự Giữ", url: "/tru-ren-tu-giu" },
+      { name: "Tán Trụ Tự Giữ", url: "/tan-tru-tu-giu" },
     ],
   },
   {
     section: "Công ty",
     links: [
-      { name: "Về chúng tôi", url: "#" },
-      { name: "Blog", url: "/blog" },
+      { name: "Về chúng tôi", url: "/about-us" },
+      { name: "Bài Viết", url: "/blog" },
       { name: "Liên hệ", url: "/contact" },
     ],
   },
 ];
 
 const socialLinks = {
-  facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "#",
-  slack: "#",
+  facebook: "https://www.facebook.com/hahutech.vn",
 };
 
 export default {

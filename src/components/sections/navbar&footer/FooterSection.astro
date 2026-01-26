@@ -15,14 +15,17 @@ const crafted: string =
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
-  <div
-    class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-(--breakpoint-2xl)"
-  >
-    <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
-      <div class="col-span-full lg:col-span-1">
-        <BrandLogo class="h-auto w-36" />
-        <div class="mt-5 space-y-3">
-          <h3 class="text-base font-bold text-neutral-800 dark:text-neutral-200">
+  <div class="mx-auto w-full max-w-[85rem] px-4 py-16 sm:px-6 lg:px-16 lg:pt-20">
+
+    <!-- Main grid: 5 columns on md+ -->
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-5 items-start">
+
+      <!-- Logo & intro -->
+      <div class="md:col-span-1 flex flex-col pr-0 md:pr-6">
+        <BrandLogo class="h-auto w-40" />
+
+        <div class="mt-6 space-y-4 max-w-[16rem]">
+          <h3 class="text-base font-bold text-neutral-800 dark:text-neutral-200 leading-snug">
             {
               Astro.currentLocale === "en" ? (
                 <>
@@ -39,6 +42,7 @@ const crafted: string =
               )
             }
           </h3>
+
           <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
             {
               Astro.currentLocale === "en"
@@ -49,64 +53,120 @@ const crafted: string =
         </div>
       </div>
 
-      {
-        strings.footerLinks.map((section: { section: string; links: { name: string; url: string }[] }) => (
-          <div class="col-span-1">
-            <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
-              {section.section}
-            </h3>
-            <ul class="mt-3 grid space-y-3">
-              {section.links.map((link: { name: string; url: string }, index: number) => (
+      <!-- Column 2: Products (from footerLinks[0]) -->
+      <div class="md:col-span-1 flex flex-col min-h-[11rem]">
+        <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+          {strings.footerLinks && strings.footerLinks[0] ? strings.footerLinks[0].section : ""}
+        </h3>
+        <ul class="mt-4 space-y-3">
+          {strings.footerLinks && strings.footerLinks[0]
+            ? strings.footerLinks[0].links.map((link) => (
                 <li>
                   <a
                     href={link.url}
-                    class="inline-flex gap-x-2 rounded-lg text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-300 dark:focus:outline-hidden"
+                    class="block rounded-md py-1 text-sm text-neutral-600 transition hover:text-neutral-800 focus-visible:ring-2 focus-visible:ring-zinc-500 dark:text-neutral-400 dark:hover:text-neutral-200"
                   >
                     {link.name}
                   </a>
                 </li>
-              ))}
-            </ul>
+              ))
+            : null}
+        </ul>
+      </div>
+
+      <!-- Column 3: Company (from footerLinks[1]) -->
+      <div class="md:col-span-1 flex flex-col min-h-[11rem]">
+        <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+          {strings.footerLinks && strings.footerLinks[1] ? strings.footerLinks[1].section : ""}
+        </h3>
+        <ul class="mt-4 space-y-3">
+          {strings.footerLinks && strings.footerLinks[1]
+            ? strings.footerLinks[1].links.map((link) => (
+                <li>
+                  <a
+                    href={link.url}
+                    class="block rounded-md py-1 text-sm text-neutral-600 transition hover:text-neutral-800 focus-visible:ring-2 focus-visible:ring-zinc-500 dark:text-neutral-400 dark:hover:text-neutral-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))
+            : null}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:col-span-1 md:pl-8">
+        <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+          {Astro.currentLocale === "en" ? "Contact" : "Liên hệ"}
+        </h3>
+
+        <div class="mt-6 space-y-6 text-sm text-neutral-600 dark:text-neutral-400">
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 items-center justify-center text-neutral-700 dark:text-neutral-300">
+                <Icon name="mapPin" />
+              </span>
+              <div>
+                <p class="font-semibold text-neutral-800 dark:text-neutral-200">
+                  {
+                    Astro.currentLocale === "en"
+                      ? "HAHUTECH Manufacturing and Trading Joint Stock Company"
+                      : "Công ty cổ phần sản xuất và thương mại HAHUTECH"
+                  }
+                </p>
+                <p>
+                  {Astro.currentLocale === "en"
+                    ? "Dong Nguyen Urban Area – Tu Son – Bac Ninh City"
+                    : "Khu đô thị Đồng Nguyên – Từ Sơn – TP. Bắc Ninh"}
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <span class="flex items-center gap-2">
+                <Icon name="phone" />
+                <a href="tel:0347741638" class="hover:underline">
+                  0347741638
+                </a>
+              </span>
+
+              <span class="flex items-center gap-2">
+                <Icon name="envelopeOpen" />
+                <a href="mailto:sales@hahutech.com.vn" class="hover:underline">
+                  sales@hahutech.com.vn
+                </a>
+              </span>
+            </div>
           </div>
-        ))
-      }
-
+        </div>
       </div>
 
-    <div
-      class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-    >
-      <div class="flex items-center justify-between"></div>
+      <!-- Map column (separate top-level column for proper alignment) -->
+      <div class="md:col-span-1 flex flex-col">
+        <h4 class="mb-3 font-semibold text-neutral-800 dark:text-neutral-200">
+          {Astro.currentLocale === "en" ? "Location" : "Bản đồ"}
+        </h4>
+        <div class="w-full">
+          <div class="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
+            <iframe
+              class="w-full h-40 sm:h-52 md:h-40 lg:h-52"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238198.35947609335!2d105.67269799453126!3d21.11857080000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135091c57ede817%3A0xd6b672980bac087e!2zQ8O0bmcgdHkgY-G7lSBwaOG6p24gc-G6o24geHXhuqV0IHbDoCB0aMawxqFuZyBt4bqhaSBIQUhVVEVDSA!5e0!3m2!1sen!2s!4v1769403211229!5m2!1sen!2s"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-      <div>
-        <FooterSocialLink url={strings.socialLinks.facebook}>
-          <Icon name="facebookFooter" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.x}>
-          <Icon name="xFooter" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.github}>
-          <Icon name="githubFooter" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.google}>
-          <Icon name="googleFooter" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.slack}>
-          <Icon name="slackFooter" />
-        </FooterSocialLink>
+          <a
+            href="https://maps.app.goo.gl/nSAHerRHnRQdzzVVA"
+            target="_blank"
+            class="mt-3 inline-block text-sm font-medium text-neutral-600 hover:underline dark:text-neutral-400"
+          >
+            {Astro.currentLocale === "en" ? "View on Google Maps" : "Xem trên Google Maps"}
+          </a>
+        </div>
       </div>
+
     </div>
-
-    <script>
-      const year = new Date().getFullYear();
-      const element = document.getElementById("current-year");
-      if (element) {
-        element.innerText = year.toString();
-      }
-    </script>
   </div>
 </footer>

@@ -49,11 +49,11 @@ const makeId = (base: any, index: any) => `${base}${index + 1}`;
         {
           faqs.faqs.map((question, i) => {
             // Generate ids dynamically for each FAQ accordion item.
-            let id = makeId(
+            const id = makeId(
               "hs-basic-with-title-and-arrow-stretched-heading-",
               i
             );
-            let collapseId = makeId(
+            const collapseId = makeId(
               "hs-basic-with-title-and-arrow-stretched-collapse",
               i
             );

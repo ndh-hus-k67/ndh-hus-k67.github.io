@@ -8,9 +8,9 @@ interface Path {
 
 const { name } = Astro.props;
 
-let icon = (Icons as any)[name] || {};
+const icon = (Icons as any)[name] || {};
 
-let paths: Path[] = icon.paths || [];
+const paths: Path[] = icon.paths || [];
 ---
 
 {

@@ -79,7 +79,7 @@ const pageTitle = `${title} | ${SITE.title}`;
               const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain || "@/images/product-default.avif";
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
-                <a href={`/oc-vit/${productTypeSlug}/${slug}`} data-product-type={dataTypes} class="group block product-item">
+                <a href={`/oc-vit/${slug}`} data-product-type={dataTypes} class="group block product-item">
                   <div class="relative aspect-square overflow-hidden rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl">
                     <Image
                       src={imgSrc}

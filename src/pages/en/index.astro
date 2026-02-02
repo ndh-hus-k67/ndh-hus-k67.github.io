@@ -27,11 +27,16 @@ import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-// Get all products to count by category
-const allProducts: CollectionEntry<"products">[] = await getCollection(
-  "products",
-  ({ id }) => id.startsWith("en/")
-);
+// Get all products to count by category (prefer EN, fallback to VN)
+const fetchProductsByLang = async (lang: "en" | "vn") =>
+  getCollection("products", ({ id }) => {
+    const normalizedId = id.replace(/\\/g, "/");
+    return normalizedId.includes(`${lang}/`) || id.includes(`${lang}\\`);
+  });
+
+const allProductsEn: CollectionEntry<"products">[] = await fetchProductsByLang("en");
+const allProductsVn: CollectionEntry<"products">[] = await fetchProductsByLang("vn");
+const allProducts = allProductsEn.length ? allProductsEn : allProductsVn;
 
 // Define product categories
 const productCategories = [

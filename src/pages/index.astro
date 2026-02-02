@@ -27,8 +27,11 @@ import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-// Lấy tất cả sản phẩm để đếm số lượng theo danh mục
-const allProducts: CollectionEntry<"products">[] = await getCollection("products");
+// Lấy tất cả sản phẩm để đếm số lượng theo danh mục (Vietnamese only)
+const allProducts: CollectionEntry<"products">[] = await getCollection("products", ({ id }) => {
+  const normalizedId = id.replace(/\\/g, "/");
+  return normalizedId.includes("vn/") || id.includes("vn\\");
+});
 
 // Định nghĩa các danh mục sản phẩm
 const productCategories = [

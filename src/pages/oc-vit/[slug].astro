@@ -16,7 +16,8 @@ declare global {
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "oc-vit";
+    const normalizedId = id.replace(/\\/g, "/");
+    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "oc-vit";
   });
 
   return productEntries.map((product) => {

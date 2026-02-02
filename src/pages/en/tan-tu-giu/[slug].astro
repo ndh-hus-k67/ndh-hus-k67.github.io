@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "tan-tu-giu";
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tu-giu";
   });
 
   return productEntries.map((product) => {
@@ -33,10 +33,12 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const { productType } = Astro.params;
+const normalizedProductId = product?.id?.replace(/\\/g, "/");
+const productLang = normalizedProductId?.startsWith("en/") ? "en-US" : "vi-VN";
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
-    "@/images/product-default.avif"
+  "@/images/product-default.avif"
 );
 
 const blueprintFirstResolved = product.data.blueprints?.first
@@ -55,7 +57,7 @@ const blueprintSecondResolved = product.data.blueprints?.second
 
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Tán Tự Giữ | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Self-Locking Rivets | ${SITE.title}`;
 const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 
@@ -66,10 +68,10 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/bu-long/${productType}/${product.data.slug}`,
+    "@id": `${SITE.url}/en/tan-tu-giu/${productType}/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
-    category: "Bu lông",
+    category: "Self-Locking Rivets",
     brand: {
       "@type": "Brand",
       name: SITE.title,
@@ -80,7 +82,7 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
       name: variant.name,
       availability: "https://schema.org/InStock",
     })),
-    inLanguage: "vi-VN",
+    inLanguage: productLang,
   }}
 >
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
@@ -133,17 +135,17 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
             <>
               <li class="inline-flex items-center">
                 <a
-                  href="/bu-long"
+                  href="/en/tan-tu-giu"
                   class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                 >
-                  Bu lông
+                  Self-Locking Rivets
                 </a>
               </li>
               <li>
                 <div class="flex items-center">
                   <span class="mx-2 text-neutral-400">/</span>
                   <a
-                    href={`/bu-long/${productType}`}
+                    href={`/en/tan-tu-giu/${productType}`}
                     class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
                   >
                     {product.data.productType?.name || productType}

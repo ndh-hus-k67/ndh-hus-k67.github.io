@@ -1,5 +1,4 @@
 ---
-// Import section components
 import MainLayout from "@/layouts/MainLayout.astro";
 import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
@@ -8,7 +7,6 @@ import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
 import { resolveLocalImageOrFallback } from "@/utils/resolveLocalImage";
 
-// Global declaration for gsap animation library
 declare global {
   interface Window {
     gsap: any;
@@ -16,28 +14,31 @@ declare global {
 }
 
 export async function getStaticPaths() {
-  const productEntries = await getCollection("products", ({ id }) =>
-    id.startsWith("en/")
-  );
+  const productEntries = await getCollection("products", ({ id, data }) => {
+    const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
+    const normalizedId = id.replace(/\\/g, "/");
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tru-tu-giu";
+  });
 
   return productEntries.map((product) => {
-    const category = product.data.category;
-    const subcategory = product.data.subcategory;
-    const idWithoutExt = product.id.split("/").pop()?.replace(".md", "");
+    const productType = product.data.productType?.slug;
+    const slug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
 
     return {
-      params: { category, subcategory, id: idWithoutExt },
+      params: { productType: productType || 'chuyen-dung', slug: slug || '' },
       props: { product },
     };
   });
 }
 
 const { product } = Astro.props;
-const { category, subcategory } = Astro.params;
+const { productType } = Astro.params;
+const normalizedProductId = product?.id?.replace(/\\/g, "/");
+const productLang = normalizedProductId?.startsWith("en/") ? "en-US" : "vi-VN";
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
-  "@/images/product-image-main-1.avif"
+  "@/images/product-default.avif"
 );
 
 const blueprintFirstResolved = product.data.blueprints?.first
@@ -54,37 +55,34 @@ const blueprintSecondResolved = product.data.blueprints?.second
     )
   : undefined;
 
-const pageTitle: string = `${product.data.title} | ${SITE.title}`;
-const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
-
-// Define titles
-const categoryTitles: Record<string, string> = {
-  "bu-long": "Bolts",
-  "oc-vit": "Screws",
-  "san-pham-khac": "Other Products",
-};
-
-const categoryTitle = categoryTitles[category as string] || category;
-const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
+const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
+const metaDescription = product.data.seo?.description || product.data.description;
+const ogTitle = `${product.data.title} | Self-Clinching Standoffs | ${SITE.title}`;
+const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 
 <MainLayout
   title={pageTitle}
-  lang="en"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `https://screwfast.uk/en/products/${category}/${subcategory}/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
+    "@id": `${SITE.url}/en/tan-tru-tu-giu/${productType}/${product.data.slug}`,
     name: product.data.title,
-    description: product.data.description,
-    category: categoryTitle,
+    description: metaDescription,
+    category: "Self-Clinching Standoffs",
     brand: {
       "@type": "Brand",
-      name: "ScrewFast",
+      name: SITE.title,
     },
+    offers: product.data.variants?.map(variant => ({
+      "@type": "Offer",
+      sku: variant.sku,
+      name: variant.name,
+      availability: "https://schema.org/InStock",
+    })),
+    inLanguage: productLang,
   }}
 >
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
@@ -96,46 +94,75 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
     <!-- Breadcrumb -->
     <nav class="mb-8 flex" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
-        <li class="inline-flex items-center">
-          <a
-            href="/en/products"
-            class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-          >
-            Products
-          </a>
-        </li>
-        <li>
-          <div class="flex items-center">
-            <span class="mx-2 text-neutral-400">/</span>
-            <a
-              href={`/en/products/${category}`}
-              class="text-sm font-medium capitalize text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-            >
-              {categoryTitle}
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="flex items-center">
-            <span class="mx-2 text-neutral-400">/</span>
-            <a
-              href={`/en/products/${category}/${subcategory}`}
-              class="text-sm font-medium capitalize text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-            >
-              {subcategoryTitle}
-            </a>
-          </div>
-        </li>
-        <li aria-current="page">
-          <div class="flex items-center">
-            <span class="mx-2 text-neutral-400">/</span>
-            <span
-              class="text-sm font-medium text-neutral-500 dark:text-neutral-500"
-            >
-              {product.data.title}
-            </span>
-          </div>
-        </li>
+        {
+          product.data.breadcrumbs && product.data.breadcrumbs.length > 0 ? (
+            product.data.breadcrumbs.map((crumb: any, index: number) => (
+              <>
+                {index === 0 ? (
+                  <li class="inline-flex items-center">
+                    <a
+                      href={crumb.url}
+                      class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+                    >
+                      {crumb.name}
+                    </a>
+                  </li>
+                ) : index === product.data.breadcrumbs!.length - 1 ? (
+                  <li aria-current="page">
+                    <div class="flex items-center">
+                      <span class="mx-2 text-neutral-400">/</span>
+                      <span class="text-sm font-medium text-neutral-500 dark:text-neutral-500">
+                        {crumb.name}
+                      </span>
+                    </div>
+                  </li>
+                ) : (
+                  <li>
+                    <div class="flex items-center">
+                      <span class="mx-2 text-neutral-400">/</span>
+                      <a
+                        href={crumb.url}
+                        class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+                      >
+                        {crumb.name}
+                      </a>
+                    </div>
+                  </li>
+                )}
+              </>
+            ))
+          ) : (
+            <>
+              <li class="inline-flex items-center">
+                <a
+                  href="/en/tan-tru-tu-giu"
+                  class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+                >
+                  Self-Clinching Standoffs
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center">
+                  <span class="mx-2 text-neutral-400">/</span>
+                  <a
+                    href={`/en/tan-tru-tu-giu/${productType}`}
+                    class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
+                  >
+                    {product.data.productType?.name || productType}
+                  </a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div class="flex items-center">
+                  <span class="mx-2 text-neutral-400">/</span>
+                  <span class="text-sm font-medium text-neutral-500 dark:text-neutral-500">
+                    {product.data.title}
+                  </span>
+                </div>
+              </li>
+            </>
+          )
+        }
       </ol>
     </nav>
 
@@ -159,6 +186,17 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
         <p class="text-lg text-neutral-600 dark:text-neutral-400">
           {product.data.description}
         </p>
+        {
+          product.data.tags && product.data.tags.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-2">
+              {product.data.tags.slice(0, 5).map((tag) => (
+                <span class="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )
+        }
       </div>
       <div>
         <Image
@@ -252,20 +290,7 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
               }
             </div>
             {
-              product.data.specificationsRight ? (
-                <div class="mt-6 max-w-md space-y-6 md:mt-0 md:ml-auto">
-                  {product.data.specificationsRight?.map((spec) => (
-                    <div>
-                      <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
-                        {spec.title}
-                      </h3>
-                      <p class="text-neutral-600 dark:text-neutral-400">
-                        {spec.subTitle}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ) : product.data.tableData ? (
+              product.data.tableData && (
                 <div class="mt-6 space-y-6 md:mt-0 md:ml-auto">
                   <div class="flex flex-col">
                     <div class="-m-1.5 overflow-x-auto">
@@ -288,12 +313,9 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
                             </thead>
                             <tbody class="divide-y divide-neutral-300 dark:divide-neutral-700">
                               {product.data.tableData?.map((row) =>
-                                // Wrap each row's content in a separate <tr> element
                                 row.description.map((rowData) => (
                                   <tr>
-                                    {/* Iterate through each cell value in the row's description array */}
                                     {rowData.map((cellValue) => (
-                                      // Render each cell value in its own <td> element
                                       <td class="px-6 py-4 text-sm font-medium whitespace-nowrap text-neutral-600 dark:text-neutral-400">
                                         {cellValue}
                                       </td>
@@ -308,43 +330,41 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
                     </div>
                   </div>
                 </div>
-              ) : null
+              )
             }
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div id="tabs-with-card-3" class="hidden" role="tabpanel">
-    <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
-      <div
-        class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0"
-      >
-        {
-          blueprintFirstResolved && (
-            <Image
-              src={blueprintFirstResolved}
-              class="h-full w-full object-cover object-center"
-              alt="Blueprint Illustration"
-              format={"avif"}
-            />
-          )
-        }
-      </div>
+      {
+        (blueprintFirstResolved || blueprintSecondResolved) && (
+          <div id="tabs-with-card-3" class="hidden" role="tabpanel">
+            <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
+              {blueprintFirstResolved && (
+                <div class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0">
+                  <Image
+                    src={blueprintFirstResolved}
+                    class="h-full w-full object-cover object-center"
+                    alt="Blueprint Illustration"
+                    format={"avif"}
+                  />
+                </div>
+              )}
 
-      <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
-        {
-          blueprintSecondResolved && (
-            <Image
-              src={blueprintSecondResolved}
-              class="h-full w-full object-cover object-center"
-              alt="Blueprint Illustration"
-              format={"avif"}
-            />
-          )
-        }
-      </div>
+              {blueprintSecondResolved && (
+                <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
+                  <Image
+                    src={blueprintSecondResolved}
+                    class="h-full w-full object-cover object-center"
+                    alt="Blueprint Illustration"
+                    format={"avif"}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </MainLayout>
@@ -408,6 +428,7 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
 
   timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
 </script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     function setButtonInactive(btn: any, activeButton: any) {
@@ -439,7 +460,7 @@ const subcategoryTitle = (subcategory as string).replace(/-/g, " ");
       button.classList.add(
         "active",
         "bg-neutral-100",
-        ",hover:border-transparent",
+        "hover:border-transparent",
         "dark:bg-white/[.05]"
       );
 

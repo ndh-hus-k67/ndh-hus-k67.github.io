@@ -5,14 +5,29 @@ import { docsSchema } from '@astrojs/starlight/schema';
 import { glob } from 'astro/loaders';
 
 const productsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/products/', import.meta.url) }),
+  loader: glob({ 
+    pattern: '**/[^_]*.md', 
+    base: new URL('./content/products/', import.meta.url),
+    // Generate unique IDs that include the language path (en/ or vn/)
+    generateId: ({ entry, base }) => {
+      // entry is the relative path from base
+      // Remove .md extension and use the full path as ID
+      return entry.replace(/\.md$/, '');
+    }
+  }),
     schema: ({ image }) => z.object({
     title: z.string(),
     slug: z.string().optional(),
     description: z.string(),
     updatedAt: z.coerce.date().optional(),
     category: z.union([
-      z.enum(['bu-long', 'oc-vit', 'san-pham-khac']),
+      z.enum([
+        'bu-long',
+        'oc-vit',
+        'tan-tru-tu-giu',
+        'tan-tu-giu',
+        'tru-ren-tu-giu',
+      ]),
       z.object({
         slug: z.string(),
         name: z.string(),

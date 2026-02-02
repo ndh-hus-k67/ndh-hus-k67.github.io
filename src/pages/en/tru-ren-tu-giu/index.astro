@@ -5,20 +5,19 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm ốc vít (Vietnamese only)
+// Get all forged self-clinching studs products (English only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "oc-vit";
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tru-ren-tu-giu";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
 
-// Nhóm sản phẩm theo productType
-// Nhóm sản phẩm theo productType — lấy trực tiếp từ nội dung `products`
+// Group products by productType
 const productsByType = (() => {
   const map = new Map();
   for (const p of allProducts) {
@@ -34,8 +33,8 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Ốc Vít";
-const description = "Khám phá bộ sưu tập ốc vít chất lượng cao của chúng tôi, bao gồm vít bắn tôn, vít tự khoan inox, phù hợp cho mọi dự án xây dựng và lắp ráp kết cấu.";
+const title = "Forged Self-Clinching Studs";
+const description = "Explore our collection of high-quality forged self-clinching studs — diverse types, materials and sizes, suitable for load-bearing structures and industrial applications.";
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---
@@ -65,22 +64,22 @@ const pageTitle = `${title} | ${SITE.title}`;
       </p>
     </div>
 
-    <!-- Nội dung: danh sách tất cả sản phẩm + sidebar danh mục -->
+    <!-- Content: product list + sidebar categories -->
     <div class="grid gap-8 lg:grid-cols-4">
-      <!-- Main: danh sách sản phẩm -->
+      <!-- Main: product list -->
       <div class="lg:col-span-3">
         <div class="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {
             allProducts.map(p => {
               const slug = p.data?.slug || p.id?.split('/').pop()?.replace('.md', '');
               const productTypeSlug = typeof p.data.productType === 'string' ? p.data.productType : p.data.productType?.slug || '';
-              const alias = productTypeSlug.replace(/^vit-/, '').replace(/^vit-/, '');
+              const alias = productTypeSlug.replace(/^tru-ren-tu-giu-/, '');
               const dataTypes = `${productTypeSlug} ${alias}`.trim();
               const titleText = p.data?.title ?? slug;
               const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain || "@/images/product-default.avif";
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
-                <a href={`/oc-vit/${slug}`} data-product-type={dataTypes} class="group block product-item">
+                <a href={`/en/tru-ren-tu-giu/${slug}`} data-product-type={dataTypes} class="group block product-item">
                   <div class="relative aspect-square overflow-hidden rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl">
                     <Image
                       src={imgSrc}
@@ -100,7 +99,7 @@ const pageTitle = `${title} | ${SITE.title}`;
         </div>
       </div>
 
-      <!-- Sidebar: danh sách các danh mục/productType trong oc-vit -->
+      <!-- Sidebar: list of categories/productType -->
      <aside class="hidden lg:block lg:col-span-1">
   <div class="sticky top-20 rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">
     
@@ -111,11 +110,11 @@ const pageTitle = `${title} | ${SITE.title}`;
           d="M20 13V7a2 2 0 00-2-2h-4M4 11V7a2 2 0 012-2h4M4 17v-2m16 2v-2M9 21h6" />
       </svg>
       <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-        Danh mục Ốc Vít
+        Stud Categories
       </h4>
     </div>
 
-    <!-- Danh sách -->
+    <!-- List -->
     <ul class="p-3 space-y-1">
 
       <!-- All -->
@@ -124,7 +123,7 @@ const pageTitle = `${title} | ${SITE.title}`;
           data-filter-type="all"
           class="filter-type-btn group flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2 text-sm text-neutral-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-800"
         >
-          <span class="truncate">Tất cả sản phẩm</span>
+          <span class="truncate">All Products</span>
           <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
             {allProducts.length}
           </span>
@@ -151,10 +150,10 @@ const pageTitle = `${title} | ${SITE.title}`;
 
     </div>
 
-    
+   
   </div>
 </MainLayout>
-
+ 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-type-btn');

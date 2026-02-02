@@ -5,11 +5,12 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm tán trụ tự giữ
+// Lấy tất cả sản phẩm tán trụ tự giữ (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
-    return categorySlug === "tan-tru-tu-giu";
+    const normalizedId = id.replace(/\\/g, "/");
+    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "tan-tru-tu-giu";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>

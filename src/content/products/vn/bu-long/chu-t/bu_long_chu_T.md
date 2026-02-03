@@ -9,13 +9,6 @@ category:
 productType:
   slug: "bu-long-chu-t"
   name: "Bu lông chữ T"
-filters:
-  material: ["inox-304", "inox-316", "thep-ma-kem", "thep-ma-niken"]
-  diameter: ["M6", "M8"]
-  length_mm: [16, 20, 25, 30]
-  surface: ["ma-kem", "ma-niken", "khong-xu-ly"]
-  application: ["tu-dong-hoa-cong-nghiep", "che-tao-may", "nhom-dinh-hinh"]
-tags: ["bu-long-chu-t", "nhom-dinh-hinh", "tu-dong-hoa", "phu-kien-nhom", "bu-long-co-co"]
 seo:
   title: "Bu lông chữ T - Phụ kiện nhôm định hình chất lượng cao"
   description: "Bu lông chữ T dùng cho nhôm định hình, chịu lực cao, đa dạng kích thước M6-M8, vật liệu inox 304/316 và thép mạ. Giải pháp lý tưởng cho tự động hóa công nghiệp."
@@ -46,8 +39,6 @@ breadcrumbs:
     url: "/"
   - name: "Bu lông"
     url: "/bu-long"
-  - name: "Chữ T"
-    url: "/bu-long/chu-t"
   - name: "Bu lông chữ T"
     url: "/bu-long/chu-t/bu-long-chu-t"
 relatedCategory:

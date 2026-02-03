@@ -55,7 +55,7 @@ const blueprintSecondResolved = product.data.blueprints?.second
 
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Tán Trụ Tự Giữ | ${SITE.title}`;
 const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 
@@ -69,7 +69,7 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
     "@id": `${SITE.url}/tan-tru-tu-giu/${productType}/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
-    category: "Bu lông",
+    category: "Tán trụ tự giữ",
     brand: {
       "@type": "Brand",
       name: SITE.title,
@@ -175,32 +175,35 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
     <div
       class="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0"
     >
-      <div id="fadeInUp">
-        <h1
-          class="block text-4xl font-bold tracking-tighter text-neutral-800 sm:text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200"
-        >
-          {product.data.title}
-        </h1>
-        <p class="text-lg text-neutral-600 dark:text-neutral-400">
-          {product.data.description}
-        </p>
-        {
-          product.data.tags && product.data.tags.length > 0 && (
-            <div class="mt-4 flex flex-wrap gap-2">
-              {product.data.tags.slice(0, 5).map((tag) => (
-                <span class="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800 dark:bg-orange-900 dark:text-orange-200">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )
-        }
+      <div id="fadeInUp" class="space-y-4">
+  <h1
+    class="block text-3xl font-bold tracking-tighter text-neutral-800 sm:text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200"
+  >
+    {product.data.title}
+  </h1>
+
+  <p class="text-lg text-neutral-600 dark:text-neutral-400">
+    {product.data.description}
+  </p>
+
+  {
+    product.data.tags && product.data.tags.length > 0 && (
+      <div class="mt-2 flex flex-wrap gap-2">
+        {product.data.tags.slice(0, 5).map((tag) => (
+          <span class="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+            {tag}
+          </span>
+        ))}
       </div>
+    )
+  }
+</div>
+
       <div>
         <Image
           id="fadeInMoveRight"
           src={imgMainResolved}
-          class="w-[600px]"
+          class="w-[500px]"
           alt={product.data.main.imgAlt}
           format={"avif"}
           loading={"eager"}
@@ -208,6 +211,88 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
       </div>
     </div>
   </section>
+
+  <!-- Variants Section -->
+  {
+    product.data.variants && product.data.variants.length > 0 && (
+      <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div class="mx-auto max-w-5xl">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
+              Các Biến Thể Sản Phẩm
+            </h2>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400">
+              Chọn biến thể phù hợp với nhu cầu của bạn. Liên hệ để nhận báo giá tốt nhất.
+            </p>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-neutral-300 dark:divide-neutral-700">
+              <thead class="bg-neutral-50 dark:bg-neutral-800">
+                <tr>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Mã SKU
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Tên sản phẩm
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Vật liệu
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Đường kính
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Chiều dài (mm)
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                    Hành động
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-200 bg-white dark:divide-neutral-700 dark:bg-neutral-900">
+                {product.data.variants.map((variant: any) => (
+                  <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800">
+                    <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-900 dark:text-neutral-100">
+                      {variant.sku}
+                    </td>
+                    <td class="px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
+                      {variant.name}
+                    </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
+                      {variant.material?.replace('inox-', 'Inox ').replace('thep-ma-kem', 'Thép mạ kẽm').replace('thep-ma-niken', 'Thép mạ niken')}
+                    </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
+                      {variant.diameter}
+                    </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
+                      {variant.length_mm}
+                    </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-sm">
+                      <a
+                        href="/contact"
+                        class="inline-flex items-center rounded-md bg-orange-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                      >
+                        Yêu cầu báo giá
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-6 rounded-lg bg-orange-50 p-4 dark:bg-orange-900/20">
+            <p class="text-sm text-orange-800 dark:text-orange-200">
+              <strong>Lưu ý:</strong> Chúng tôi cũng nhận gia công theo yêu cầu và bản vẽ kỹ thuật. 
+              Liên hệ bộ phận kinh doanh để được tư vấn chi tiết về số lượng đặt hàng tối thiểu (MOQ) và thời gian giao hàng.
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
 
   <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
     <nav
@@ -365,6 +450,59 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
       }
     </div>
   </div>
+
+  <!-- Related Categories Section -->
+  {
+    product.data.relatedCategory && product.data.relatedCategory.length > 0 && (
+      <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="mb-8 text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
+            Danh Mục Liên Quan
+          </h2>
+          <p class="mb-6 text-neutral-600 dark:text-neutral-400">
+            Khám phá thêm các sản phẩm liên quan khác từ chúng tôi
+          </p>
+          
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {product.data.relatedCategory.map((category: any) => (
+              <a
+                href={`/${category.slug}`}
+                class="group block rounded-lg border border-neutral-200 p-6 transition-all hover:border-orange-400 hover:shadow-lg dark:border-neutral-700 dark:hover:border-orange-500"
+              >
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold text-neutral-800 group-hover:text-orange-500 dark:text-neutral-200 dark:group-hover:text-orange-400">
+                    {category.name}
+                  </h3>
+                  <svg
+                    class="h-5 w-5 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-orange-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+          
+          <div class="mt-8 text-center">
+            <a
+              href="/tan-tru-tu-giu"
+              class="inline-flex items-center justify-center rounded-lg border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            >
+              Xem tất cả sản phẩm Tán trụ tự giữ
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
 </MainLayout>
 
 <script>

@@ -78,7 +78,7 @@ const homeUrl = Astro.currentLocale === "en" ? "/en" : "/";
     <!-- Contains navigation links -->
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
+      class="hs-collapse hidden grow basis-full overflow-hidden md:overflow-visible transition-all duration-300 md:block"
     >
       <!-- Navigation links container -->
       <div
@@ -89,6 +89,50 @@ const homeUrl = Astro.currentLocale === "en" ? "/en" : "/";
           <NavLink url={link.url} name={link.name} />
         ))}
 
+        <!-- Products dropdown -->
+        <div class="group relative" id="products-nav-item">
+          <!-- Desktop trigger (hover) / Mobile trigger (click) -->
+          <button
+            type="button"
+            id="products-mobile-toggle"
+            class="flex items-center gap-x-1 font-medium text-neutral-600 outline-none transition duration-300 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300 md:py-4"
+          >
+            {strings.productsNav.label}
+            <svg
+              id="products-arrow"
+              class="h-4 w-4 shrink-0 transition-transform duration-200 md:group-hover:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+
+          <!-- Desktop dropdown (hover-powered) -->
+          <div
+            class="hidden md:block pointer-events-none invisible absolute left-0 top-full z-50  min-w-52 translate-y-1 rounded-2xl border border-yellow-100/60 bg-yellow-50/95 opacity-0 shadow-lg backdrop-blur-md transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-neutral-700/60 dark:bg-neutral-800/95"
+          >
+            <ul class="py-2">
+              {strings.productsNav.categories.map((cat: { name: string; url: string }) => (
+                <li><a href={cat.url} class="flex items-center px-4 py-2 text-sm text-neutral-600 transition hover:bg-yellow-100/60 hover:text-orange-400 dark:text-neutral-300 dark:hover:bg-neutral-700/60 dark:hover:text-orange-300 rounded-xl mx-1">{cat.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Mobile accordion list (toggle on click) -->
+          <ul id="products-mobile-list" class="hidden md:hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
+            {strings.productsNav.categories.map((cat: { name: string; url: string }) => (
+              <li><a href={cat.url} class="block py-2 text-sm text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300">{cat.name}</a></li>
+            ))}
+          </ul>
+        </div>
 
         <LanguagePicker />
         <!-- ThemeIcon component specifically for larger screens -->
@@ -203,4 +247,26 @@ const homeUrl = Astro.currentLocale === "en" ? "/en" : "/";
       });
     });
   });
+</script>
+
+<script is:inline>
+  // Mobile products accordion toggle
+  const mobileToggle = document.getElementById("products-mobile-toggle");
+  const mobileList = document.getElementById("products-mobile-list");
+  const arrow = document.getElementById("products-arrow");
+
+  if (mobileToggle && mobileList) {
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = !mobileList.classList.contains("hidden");
+      if (isOpen) {
+        mobileList.classList.add("hidden");
+        mobileList.classList.remove("flex");
+        if (arrow) arrow.style.transform = "";
+      } else {
+        mobileList.classList.remove("hidden");
+        mobileList.classList.add("flex");
+        if (arrow) arrow.style.transform = "rotate(180deg)";
+      }
+    });
+  }
 </script>

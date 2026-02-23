@@ -3,7 +3,8 @@ import { languages } from "@utils//ui";
 import Icon from "./icons/Icon.astro";
 ---
 
-<div class="hs-dropdown relative inline-flex">
+<!-- Desktop: hs-dropdown (hover/click powered by Preline) -->
+<div class="hs-dropdown relative hidden md:inline-flex">
   <button
     id="hs-dropdown-default"
     type="button"
@@ -30,7 +31,6 @@ import Icon from "./icons/Icon.astro";
     aria-labelledby="hs-dropdown-hover-event"
   >
     {
-      // Map through the list of languages, creating a link for each language
       Object.entries(languages).map(([lang, label]) => (
         <a
           class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-hidden dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
@@ -43,45 +43,110 @@ import Icon from "./icons/Icon.astro";
   </div>
 </div>
 
+<!-- Mobile: accordion (same style as products dropdown) -->
+<div class="md:hidden">
+  <button
+    type="button"
+    id="lang-mobile-toggle"
+    class="flex items-center gap-x-1 font-medium text-neutral-600 outline-none transition duration-300 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
+  >
+    <Icon name="earth" />
+    <svg
+      id="lang-mobile-arrow"
+      class="h-4 w-4 shrink-0 transition-transform duration-200"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </button>
+
+  <ul id="lang-mobile-list" class="hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <li>
+          <a
+            href={`/${lang === "vn" ? "" : lang}`}
+            class="block py-2 text-sm text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
 <script>
   // Type alias for supported languages
   type TLanguage = "en" | "vn";
   // array of supported languages
   const languages: TLanguage[] = ["en", "vn"];
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Only target language picker links
-    const languageLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
+  function handleLangLinkClick(link: HTMLAnchorElement) {
+    const lang = link
+      .getAttribute("href")
+      ?.replace("/", "")
+      .replace("/", "") as TLanguage;
 
-    languageLinks.forEach((element) => {
-      const link = element as HTMLAnchorElement;
-      const lang = link
-        .getAttribute("href")
-        ?.replace("/", "")
-        .replace("/", "") as TLanguage;
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
 
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
+      const url = new URL(window.location.href);
 
-        const url = new URL(window.location.href);
+      const currentPath = url.pathname
+        .split("/")
+        .filter((part) => part && !languages.includes(part as TLanguage))
+        .join("/");
 
-        const currentPath = url.pathname
-          .split("/")
-          .filter((part) => part && !languages.includes(part as TLanguage))
-          .join("/");
+      let newPath = "";
+      if (lang && lang !== "vn") {
+        newPath = `/${lang}/${currentPath}`;
+      } else {
+        newPath = `/${currentPath}`;
+      }
 
-        let newPath = "";
-        if (lang && lang !== "vn") {
-          newPath = `/${lang}/${currentPath}`;
-        } else {
-          newPath = `/${currentPath}`;
-        }
+      newPath = newPath.replace(/\/+/g, "/");
+      if (newPath === "") newPath = "/";
 
-        newPath = newPath.replace(/\/+/g, "/");
-        if (newPath === "") newPath = "/";
-
-        window.location.href = `${url.origin}${newPath}${url.search}`;
-      });
+      window.location.href = `${url.origin}${newPath}${url.search}`;
     });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Desktop dropdown links
+    const desktopLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
+    desktopLinks.forEach((el) => handleLangLinkClick(el as HTMLAnchorElement));
+
+    // Mobile accordion links
+    const mobileLinks = document.querySelectorAll("#lang-mobile-list a");
+    mobileLinks.forEach((el) => handleLangLinkClick(el as HTMLAnchorElement));
+
+    // Mobile accordion toggle
+    const toggle = document.getElementById("lang-mobile-toggle");
+    const list = document.getElementById("lang-mobile-list");
+    const arrow = document.getElementById("lang-mobile-arrow");
+
+    if (toggle && list) {
+      toggle.addEventListener("click", () => {
+        const isOpen = !list.classList.contains("hidden");
+        if (isOpen) {
+          list.classList.add("hidden");
+          list.classList.remove("flex");
+          if (arrow) arrow.style.transform = "";
+        } else {
+          list.classList.remove("hidden");
+          list.classList.add("flex");
+          if (arrow) arrow.style.transform = "rotate(180deg)";
+        }
+      });
+    }
   });
 </script>

@@ -27,11 +27,7 @@ relatedCategory:
     name: "Sên xích"
 main:
   id: 1
-  content: |
-    Con trượt bi là phụ kiện quan trọng cho hệ thống truyền động tuyến tính, được sử dụng rộng rãi trong các ứng dụng tự động hóa.
-    Sản phẩm có độ chính xác cao, vận hành êm ái với độ ma sát thấp nhờ hệ thống bi lăn.
-    
-    Thiết kế chắc chắn, tuổi thọ cao, phù hợp cho các môi trường làm việc khắc nghiệt.
+  content: "Con trượt bi là phụ kiện quan trọng cho hệ thống truyền động tuyến tính, được sử dụng rộng rãi trong các ứng dụng tự động hóa. Sản phẩm có độ chính xác cao, vận hành êm ái với độ ma sát thấp nhờ hệ thống bi lăn. Thiết kế chắc chắn, tuổi thọ cao, phù hợp cho các môi trường làm việc khắc nghiệt."
   imgCard: "@/images/products/phu-kien-nhom/con-truot-bi.avif"
   imgMain: "@/images/products/phu-kien-nhom/con-truot-bi.avif"
   imgAlt: "Con trượt bi chất lượng cao"
@@ -47,9 +43,7 @@ tabs:
     title: "Bản vẽ"
 longDescription:
   title: "Con Trượt Bi Chính Xác Cao"
-  subTitle: |
-    Con trượt bi được thiết kế với độ chính xác cao, đảm bảo chuyển động tuyến tính trơn tru.
-    Sử dụng hệ thống bi lăn chất lượng, giảm ma sát, tăng hiệu suất vận hành.
+  subTitle: "Con trượt bi được thiết kế với độ chính xác cao, đảm bảo chuyển động tuyến tính trơn tru. Sử dụng hệ thống bi lăn chất lượng, giảm ma sát, tăng hiệu suất vận hành."
   btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
   btnURL: "/contact"
 descriptionList:

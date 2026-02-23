@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Con trượt lá là phụ kiện quan trọng cho hệ thống truyền động."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/phu-kien-nhom/con-truot-la.avif"
+  imgMain: "@/images/products/phu-kien-nhom/con-truot-la.avif"
   imgAlt: "Con trượt lá"
 tabs:
   - id: "tabs-with-card-item-1"

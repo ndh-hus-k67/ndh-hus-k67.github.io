@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Sen xích bước đôi là lựa chọn tin cậy cho các ứng dụng truyền động công nghiệp."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/sen-xich/xich-buoc-doi.avif"
+  imgMain: "@/images/products/sen-xich/xich-buoc-doi.avif"
   imgAlt: "Sen xích bước đôi"
 tabs:
   - id: "tabs-with-card-item-1"

@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Sen xích chốt rộng là lựa chọn tin cậy cho các ứng dụng truyền động công nghiệp."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/sen-xich/xich-chot-rong.avif"
+  imgMain: "@/images/products/sen-xich/xich-chot-rong.avif"
   imgAlt: "Sen xích chốt rộng"
 tabs:
   - id: "tabs-with-card-item-1"

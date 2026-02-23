@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Xích công nghiệp DID là lựa chọn tin cậy cho các ứng dụng truyền động công nghiệp."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/sen-xich/xich-cong-nghiep-did.avif"
+  imgMain: "@/images/products/sen-xich/xich-cong-nghiep-did.avif"
   imgAlt: "Xích công nghiệp DID"
 tabs:
   - id: "tabs-with-card-item-1"

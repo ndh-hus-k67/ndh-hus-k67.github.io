@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Con trượt thuỷen là phụ kiện quan trọng cho hệ thống truyền động."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
+  imgMain: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
   imgAlt: "Con trượt thuỷen"
 tabs:
   - id: "tabs-with-card-item-1"

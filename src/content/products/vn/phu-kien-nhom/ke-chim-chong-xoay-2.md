@@ -11,8 +11,8 @@ productType:
 main:
   id: 1
   content: "Ke chìm chống xoay hai đầu là phụ kiện quan trọng cho hệ thống truyền động."
-  imgCard: "@/images/product-default.avif"
-  imgMain: "@/images/product-default.avif"
+  imgCard: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay.avif"
+  imgMain: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay.avif"
   imgAlt: "Ke chìm chống xoay hai đầu"
 tabs:
   - id: "tabs-with-card-item-1"

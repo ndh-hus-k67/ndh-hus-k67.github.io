@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm bu lông (Vietnamese only)
+// Lấy tất cả sản phẩm sên xích (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
@@ -34,7 +34,7 @@ const productsByType = (() => {
 })();
 
 const title = "Sên Xích";
-const description = "Khám phá bộ sưu tập sên xích chất lượng cao của chúng tôi, bao gồm sên xích inox, sên xích lục giác, sên xích chữ T và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp cơ khí.";
+const description = "Khám phá bộ sưu tập sên xích chất lượng cao của chúng tôi, bao gồm sên xích công nghiệp, sên xích truyền động, sên xích tải và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp cơ khí.";
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---
@@ -73,13 +73,13 @@ const pageTitle = `${title} | ${SITE.title}`;
             allProducts.map(p => {
               const slug = p.data?.slug || p.id?.split('/').pop()?.replace('.md', '');
               const productTypeSlug = typeof p.data.productType === 'string' ? p.data.productType : p.data.productType?.slug || '';
-              const alias = productTypeSlug.replace(/^bu-long-/, '');
+              const alias = productTypeSlug.replace(/^sen-xich-/, '');
               const dataTypes = `${productTypeSlug} ${alias}`.trim();
               const titleText = p.data?.title ?? slug;
-              const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain || "@/images/product-default.avif";
+              const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain;
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
-                <a href={`/bu-long/${slug}`} data-product-type={dataTypes} class="group block product-item">
+                <a href={`/sen-xich/${slug}`} data-product-type={dataTypes} class="group block product-item">
                   <div class="relative aspect-square overflow-hidden rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl">
                     <Image
                       src={imgSrc}
@@ -99,6 +99,7 @@ const pageTitle = `${title} | ${SITE.title}`;
         </div>
       </div>
 
+      <!-- Sidebar: danh sách các danh mục/productType trong bu-long -->
      <aside class="hidden lg:block lg:col-span-1">
   <div class="sticky top-20 rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">
     

@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Lấy tất cả sản phẩm bu lông (Vietnamese only)
+// Lấy tất cả sản phẩm phụ kiện nhôm (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
@@ -33,8 +33,8 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Phụ Kiện Nhóm định hình";
-const description = "Khám phá bộ sưu tập phụ kiện nhóm chất lượng cao của chúng tôi.";
+const title = "Phụ Kiện Nhôm";
+const description = "Khám phá bộ sưu tập phụ kiện nhôm chất lượng cao của chúng tôi, bao gồm profile nhôm, thanh nhôm định hình, kẹp nhôm và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp.";
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---
@@ -73,10 +73,10 @@ const pageTitle = `${title} | ${SITE.title}`;
             allProducts.map(p => {
               const slug = p.data?.slug || p.id?.split('/').pop()?.replace('.md', '');
               const productTypeSlug = typeof p.data.productType === 'string' ? p.data.productType : p.data.productType?.slug || '';
-              const alias = productTypeSlug.replace(/^bu-long-/, '');
+              const alias = productTypeSlug.replace(/^phu-kien-nhom-/, '');
               const dataTypes = `${productTypeSlug} ${alias}`.trim();
               const titleText = p.data?.title ?? slug;
-              const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain || "@/images/product-default.avif";
+              const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain;
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
                 <a href={`/phu-kien-nhom/${slug}`} data-product-type={dataTypes} class="group block product-item">
@@ -110,7 +110,7 @@ const pageTitle = `${title} | ${SITE.title}`;
           d="M20 13V7a2 2 0 00-2-2h-4M4 11V7a2 2 0 012-2h4M4 17v-2m16 2v-2M9 21h6" />
       </svg>
       <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-        Danh mục Phụ Kiện Nhóm
+        Danh mục Phụ Kiện Nhôm
       </h4>
     </div>
 

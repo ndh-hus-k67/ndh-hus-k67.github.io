@@ -5,13 +5,9 @@ import { Image } from "astro:assets";
 interface Category {
   slug: string;
   name: string;
-  description: string;
-  icon: string;
   count: number;
   image?: any;
   imageAlt?: string;
-  features?: string[];
-  highlights?: { label: string; value: string }[];
 }
 
 interface Props {

@@ -92,9 +92,7 @@ const ogTitle = `${product.data.title} | Ốc vít | ${SITE.title}`;
           product.data.main?.content && (
             <div class="mb-8 rounded-lg border border-neutral-200 bg-orange-50 p-6 dark:border-neutral-700 dark:bg-orange-950/20">
               <h2 class="mb-3 text-lg font-semibold text-neutral-900 dark:text-neutral-100">Mô tả sản phẩm</h2>
-              <p class="leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {product.data.main.content}
-              </p>
+              <div class="leading-relaxed text-neutral-700 dark:text-neutral-300" set:html={product.data.main.content} />
             </div>
           )
         }

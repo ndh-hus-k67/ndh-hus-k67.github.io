@@ -1,7 +1,6 @@
 ---
 title: "Tán trụ tự giữ xuyên lỗ"
 slug: "tan-tru-tu-giu-xuyen-lo"
-description: "Tán trụ tự giữ xuyên lỗ - Giải pháp liên kết xuyên lỗ chắc chắn, vật liệu nhôm/SUS410/SUS303/thép, đa dạng kích thước"
 updatedDate: 2026-01-20
 category:
   slug: "tan-tru-tu-giu"
@@ -9,48 +8,10 @@ category:
 productType:
   slug: "tan-tru-tu-giu-xuyen-lo"
   name: "Tán trụ tự giữ xuyên lỗ"
-filters:
-  material: ["nhom", "sus410", "sus303", "thep"]
-  diameter: ["M3", "M3.5", "M4", "M5", "#4-40", "#6-32", "#8-32", "#10-32"]
-  application: ["co-khi", "tu-dong-hoa", "che-tao-may", "dien-tu"]
-tags: ["tan-tru-tu-giu", "xuyen-lo", "tan-nhom", "tan-thep", "tan-sus410", "tan-sus303"]
 seo:
   title: "Tán trụ tự giữ xuyên lỗ - Liên kết xuyên lỗ chắc chắn"
   description: "Tán trụ tự giữ xuyên lỗ chất lượng cao, vật liệu Nhôm/SUS410/SUS303/Thép, size ren từ M3-M5 và #4-40 đến #10-32. Đa dạng kích thước, liên kết xuyên lỗ chắc chắn."
   keywords: ["tán trụ tự giữ xuyên lỗ", "xuyen lo nut", "tán nhôm", "tán thép", "tán sus410", "tán sus303", "tán tự giữ"]
-variants:
-  - sku: "TTTG-XL-M3-NHOM"
-    name: "Tán trụ tự giữ xuyên lỗ M3 Nhôm"
-    material: "nhom"
-    diameter: "M3"
-  - sku: "TTTG-XL-M4-SUS410"
-    name: "Tán trụ tự giữ xuyên lỗ M4 SUS410"
-    material: "sus410"
-    diameter: "M4"
-  - sku: "TTTG-XL-6-32-THEP"
-    name: "Tán trụ tự giữ xuyên lỗ #6-32 Thép"
-    material: "thep"
-    diameter: "#6-32"
-  - sku: "TTTG-XL-8-32-SUS303"
-    name: "Tán trụ tự giữ xuyên lỗ #8-32 SUS303"
-    material: "sus303"
-    diameter: "#8-32"
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Tán trụ tự giữ"
-    url: "/tan-tru-tu-giu"
-  - name: "Xuyên lỗ"
-    url: "/tan-tru-tu-giu/xuyen-lo"
-  - name: "Tán trụ tự giữ xuyên lỗ"
-    url: "/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo"
-relatedCategory:
-  - slug: "tan-tu-giu"
-    name: "Tán tự giữ"
-  - slug: "dai-oc"
-    name: "Đai ốc"
-  - slug: "bu-long"
-    name: "Bu lông"
 main:
   id: 1
   content: |
@@ -59,38 +20,6 @@ main:
   imgMain: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.jpg"
   imgAlt: "Tán trụ tự giữ xuyên lỗ"
 
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-longDescription:
-  title: "Giải Pháp Liên Kết Xuyên Lỗ Chuyên Nghiệp"
-  subTitle: |
-    Tán trụ tự giữ xuyên lỗ là lựa chọn lý tưởng cho các vị trí liên kết xuyên lỗ, giúp tăng độ bền, ổn định và tính thẩm mỹ cho kết cấu. Sản phẩm phù hợp cho các ứng dụng đòi hỏi độ chính xác và độ bền cao.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Liên Kết Xuyên Lỗ"
-    subTitle: "Thiết kế chuyên dụng cho các vị trí xuyên lỗ, tăng độ bền và ổn định cho kết cấu."
-  - title: "Vật Liệu Đa Dạng"
-    subTitle: "Có sẵn từ Nhôm, SUS410, SUS303 và Thép, phù hợp với nhiều môi trường làm việc."
-  - title: "Đa Dạng Kích Thước"
-    subTitle: "Nhiều size ren và chiều dài, dễ dàng lựa chọn cho từng vị trí lắp đặt."
-specificationsLeft:
-  - title: "Vật liệu"
-    subTitle: "Nhôm, SUS410, Thép, SUS303"
-  - title: "Size Ren"
-    subTitle: "M3-M5, #4-40 đến #10-32"
-  - title: "Ứng dụng"
-    subTitle: "Cơ khí, tự động hóa, chế tạo máy, điện tử"
-  - title: "Đặc điểm"
-    subTitle: "Xuyên lỗ, đa dạng kích thước, liên kết chắc chắn"
 tableData:
   - feature: ["Thông số", "Giá trị"]
     description:

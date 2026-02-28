@@ -1,7 +1,6 @@
 ---
 title: "Con trượt thuỷen"
 slug: "con-truot-thuyen"
-description: "Con trượt thuỷen chất lượng cao cho các ứng dụng tự động hóa"
 category:
   slug: "phu-kien-nhom"
   name: "Phụ kiện nhóm"
@@ -14,19 +13,4 @@ main:
   imgCard: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
   imgMain: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
   imgAlt: "Con trượt thuỷen"
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-longDescription:
-  title: "Con Trượt Thuỷen Chất Lượng"
-  subTitle: "Sản phẩm đạt chuẩn quốc tế"
-  btnTitle: "Liên hệ"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Chất lượng cao"
-    subTitle: "Đạt chuẩn quốc tế"
-specificationsLeft:
-  - title: "Chất lượng"
-    subTitle: "Cao cấp"
 ---

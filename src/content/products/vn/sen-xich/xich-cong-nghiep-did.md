@@ -1,7 +1,6 @@
 ---
 title: "Xích công nghiệp DID"
 slug: "xich-cong-nghiep-did"
-description: "Xích công nghiệp DID cho hệ thống truyền động"
 category:
   slug: "sen-xich"
   name: "Xích"
@@ -14,19 +13,4 @@ main:
   imgCard: "@/images/products/sen-xich/xich-cong-nghiep-did.avif"
   imgMain: "@/images/products/sen-xich/xich-cong-nghiep-did.avif"
   imgAlt: "Xích công nghiệp DID"
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-longDescription:
-  title: "Xích Công Nghiệp DID"
-  subTitle: "Sản phẩm chất lượng cao đạt chuẩn quốc tế"
-  btnTitle: "Liên hệ"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Chất lượng cao"
-    subTitle: "Sản phẩm DID uy tín"
-specificationsLeft:
-  - title: "Hãng sản xuất"
-    subTitle: "DID uy tín"
 ---

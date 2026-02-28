@@ -1,7 +1,6 @@
 ---
 title: "Sen xích chốt dài"
 slug: "sen-xich-chot-dai"
-description: "Sen xích chốt dài cho hệ thống truyền động"
 category:
   slug: "sen-xich"
   name: "Xích"
@@ -14,19 +13,4 @@ main:
   imgCard: "@/images/products/sen-xich/xich-chot-dai.avif"
   imgMain: "@/images/products/sen-xich/xich-chot-dai.avif"
   imgAlt: "Sen xích chốt dài"
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-longDescription:
-  title: "Sen Xích Chốt Dài"
-  subTitle: "Sản phẩm chất lượng cao đạt chuẩn quốc tế"
-  btnTitle: "Liên hệ"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Chất lượng cao"
-    subTitle: "Sản phẩm chuyên dụng"
-specificationsLeft:
-  - title: "Loại"
-    subTitle: "Sen xích chốt dài"
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Tán tự giữ lục giác Bohsei"
 slug: "tan-tu-giu-luc-giac-bohsei"
-description: "Tán tự giữ lục giác Bohsei Nut - Độ bền cao, chống xoay vượt trội"
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -9,48 +8,10 @@ category:
 productType:
   slug: "tan-tu-giu-luc-giac-bohsei"
   name: "Tán tự giữ lục giác Bohsei"
-filters:
-  material: ["inox-304", "inox-410", "thep"]
-  diameter: ["M2", "M2.5", "M2.6", "M3", "M4", "M5", "M6", "M8", "#6-32", "#8-32", "#10-24", "#10-32", "1/4-20"]
-  application: ["co-khi", "tu-dong-hoa", "che-tao-may", "dien-tu"]
-tags: ["tan-tu-giu", "tan-luc-giac", "bohsei-nut", "tan-inox", "chong-xoay"]
 seo:
   title: "Tán tự giữ lục giác Bohsei - Chống xoay cao cấp"
   description: "Tán tự giữ lục giác Bohsei Nut chất lượng cao, vật liệu Inox 304/410, Thép. Size ren từ M2 đến M8 và #6-32 đến 1/4-20. Thiết kế lục giác chống xoay vượt trội."
   keywords: ["tán tự giữ lục giác", "bohsei nut", "tán lục giác", "tán chống xoay", "tán tự giữ M3", "tán tự giữ M4", "hexagonal rivet nut"]
-variants:
-  - sku: "TTG-BOHSEI-M3-INOX304"
-    name: "Tán tự giữ lục giác Bohsei M3 Inox 304"
-    material: "inox-304"
-    diameter: "M3"
-  - sku: "TTG-BOHSEI-M4-INOX304"
-    name: "Tán tự giữ lục giác Bohsei M4 Inox 304"
-    material: "inox-304"
-    diameter: "M4"
-  - sku: "TTG-BOHSEI-M5-INOX410"
-    name: "Tán tự giữ lục giác Bohsei M5 Inox 410"
-    material: "inox-410"
-    diameter: "M5"
-  - sku: "TTG-BOHSEI-M6-INOX410"
-    name: "Tán tự giữ lục giác Bohsei M6 Inox 410"
-    material: "inox-410"
-    diameter: "M6"
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Tán tự giữ"
-    url: "/tan-tu-giu"
-  - name: "Lục giác Bohsei"
-    url: "/tan-tu-giu/luc-giac-bohsei"
-  - name: "Tán tự giữ lục giác Bohsei"
-    url: "/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei"
-relatedCategory:
-  - slug: "tan-tu-giu"
-    name: "Tán tự giữ"
-  - slug: "dai-oc"
-    name: "Đai ốc"
-  - slug: "bu-long"
-    name: "Bu lông"
 main:
   id: 1
   content: |
@@ -59,38 +20,6 @@ main:
   imgMain: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei.avif"
   imgAlt: "Tán tự giữ lục giác Bohsei"
 
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-longDescription:
-  title: "Giải Pháp Chống Xoay Chuyên Nghiệp"
-  subTitle: |
-    Tán tự giữ lục giác Bohsei Nut là lựa chọn hàng đầu cho các ứng dụng đòi hỏi khả năng chống xoay cao. Thiết kế lục giác độc đáo tạo ra lực cản xoay mạnh mẽ, đảm bảo tán luôn giữ nguyên vị trí trong suốt quá trình vận hành, ngay cả trong điều kiện rung động cao.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Chống Xoay Vượt Trội"
-    subTitle: "Thiết kế lục giác bên ngoài tạo lực cản xoay mạnh mẽ, ngăn chặn tán bị xoay khi siết chặt bu lông."
-  - title: "Độ Bền Cao"
-    subTitle: "Sản xuất từ Inox 304, Inox 410 và Thép chất lượng cao, đảm bảo độ bền vượt trội trong mọi môi trường làm việc."
-  - title: "Đa Dạng Kích Thước"
-    subTitle: "Có sẵn nhiều size ren từ M2 đến M8 (metric) và #6-32 đến 1/4-20 (imperial), đáp ứng mọi nhu cầu."
-specificationsLeft:
-  - title: "Vật liệu"
-    subTitle: "SUS304, SUS410, Thép"
-  - title: "Size Ren"
-    subTitle: "M2-M8, #6-32 đến 1/4-20"
-  - title: "Ứng dụng"
-    subTitle: "Cơ khí chính xác, tự động hóa, chế tạo máy, điện tử công nghiệp"
-  - title: "Đặc điểm"
-    subTitle: "Đầu lục giác Bohsei, chống xoay cao, độ bền vượt trội, lắp đặt chắc chắn"
 tableData:
   - feature: ["Thông số", "Giá trị"]
     description:

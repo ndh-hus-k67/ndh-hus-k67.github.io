@@ -1,7 +1,6 @@
 ---
 title: "Tán tự giữ Right Angle"
 slug: "tan-tu-giu-right-angle"
-description: "Tán tự giữ góc vuông (Right Angle Nut) - Giải pháp liên kết cho các vị trí góc, vật liệu nhôm/thép, đa dạng kích thước"
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -9,48 +8,10 @@ category:
 productType:
   slug: "tan-tu-giu-right-angle"
   name: "Tán tự giữ Right Angle"
-filters:
-  material: ["nhom", "thep"]
-  diameter: ["M3", "M4", "#4-40", "#6-32", "#8-32"]
-  application: ["co-khi", "tu-dong-hoa", "che-tao-may", "dien-tu"]
-tags: ["tan-tu-giu", "right-angle-nut", "tan-nhom", "tan-thep", "tan-goc-vuong"]
 seo:
   title: "Tán tự giữ Right Angle - Giải pháp liên kết góc vuông"
   description: "Tán tự giữ góc vuông (Right Angle Nut) chất lượng cao, vật liệu Nhôm/Thép, size ren từ M3-M4 và #4-40 đến #8-32. Đa dạng kích thước, phù hợp cho liên kết tại các vị trí góc."
   keywords: ["tán tự giữ right angle", "right angle nut", "tán góc vuông", "tán nhôm", "tán thép", "tán tự giữ M3", "tán tự giữ M4"]
-variants:
-  - sku: "TTG-RA-M3-NHOM"
-    name: "Tán tự giữ Right Angle M3 Nhôm"
-    material: "nhom"
-    diameter: "M3"
-  - sku: "TTG-RA-M4-THEP"
-    name: "Tán tự giữ Right Angle M4 Thép"
-    material: "thep"
-    diameter: "M4"
-  - sku: "TTG-RA-6-32-NHOM"
-    name: "Tán tự giữ Right Angle #6-32 Nhôm"
-    material: "nhom"
-    diameter: "#6-32"
-  - sku: "TTG-RA-8-32-THEP"
-    name: "Tán tự giữ Right Angle #8-32 Thép"
-    material: "thep"
-    diameter: "#8-32"
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Tán tự giữ"
-    url: "/tan-tu-giu"
-  - name: "Right Angle"
-    url: "/tan-tu-giu/right-angle"
-  - name: "Tán tự giữ Right Angle"
-    url: "/tan-tu-giu/right-angle/tan-tu-giu-right-angle"
-relatedCategory:
-  - slug: "tan-tu-giu"
-    name: "Tán tự giữ"
-  - slug: "dai-oc"
-    name: "Đai ốc"
-  - slug: "bu-long"
-    name: "Bu lông"
 main:
   id: 1
   content: |
@@ -59,38 +20,6 @@ main:
   imgMain: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle.avif"
   imgAlt: "Tán tự giữ Right Angle"
 
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-longDescription:
-  title: "Giải Pháp Liên Kết Góc Vuông Chuyên Nghiệp"
-  subTitle: |
-    Tán tự giữ Right Angle là lựa chọn lý tưởng cho các vị trí liên kết góc vuông, giúp tối ưu hóa không gian và tăng độ chắc chắn cho kết cấu. Sản phẩm phù hợp cho các ứng dụng đòi hỏi độ chính xác và độ bền cao.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Liên Kết Góc Vuông"
-    subTitle: "Thiết kế chuyên dụng cho các vị trí góc, tối ưu hóa không gian lắp đặt."
-  - title: "Vật Liệu Đa Dạng"
-    subTitle: "Có sẵn từ Nhôm và Thép, phù hợp với nhiều môi trường làm việc."
-  - title: "Đa Dạng Kích Thước"
-    subTitle: "Nhiều size ren và kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt."
-specificationsLeft:
-  - title: "Vật liệu"
-    subTitle: "Nhôm, Thép"
-  - title: "Size Ren"
-    subTitle: "M3-M4, #4-40 đến #8-32"
-  - title: "Ứng dụng"
-    subTitle: "Cơ khí, tự động hóa, chế tạo máy, điện tử"
-  - title: "Đặc điểm"
-    subTitle: "Góc vuông, tối ưu hóa không gian, đa dạng kích thước"
 tableData:
   - feature: ["Thông số", "Giá trị"]
     description:

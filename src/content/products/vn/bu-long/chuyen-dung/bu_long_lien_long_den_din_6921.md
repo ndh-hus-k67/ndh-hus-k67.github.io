@@ -1,7 +1,6 @@
 ---
 title: "Bu lông inox liền long đen DIN 6921"
 slug: "bu-long-inox-lien-long-den-din-6921"
-description: "Bu lông liền long đen (flange bolt) theo tiêu chuẩn DIN 6921; đầu lục giác ngoài kèm bích/long đen liền giúp tăng diện tích tỳ và chống lỏng."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -9,54 +8,10 @@ category:
 productType:
   slug: "bu-long-chuyen-dung"
   name: "Bu lông chuyên dụng"
-filters:
-  material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
-  diameter: ["M5", "M6", "M8", "M10", "M12", "M16", "M20"]
-  length_mm: []
-  surface: ["khong-xu-ly"]
-  application: ["chong-long", "co-khi", "lap-rap", "o-to"]
-tags: ["bu-long-lien-long-den", "din-6921", "flange-bolt", "bu-long-bich", "bu-long-chong-long", "bu-long-inox-6921"]
 seo:
   title: "Bu lông inox liền long đen DIN 6921 - Flange bolt chống lỏng"
   description: "Bu lông liền long đen DIN 6921 inox 201/304/316/316L. Đầu lục giác kèm bích liền tăng diện tích tỳ, chống lỏng. Kích thước M5-M20, phù hợp cơ khí, ô tô."
   keywords: ["bu lông din 6921", "flange bolt", "bu lông liền long đen", "bu lông bích", "bu lông chống lỏng inox"]
-variants:
-  - sku: "BL6921-M8-25-INOX304"
-    name: "Bu lông liền long đen M8×25 Inox 304"
-    material: "inox-304"
-    diameter: "M8"
-    length_mm: 25
-  - sku: "BL6921-M10-30-INOX304"
-    name: "Bu lông liền long đen M10×30 Inox 304"
-    material: "inox-304"
-    diameter: "M10"
-    length_mm: 30
-  - sku: "BL6921-M12-40-INOX316"
-    name: "Bu lông liền long đen M12×40 Inox 316"
-    material: "inox-316"
-    diameter: "M12"
-    length_mm: 40
-  - sku: "BL6921-M16-50-INOX316L"
-    name: "Bu lông liền long đen M16×50 Inox 316L"
-    material: "inox-316l"
-    diameter: "M16"
-    length_mm: 50
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Bu lông"
-    url: "/bu-long"
-  - name: "Chuyên dụng"
-    url: "/bu-long/bu-long-chuyen-dung"
-  - name: "Bu lông inox liền long đen DIN 6921"
-    url: "/bu-long/bu-long-chuyen-dung/bu-long-inox-lien-long-den-din-6921"
-relatedCategory:
-  - slug: "dai-oc"
-    name: "Đai ốc"
-  - slug: "long-den"
-    name: "Long đen"
-  - slug: "inox-304"
-    name: "Inox 304"
 main:
   id: 17
   content: |
@@ -66,46 +21,6 @@ main:
   imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
   imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
   imgAlt: "Bu lông inox liền long đen DIN 6921"
-
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-
-longDescription:
-  title: "DIN 6921 – Bu Lông Bích Liền Cho Liên Kết Ổn Định"
-  subTitle: |
-    Bu lông DIN 6921 có cấu tạo gồm 2 phần chính: đầu lục giác ngoài để siết bằng cờ lê/tuýp và thân trụ có ren. Phần bích/long đen liền dưới đầu giúp tăng khả năng tỳ và giảm hiện tượng lún bề mặt so với bu lông thông thường (tùy vật liệu nền).
-
-    Vật liệu có thể là inox 201/304/316/316L hoặc thép tùy theo yêu cầu chống ăn mòn và tải trọng. Với thép, cấp bền có thể tham khảo theo ISO 898-1 (tùy lô hàng/tiêu chuẩn áp dụng).
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-
-descriptionList:
-  - title: "Bích/Long Đen Liền"
-    subTitle: "Tăng diện tích tỳ, phân bố lực tốt hơn và hỗ trợ chống lỏng trong một số ứng dụng." 
-  - title: "Thi Công Phổ Biến"
-    subTitle: "Đầu lục giác ngoài thuận tiện siết bằng cờ lê/tuýp." 
-  - title: "Vật Liệu Linh Hoạt"
-    subTitle: "Tùy chọn inox 201/304/316/316L hoặc thép để phù hợp môi trường làm việc." 
-
-specificationsLeft:
-  - title: "Tiêu chuẩn"
-    subTitle: "DIN 6921"
-  - title: "Kiểu đầu"
-    subTitle: "Lục giác ngoài + bích/long đen liền"
-  - title: "Kiểu ren"
-    subTitle: "Ren hệ mét (thường là ren suốt)"
-  - title: "Vật liệu"
-    subTitle: "Inox 201/304/316/316L; Thép"
-  - title: "Kích thước"
-    subTitle: "Phổ biến M5 ~ M20"
 
 tableData:
   - feature: ["Thông số", "Giá trị"]

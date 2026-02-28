@@ -1,7 +1,6 @@
 ---
 title: "Xích đôi chuẩn ISO"
 slug: "xich-doi-chuan-iso"
-description: "Xích đôi chuẩn ISO cho hệ thống truyền động"
 category:
   slug: "sen-xich"
   name: "Xích"
@@ -14,19 +13,4 @@ main:
   imgCard: "@/images/products/sen-xich/xich-2-iso.avif"
   imgMain: "@/images/products/sen-xich/xich-2-iso.avif"
   imgAlt: "Xích đôi chuẩn ISO"
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-longDescription:
-  title: "Xích Đôi Chuẩn ISO"
-  subTitle: "Sản phẩm chất lượng cao đạt chuẩn quốc tế"
-  btnTitle: "Liên hệ"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Chất lượng cao"
-    subTitle: "Đạt chuẩn ISO quốc tế"
-specificationsLeft:
-  - title: "Chuẩn"
-    subTitle: "ISO quốc tế"
 ---

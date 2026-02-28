@@ -1,7 +1,6 @@
 ---
 title: "Tán tự giữ floating"
 slug: "tan-tu-giu-floating"
-description: "Tán tự giữ floating (nổi) cho phép điều chỉnh linh hoạt, bù sai lệch lắp đặt"
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -9,48 +8,10 @@ category:
 productType:
   slug: "tan-tu-giu-floating"
   name: "Tán tự giữ floating"
-filters:
-  material: ["inox-304", "inox-410", "thep"]
-  diameter: ["M3", "M4", "M5", "M6", "#4-40", "#6-32", "#8-32", "#10-24", "#10-32", "1/4-20", "1/4-28"]
-  application: ["tu-dong-hoa", "robot", "che-tao-may", "hang-khong"]
-tags: ["tan-tu-giu", "tan-floating", "tan-noi", "tan-dieu-chinh", "tan-inox"]
 seo:
   title: "Tán tự giữ floating - Giải pháp bù sai lệch lắp đặt"
   description: "Tán tự giữ floating (nổi) cho phép điều chỉnh linh hoạt, bù sai lệch lắp đặt. Vật liệu Inox 304/410, Thép. Size ren từ M3 đến M6 và #4-40 đến 1/4-28. Ứng dụng trong robot, tự động hóa."
   keywords: ["tán tự giữ floating", "tán nổi", "floating rivet nut", "tán điều chỉnh", "tán tự giữ M4", "tán tự giữ M5", "bù sai số"]
-variants:
-  - sku: "TTG-FLOAT-M3-INOX304"
-    name: "Tán tự giữ floating M3 Inox 304"
-    material: "inox-304"
-    diameter: "M3"
-  - sku: "TTG-FLOAT-M4-INOX304"
-    name: "Tán tự giữ floating M4 Inox 304"
-    material: "inox-304"
-    diameter: "M4"
-  - sku: "TTG-FLOAT-M5-INOX410"
-    name: "Tán tự giữ floating M5 Inox 410"
-    material: "inox-410"
-    diameter: "M5"
-  - sku: "TTG-FLOAT-M6-INOX410"
-    name: "Tán tự giữ floating M6 Inox 410"
-    material: "inox-410"
-    diameter: "M6"
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Tán tự giữ"
-    url: "/tan-tu-giu"
-  - name: "Floating"
-    url: "/tan-tu-giu/floating"
-  - name: "Tán tự giữ floating"
-    url: "/tan-tu-giu/floating/tan-tu-giu-floating"
-relatedCategory:
-  - slug: "tan-tu-giu"
-    name: "Tán tự giữ"
-  - slug: "bu-long"
-    name: "Bu lông"
-  - slug: "vit"
-    name: "Vít"
 main:
   id: 1
   content: |
@@ -59,38 +20,6 @@ main:
   imgMain: "@/images/products/tan-tu-giu/floating/tan-tu-giu-floating.avif"
   imgAlt: "Tán tự giữ floating"
 
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-longDescription:
-  title: "Giải Pháp Bù Sai Lệch Lắp Đặt Thông Minh"
-  subTitle: |
-    Tán tự giữ floating là lựa chọn hoàn hảo khi bạn cần bù trừ sai lệch nhỏ giữa các lỗ khoan hoặc cần điều chỉnh vị trí trong quá trình lắp ráp. Khả năng "nổi" của sản phẩm cho phép di chuyển nhẹ theo nhiều hướng, giúp quá trình lắp đặt nhanh chóng và chính xác hơn.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Điều Chỉnh Linh Hoạt"
-    subTitle: "Cho phép di chuyển nhẹ theo nhiều hướng để bù trừ sai lệch lắp đặt, giúp quá trình lắp ráp dễ dàng và chính xác hơn."
-  - title: "Vật Liệu Cao Cấp"
-    subTitle: "Sản xuất từ Inox 304, Inox 410 và Thép, đảm bảo độ bền cao và khả năng chống ăn mòn tuyệt vời."
-  - title: "Ứng Dụng Đa Dạng"
-    subTitle: "Phù hợp cho robot công nghiệp, tự động hóa, hàng không và các ứng dụng đòi hỏi độ chính xác cao."
-specificationsLeft:
-  - title: "Vật liệu"
-    subTitle: "SUS304, SUS410, Thép"
-  - title: "Size Ren"
-    subTitle: "M3-M6, #4-40 đến 1/4-28"
-  - title: "Ứng dụng"
-    subTitle: "Robot công nghiệp, tự động hóa, hàng không, chế tạo máy chính xác"
-  - title: "Đặc điểm"
-    subTitle: "Floating (nổi), điều chỉnh linh hoạt, bù sai lệch, lắp đặt dễ dàng"
 tableData:
   - feature: ["Thông số", "Giá trị"]
     description:

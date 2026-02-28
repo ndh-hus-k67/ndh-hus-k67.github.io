@@ -1,7 +1,6 @@
 ---
 title: "Tán tự giữ tròn"
 slug: "tan-tu-giu-tron"
-description: "Tán tự giữ tròn chất lượng cao, đa dạng kích thước và vật liệu"
 updatedAt: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -9,48 +8,10 @@ category:
 productType:
   slug: "tan-tu-giu-tron"
   name: "Tán tự giữ tròn"
-filters:
-  material: ["nhom", "inox-304", "inox-410", "thep"]
-  diameter: ["M2", "M2.5", "M3", "M3.5", "M4", "M5", "M6", "M8", "M10", "M12", "#2-56", "#3-48", "#4-40", "#6-32", "#8-32", "#10-24", "#10-32", "#12-24", "1/4-20", "1/4-28", "5/16-18", "5/16-24", "3/8-16", "3/8-24", "7/16-20", "1/2-13", "1/2-20"]
-  application: ["dien-tu", "co-khi", "tu-dong-hoa", "hang-khong"]
-tags: ["tan-tu-giu", "tan-tron", "phu-kien-lien-ket", "tan-inox", "tan-nhom"]
 seo:
   title: "Tán tự giữ tròn - Giải pháp liên kết chuyên nghiệp"
   description: "Tán tự giữ tròn chất lượng cao, đa dạng vật liệu (Nhôm, Inox 304/410, Thép), size ren từ M2 đến M12 và #2-56 đến 1/2-20. Ứng dụng trong điện tử, cơ khí, tự động hóa."
   keywords: ["tán tự giữ tròn", "tán tròn", "tán inox", "tán nhôm", "phụ kiện liên kết", "tán tự giữ M3", "tán tự giữ M4", "tán tự giữ M5"]
-variants:
-  - sku: "TTG-TRON-M3-NHOM"
-    name: "Tán tự giữ tròn M3 Nhôm"
-    material: "nhom"
-    diameter: "M3"
-  - sku: "TTG-TRON-M4-NHOM"
-    name: "Tán tự giữ tròn M4 Nhôm"
-    material: "nhom"
-    diameter: "M4"
-  - sku: "TTG-TRON-M5-INOX304"
-    name: "Tán tự giữ tròn M5 Inox 304"
-    material: "inox-304"
-    diameter: "M5"
-  - sku: "TTG-TRON-M6-INOX304"
-    name: "Tán tự giữ tròn M6 Inox 304"
-    material: "inox-304"
-    diameter: "M6"
-breadcrumbs:
-  - name: "Trang chủ"
-    url: "/"
-  - name: "Tán tự giữ"
-    url: "/tan-tu-giu"
-  - name: "Tròn"
-    url: "/tan-tu-giu/tron"
-  - name: "Tán tự giữ tròn"
-    url: "/tan-tu-giu/tron/tan-tu-giu-tron"
-relatedCategory:
-  - slug: "tan-tu-giu"
-    name: "Tán tự giữ"
-  - slug: "bu-long"
-    name: "Bu lông"
-  - slug: "dai-oc"
-    name: "Đai ốc"
 main:
   id: 1
   content: |
@@ -59,38 +20,6 @@ main:
   imgMain: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-1.avif"
   imgAlt: "Tán tự giữ tròn"
 
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Mô tả"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Thông số kỹ thuật"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Bản vẽ"
-longDescription:
-  title: "Giải Pháp Liên Kết Chuyên Nghiệp Cho Tấm Kim Loại Mỏng"
-  subTitle: |
-    Tán tự giữ tròn là lựa chọn lý tưởng cho việc tạo ren bền vững trên các tấm kim loại mỏng. Với thiết kế đầu tròn phẳng, sản phẩm mang lại vẻ ngoài thẩm mỹ và khả năng chịu lực cao, đáp ứng mọi yêu cầu kỹ thuật khắt khe của ngành công nghiệp hiện đại.
-  btnTitle: "Liên hệ bộ phận kinh doanh để được tư vấn"
-  btnURL: "/contact"
-descriptionList:
-  - title: "Đa Dạng Vật Liệu"
-    subTitle: "Có sẵn từ Nhôm, Inox 304, Inox 410 đến Thép, phù hợp với mọi môi trường làm việc và yêu cầu kỹ thuật."
-  - title: "Nhiều Kích Thước"
-    subTitle: "Đầy đủ size ren từ M2 đến M12 (metric) và #2-56 đến 1/2-20 (imperial), đáp ứng mọi nhu cầu lắp đặt."
-  - title: "Lắp Đặt Dễ Dàng"
-    subTitle: "Thiết kế đầu tròn phẳng giúp lắp đặt nhanh chóng, tạo ren bền vững trên tấm kim loại mỏng."
-specificationsLeft:
-  - title: "Vật liệu"
-    subTitle: "Nhôm, SUS304, SUS410, Thép"
-  - title: "Size Ren"
-    subTitle: "M2-M12, #2-56 đến 1/2-20"
-  - title: "Ứng dụng"
-    subTitle: "Điện tử, cơ khí chính xác, tự động hóa công nghiệp, hàng không"
-  - title: "Đặc điểm"
-    subTitle: "Đầu tròn phẳng, chịu lực cao, tạo ren bền vững trên tấm mỏng"
 tableData:
   - feature: ["Thông số", "Giá trị"]
     description:

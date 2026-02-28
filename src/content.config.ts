@@ -18,7 +18,7 @@ const productsCollection = defineCollection({
     schema: ({ image }) => z.object({
     title: z.string(),
     slug: z.string().optional(),
-    description: z.string(),
+    description: z.string().optional(),
     updatedAt: z.coerce.date().optional(),
     category: z.union([
       z.enum([
@@ -85,25 +85,25 @@ const productsCollection = defineCollection({
         dataTab: z.string(),
         title: z.string(),
       })
-    ),
+    ).optional(),
     longDescription: z.object({
       title: z.string(),
       subTitle: z.string(),
       btnTitle: z.string(),
       btnURL: z.string(),
-    }),
+    }).optional(),
     descriptionList: z.array(
       z.object({
         title: z.string(),
         subTitle: z.string(),
       })
-    ),
+    ).optional(),
     specificationsLeft: z.array(
       z.object({
         title: z.string(),
         subTitle: z.string(),
       })
-    ),
+    ).optional(),
     specificationsRight: z.array(
       z.object({
         title: z.string(),

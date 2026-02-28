@@ -1,17 +1,9 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
 import { resolveLocalImageOrFallback } from "@/utils/resolveLocalImage";
-
-declare global {
-  interface Window {
-    gsap: any;
-  }
-}
 
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
@@ -46,17 +38,9 @@ const blueprintFirstResolved = product.data.blueprints?.first
     )
   : undefined;
 
-const blueprintSecondResolved = product.data.blueprints?.second
-  ? await resolveLocalImageOrFallback(
-      product.data.blueprints.second,
-      "@/images/blueprint-2.avif"
-    )
-  : undefined;
-
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
-const keywords = product.data.seo?.keywords?.join(", ") || "";
 ---
 
 <MainLayout
@@ -74,574 +58,152 @@ const keywords = product.data.seo?.keywords?.join(", ") || "";
       "@type": "Brand",
       name: SITE.title,
     },
-    offers: product.data.variants?.map(variant => ({
-      "@type": "Offer",
-      sku: variant.sku,
-      name: variant.name,
-      availability: "https://schema.org/InStock",
-    })),
     inLanguage: "vi-VN",
   }}
 >
-  <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
-  </div>
-
-  <section
-    class="mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <!-- Breadcrumb -->
-    <nav class="mb-8 flex" aria-label="Breadcrumb">
-      <ol class="inline-flex items-center space-x-1 md:space-x-3">
-        {
-          product.data.breadcrumbs && product.data.breadcrumbs.length > 0 ? (
-            product.data.breadcrumbs.map((crumb: any, index: number) => (
-              <>
-                {index === 0 ? (
-                  <li class="inline-flex items-center">
-                    <a
-                      href={crumb.url}
-                      class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-                    >
-                      {crumb.name}
-                    </a>
-                  </li>
-                ) : index === product.data.breadcrumbs!.length - 1 ? (
-                  <li aria-current="page">
-                    <div class="flex items-center">
-                      <span class="mx-2 text-neutral-400">/</span>
-                      <span class="text-sm font-medium text-neutral-500 dark:text-neutral-500">
-                        {crumb.name}
-                      </span>
-                    </div>
-                  </li>
-                ) : (
-                  <li>
-                    <div class="flex items-center">
-                      <span class="mx-2 text-neutral-400">/</span>
-                      <a
-                        href={crumb.url}
-                        class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-                      >
-                        {crumb.name}
-                      </a>
-                    </div>
-                  </li>
-                )}
-              </>
-            ))
-          ) : (
-            <>
-              <li class="inline-flex items-center">
-                <a
-                  href="/bu-long"
-                  class="inline-flex items-center text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-                >
-                  Bu lông
-                </a>
-              </li>
-              <li>
-                <div class="flex items-center">
-                  <span class="mx-2 text-neutral-400">/</span>
-                  <a
-                    href={`/bu-long/${productType}`}
-                    class="text-sm font-medium text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-400"
-                  >
-                    {product.data.productType?.name || productType}
-                  </a>
-                </div>
-              </li>
-              <li aria-current="page">
-                <div class="flex items-center">
-                  <span class="mx-2 text-neutral-400">/</span>
-                  <span class="text-sm font-medium text-neutral-500 dark:text-neutral-500">
-                    {product.data.title}
-                  </span>
-                </div>
-              </li>
-            </>
-          )
-        }
+  <!-- Breadcrumb -->
+  <section class="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8">
+    <nav class="text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Trang chủ</a></li>
+        <li><span class="text-neutral-400">›</span></li>
+        <li><a href="/bu-long" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Bu lông</a></li>
+        <li><span class="text-neutral-400">›</span></li>
+        <li class="font-medium text-orange-500 dark:text-orange-400">{product.data.title}</li>
       </ol>
     </nav>
+  </section>
 
-    <div>
-      <p
-        id="fadeText"
-        class="mb-8 max-w-prose font-light text-pretty text-neutral-700 sm:text-xl dark:text-neutral-300"
-      >
-        {product.data.main.content}
-      </p>
-    </div>
-    <div
-      class="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0"
-    >
-      <div id="fadeInUp" class="space-y-4">
-  <h1
-    class="block text-3xl font-bold tracking-tighter text-neutral-800 sm:text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200"
-  >
-    {product.data.title}
-  </h1>
+  <!-- Main Content -->
+  <section class="mx-auto max-w-[85rem] px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <!-- Main Content Area -->
+      <div class="lg:col-span-2">
+        <!-- Title -->
+        <h1 class="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+          {product.data.title}
+        </h1>
+        <p class="mb-8 text-neutral-600 dark:text-neutral-400">
+          {product.data.description}
+        </p>
 
-  <p class="text-lg text-neutral-600 dark:text-neutral-400">
-    {product.data.description}
-  </p>
+        <!-- Description -->
+        {
+          product.data.main?.content && (
+            <div class="mb-8 rounded-lg border border-neutral-200 bg-orange-50 p-6 dark:border-neutral-700 dark:bg-orange-950/20">
+              <h2 class="mb-3 text-lg font-semibold text-neutral-900 dark:text-neutral-100">Mô tả sản phẩm</h2>
+              <p class="leading-relaxed text-neutral-700 dark:text-neutral-300">
+                {product.data.main.content}
+              </p>
+            </div>
+          )
+        }
 
-  {
-    product.data.tags && product.data.tags.length > 0 && (
-      <div class="mt-2 flex flex-wrap gap-2">
-        {product.data.tags.slice(0, 5).map((tag) => (
-          <span class="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800 dark:bg-orange-900 dark:text-orange-200">
-            {tag}
-          </span>
-        ))}
+        <!-- Blueprint -->
+        {
+          blueprintFirstResolved && (
+            <div class="mb-8">
+              <h2 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                Bản vẽ kỹ thuật
+              </h2>
+              <div class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+                <Image
+                  src={blueprintFirstResolved}
+                  class="mx-auto max-h-96 w-auto"
+                  alt="Bản vẽ kỹ thuật"
+                  format={"avif"}
+                />
+              </div>
+            </div>
+          )
+        }
+
+        <!-- Specifications Table -->
+        {
+          product.data.tableData && product.data.tableData.length > 0 && (
+            <div class="mb-8">
+              <h2 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                Thông số kỹ thuật
+              </h2>
+              <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-700">
+                <div class="overflow-x-auto">
+                  <table class="min-w-full">
+                    <thead class="bg-orange-400">
+                      <tr>
+                        {product.data.tableData[0].feature?.map((header) => (
+                          <th class="px-6 py-3 text-left text-sm font-semibold text-white">
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-200 bg-white dark:divide-neutral-700 dark:bg-neutral-900">
+                      {product.data.tableData.map((row) =>
+                        row.description.map((rowData) => (
+                          <tr class="hover:bg-orange-50 dark:hover:bg-orange-950/20">
+                            {rowData.map((cellValue, idx) => (
+                              <td class={`px-6 py-3 text-sm ${idx === 0 ? 'font-medium text-neutral-900 dark:text-neutral-100' : 'text-neutral-700 dark:text-neutral-300'}`}>
+                                {cellValue}
+                              </td>
+                            ))}
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </div>
-    )
-  }
-</div>
 
-      <div>
-        <Image
-          id="fadeInMoveRight"
-          src={imgMainResolved}
-          class="w-[500px]"
-          alt={product.data.main.imgAlt}
-          format={"avif"}
-          loading={"eager"}
-        />
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="space-y-6 lg:sticky lg:top-4">
+          <!-- Product Image -->
+          {
+            imgMainResolved && (
+              <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+                <Image
+                  src={imgMainResolved}
+                  class="w-full rounded"
+                  alt={product.data.main?.imgAlt || product.data.title}
+                  format={"avif"}
+                />
+              </div>
+            )
+          }
+
+          <!-- Contact Box -->
+          <div class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+            <h3 class="mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+              Cần hỗ trợ?
+            </h3>
+            <p class="mb-5 text-sm text-neutral-600 dark:text-neutral-400">
+              Liên hệ với chúng tôi để được tư vấn và báo giá chi tiết.
+            </p>
+            <div class="space-y-3">
+              <a 
+                href="tel:012345678" 
+                class="flex items-center justify-center gap-2 w-full rounded-lg bg-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-orange-600 transition"
+              >
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                Liên hệ tư vấn
+              </a>
+              <a 
+                href="/contact" 
+                class="block w-full rounded-lg border border-neutral-300 bg-neutral-50 px-4 py-2.5 text-center text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+              >
+                Thông tin liên hệ
+              </a>
+             
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Variants Section -->
-  {
-    product.data.variants && product.data.variants.length > 0 && (
-      <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div class="mx-auto max-w-5xl">
-          <div class="mb-8">
-            <h2 class="text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
-              Các Biến Thể Sản Phẩm
-            </h2>
-            <p class="mt-2 text-neutral-600 dark:text-neutral-400">
-              Chọn biến thể phù hợp với nhu cầu của bạn. Liên hệ để nhận báo giá tốt nhất.
-            </p>
-          </div>
-          
-          <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-neutral-300 dark:divide-neutral-700">
-              <thead class="bg-neutral-50 dark:bg-neutral-800">
-                <tr>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Mã SKU
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Tên sản phẩm
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Vật liệu
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Đường kính
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Chiều dài (mm)
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-                    Hành động
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-neutral-200 bg-white dark:divide-neutral-700 dark:bg-neutral-900">
-                {product.data.variants.map((variant: any) => (
-                  <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800">
-                    <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-900 dark:text-neutral-100">
-                      {variant.sku}
-                    </td>
-                    <td class="px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
-                      {variant.name}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
-                      {variant.material?.replace('inox-', 'Inox ').replace('thep-ma-kem', 'Thép mạ kẽm').replace('thep-ma-niken', 'Thép mạ niken')}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
-                      {variant.diameter}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-4 text-sm text-neutral-700 dark:text-neutral-300">
-                      {variant.length_mm}
-                    </td>
-                    <td class="whitespace-nowrap px-6 py-4 text-sm">
-                      <a
-                        href="/contact"
-                        class="inline-flex items-center rounded-md bg-orange-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                      >
-                        Yêu cầu báo giá
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          
-          <div class="mt-6 rounded-lg bg-orange-50 p-4 dark:bg-orange-900/20">
-            <p class="text-sm text-orange-800 dark:text-orange-200">
-              <strong>Lưu ý:</strong> Chúng tôi cũng nhận gia công theo yêu cầu và bản vẽ kỹ thuật. 
-              Liên hệ bộ phận kinh doanh để được tư vấn chi tiết về số lượng đặt hàng tối thiểu (MOQ) và thời gian giao hàng.
-            </p>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-
-  <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
-    <nav
-      class="mx-auto grid max-w-6xl gap-y-px sm:flex sm:gap-x-4 sm:gap-y-0"
-      aria-label="Tabs"
-      role="tablist"
-    >
-      {
-        product.data.tabs.map((tab, index) => (
-          <ProductTabBtn
-            title={tab.title}
-            id={tab.id}
-            dataTab={tab.dataTab}
-            first={index === 0}
-          />
-        ))
-      }
-    </nav>
-
-    <div class="mt-12 md:mt-16">
-      <div id="tabs-with-card-1" role="tabpanel">
-        <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
-          <div class="grid gap-12 md:grid-cols-2">
-            <div class="lg:w-3/4">
-              <h2
-                class="text-3xl font-bold tracking-tight text-balance text-neutral-800 md:leading-tight lg:text-4xl dark:text-neutral-200"
-              >
-                {product.data.longDescription.title}
-              </h2>
-              <p
-                class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
-              >
-                {product.data.longDescription.subTitle}
-              </p>
-              <p class="mt-5">
-                <PrimaryCTA
-                  title={product.data.longDescription.btnTitle}
-                  url={product.data.longDescription.btnURL}
-                />
-              </p>
-            </div>
-
-            <div class="space-y-6 lg:space-y-10">
-              {
-                product.data.descriptionList.map((list) => (
-                  <div class="flex">
-                    <div>
-                      <h3 class="text-base font-bold text-neutral-800 sm:text-lg dark:text-neutral-200">
-                        {list.title}
-                      </h3>
-                      <p class="mt-1 text-neutral-600 dark:text-neutral-400">
-                        {list.subTitle}
-                      </p>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tabs-with-card-2" class="hidden" role="tabpanel">
-        <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
-          <div class="grid w-full grid-cols-1 gap-x-16 md:grid-cols-2">
-            <div class="max-w-md space-y-6">
-              {
-                product.data.specificationsLeft.map((spec) => (
-                  <div>
-                    <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
-                      {spec.title}
-                    </h3>
-                    <p class="text-neutral-600 dark:text-neutral-400">
-                      {spec.subTitle}
-                    </p>
-                  </div>
-                ))
-              }
-            </div>
-            {
-              product.data.tableData && (
-                <div class="mt-6 space-y-6 md:mt-0 md:ml-auto">
-                  <div class="flex flex-col">
-                    <div class="-m-1.5 overflow-x-auto">
-                      <div class="inline-block min-w-full p-1.5 align-middle">
-                        <div class="overflow-hidden">
-                          <table class="min-w-full divide-y divide-neutral-300 dark:divide-neutral-700">
-                            <thead>
-                              <tr>
-                                {product.data.tableData?.[0].feature?.map(
-                                  (header) => (
-                                    <th
-                                      scope="col"
-                                      class="px-6 py-3 text-start text-xs font-medium text-neutral-500 uppercase dark:text-neutral-500"
-                                    >
-                                      {header}
-                                    </th>
-                                  )
-                                )}
-                              </tr>
-                            </thead>
-                            <tbody class="divide-y divide-neutral-300 dark:divide-neutral-700">
-                              {product.data.tableData?.map((row) =>
-                                row.description.map((rowData) => (
-                                  <tr>
-                                    {rowData.map((cellValue) => (
-                                      <td class="px-6 py-4 text-sm font-medium whitespace-nowrap text-neutral-600 dark:text-neutral-400">
-                                        {cellValue}
-                                      </td>
-                                    ))}
-                                  </tr>
-                                ))
-                              )}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            }
-          </div>
-        </div>
-      </div>
-
-      {
-        (blueprintFirstResolved || blueprintSecondResolved) && (
-          <div id="tabs-with-card-3" class="hidden" role="tabpanel">
-            <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
-              {blueprintFirstResolved && (
-                <div class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0">
-                  <Image
-                    src={blueprintFirstResolved}
-                    class="h-full w-full object-cover object-center"
-                    alt="Blueprint Illustration"
-                    format={"avif"}
-                  />
-                </div>
-              )}
-
-              {blueprintSecondResolved && (
-                <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
-                  <Image
-                    src={blueprintSecondResolved}
-                    class="h-full w-full object-cover object-center"
-                    alt="Blueprint Illustration"
-                    format={"avif"}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        )
-      }
-    </div>
-  </div>
-
-  <!-- Related Categories Section -->
-  {
-    product.data.relatedCategory && product.data.relatedCategory.length > 0 && (
-      <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div class="mx-auto max-w-5xl">
-          <h2 class="mb-8 text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
-            Danh Mục Liên Quan
-          </h2>
-          <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-            Khám phá thêm các sản phẩm liên quan khác từ chúng tôi
-          </p>
-          
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {product.data.relatedCategory.map((category: any) => (
-              <a
-                href={`/${category.slug}`}
-                class="group block rounded-lg border border-neutral-200 p-6 transition-all hover:border-orange-400 hover:shadow-lg dark:border-neutral-700 dark:hover:border-orange-500"
-              >
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-neutral-800 group-hover:text-orange-500 dark:text-neutral-200 dark:group-hover:text-orange-400">
-                    {category.name}
-                  </h3>
-                  <svg
-                    class="h-5 w-5 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-orange-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </a>
-            ))}
-          </div>
-          
-          <div class="mt-8 text-center">
-            <a
-              href="/bu-long"
-              class="inline-flex items-center justify-center rounded-lg border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-            >
-              Xem tất cả sản phẩm Bu lông
-            </a>
-          </div>
-        </div>
-      </section>
-    )
-  }
 </MainLayout>
-
-<script>
-  import { gsap } from "gsap";
-
-  type AnimationSettings = {
-    autoAlpha?: number;
-    y?: number;
-    x?: number;
-    willChange?: string;
-  };
-
-  function setElementAnimationDefaults(
-    id: string,
-    settings: AnimationSettings
-  ) {
-    gsap.set(id, settings);
-  }
-
-  setElementAnimationDefaults("#fadeText", {
-    autoAlpha: 0,
-    y: 50,
-    willChange: "transform, opacity",
-  });
-
-  setElementAnimationDefaults("#fadeInUp", {
-    autoAlpha: 0,
-    y: 50,
-    willChange: "transform, opacity",
-  });
-
-  setElementAnimationDefaults("#fadeInMoveRight", {
-    autoAlpha: 0,
-    x: 300,
-    willChange: "transform, opacity",
-  });
-
-  const timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
-
-  timeline.to("#fadeText", {
-    duration: 1.5,
-    autoAlpha: 1,
-    y: 0,
-    delay: 1,
-    ease: "power2.out",
-  });
-
-  timeline.to(
-    "#fadeInUp",
-    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
-    "-=1.2"
-  );
-
-  timeline.to(
-    "#fadeInMoveRight",
-    { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
-    "-=1.4"
-  );
-
-  timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function setButtonInactive(btn: any, activeButton: any) {
-      if (btn !== activeButton) {
-        btn.classList.remove(
-          "active",
-          "bg-neutral-100",
-          "hover:border-transparent",
-          "dark:bg-white/[.05]"
-        );
-
-        const tabId = btn.getAttribute("data-target");
-        if (tabId) {
-          const contentElement = document.querySelector(tabId);
-          if (contentElement) {
-            contentElement.classList.add("hidden");
-          }
-        }
-
-        changeHeadingStyle(
-          btn,
-          ["text-neutral-800", "dark:text-neutral-200"],
-          ["text-orange-400", "dark:text-orange-300"]
-        );
-      }
-    }
-
-    function activateButton(button: any) {
-      button.classList.add(
-        "active",
-        "bg-neutral-100",
-        "hover:border-transparent",
-        "dark:bg-white/[.05]"
-      );
-
-      const tabId = button.getAttribute("data-target");
-      if (tabId) {
-        const contentElementToShow = document.querySelector(tabId);
-        if (contentElementToShow) {
-          contentElementToShow.classList.remove("hidden");
-        }
-      }
-
-      changeHeadingStyle(
-        button,
-        ["text-orange-400", "dark:text-orange-300"],
-        ["text-neutral-800", "dark:text-neutral-200"]
-      );
-    }
-
-    function changeHeadingStyle(
-      button: any,
-      addClasses: any,
-      removeClasses: any
-    ) {
-      const heading = button.querySelector("span");
-      if (heading) {
-        heading.classList.remove(...removeClasses);
-        heading.classList.add(...addClasses);
-      }
-    }
-
-    const tabButtons = document.querySelectorAll("[data-target]");
-
-    if (tabButtons.length > 0) {
-      changeHeadingStyle(
-        tabButtons[0],
-        ["text-orange-400", "dark:text-orange-300"],
-        []
-      );
-    }
-
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        tabButtons.forEach((btn) => setButtonInactive(btn, button));
-        activateButton(button);
-      });
-    });
-  });
-</script>

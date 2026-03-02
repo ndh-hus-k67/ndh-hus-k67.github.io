@@ -119,25 +119,25 @@ const ogTitle = `${product.data.title} | Tấn trụ tự giữ | ${SITE.title}`
         <!-- Specifications Table -->
         {
           product.data.tableData && product.data.tableData.length > 0 && (
-            <div class="mb-8">
+            <div class="mb-8 space-y-6">
               <h2 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
                 Thông số kỹ thuật
               </h2>
-              <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-700">
-                <div class="overflow-x-auto">
-                  <table class="min-w-full">
-                    <thead class="bg-orange-400">
-                      <tr>
-                        {product.data.tableData[0].feature?.map((header) => (
-                          <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            {header}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-200 bg-white dark:divide-neutral-700 dark:bg-neutral-900">
-                      {product.data.tableData.map((row) =>
-                        row.description.map((rowData) => (
+              {product.data.tableData.map((table) => (
+                <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-700">
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                      <thead class="bg-orange-400">
+                        <tr>
+                          {table.feature?.map((header) => (
+                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-neutral-200 bg-white dark:divide-neutral-700 dark:bg-neutral-900">
+                        {table.description.map((rowData) => (
                           <tr class="hover:bg-orange-50 dark:hover:bg-orange-950/20">
                             {rowData.map((cellValue, idx) => (
                               <td class={`px-6 py-3 text-sm ${idx === 0 ? 'font-medium text-neutral-900 dark:text-neutral-100' : 'text-neutral-700 dark:text-neutral-300'}`}>
@@ -145,12 +145,12 @@ const ogTitle = `${product.data.title} | Tấn trụ tự giữ | ${SITE.title}`
                               </td>
                             ))}
                           </tr>
-                        ))
-                      )}
-                    </tbody>
-                  </table>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           )
         }

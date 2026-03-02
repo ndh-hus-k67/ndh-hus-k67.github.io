@@ -15,22 +15,21 @@ seo:
 main:
   id: 17
   content: |
-    Bu lông inox liền long đen DIN 6921 là loại bu lông có đầu lục giác ngoài và phần bích/long đen được gắn liền ngay dưới đầu bu lông.
+    Bu lông inox DIN 6921, bu lông inox liền long đen là tên gọi của một loại bu lông có tiêu chuẩn DIN 6921. Bu lông liền long đen được làm bởi chất liệu inox. Nó có tên đầy đủ và chi tiết nhất là: Bu lông inox liền long đen DIN 6921.
+    </br></br>
 
-    Thiết kế bích liền giúp tăng diện tích tiếp xúc, phân bố lực tốt hơn và hỗ trợ chống lỏng trong một số ứng dụng. Thân bu lông thường được tiện ren theo hệ mét (phổ biến là ren suốt).
+    Bu lông inox liền long đen được sản xuất theo tiêu chuẩn DIN 6921 của Đức và đạt độ cấp bền 4.8/ 5.6/ 8.8/ A2/ A4 theo tiêu chuẩn ISO 898-1. Nhiều người trong ngành có thể quen gọi chúng là bu lông inox DIN 6921 cũng chính là chỉ loại bu lông inox liền long đen DIN 6921 này.
+    </br></br>
+
+    Bu lông inox liền long đen có rất nhiều kích thước khác nhau từ M5 đến M20. Các bạn có thể xem bảng tra kích thước bu lông tai hồng ngay tại phần nội dung bên dưới bài viết này.
+    </br></br>
+
+    Về cơ bản, bu lông Inox liền long đen có hình dáng và tiêu chuẩn cấu tạo như bên trên vừa mô tả. Ngoài ra điểm cần chú ý nhất của loại bulong này chính là nguyên liệu sản xuất nên chúng. Là một trong các loại Bulong Inox, dĩ nhiên nguyên vật liệu cấu tạo nên các loại bu lông liền long đen này phải là INOX: Inox 201, Inox 304, Inox 316, Inox 316L…
   imgCard: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
   imgMain: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den.avif"
   imgAlt: "Bu lông inox liền long đen DIN 6921"
 
 tableData:
-  - feature: ["Thông số", "Giá trị"]
-    description:
-      - ["Tên gọi", "Bu lông inox liền long đen DIN 6921"]
-      - ["Tiêu chuẩn", "DIN 6921"]
-      - ["Cấp bền (tham khảo)", "Thép: 4.8/5.6/8.8 (ISO 898-1); Inox: A2/A4 (tùy vật liệu)"]
-      - ["Vật liệu", "Inox 201/304/316/316L; Thép"]
-      - ["Giá", "Liên hệ để nhận báo giá tốt nhất"]
-
   - feature: ["d", "M5", "M6", "M8", "M10", "M12", "M14", "M16", "M20"]
     description:
       - ["P", "0,8", "1", "1,25", "1,5", "1.75", "2", "2", "2.5"]
@@ -40,6 +39,6 @@ tableData:
       - ["dc", "11,8", "14,2", "18", "22.3", "26.6", "30.5", "35", "43"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den_ban_ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Bu lông hàn Inox"
-slug: "bu-long-han-inox"
+title: "Bu lông hàn"
+slug: "bu-long-han"
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -15,26 +15,26 @@ seo:
 main:
   id: 4
   content: |
-    Bu lông hàn inox (còn gọi là vít hàn inox, bulong hàn chập, đinh hàn có ren) là loại bu lông được hàn trực tiếp lên bề mặt tấm kim loại phẳng bằng máy hàn chuyên dụng.
+    Bulong hàn là loại bu lông sử dụng máy hàn chuyên dụng để gắn bu lông lên các tấm kim loại mặt phẳng bằng phương pháp hàn chập hàn hồ quang. Bulong hàn có nhiều hình dạng khác nhau có loại có ren có loại không có ren, dưới đế bulong có đinh nhỏ tác dụng định vị vị trí hàn và khi hàn nhiệt nóng chảy sẽ giúp đinh tan ra bám chắc vào bề mặt tấm kim loại.
+    </br></br>
 
-    Sản phẩm có thể có ren hoặc không có ren; phần chân thường có chốt/đinh định vị giúp cố định vị trí hàn, khi hàn nhiệt nóng chảy giúp liên kết bám chắc vào tấm kim loại.
+    Bu lông hàn còn có các tên gọi khác như: Vít hàn inox, bulong hàn chập, đinh hàn có ren. Được sản xuất từ vật liệu Inox 304 hoặc thép mạ kẽm, mạ đồng, thông thường được áp dụng tiêu chuẩn GB902.3 (PT) hoặc ISO 13918 (PT) để sản xuất loại bu lông này.
   imgCard: "@/images/products/bu-long/han/bu-long-han.avif"
   imgMain: "@/images/products/bu-long/han/bu-long-han.avif"
   imgAlt: "Bu lông hàn inox"
 
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature: ["Nominal Diameter d", "M3", "M4", "M5", "M6", "M8"]
     description:
-      - ["Tên gọi", "Bulong hàn inox / vít hàn / đinh hàn có ren"]
-      - ["Tiêu chuẩn chế tạo", "GB/T 902.3 (PT) hoặc ISO 13918 (PT)"]
-      - ["Đường kính thân", "4 ~ 8 mm"]
-      - ["Cấp bền", "4.6 – 10.9"]
-      - ["Chất liệu", "Inox 201/304/316/316L, Inox 304, Thép carbon"]
-      - ["Bề mặt", "Mạ kẽm điện phân, mạ kẽm nhúng nóng, mạ đồng"]
-      - ["Xuất xứ", "Việt Nam / Trung Quốc"]
-      - ["Giá", "Liên hệ để nhận báo giá tốt nhất"]
+      - ["P", "0.5", "0.7", "0.8", "1", "1.25"]
+      - ["dk", "4.5", "5.5", "6.5", "7.5", "9"]
+      - ["dp", "0.6", "0.65", "0.75", "0.75", "0.75"]
+      - ["z", "0.55", "0.55", "0.8", "0.8", "0.85"]
+      - ["h", "0.7~1.4", "0.7~1.4", "0.8~1.4", "0.8~1.4", "0.8~1.4"]
+      - ["n", "1.5", "1.5", "2", "2", "3"]
+      - ["a", "3°", "3°", "3°", "3°", "3°"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/bu-long/han/bu-long-han_ban_ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

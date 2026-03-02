@@ -15,20 +15,28 @@ seo:
 main:
   id: 3
   content: |
-    Bu lông đầu cầu hoa thị có chốt (tên tiếng Anh: Hexalobular socket TORX+PIN Anti-theft) là loại vật tư liên kết đặc biệt, thường được gọi là vít chống trộm hay vít chốt an toàn. 
-    
-    Đặc điểm nổi bật là phần đầu mũ có dập hình hoa thị với một chốt trụ nhỏ ở giữa, ngăn cản việc sử dụng các tuốc nơ vít thông thường. Sản phẩm được sử dụng ở những vị trí cần sự an toàn cao, tránh tình trạng tháo lắp tùy tiện. Tuy nhiên, do quy trình gia công đầu mũ phức tạp nên giá thành thường cao hơn các loại vít thông dụng.
+    Bu lông đầu cầu hoa thị có chốt là loại bulong được chế tạo đặc biệt sử dụng ở những vị trí cần sự an toàn cho thiết bị được lắp đặt, tránh tình trạng tháo lắp tùy tiện nên nó còn được gọi là bulong chống trộm, vít chống trộm.
+    </br></br>
+
+    Theo tên gọi tiếng anh Hexalobular socket TORX+PIN Anti-theft thì nó được hiểu là vít chống trộm, vít chốt an toàn nhưng thực tế nó không thể chống trộm vì hiện nay người ta cũng sản xuất ra các dụng cụ tool mở loại vít này và bán rộng rãi trên thị trường.
+    </br></br>
+
+    Sản phẩm này ít được sử dụng rộng rãi vì việc gia công đầu mũ có chốt khó hơn, giá thành cũng cao hơn những loại bu lông và vít khác cùng chủng loại đang lưu hành trên thị trường.
+
+
   imgCard: "@/images/products/bu-long/dau-cau/bu-long-dau-cau-hoa-thi.avif"
   imgMain: "@/images/products/bu-long/dau-cau/bu-long-dau-cau-hoa-thi.avif"
   imgAlt: "Bu lông đầu cầu hoa thị có chốt (Vít chống trộm)"
 
 tableData:
-  - feature: ["Điều kiện cung cấp", "Chi tiết"]
+  - feature: ["Size", "M2", "M2.5", "M3", "M4", "M5", "M6", "M8", "M10", "M12", "M14"]
     description:
-      - ["Hàng có sẵn kho", "Giao trong 1 ~ 10 ngày"]
-      - ["Hàng gia công/SX", "Giao trong 3 ~ 4 tuần"]
-      - ["Quy trình thanh toán", "Cọc 30%, thanh toán nốt khi nhận thông báo giao hàng"]
+      - ["Pitch", "0.4", "0.45", "0.5", "0.7", "0.8", "1", "1.25", "1.5", "-", "-"]
+      - ["dk", "3.5", "4.5", "5.7", "7.6", "9.8", "10.2", "15", "17.5", "-", "-"]
+      - ["k", "1", "1.3", "1.8", "2.2", "2.8", "3.8", "5.2", "6", "-", "-"]
+      - ["h", "0.6", "0.7", "0.8", "1", "1.5", "1.8", "2.2", "2.7", "-", "-"]
+      - ["slotted", "T6", "T8", "T10", "T20", "T25", "T30", "T40", "T50", "-", "-"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/bu-long/dau-cau/bu-long-dau-cau-hoa-thi_ban_ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

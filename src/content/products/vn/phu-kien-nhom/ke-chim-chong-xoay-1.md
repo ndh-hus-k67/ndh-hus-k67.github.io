@@ -10,7 +10,7 @@ productType:
 main:
   id: 1
   content: "Ke chìm chống xoay một đầu là phụ kiện quan trọng cho hệ thống truyền động."
-  imgCard: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay.avif"
-  imgMain: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay.avif"
+  imgCard: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
+  imgMain: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
   imgAlt: "Ke chìm chống xoay một đầu"
 ---

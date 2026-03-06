@@ -15,25 +15,39 @@ seo:
 main:
   id: 1
   content: |
-    Tán tự giữ tròn là giải pháp liên kết hiện đại, được thiết kế để tạo ren trên các tấm kim loại mỏng. Với đầu tròn phẳng, sản phẩm mang lại vẻ ngoài thẩm mỹ và khả năng chịu lực cao, phù hợp cho nhiều ứng dụng trong điện tử, cơ khí chính xác, tự động hóa công nghiệp và hàng không.
+    Tán tự giữ tròn - Self-clinching Nuts hay còn được gọi là Tán Đóng, Tán Dập, Tán Ép, Đai Ốc Tự Giữ, Đai Ốc Ép. Được thiết kế để ép, dập chìm vào các tấm kim loại mỏng đã được khoan lỗ trước đó, tạo phần ren lắp ráp các tấm kim loại, bo mạch, hardware,....
+    </br></br>
+    Cấu tạo của Tán tự giữ có dạng thân tròn với phần đầu có khe rãnh và răng cứng cáp giúp bám chặc vào tấm kinh loại.
   imgCard: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-1.avif"
   imgMain: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-1.avif"
   imgAlt: "Tán tự giữ tròn"
 
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature: ["Thông số", "M2", "M2.5", "M3", "M3.5", "M4", "M5"]
     description:
-      - ["Vật liệu", "Nhôm, SUS304, SUS410, Thép"]
-      - ["Size Ren", "#10-24, #10-32, #12-24, #2-56, #3-48, #4-40, #6-32, #8-32, 1/2-13, 1/2-20, 1/4-20, 1/4-28, 3/8-16, 3/8-24, 5/16-18, 5/16-24, 7/16-20, M10, M12, M2, M2.5, M3, M3.5, M4, M5, M6, M8"]
-      - ["Độ dày tấm", "0.03\", 0.04\", 0.047\", 0.056\", 0.09\", 0.091\", 0.092\", 0.125\", 0.126\", 0.25\", 0.8 mm, 0.92 mm, 1 mm, 1.2 mm, 1.4 mm, 2.29 mm, 2.3 mm, 3.18 mm"]
-      - ["Kích thước lỗ khoan", "0.166\", 0.1875\", 0.213\", 0.234\", 0.25\", 0.277\", 0.296\", 0.344\", 0.413\", 0.5\", 0.562\", 0.656\", 4.22 mm, 4.75 mm, 5.41 mm, 5.94 mm, 6.35 mm, 7.52 mm, 8.75 mm, 10.5 mm, 14 mm, 17 mm"]
-      - ["A", "0.03\", 0.038\", 0.054\", 0.087\", 0.12\", 0.235\", 0.77 mm, 0.89 mm, 0.97 mm, 0.98 mm, 1.15 mm, 1.38 mm, 2.21 mm, 3.05 mm"]
-      - ["C", "0.165\", 0.187\", 0.212\", 0.233\", 0.249\", 0.276\", 0.295\", 0.343\", 0.412\", 0.499\", 0.561\", 0.655\", 4.2 mm, 4.73 mm, 5.38 mm, 5.92 mm, 6.33 mm, 7.49 mm, 8.73 mm, 10.47 mm, 13.97 mm, 16.95 mm"]
-      - ["E", "0.25\", 0.28\", 0.31\", 0.34\", 0.37\", 0.44\", 0.5\", 0.56\", 0.687\", 0.81\", 6.35 mm, 7.11 mm, 7.8 mm, 7.87 mm, 8.64 mm, 9.4 mm, 11.18 mm, 12.7 mm, 17.35 mm, 20.47 mm"]
-      - ["T", "0.07\", 0.09\", 0.13\", 0.16\", 0.17\", 0.23\", 0.27\", 0.311\", 0.36\", 1.5 mm, 2 mm, 3 mm, 3.8 mm, 4.08 mm, 5.47 mm, 7.48 mm, 20.57 mm"]
-      - ["Khả năng chống ăn mòn", "Cao (Inox), Trung bình (Thép), Tốt (Nhôm)"]
-      - ["Đặt hàng", "Theo yêu cầu/bản vẽ"]
+      - ["Thread Size", "M2×0.4", "M2.5×0.45", "M3×0.5", "M3.5×0.6", "M4×0.7", "M5×0.8"]
+      - ["Vật liệu", "S, CLS, SP", "S, CLS, SP", "S, CLS, SP", "S, CLS", "S, CLS, SP", "SS, CLSS, SP"]
+      - ["Shank Code", "0,1,2", "1,2", "0,1,2", "1,2", "0,1,2", "0,1,2"]
+      - ["A Max (mm)", "0.77-1.38", "0.97-1.38", "0.77-1.38", "0.97-1.38", "0.77-1.38", "0.77-1.38"]
+      - ["Độ dày tấm (t)", "0.8-1.4", "1-1.4", "0.8-1.4", "1-1.4", "0.8-1.4", "0.8-1.4"]
+      - ["Lỗ ±0.08", "4.22", "4.22", "4.22", "4.75", "5.41", "6.35"]
+      - ["C Max", "4.2", "4.2", "4.2", "4.73", "5.38", "6.33"]
+      - ["E ±0.25", "6.35", "6.35", "6.35", "7.11", "7.87", "8.64"]
+      - ["T ±0.25", "1.5", "1.5", "1.5", "1.5", "2", "2"]
+      - ["Min. C/L (d)", "4.8", "4.8", "4.8", "5.6", "6.9", "7.1"]
+  - feature: ["Thông số", "M6", "M8", "M10", "M12"]
+    description:
+      - ["Thread Size", "M6×1", "M8×1.25", "M10×1.5", "M12×1.75"]
+      - ["Vật liệu", "S, CLS, SP", "S, CLS, SP", "S, CLS, SP", "S"]
+      - ["Shank Code", "0,1,2", "1,2", "1,2", "1"]
+      - ["A Max (mm)", "0.89-2.21", "1.38-2.21", "2.21-3.05", "3.05"]
+      - ["Độ dày tấm (t)", "0.92-2.29", "1.4-2.29", "2.3-3.18", "3.18"]
+      - ["Lỗ ±0.08", "8.75", "10.5", "14", "17"]
+      - ["C Max", "8.73", "10.47", "13.97", "16.95"]
+      - ["E ±0.25", "11.18", "12.7", "17.35", "20.57"]
+      - ["T ±0.25", "4.08", "5.47", "7.48", "6.5"]
+      - ["Min. C/L (d)", "8.6", "9.7", "13.5", "16"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

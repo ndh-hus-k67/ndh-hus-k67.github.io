@@ -58,8 +58,8 @@ main:
   id: 1
   content: |
     Miniature self-clinching nuts are designed for ultra-small, high-precision applications such as electronics, fine mechanics, medical devices, and aerospace. Made from SS304 for excellent strength and corrosion resistance, they are ideal for PCBs, miniature devices, and small mechanical components.
-  imgCard: "@/images/products/tan-tu-giu/miniature/tan-tu-giu-miniature.avif"
-  imgMain: "@/images/products/tan-tu-giu/miniature/tan-tu-giu-miniature.avif"
+  imgCard: "@/images/products/tan-tu-giu/miniature/tan-ep-tu-giu-co-nho.avif"
+  imgMain: "@/images/products/tan-tu-giu/miniature/tan-ep-tu-giu-co-nho.avif"
   imgAlt: "Miniature self-clinching nuts"
 
 tabs:

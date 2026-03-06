@@ -54,8 +54,8 @@ main:
   id: 1
   content: |
     Self-clinching flush head studs provide strong fastening with a countersunk head for a perfectly flat surface after installation. Made from aluminum, SUS304, or steel for mechanical, automation, machine-building, and electronics applications. Multiple sizes for easy selection.
-  imgCard: "@/images/products/tru-ren-tu-giu/tru-ren-tu-giu-flush-1.avif"
-  imgMain: "@/images/products/tru-ren-tu-giu/tru-ren-tu-giu-flush-1.avif"
+  imgCard: "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai.avif"
+  imgMain: "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai.avif"
   imgAlt: "Self-clinching flush head stud"
 
 tabs:

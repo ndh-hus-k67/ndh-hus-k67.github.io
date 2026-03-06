@@ -15,26 +15,18 @@ seo:
 main:
   id: 3
   content: |
-    Vít bắn tôn inox (còn gọi là vít tự khoan) là loại ốc vít dùng để lắp ghép các chi tiết chưa có sẵn lỗ. Khi thi công, phần mũi khoan của vít có thể xuyên thủng bề mặt tiếp xúc và tạo liên kết chắc như một “lỗ khoan” ngay tại vị trí bắn.
-
-    Chất liệu: Inox 201, 304, 316, 316L, Thép.
-
-    Giá sản phẩm: Liên hệ để có giá tốt nhất.
+    Vít bắn tôn DIN 7504 – K hay còn gọi là vít tự khoan inox được sản xuất theo tiêu chuẩn DIN 7504 dùng để bắn tôn lợp mái cho các công trình, nhà xưởng, nhà dân dụng. Hay nói ngắn gọn hơn thì vít bắn tôn DIN 7504 – K có công dụng để liên kết mái tôn và xà gồ. Bên cạnh đó, vít bắn tôn DIN 7504 – K còn được sử dụng để liên kết các khung kim loại lại với nhau hay lắp các giá đỡ, kệ….
   imgCard: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ton.avif"
   imgMain: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ton.avif"
   imgAlt: "Vít bắn tôn inox"
 tableData:
-  - feature: ["Thông số", "Giá trị"]
+  - feature: ["D", "P", "Dc", "K(max)", "L1", "Nr ISO"]
     description:
-      - ["Tên gọi", "Vít bắn tôn inox"]
-      - ["Nhóm sản phẩm", "Vít bắn tôn"]
-      - ["Loại vít", "Vít tự khoan"]
-      - ["Kiểu đầu", "Thường đầu lục giác liền long đen (tùy loại)"]
-      - ["Kiểu ren", "Ren suốt"]
-      - ["Long đen", "Cao su hoặc nhựa dẻo (khuyến nghị)"]
-      - ["Vật liệu", "Inox 201/304/316/316L; thép (tùy chọn)"]
-      - ["Ứng dụng", "Liên kết tôn lợp với xà gồ/khung thép và các mối ghép không có lỗ chờ"]
-      - ["Giá", "Liên hệ để có giá tốt nhất"]
+      - ["ST3.5", "1", "8.3", "3.45", "6", "6"]
+      - ["ST4.2", "1.4", "8.8", "4.25", "8", "8"]
+      - ["ST4.8", "1.6", "10.5", "4.45", "9", "10"]
+      - ["ST5.5", "1.8", "11", "5.45", "11", "12"]
+      - ["ST6.3", "1.6", "13.2", "6.45", "12", "14"]
 
 blueprints:
   first: "@/images/blueprint-1.avif"

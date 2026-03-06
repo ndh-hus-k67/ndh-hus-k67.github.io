@@ -54,8 +54,8 @@ main:
   id: 1
   content: |
     Floating self-clinching nuts allow flexible positioning during installation. The floating design compensates for minor misalignment between holes, making assembly easier—especially in robotics, automation, and aerospace applications.
-  imgCard: "@/images/products/tan-tu-giu/floating/tan-tu-giu-floating.avif"
-  imgMain: "@/images/products/tan-tu-giu/floating/tan-tu-giu-floating.avif"
+  imgCard: "@/images/products/tan-tu-giu/floating/dai-oc-tu-giu.avif"
+  imgMain: "@/images/products/tan-tu-giu/floating/dai-oc-tu-giu.avif"
   imgAlt: "Floating self-clinching nut"
 
 tabs:

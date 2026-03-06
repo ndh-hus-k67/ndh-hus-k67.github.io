@@ -54,8 +54,8 @@ main:
   id: 1
   content: |
     Bohsei hex self-clinching nuts feature a special hex profile that delivers superior anti-rotation. The external hex shape bites into the material to prevent spinning during tightening. Made from SS304, SS410, and steel for high strength and corrosion resistance across industrial applications.
-  imgCard: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei.avif"
-  imgMain: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-bohsei.avif"
+  imgCard: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac.avif"
+  imgMain: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac.avif"
   imgAlt: "Bohsei hex self-clinching nut"
 
 tabs:

@@ -33,6 +33,6 @@ tableData:
       - ["T (mm)", "3.31-4.32", "3.31-4.32", "4.32-5.34", "4.32-5.34"]
  
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/floating/dai-oc-tu-giu-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

@@ -31,6 +31,6 @@ tableData:
       - ["S - Lục giác (mm)", "5.5", "5.5", "5.5", "7", "8", "10", "12.7", "15"]
       - ["k1 (mm)", "0.8", "1", "1", "1.15", "1.35", "1.4", "1.4", "1.5"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/luc-giac-bohsei/tan-tu-giu-luc-giac-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

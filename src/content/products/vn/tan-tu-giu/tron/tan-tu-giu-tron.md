@@ -48,6 +48,6 @@ tableData:
       - ["T ±0.25", "4.08", "5.47", "7.48", "6.5"]
       - ["Min. C/L (d)", "8.6", "9.7", "13.5", "16"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/tron/tan-tu-giu-tron-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

@@ -30,6 +30,6 @@ tableData:
       - ["C (mm)", "4.35", "5.38", "6.35", "7.35-7.90", "7.90-8.72", "8.72"]
       - ["H (mm)", "4.80", "5.94", "6.86", "7.90-8.70", "8.70-9.50", "9.50"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/flush/tan-tu-giu-flush-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

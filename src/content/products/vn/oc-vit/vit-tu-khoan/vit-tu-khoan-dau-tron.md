@@ -34,6 +34,6 @@ tableData:
       - ["Nr.ISO", "4", "6", "7", "8", "10", "12"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/oc-vit/vit-tu-khoan/vit-tu-khoan-dau-tron-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

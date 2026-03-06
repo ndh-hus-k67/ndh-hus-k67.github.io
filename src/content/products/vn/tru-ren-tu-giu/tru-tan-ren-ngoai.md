@@ -34,6 +34,6 @@ tableData:
       - ["M6 x 1", "10 / 12 / 15 / 18 / 20 / 25 / 30 / 35", "1.6", "6", "8.2", "3", "6.6", "7.9"]
       - ["M8 x 1.25", "12 / 15 / 18 / 20 / 25 / 30 / 35", "2.4", "8", "9.6", "3.7", "8.6", "9.6"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first:  "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

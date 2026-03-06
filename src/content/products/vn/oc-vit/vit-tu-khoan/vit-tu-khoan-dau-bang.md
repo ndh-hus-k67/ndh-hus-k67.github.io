@@ -28,6 +28,6 @@ tableData:
       - ["L1", "–", "5", "6", "7", "8", "10"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/oc-vit/vit-tu-khoan/vit-tu-khoan-dau-bang-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

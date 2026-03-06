@@ -36,6 +36,6 @@ tableData:
       - ["L (mm)", "2.89-8.89", "3.89-8.89"]
       - ["Kích thước lỗ (mm)", "8x3 ~ 10x9", "8x4 ~ 10x9"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

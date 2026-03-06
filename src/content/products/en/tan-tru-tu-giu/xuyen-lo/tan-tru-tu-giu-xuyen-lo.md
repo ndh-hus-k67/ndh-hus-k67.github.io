@@ -54,8 +54,8 @@ main:
   id: 1
   content: |
     Self-clinching through-hole standoffs provide secure fastening through holes, improving strength and stability. Made from aluminum, SUS410, SUS303, or steel for mechanical, automation, machine-building, and electronics applications. Multiple sizes for easy selection.
-  imgCard: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.jpg"
-  imgMain: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.jpg"
+  imgCard: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.avif"
+  imgMain: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.avif"
   imgAlt: "Self-clinching through-hole standoff"
 
 tabs:

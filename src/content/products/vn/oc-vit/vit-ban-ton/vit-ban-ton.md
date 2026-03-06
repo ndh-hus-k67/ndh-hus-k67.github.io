@@ -29,6 +29,6 @@ tableData:
       - ["ST6.3", "1.6", "13.2", "6.45", "12", "14"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/oc-vit/vit-ban-ton/vit-ban-ton-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

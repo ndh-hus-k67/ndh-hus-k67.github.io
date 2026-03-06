@@ -16,8 +16,8 @@ main:
   id: 1
   content: |
     Tán trụ tự giữ xuyên lỗ là giải pháp liên kết chắc chắn cho các vị trí xuyên lỗ, giúp tăng độ bền và ổn định cho kết cấu. Sản phẩm được sản xuất từ nhôm, SUS410, SUS303 và thép, phù hợp cho các ứng dụng cơ khí, tự động hóa, chế tạo máy và điện tử. Đa dạng kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt cụ thể.
-  imgCard: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.jpg"
-  imgMain: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.jpg"
+  imgCard: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.avif"
+  imgMain: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo.avif"
   imgAlt: "Tán trụ tự giữ xuyên lỗ"
 
 tableData:
@@ -28,6 +28,6 @@ tableData:
       - ["4.1", "SO / SOS / SOA / SO4", "84.1", "3 / 4 / 6 / 8 / 10 / 12 / 14 / 16 / 18 / 20"]
       - ["5.1", "SO / SOS / SOA / SO4", "85.1", "3 / 4 / 6 / 8 / 10 / 12 / 14 / 16 / 18 / 20"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tru-tu-giu/xuyen-lo/tan-tru-tu-giu-xuyen-lo-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

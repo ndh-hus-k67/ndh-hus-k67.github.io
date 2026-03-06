@@ -32,6 +32,6 @@ tableData:
       - ["D (mm)", "2.50", "3.96", "5.23", "6.48", "7.72"]
       - ["T (mm)", "1.65", "1.90", "2.55", "3.05", "3.30"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/miniature/tan-ep-tu-giu-co-nho-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

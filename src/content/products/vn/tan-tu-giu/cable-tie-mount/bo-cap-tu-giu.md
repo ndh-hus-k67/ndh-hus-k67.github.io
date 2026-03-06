@@ -44,6 +44,6 @@ tableData:
  
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/cable-tie-mount/tan-tu-giu-cable-tie-mounts-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

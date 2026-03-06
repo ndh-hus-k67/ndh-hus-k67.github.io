@@ -32,6 +32,6 @@ tableData:
       - ["D (mm)", "5.52", "7.01", "7.52"]
       - ["T (mm)", "3.56", "4.20", "4.45"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tan-tu-giu/khoa-nylon/tan-tu-giu-khoa-nylon-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

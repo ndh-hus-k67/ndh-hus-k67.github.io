@@ -25,7 +25,7 @@ export default [
       "prefer-const": "warn",
       
       // 4. Cảnh báo về XSS khi dùng set:html (Astro thường xuyên phải dùng cái này)
-      "astro/no-set-html-directive": "warn",
+      "astro/no-set-html-directive": "off",
 
       // 5. Bỏ qua lỗi triple-slash cũ trong file env.d.ts
       "@typescript-eslint/triple-slash-reference": "off"

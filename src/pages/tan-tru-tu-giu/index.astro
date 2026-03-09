@@ -3,7 +3,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { SITE } from "@data/constants";
 
 // Lấy tất cả sản phẩm tán trụ tự giữ (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
@@ -33,9 +32,9 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Tán trụ tự giữ";
-const description = "Khám phá bộ sưu tập tán trụ tự giữ chất lượng cao, đa dạng chủng loại, phù hợp cho các ứng dụng cơ khí, lắp ráp, chế tạo máy và nhiều lĩnh vực khác.";
-const pageTitle = `${title} | ${SITE.title}`;
+const title = "Tán Trụ Tự Giữ HAHUTECH - Kết Cấu Chịu Tải";
+const description = "HAHUTECH chuyên cung cấp tán trụ tự giữ chất lượng cao: tán trụ tròn, tán trụ lục giác, đa dạng kích thước. Kết cấu chịu tải cao, lắp đặt dễ dàng. Giải pháp tối ưu cho cơ khí chính xác.";
+const pageTitle = `Tán Trụ Tự Giữ - Kết Cấu Chịu Tải | HAHUTECH`;
 ---
 
 <MainLayout
@@ -43,9 +42,37 @@ const pageTitle = `${title} | ${SITE.title}`;
   customDescription={description}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description: description,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hahutech.com.vn/tan-tru-tu-giu",
+        "url": "https://hahutech.com.vn/tan-tru-tu-giu",
+        "name": title,
+        "description": description,
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hahutech.com.vn"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://hahutech.com.vn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tán trụ tự giữ",
+            "item": "https://hahutech.com.vn/tan-tru-tu-giu"
+          }
+        ]
+      }
+    ]
   }}
 >
   <div

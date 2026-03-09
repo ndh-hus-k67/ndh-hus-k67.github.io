@@ -44,13 +44,14 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "HAHUTECH",
+    name: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
+    description: "Chuyên cung cấp bu lông, ốc vít, vật tư công nghiệp chất lượng cao",
     icons,
     display: "minimal-ui",
     id: "/",
     start_url: "/",
-    theme_color: "#FFEDD5",
+    theme_color: "#facc15",
     background_color: "#262626",
   };
 

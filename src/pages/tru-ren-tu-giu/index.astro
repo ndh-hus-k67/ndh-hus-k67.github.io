@@ -3,7 +3,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { SITE } from "@data/constants";
 
 // Lấy tất cả sản phẩm thuộc category `tru-ren-tu-giu` (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
@@ -33,10 +32,10 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Trụ Rèn Tự Giữ";
-const description = "Khám phá bộ sưu tập trụ rèn tự giữ chất lượng cao của chúng tôi — đa dạng loại, vật liệu và kích thước, phù hợp cho kết cấu chịu tải và công nghiệp.";
+const title = "Trụ Rèn Tự Giữ HAHUTECH - Độ Bền Vượt Trội";
+const description = "HAHUTECH chuyên cung cấp trụ rèn tự giữ chất lượng cao: trụ ren trong, trụ ren ngoài, đa dạng loại và kích thước. Độ bền vượt trội, kết cấu chắc chắn. Ứng dụng trong nhựa, kim loại mềm.";
 
-const pageTitle = `${title} | ${SITE.title}`;
+const pageTitle = `Trụ Rèn Tự Giữ Chất Lượng Cao | HAHUTECH`;
 ---
 
 <MainLayout
@@ -44,9 +43,37 @@ const pageTitle = `${title} | ${SITE.title}`;
   customDescription={description}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description: description,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hahutech.com.vn/tru-ren-tu-giu",
+        "url": "https://hahutech.com.vn/tru-ren-tu-giu",
+        "name": title,
+        "description": description,
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hahutech.com.vn"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://hahutech.com.vn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Trụ rèn tự giữ",
+            "item": "https://hahutech.com.vn/tru-ren-tu-giu"
+          }
+        ]
+      }
+    ]
   }}
 >
   <div

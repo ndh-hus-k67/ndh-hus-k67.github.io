@@ -49,16 +49,47 @@ const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${SITE.url}/bu-long/${productType}/${product.data.slug}`,
-    name: product.data.title,
-    description: metaDescription,
-    category: "Bu lông",
-    brand: {
-      "@type": "Brand",
-      name: SITE.title,
-    },
-    inLanguage: "vi-VN",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${SITE.url}/bu-long/${productType}/${product.data.slug}`,
+        "name": product.data.title,
+        "description": metaDescription,
+        "category": "Bu lông",
+        "brand": {
+          "@type": "Brand",
+          "name": "HAHUTECH",
+        },
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "HAHUTECH",
+        },
+        "inLanguage": "vi-VN",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": `${SITE.url}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Bu lông",
+            "item": `${SITE.url}/bu-long`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": product.data.title,
+            "item": `${SITE.url}/bu-long/${productType}/${product.data.slug}`
+          }
+        ]
+      }
+    ]
   }}
 >
   <!-- Breadcrumb -->

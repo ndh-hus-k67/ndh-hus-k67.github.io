@@ -49,16 +49,47 @@ const ogTitle = `${product.data.title} | Sên xích | ${SITE.title}`;
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${SITE.url}/sen-xich/${productType}/${product.data.slug}`,
-    name: product.data.title,
-    description: metaDescription,
-    category: "Sên xích",
-    brand: {
-      "@type": "Brand",
-      name: SITE.title,
-    },
-    inLanguage: "vi-VN",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${SITE.url}/sen-xich/${productType}/${product.data.slug}`,
+        "name": product.data.title,
+        "description": metaDescription,
+        "category": "Sên xích",
+        "brand": {
+          "@type": "Brand",
+          "name": "HAHUTECH",
+        },
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "HAHUTECH",
+        },
+        "inLanguage": "vi-VN",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": `${SITE.url}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sên xích",
+            "item": `${SITE.url}/sen-xich`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": product.data.title,
+            "item": `${SITE.url}/sen-xich/${productType}/${product.data.slug}`
+          }
+        ]
+      }
+    ]
   }}
 >
   <!-- Breadcrumb -->

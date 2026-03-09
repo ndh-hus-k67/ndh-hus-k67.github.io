@@ -3,7 +3,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { SITE } from "@data/constants";
 
 // Lấy tất cả sản phẩm bu lông (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = (
@@ -33,10 +32,10 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Bu Lông";
-const description = "Khám phá bộ sưu tập bu lông chất lượng cao của chúng tôi, bao gồm bu lông inox, bu lông lục giác, bu lông chữ T và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp cơ khí.";
+const title = "Bu Lông HAHUTECH - Chất Lượng Cao";
+const description = "HAHUTECH chuyên cung cấp bu lông chất lượng cao: bu lông inox, bu lông DIN, bu lông JIS, bu lông lục giác, bu lông chữ T. Tiêu chuẩn quốc tế, đa dạng cấp bền 4.8, 8.8, 10.9, 12.9. Uy tín - Chất lượng - Giá tốt.";
 
-const pageTitle = `${title} | ${SITE.title}`;
+const pageTitle = `Bu Lông Chất Lượng Cao | HAHUTECH`;
 ---
 
 <MainLayout
@@ -44,9 +43,37 @@ const pageTitle = `${title} | ${SITE.title}`;
   customDescription={description}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description: description,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hahutech.com.vn/bu-long",
+        "url": "https://hahutech.com.vn/bu-long",
+        "name": title,
+        "description": description,
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hahutech.com.vn"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://hahutech.com.vn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Bu lông",
+            "item": "https://hahutech.com.vn/bu-long"
+          }
+        ]
+      }
+    ]
   }}
 >
   <div

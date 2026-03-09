@@ -8,7 +8,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   // 1. CẬP NHẬT TÊN MIỀN CỦA BẠN
-  site: "https://hahutech.me",
+  site: "https://hahutech.com.vn",
   
   output: "static",
   

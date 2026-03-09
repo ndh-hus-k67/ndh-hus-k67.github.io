@@ -33,10 +33,10 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Phụ Kiện Nhôm";
-const description = "Khám phá bộ sưu tập phụ kiện nhôm chất lượng cao của chúng tôi, bao gồm profile nhôm, thanh nhôm định hình, kẹp nhôm và nhiều loại khác, phù hợp cho mọi dự án xây dựng và lắp ráp.";
+const title = "Phụ Kiện Nhôm HAHUTECH - Ke Chìm Chống Xoay";
+const description = "HAHUTECH chuyên cung cấp phụ kiện nhôm định hình: ke chìm chống xoay, thanh nhôm, con trượt thuyền, hạt tán nhôm. Chất lượng cao, gia công chính xác. Giải pháp hoàn hảo cho hệ profile nhôm.";
 
-const pageTitle = `${title} | ${SITE.title}`;
+const pageTitle = `Phụ Kiện Nhôm - Ke Chìm Chống Xoay | HAHUTECH`;
 ---
 
 <MainLayout
@@ -44,9 +44,37 @@ const pageTitle = `${title} | ${SITE.title}`;
   customDescription={description}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description: description,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hahutech.com.vn/phu-kien-nhom",
+        "url": "https://hahutech.com.vn/phu-kien-nhom",
+        "name": title,
+        "description": description,
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hahutech.com.vn"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://hahutech.com.vn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Phụ kiện nhôm",
+            "item": "https://hahutech.com.vn/phu-kien-nhom"
+          }
+        ]
+      }
+    ]
   }}
 >
   <div

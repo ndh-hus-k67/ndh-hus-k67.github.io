@@ -33,10 +33,10 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Tán tự giữ";
-const description = "Khám phá bộ sưu tập tán tự giữ chất lượng cao của chúng tôi — đa dạng loại, vật liệu và kích thước, phù hợp cho công nghiệp và xây dựng.";
+const title = "Tán Tự Giữ HAHUTECH - Bền Bỉ Chắc Chắn";
+const description = "HAHUTECH chuyên cung cấp tán tự giữ chất lượng cao: tán tròn, tán lục giác, tán hoa thị, đa dạng vật liệu thép, inox. Ứng dụng rộng rãi trong lắp ráp điện tử, ô tô, cơ khí.";
 
-const pageTitle = `${title} | ${SITE.title}`;
+const pageTitle = `Tán Tự Giữ Chất Lượng Cao | HAHUTECH`;
 ---
 
 <MainLayout
@@ -44,9 +44,37 @@ const pageTitle = `${title} | ${SITE.title}`;
   customDescription={description}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description: description,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hahutech.com.vn/tan-tu-giu",
+        "url": "https://hahutech.com.vn/tan-tu-giu",
+        "name": title,
+        "description": description,
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hahutech.com.vn"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://hahutech.com.vn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tán tự giữ",
+            "item": "https://hahutech.com.vn/tan-tu-giu"
+          }
+        ]
+      }
+    ]
   }}
 >
   <div

@@ -6,8 +6,8 @@ import { SITE } from "@data/constants";
 
 const pageTitle: string = `Liên hệ | ${SITE.title}`;
 const metaDescription =
-  "Bạn có câu hỏi hoặc muốn trao đổi về một dự án? Hãy liên hệ với chúng tôi để cùng nhau xây dựng giải pháp hoàn hảo với các công cụ và dịch vụ của ScrewFast.";
-const ogTitle = "Liên hệ | ScrewFast";
+  "Liên hệ HAHUTECH để được tư vấn và báo giá bu lông, ốc vít, vật tư công nghiệp chất lượng cao. Đội ngũ chuyên nghiệp sẵn sàng hỗ trợ 24/7. Gọi ngay để nhận ưu đãi!";
+const ogTitle = "Liên hệ HAHUTECH - Tư vấn bu lông ốc vít chất lượng cao";
 ---
 
 <MainLayout
@@ -16,20 +16,18 @@ const ogTitle = "Liên hệ | ScrewFast";
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    url: "https://screwfast.uk/contact",
-    name: "Liên hệ | ScrewFast",
-    description:
-      "Bạn có câu hỏi hoặc muốn trao đổi về một dự án? Hãy liên hệ với chúng tôi để cùng nhau xây dựng giải pháp hoàn hảo với các công cụ và dịch vụ của ScrewFast.",
+    "@type": "ContactPage",
+    "@id": `${SITE.url}/contact`,
+    url: `${SITE.url}/contact`,
+    name: `Liên hệ | ${SITE.title}`,
+    description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
-      description:
-        "ScrewFast cung cấp các công cụ phần cứng cao cấp và dịch vụ xây dựng chuyên nghiệp để đáp ứng mọi nhu cầu dự án của bạn.",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
     },
-    inLanguage: "vn",
+    inLanguage: "vi-VN",
   }}
 >
   <ContactSection />

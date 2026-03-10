@@ -95,6 +95,14 @@ const appleTouchIcon = await getImage({
     />
   )
 }
+{/* Google Analytics 4 */}
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2KG357SQ8D"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2KG357SQ8D');
+</script>
 {/* Define the character set, description, author, and viewport settings */}
 <meta charset="utf-8" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

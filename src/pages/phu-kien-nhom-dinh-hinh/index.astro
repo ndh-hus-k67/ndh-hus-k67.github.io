@@ -9,7 +9,7 @@ const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "phu-kien-nhom";
+    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "phu-kien-nhom-dinh-hinh";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
@@ -46,8 +46,8 @@ const pageTitle = `Phụ Kiện Nhôm - Ke Chìm Chống Xoay | HAHUTECH`;
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://hahutech.com.vn/phu-kien-nhom",
-        "url": "https://hahutech.com.vn/phu-kien-nhom",
+        "@id": "https://hahutech.com.vn/phu-kien-nhom-dinh-hinh",
+        "url": "https://hahutech.com.vn/phu-kien-nhom-dinh-hinh",
         "name": title,
         "description": description,
         "inLanguage": "vi-VN",
@@ -69,7 +69,7 @@ const pageTitle = `Phụ Kiện Nhôm - Ke Chìm Chống Xoay | HAHUTECH`;
             "@type": "ListItem",
             "position": 2,
             "name": "Phụ kiện nhôm",
-            "item": "https://hahutech.com.vn/phu-kien-nhom"
+            "item": "https://hahutech.com.vn/phu-kien-nhom-dinh-hinh"
           }
         ]
       }
@@ -100,13 +100,13 @@ const pageTitle = `Phụ Kiện Nhôm - Ke Chìm Chống Xoay | HAHUTECH`;
             allProducts.map(p => {
               const slug = p.data?.slug || p.id?.split('/').pop()?.replace('.md', '');
               const productTypeSlug = typeof p.data.productType === 'string' ? p.data.productType : p.data.productType?.slug || '';
-              const alias = productTypeSlug.replace(/^phu-kien-nhom-/, '');
+              const alias = productTypeSlug.replace(/^phu-kien-nhom-dinh-hinh-/, '');
               const dataTypes = `${productTypeSlug} ${alias}`.trim();
               const titleText = p.data?.title ?? slug;
               const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain;
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
-                <a href={`/phu-kien-nhom/${slug}`} data-product-type={dataTypes} class="group block product-item">
+                <a href={`/phu-kien-nhom-dinh-hinh/${slug}`} data-product-type={dataTypes} class="group block product-item">
                   <div class="relative aspect-square overflow-hidden rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl">
                     <Image
                       src={imgSrc}

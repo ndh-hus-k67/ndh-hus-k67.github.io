@@ -116,6 +116,38 @@ interface Props {
       // https://preline.co
       import "preline/preline.js";
     </script>
+    <script>
+      // GA4 Global Tracking for Email Links
+      document.addEventListener('DOMContentLoaded', () => {
+        // Track all email links (mailto:) across the entire website
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'click_email', {
+                'event_category': 'Contact',
+                'event_label': 'Email Link - Global',
+                'email': link.getAttribute('href')?.replace('mailto:', '') || ''
+              });
+            }
+          });
+        });
+
+        // Track all phone links (tel:) across the entire website
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'click_call', {
+                'event_category': 'Contact',
+                'event_label': 'Phone Link - Global',
+                'phone_number': link.getAttribute('href')?.replace('tel:', '') || ''
+              });
+            }
+          });
+        });
+      });
+    </script>
     <style>
       /* CSS rules for the page scrollbar */
       .scrollbar-hide::-webkit-scrollbar {

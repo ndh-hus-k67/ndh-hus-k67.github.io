@@ -473,7 +473,30 @@ const redirectUrl = new URL("/contact", Astro.url.origin).toString();
         buttonSpinner.classList.remove('hidden');
       }
 
+      // Track form submission with GA4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'submit_form', {
+          'event_category': 'Contact',
+          'event_label': 'Contact Form',
+          'form_location': 'Contact Page'
+        });
+      }
+
       // Let the form submit naturally (will redirect to the _redirect URL)
+    });
+
+    // Track email link clicks
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click_email', {
+            'event_category': 'Contact',
+            'event_label': 'Email Link',
+            'email': link.getAttribute('href')?.replace('mailto:', '')
+          });
+        }
+      });
     });
   });
 </script>

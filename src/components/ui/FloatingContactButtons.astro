@@ -299,3 +299,35 @@
     }
   }
 </style>
+
+<script>
+  // GA4 Conversion Tracking for Floating Contact Buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    // Track phone button clicks
+    const phoneBtn = document.querySelector('.phone-btn');
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click_call', {
+            'event_category': 'Contact',
+            'event_label': 'Floating Phone Button',
+            'phone_number': '+84347741638'
+          });
+        }
+      });
+    }
+
+    // Track Zalo button clicks
+    const messageBtn = document.querySelector('.message-btn');
+    if (messageBtn) {
+      messageBtn.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click_zalo', {
+            'event_category': 'Contact',
+            'event_label': 'Floating Zalo Button'
+          });
+        }
+      });
+    }
+  });
+</script>

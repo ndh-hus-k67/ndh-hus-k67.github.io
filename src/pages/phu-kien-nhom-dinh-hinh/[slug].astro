@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "phu-kien-nhom";
+    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "phu-kien-nhom-dinh-hinh";
   });
 
   return productEntries.map((product) => {
@@ -52,7 +52,7 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
     "@graph": [
       {
         "@type": "Product",
-        "@id": `${SITE.url}/phu-kien-nhom/${productType}/${product.data.slug}`,
+        "@id": `${SITE.url}/phu-kien-nhom-dinh-hinh/${productType}/${product.data.slug}`,
         "name": product.data.title,
         "description": metaDescription,
         "category": "Phụ kiện nhôm",
@@ -79,13 +79,13 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
             "@type": "ListItem",
             "position": 2,
             "name": "Phụ kiện nhôm",
-            "item": `${SITE.url}/phu-kien-nhom`
+            "item": `${SITE.url}/phu-kien-nhom-dinh-hinh`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": product.data.title,
-            "item": `${SITE.url}/phu-kien-nhom/${productType}/${product.data.slug}`
+            "item": `${SITE.url}/phu-kien-nhom-dinh-hinh/${productType}/${product.data.slug}`
           }
         ]
       }
@@ -98,7 +98,7 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
       <ol class="flex items-center space-x-2">
         <li><a href="/" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Trang chủ</a></li>
         <li><span class="text-neutral-400">›</span></li>
-        <li><a href="/phu-kien-nhom" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Phụ kiện nhôm</a></li>
+        <li><a href="/phu-kien-nhom-dinh-hinh" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Phụ kiện nhôm</a></li>
         <li><span class="text-neutral-400">›</span></li>
         <li class="font-medium text-orange-500 dark:text-orange-400">{product.data.title}</li>
       </ol>
@@ -214,7 +214,7 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
             </p>
             <div class="space-y-3">
               <a 
-                href="tel:012345678" 
+                href="tel:0347741638" 
                 class="flex items-center justify-center gap-2 w-full rounded-lg bg-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-orange-600 transition"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

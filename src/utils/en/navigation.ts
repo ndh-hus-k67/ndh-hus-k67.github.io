@@ -31,7 +31,7 @@ const productsNav = {
     { name: "Self-Clinching Standoffs", url: "/en/tan-tru-tu-giu" },
     { name: "Self-Clinching Studs", url: "/en/tru-ren-tu-giu" },
     { name: "Roller Chain", url: "/en/sen-xich" },
-    { name: "Aluminum Profile Accessories", url: "/en/phu-kien-nhom" },
+    { name: "Aluminum Profile Accessories", url: "/en/phu-kien-nhom-dinh-hinh" },
   ],
 };
 

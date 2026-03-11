@@ -11,6 +11,7 @@ import { capitalize, formatDate } from "@utils/utils";
 import { getCollection, getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { generateBlogPostingSchema } from "@/utils/schemas";
 
 // Update getStaticPaths for Vietnamese posts
 export async function getStaticPaths() {
@@ -51,36 +52,39 @@ const metaDescription =
 const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
 
 const markdownHtml = post.rendered?.html ?? "";
+
+// Generate blog post URL
+const blogPostUrl = `${SITE.url}/blog/${id}`;
+
+// Generate BlogPosting schema
+const blogSchema = generateBlogPostingSchema({
+  id: blogPostUrl,
+  headline: post.data.title,
+  description: metaDescription,
+  image: `${SITE.url}${post.data.cardImage.src}`,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: post.data.pubDate.toISOString(),
+  author: {
+    name: post.data.author
+  },
+  publisher: {
+    name: SITE.title,
+    logo: {
+      url: `${SITE.url}/social.png`,
+      width: "1200",
+      height: "630"
+    }
+  },
+  inLanguage: "vi-VN",
+  blogSection: "Blog"
+});
 ---
 
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.data.title,
-    image: post.data.cardImage.src,
-    datePublished: post.data.pubDate.toISOString(),
-    author: {
-      "@type": "Person",
-      name: post.data.author,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.title,
-      logo: {
-        "@type": "ImageObject",
-        url: "https://screwfast.uk/favicon.ico",
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://screwfast.uk/blog/${post.id.replace(/^vn\//, "")}`,
-    },
-    inLanguage: "vn",
-  }}
+  structuredData={blogSchema}
 >
   <section class="mx-auto max-w-3xl px-4 pt-6 pb-12 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">

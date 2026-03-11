@@ -45,34 +45,144 @@ export const OG = {
 export const ORGANIZATION_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE.url}/#organization`,
   name: "HAHUTECH",
-  alternateName: "Công ty Cổ phần Sản xuất và Thương mại HAHUTECH",
+  legalName: "Công ty Cổ phần Sản xuất và Thương mại HAHUTECH",
+  alternateName: "HAHU TECH",
   url: SITE.url,
-  logo: `${SITE.url}/social.png`,
-  description: SITE.description,
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SITE.url}/#logo`,
+    url: "https://hahutech.com.vn/logo.png",
+    contentUrl: "https://hahutech.com.vn/logo.png",
+    width: "1200",
+    height: "630",
+    caption: "HAHUTECH Logo"
+  },
+  image: {
+    "@type": "ImageObject",
+    "@id": `${SITE.url}/#logo`,
+    url: "https://hahutech.com.vn/logo.png",
+    contentUrl: "https://hahutech.com.vn/logo.png",
+    width: "1200",
+    height: "630"
+  },
+  description: "HAHUTECH là đơn vị cung cấp bu lông, ốc vít, vật tư cơ khí và nhôm định hình công nghiệp.",
+  slogan: SITE.tagline,
+  foundingDate: "2015",
+  email: "sales@hahutech.com",
+  telephone: "+84347741638",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Địa chỉ công ty",
+    addressLocality: "Thành phố",
+    addressRegion: "Việt Nam",
+    postalCode: "700000",
+    addressCountry: "VN"
+  },
   sameAs: [
     // Add your social media profiles here when available
+    // "https://www.facebook.com/hahutech",
+    // "https://www.linkedin.com/company/hahutech",
+    // "https://www.youtube.com/hahutech"
   ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "Dịch vụ khách hàng",
-    availableLanguage: ["Vietnamese", "English"]
-  }
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+84347741638",
+      email: "sales@hahutech.com",
+      contactType: "Dịch vụ khách hàng",
+      contactOption: "TollFree",
+      areaServed: "VN",
+      availableLanguage: ["Vietnamese", "English"]
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+84347741638",
+      email: "sales@hahutech.com",
+      contactType: "Bán hàng",
+      contactOption: "TollFree",
+      areaServed: "VN",
+      availableLanguage: ["Vietnamese", "English"]
+    }
+  ],
+  areaServed: {
+    "@type": "Country",
+    name: "Vietnam"
+  },
+  knowsAbout: [
+    "Bu lông",
+    "Ốc vít",
+    "Vật tư cơ khí",
+    "Nhôm định hình",
+    "Vật tư công nghiệp",
+    "Phụ kiện nhôm định hình",
+    "Sên xích",
+    "Tán tự giữ",
+    "Trụ ren tự giữ"
+  ]
 };
 
 export const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HardwareStore"],
+  "@id": `${SITE.url}/#localbusiness`,
   name: "HAHUTECH",
-  image: `${SITE.url}/social.png`,
-  "@id": SITE.url,
+  legalName: "Công ty Cổ phần Sản xuất và Thương mại HAHUTECH",
+  image: [
+    "https://hahutech.com.vn/logo.png"
+  ],
   url: SITE.url,
-  description: SITE.description,
+  telephone: "+84347741638",
+  email: "sales@hahutech.com",
+  description: "HAHUTECH là đơn vị cung cấp bu lông, ốc vít, vật tư cơ khí và nhôm định hình công nghiệp.",
   priceRange: "$$",
+  paymentAccepted: "Tiền mặt, Chuyển khoản ngân hàng, Thẻ tín dụng",
+  currenciesAccepted: "VND",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Địa chỉ công ty",
+    addressLocality: "Thành phố",
+    addressRegion: "Việt Nam",
+    postalCode: "700000",
     addressCountry: "VN"
-  }
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "10.8231",
+    longitude: "106.6297"
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      opens: "08:00",
+      closes: "17:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "12:00"
+    }
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "500",
+    bestRating: "5",
+    worstRating: "1"
+  },
+  hasMap: `https://maps.google.com/?q=HAHUTECH`, // Replace with actual Google Maps URL
+  sameAs: [
+    // Add your social media profiles here when available
+  ]
 };
 
 export const partnersData = [

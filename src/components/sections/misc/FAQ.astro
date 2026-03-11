@@ -1,6 +1,7 @@
 ---
 // Import the necessary AccordionItem component and JSON data
 import AccordionItem from "@components/ui/blocks/AccordionItem.astro";
+import { generateFAQPageSchema } from "@/utils/schemas";
 
 // Define props from Astro
 const { title, faqs } = Astro.props;
@@ -22,7 +23,18 @@ interface Props {
 }
 // Define a helper function to generate ids dynamically.
 const makeId = (base: any, index: any) => `${base}${index + 1}`;
+
+// Generate FAQPage schema
+const faqSchema = generateFAQPageSchema(
+  faqs.faqs.map((faq: Faq) => ({
+    question: faq.question,
+    answer: faq.answer
+  }))
+);
 ---
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <!-- Main container that holds all content. Customized for different viewport sizes. -->
 <section

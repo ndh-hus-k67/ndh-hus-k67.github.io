@@ -7,6 +7,10 @@ category:
 productType:
   slug: "ke-chim-chong-xoay-1"
   name: "Ke chìm chống xoay một đầu"
+seo:
+  title: "Ke chìm chống xoay một đầu - Giải pháp lắp ráp linh hoạt"
+  description: "Ke chìm chống xoay một đầu cho nhôm định hình. Giải quyết va chạm khi lắp bịt đầu. Răng chống xoay, bám chặt vào rãnh nhôm. Vật liệu thép, inox 304."
+  keywords: ["ke chìm chống xoay 1 đầu", "ke chìm một đầu", "phụ kiện nhôm", "ke chống xoay", "nhôm định hình"]
 main:
   id: 1
   content: |

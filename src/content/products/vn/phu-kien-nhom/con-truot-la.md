@@ -7,6 +7,10 @@ category:
 productType:
   slug: "con-truot-la"
   name: "Con trượt lá"
+seo:
+  title: "Con trượt lá - Phụ kiện nhôm định hình chất lượng cao"
+  description: "Con trượt lá nhôm cho hệ thống profile nhôm. Thiết kế đàn hồi, lắp ráp dễ dàng. Đa dạng kích thước nhôm 30, 40, 50. Giá tốt, giao nhanh."
+  keywords: ["con trượt lá", "bọ lá nhôm", "trượt lá", "phụ kiện nhôm", "nhôm định hình", "con trượt nhôm"]
 main:
   id: 1
   content: |

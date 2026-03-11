@@ -7,6 +7,10 @@ category:
 productType:
   slug: "con-truot-thuyen"
   name: "Con trượt thuyền"
+seo:
+  title: "Con trượt thuyền - Đai ốc nhôm dạng thuyền chuyên dụng"
+  description: "Con trượt thuyền nhôm (T-Nut) cho profile nhôm định hình. Thiết kế dạng thuyền, lắp ráp nhanh trong rãnh nhôm. Đa dạng kích thước, chất lượng cao."
+  keywords: ["con trượt thuyền", "T-nut", "đai ốc nhôm", "phụ kiện nhôm", "nhôm định hình", "con trượt nhôm"]
 main:
   id: 1
   content: |

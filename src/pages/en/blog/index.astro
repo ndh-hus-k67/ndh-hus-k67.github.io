@@ -32,15 +32,15 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 // Define variables for page content
 const title: string = "Your Gateway to Construction Excellence";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
+  "Explore the latest news, tips, and insights from HAHUTECH to support your industrial projects. From product spotlights to application guidance, our blog is a practical resource for bolts, fasteners, and technical accessories.";
 const secondTitle: string = "Insights";
 const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
+  "Stay up-to-date with the latest trends and developments in industrial supply and fastening solutions with insights from HAHUTECH's team. ";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 const metaDescription =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.";
-const ogTitle = "Construction Industry Blog | ScrewFast";
+  "Stay up-to-date with product insights, application guides, and industrial fastener expertise from HAHUTECH.";
+const ogTitle = `HAHUTECH Blog | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -51,17 +51,15 @@ const ogTitle = "Construction Industry Blog | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/en/blog",
-    url: "https://screwfast.uk/en/blog",
-    name: "Blog | ScrewFast",
-    description:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
+    "@id": `${SITE.url}/en/blog`,
+    url: `${SITE.url}/en/blog`,
+    name: `Blog | ${SITE.title}`,
+    description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk/en",
-      name: "ScrewFast",
-      description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      url: `${SITE.url}/en`,
+      name: SITE.title,
+      description: SITE.description,
     },
     inLanguage: "en-US",
   }}

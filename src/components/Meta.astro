@@ -22,6 +22,7 @@ const {
   structuredData = defaultProps.structuredData,
   customDescription = defaultProps.customDescription,
   customOgTitle = defaultProps.customOgTitle,
+  lang = "vi",
 } = Astro.props;
 
 // Use custom description if provided, otherwise use default meta
@@ -31,7 +32,6 @@ const ogTitle = customOgTitle || OG.title;
 const ogDescription = customDescription || OG.description;
 
 // Define the metadata for your website and individual pages
-const siteURL = `${Astro.site}`; // Set the website URL in astro.config.mjs
 const author = SITE.author;
 const canonical = new URL(
   Astro.url.pathname,
@@ -44,31 +44,39 @@ const socialImageRes = await getImage({
 });
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 const twitterDomain = new URL(SITE.url).hostname;
+const currentLang = lang === "en" ? "en" : "vi";
+const ogLocale = currentLang === "en" ? "en_US" : "vi_VN";
 
-const languages: { [key: string]: string } = {
-  en: "",
-  vn: "vn",
-};
+const languages = {
+  vi: "",
+  en: "en",
+} as const;
 
-function createHref(lang: string, prefix: string, path: string): string {
-  // Remove any existing language prefix
-  const cleanPath = path.replace(/^\/(vn|en)\//, "/");
+const cleanPath = Astro.url.pathname.replace(/^\/en(?=\/|$)/, "") || "/";
+const englishPendingPrefixes = ["/sen-xich", "/phu-kien-nhom-dinh-hinh"];
+const skipEnglishAlternate = englishPendingPrefixes.some(
+  (prefix) => cleanPath === prefix || cleanPath.startsWith(`${prefix}/`)
+);
 
-  // Add the correct language prefix if needed
-  const basePath = prefix ? `/${prefix}${cleanPath}` : cleanPath;
-  const normalizedBasePath = basePath.replace(/\/\/+/g, "/");
+function createHref(prefix: string, path: string): string {
+  const normalizedPath = path === "/" ? "/" : path.replace(/\/$/, "");
+  const localizedPath = prefix
+    ? normalizedPath === "/"
+      ? `/${prefix}/`
+      : `/${prefix}${normalizedPath}/`
+    : normalizedPath === "/"
+      ? "/"
+      : `${normalizedPath}/`;
 
-  return `${siteURL.slice(0, -1)}${normalizedBasePath}`;
+  return new URL(localizedPath, Astro.site || Astro.url.origin).href;
 }
 
-const fullPath: string = Astro.url.pathname;
-
 const alternateLanguageLinks: string = Object.entries(languages)
-  .map(([lang, prefix]: [string, string]) => {
-    const cleanPath = fullPath.replace(/^\/(vn|en)\//, "/");
-    const href: string = createHref(lang, prefix, cleanPath);
+  .filter(([language]) => !(language === "en" && skipEnglishAlternate))
+  .map(([language, prefix]) => {
+    const href = createHref(prefix, cleanPath);
 
-    return `<link rel="alternate" hreflang="${lang}" href="${href}" />`;
+    return `<link rel="alternate" hreflang="${language}" href="${href}" />`;
   })
   .join("\n");
 
@@ -121,7 +129,7 @@ const appleTouchIcon = await getImage({
 <Fragment set:html={alternateLanguageLinks} />
 
 {/* Facebook Meta Tags */}
-<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale" content={ogLocale} />
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={ogTitle} />

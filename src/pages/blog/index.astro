@@ -32,15 +32,15 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 // Define variables for page content
 const title: string = "Cánh cổng dẫn tới sự xuất sắc trong xây dựng";
 const subTitle: string =
-  "Khám phá những tin tức mới nhất, mẹo hữu ích và phân tích chuyên sâu từ ScrewFast nhằm nâng cao hiệu quả cho các dự án xây dựng của bạn. Từ giới thiệu sản phẩm đến chiến lược quản lý dự án, blog của chúng tôi là nguồn tài nguyên không thể thiếu cho mọi vấn đề liên quan đến công cụ và xây dựng.";
+  "Khám phá những tin tức mới nhất, mẹo hữu ích và phân tích chuyên sâu từ HAHUTECH để nâng cao hiệu quả cho các dự án cơ khí và công nghiệp của bạn. Từ giới thiệu sản phẩm đến kinh nghiệm triển khai thực tế, blog là nguồn tham khảo dành cho khách hàng và đối tác kỹ thuật.";
 const secondTitle: string = "Góc nhìn chuyên sâu";
 const secondSubTitle: string =
-  "Luôn cập nhật các xu hướng và thay đổi mới nhất trong ngành xây dựng thông qua những phân tích đến từ đội ngũ chuyên gia của ScrewFast.";
+  "Luôn cập nhật các xu hướng và thay đổi mới nhất trong ngành cơ khí, vật tư công nghiệp và giải pháp liên kết từ đội ngũ HAHUTECH.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 const metaDescription =
-  "Luôn cập nhật những xu hướng và biến chuyển mới nhất trong ngành xây dựng với các phân tích từ đội ngũ chuyên gia của ScrewFast.";
-const ogTitle = "Blog ngành xây dựng | ScrewFast";
+  "Luôn cập nhật những xu hướng và biến chuyển mới nhất trong ngành cơ khí, vật tư công nghiệp và giải pháp liên kết từ đội ngũ HAHUTECH.";
+const ogTitle = `Blog HAHUTECH | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -50,19 +50,17 @@ const ogTitle = "Blog ngành xây dựng | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/blog",
-    url: "https://screwfast.uk/blog",
-    name: "Blog | ScrewFast",
-    description:
-      "Luôn cập nhật những xu hướng và biến chuyển mới nhất trong ngành xây dựng với các phân tích từ đội ngũ chuyên gia của ScrewFast.",
+    "@id": `${SITE.url}/blog`,
+    url: `${SITE.url}/blog`,
+    name: `Blog | ${SITE.title}`,
+    description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
-      description:
-        "ScrewFast cung cấp các công cụ phần cứng hàng đầu cùng dịch vụ xây dựng chuyên nghiệp nhằm đáp ứng mọi nhu cầu dự án của bạn.",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
     },
-    inLanguage: "vn",
+    inLanguage: "vi-VN",
   }}
 >
   <section

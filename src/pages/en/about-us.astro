@@ -140,7 +140,7 @@ const articles: Article[] = [
     isRightSection: false,
     title: "Transforming Designs into Reality",
     subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
+      "Our team brings precision and consistency to every industrial supply project. From standard fasteners to custom technical items, HAHUTECH delivers reliable products and support to turn specifications into practical results.",
     img: beforeAfter,
     imgAlt: "Construction site before and after",
     // Removed "Learn More" button props
@@ -149,7 +149,7 @@ const articles: Article[] = [
     isRightSection: true,
     title: "Navigating Projects with Professional Oversight",
     subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+      "Effective project coordination is at the heart of every successful deployment. HAHUTECH supports planning, sourcing, and delivery control so your team can stay on schedule and keep materials aligned with technical requirements.",
     single: false,
     imgOne: constructionWorkers,
     imgOneAlt: "Construction workers orchestrating a project",
@@ -160,7 +160,7 @@ const articles: Article[] = [
     isRightSection: false,
     title: "Ensuring Long-lasting Performance",
     subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+      "Our commitment does not end after delivery. HAHUTECH continues to support customers with responsive service, product consultation, and follow-up assistance to maintain stable long-term performance.",
     img: usingTools,
     imgAlt:
       "Man in orange and black vest wearing white helmet holding yellow and black power tool",
@@ -169,7 +169,7 @@ const articles: Article[] = [
     isRightSection: true,
     title: "Crafting Bespoke Strategies for Unique Challenges",
     subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
+      "For enterprise customers, HAHUTECH develops custom supply solutions tailored to specific technical and operational requirements. We work with your team to improve efficiency, control quality, and support business growth.",
     single: false,
     imgOne: progressBuilding,
     imgOneAlt: "In progress building structure",
@@ -179,10 +179,10 @@ const articles: Article[] = [
   },
 ];
 
-const pageTitle: string = `Services | ${SITE.title}`;
+const pageTitle: string = `About Us | ${SITE.title}`;
 const metaDescription =
-  "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.";
-const ogTitle = "Expert Consultation Services | ScrewFast";
+  "Learn about HAHUTECH, our product portfolio, and our experience supplying industrial fasteners and technical accessories.";
+const ogTitle = `About HAHUTECH | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -193,17 +193,15 @@ const ogTitle = "Expert Consultation Services | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/en/services",
-    url: "https://screwfast.uk/en/services",
-    name: "Expert Consultation Services | ScrewFast",
-    description:
-      "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    "@id": `${SITE.url}/en/about-us`,
+    url: `${SITE.url}/en/about-us`,
+    name: `About Us | ${SITE.title}`,
+    description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk/en",
-      name: "ScrewFast",
-      description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      url: `${SITE.url}/en`,
+      name: SITE.title,
+      description: SITE.description,
     },
     inLanguage: "en-US",
   }}
@@ -211,7 +209,7 @@ const ogTitle = "Expert Consultation Services | ScrewFast";
   {/* MainSection is the introductory section of the page, it also contains a CTA button */}
   <MainSection
     title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    subTitle="At HAHUTECH, we provide dependable solutions and responsive service for industrial fasteners, accessories, and technical supply needs. Our team supports your project from initial consultation through delivery and after-sales assistance."
     btnExists={false}
   />
   {/* RightSection and LeftSection contain details about various services along with pertinent imagery.

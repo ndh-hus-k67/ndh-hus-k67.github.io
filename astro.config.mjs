@@ -21,9 +21,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       i18n: {
-        defaultLocale: "vn", // Mặc định là tiếng Việt
+        defaultLocale: "vi", // Mặc định là tiếng Việt
         locales: {
-          vn: "vn",
+          vi: "vi",
           en: "en",
         },
       },
@@ -36,7 +36,7 @@ export default defineConfig({
       locales: {
         root: {
           label: "Tiếng Việt",
-          lang: "vn",
+          lang: "vi",
         },
         en: { label: "English", lang: "en" },
         // Các ngôn ngữ dưới đây tạm thời comment lại nếu không dùng đến
@@ -52,7 +52,7 @@ export default defineConfig({
         {
           label: "Quick Start Guides",
           translations: {
-            vn: "Hướng dẫn Bắt đầu Nhanh",
+            vi: "Hướng dẫn Bắt đầu Nhanh",
             // de: "Schnellstartanleitungen",
           },
           autogenerate: { directory: "guides" },

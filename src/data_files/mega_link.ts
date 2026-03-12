@@ -11,7 +11,7 @@ export const servicesData = [
   {
     title: "Explore Advice and Explanations",
     description:
-      "Dive deep into helpful guides and explanations for all of ScrewFast's features",
+      "Dive into practical guides and explanations for HAHUTECH products and services",
     icon: "guides",
     url: "#",
   },
@@ -24,27 +24,27 @@ export const servicesData = [
   },
   {
     title: "Expert Services",
-    description: "Go beyond tools with ScrewFast's expert services",
+    description: "Go beyond products with HAHUTECH's expert support services",
     icon: "rocket",
     url: "#",
   },
   {
     title: "Cutting-Edge Tools",
     description:
-      "Build Smarter, Faster. Experience next-level efficiency with ScrewFast's cutting-edge construction tools",
+      "Build smarter and faster with high-performance tools and industrial accessories from HAHUTECH",
     icon: "hammer",
     url: "#",
   },
   {
     title: "Simple Plans",
     description:
-      "Boost your efficiency with ScrewFast's straightforward, value-driven plans",
+      "Boost efficiency with straightforward, value-driven plans from HAHUTECH",
     icon: "sparks",
     url: "#",
   },
   {
     title: "Community Forum",
-    description: "Learn, share, and connect with other ScrewFast users",
+    description: "Learn, share, and connect with the HAHUTECH customer community",
     icon: "community",
     url: "#",
   },

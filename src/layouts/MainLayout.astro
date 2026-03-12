@@ -12,7 +12,7 @@ const {
   title = SITE.title,
   meta,
   structuredData,
-  lang = "en",
+  lang = "vi",
   customDescription = null,
   customOgTitle = null,
 } = Astro.props;
@@ -36,6 +36,7 @@ interface Props {
       structuredData={structuredData}
       customDescription={customDescription}
       customOgTitle={customOgTitle}
+      lang={lang}
     />
     {/* Define the title of the page */}
     <title>{title}</title>

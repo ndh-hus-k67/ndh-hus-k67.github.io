@@ -58,6 +58,16 @@ const ogTitle = `${product.data.title} | Self-clinching studs | ${SITE.title}`;
       "@type": "Brand",
       name: SITE.title,
     },
+    offers: {
+      "@type": "Offer",
+      url: `${SITE.url}/en/tan-tru-tu-giu/${productType}/${product.data.slug}`,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: "HAHUTECH"
+      }
+    },
     inLanguage: "en-US",
   }}
 >

@@ -58,6 +58,16 @@ const ogTitle = `${product.data.title} | Screws | ${SITE.title}`;
       "@type": "Brand",
       name: SITE.title,
     },
+    offers: {
+      "@type": "Offer",
+      url: `${SITE.url}/en/oc-vit/${productType}/${product.data.slug}`,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: "HAHUTECH"
+      }
+    },
     inLanguage: "en-US",
   }}
 >

@@ -25,7 +25,7 @@ import tantrutugiuImage from "@images/tan-tru-tu-giu-category.avif";
 import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
-import { partnersData, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA } from "@/data_files/constants";
+import { partnersData, SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -108,14 +108,61 @@ const productCategories = [
     }).length
   }
 ];
+
+const categoryUrlMap: Record<string, string> = {
+  "bu-long": `${SITE.url}/bu-long`,
+  "oc-vit": `${SITE.url}/oc-vit`,
+  "tan-tu-giu": `${SITE.url}/tan-tu-giu`,
+  "tan-tru-tu-giu": `${SITE.url}/tan-tru-tu-giu`,
+  "tru-ren-tu-giu": `${SITE.url}/tru-ren-tu-giu`,
+  "sen-xich": `${SITE.url}/sen-xich`,
+  "phu-kien-nhom": `${SITE.url}/phu-kien-nhom-dinh-hinh`
+};
+
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    WEBSITE_SCHEMA,
+    PLACE_SCHEMA,
+    ORGANIZATION_SCHEMA,
+    LOCAL_BUSINESS_SCHEMA,
+    PRODUCT_OFFER_CATALOG_SCHEMA,
+    {
+      "@type": "CollectionPage",
+      "@id": SITE.url,
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+      inLanguage: "vi-VN",
+      isPartOf: {
+        "@id": `${SITE.url}/#website`
+      },
+      about: {
+        "@id": `${SITE.url}/#catalog`
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        name: "Danh mục sản phẩm HAHUTECH",
+        numberOfItems: productCategories.length,
+        itemListElement: productCategories.map((category, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: category.name,
+          url: categoryUrlMap[category.slug],
+          item: {
+            "@type": "CollectionPage",
+            name: category.name,
+            url: categoryUrlMap[category.slug],
+            numberOfItems: category.count
+          }
+        }))
+      }
+    }
+  ]
+};
 ---
 
-<MainLayout>
-  <!-- Organization and LocalBusiness Schema for SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify(ORGANIZATION_SCHEMA)} slot="head" />
-  <script type="application/ld+json" set:html={JSON.stringify(LOCAL_BUSINESS_SCHEMA)} slot="head" />
-
-
+<MainLayout structuredData={homepageStructuredData}>
   <HeroSection
     title=`Bu lông ốc vít chất lượng cao HAHU<span class="text-yellow-500 dark:text-yellow-400">TECH</span>`
     subTitle="Giải pháp liên kết cho công nghiệp và xây dựng"
@@ -123,10 +170,6 @@ const productCategories = [
     primaryBtnURL="/about-us"
     secondaryBtn="Liên hệ"
     secondaryBtnURL="/contact"
-    withReview={true}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`Hơn <span class="font-bold">500+</span> khách hàng tin dùng`
     src={heroImage}
     alt="Sản phẩm bu lông ốc vít HAHUTECH"
   />

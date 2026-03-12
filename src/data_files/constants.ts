@@ -11,25 +11,120 @@ export const SITE = {
   author: "HAHUTECH",
 };
 
+const SOCIAL_PROFILES = ["https://www.facebook.com/hahutech.com.vn"];
+
+const LOGO_URL = `${SITE.url}/logo.jpg`;
+
+const BUSINESS_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "80 - 35 KĐT Bắc",
+  addressLocality: "Từ Sơn",
+  addressRegion: "Bắc Ninh",
+  postalCode: "16000",
+  addressCountry: "VN"
+};
+
+const BUSINESS_GEO = {
+  "@type": "GeoCoordinates",
+  latitude: "21.118423",
+  longitude: "105.977310"
+};
+
+const CONTACT_POINTS = [
+  {
+    "@type": "ContactPoint",
+    telephone: "+84347741638",
+    email: "sales@hahutech.com.vn",
+    contactType: "Dịch vụ khách hàng",
+    areaServed: "VN",
+    availableLanguage: ["Vietnamese", "English"]
+  },
+  {
+    "@type": "ContactPoint",
+    telephone: "+84347741638",
+    email: "sales@hahutech.com.vn",
+    contactType: "Bán hàng",
+    areaServed: "VN",
+    availableLanguage: ["Vietnamese", "English"]
+  }
+];
+
+const PRODUCT_CATALOG_ITEMS = [
+  {
+    "@type": "OfferCatalog",
+    name: "Bu lông",
+    url: `${SITE.url}/bu-long`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Ốc vít",
+    url: `${SITE.url}/oc-vit`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Tán tự giữ",
+    url: `${SITE.url}/tan-tu-giu`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Tán trụ tự giữ",
+    url: `${SITE.url}/tan-tru-tu-giu`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Trụ ren tự giữ",
+    url: `${SITE.url}/tru-ren-tu-giu`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Sên xích",
+    url: `${SITE.url}/sen-xich`
+  },
+  {
+    "@type": "OfferCatalog",
+    name: "Phụ kiện nhôm định hình",
+    url: `${SITE.url}/phu-kien-nhom-dinh-hinh`
+  }
+];
+
+export const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  url: SITE.url,
+  name: SITE.title,
+  description: SITE.description,
+  inLanguage: "vi-VN",
+  publisher: {
+    "@id": `${SITE.url}/#organization`
+  }
+};
+
+export const PLACE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "@id": `${SITE.url}/#place`,
+  name: "HAHUTECH",
+  url: SITE.url,
+  address: BUSINESS_ADDRESS,
+  geo: BUSINESS_GEO,
+  hasMap: "https://www.google.com/maps?cid=15472956453569700990"
+};
+
+export const PRODUCT_OFFER_CATALOG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "@id": `${SITE.url}/#catalog`,
+  name: "Danh mục sản phẩm HAHUTECH",
+  url: SITE.url,
+  itemListElement: PRODUCT_CATALOG_ITEMS
+};
+
 export const SEO = {
   title: SITE.title,
   description: SITE.description,
-  keywords: "HAHUTECH, hahutech, bu lông, ốc vít, vật tư công nghiệp, bu lông DIN, bu lông JIS, ốc vít tiêu chuẩn, vật liệu xây dựng, phụ kiện nhôm, sen xích, bu lông chất lượng cao, ốc vít inox, ke chìm chống xoay, tán tự giữ, tán trụ tự giữ, trụ rèn tự giữ, vít tự khoan, vít bắn tôn, bu lông inox, ốc vít inox",
-  structuredData: {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    inLanguage: "vi-VN",
-    "@id": SITE.url,
-    url: SITE.url,
-    name: SITE.title,
-    description: SITE.description,
-    isPartOf: {
-      "@type": "WebSite",
-      url: SITE.url,
-      name: SITE.title,
-      description: SITE.description,
-    },
-  },
+  keywords: "HAHUTECH, hahutech, bu lông, ốc vít, vật tư công nghiệp, bu lông DIN, bu lông JIS, ốc vít tiêu chuẩn, vật liệu xây dựng, phụ kiện nhôm, sên xích, bu lông chất lượng cao, ốc vít inox, ke chìm chống xoay, tán tự giữ, tán trụ tự giữ, trụ rèn tự giữ, vít tự khoan, vít bắn tôn, bu lông inox, ốc vít inox, bu lông Bắc Ninh, ốc vít Bắc Ninh, vật tư cơ khí Bắc Ninh, nhôm định hình Bắc Ninh, bu lông giá rẻ, ốc vít giá tốt, phụ tùng cơ khí, linh kiện công nghiệp",
+  structuredData: WEBSITE_SCHEMA,
 };
 
 export const OG = {
@@ -53,62 +148,30 @@ export const ORGANIZATION_SCHEMA = {
   logo: {
     "@type": "ImageObject",
     "@id": `${SITE.url}/#logo`,
-    url: "https://hahutech.com.vn/logo.png",
-    contentUrl: "https://hahutech.com.vn/logo.png",
-    width: "1200",
-    height: "630",
+    url: LOGO_URL,
+    contentUrl: LOGO_URL,
     caption: "HAHUTECH Logo"
   },
   image: {
     "@type": "ImageObject",
     "@id": `${SITE.url}/#logo`,
-    url: "https://hahutech.com.vn/logo.png",
-    contentUrl: "https://hahutech.com.vn/logo.png",
-    width: "1200",
-    height: "630"
+    url: LOGO_URL,
+    contentUrl: LOGO_URL
   },
   description: "HAHUTECH là đơn vị cung cấp bu lông, ốc vít, vật tư cơ khí và nhôm định hình công nghiệp.",
   slogan: SITE.tagline,
   foundingDate: "2015",
-  email: "sales@hahutech.com",
+  email: "sales@hahutech.com.vn",
   telephone: "+84347741638",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Địa chỉ công ty",
-    addressLocality: "Thành phố",
-    addressRegion: "Việt Nam",
-    postalCode: "700000",
-    addressCountry: "VN"
-  },
-  sameAs: [
-    // Add your social media profiles here when available
-    // "https://www.facebook.com/hahutech",
-    // "https://www.linkedin.com/company/hahutech",
-    // "https://www.youtube.com/hahutech"
-  ],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: "+84347741638",
-      email: "sales@hahutech.com",
-      contactType: "Dịch vụ khách hàng",
-      contactOption: "TollFree",
-      areaServed: "VN",
-      availableLanguage: ["Vietnamese", "English"]
-    },
-    {
-      "@type": "ContactPoint",
-      telephone: "+84347741638",
-      email: "sales@hahutech.com",
-      contactType: "Bán hàng",
-      contactOption: "TollFree",
-      areaServed: "VN",
-      availableLanguage: ["Vietnamese", "English"]
-    }
-  ],
+  address: BUSINESS_ADDRESS,
+  sameAs: SOCIAL_PROFILES,
+  contactPoint: CONTACT_POINTS,
   areaServed: {
     "@type": "Country",
     name: "Vietnam"
+  },
+  hasOfferCatalog: {
+    "@id": `${SITE.url}/#catalog`
   },
   knowsAbout: [
     "Bu lông",
@@ -129,28 +192,23 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@id": `${SITE.url}/#localbusiness`,
   name: "HAHUTECH",
   legalName: "Công ty Cổ phần Sản xuất và Thương mại HAHUTECH",
+  parentOrganization: {
+    "@id": `${SITE.url}/#organization`
+  },
   image: [
-    "https://hahutech.com.vn/logo.png"
+    LOGO_URL
   ],
   url: SITE.url,
   telephone: "+84347741638",
-  email: "sales@hahutech.com",
+  email: "sales@hahutech.com.vn",
   description: "HAHUTECH là đơn vị cung cấp bu lông, ốc vít, vật tư cơ khí và nhôm định hình công nghiệp.",
   priceRange: "$$",
   paymentAccepted: "Tiền mặt, Chuyển khoản ngân hàng, Thẻ tín dụng",
   currenciesAccepted: "VND",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Địa chỉ công ty",
-    addressLocality: "Thành phố",
-    addressRegion: "Việt Nam",
-    postalCode: "700000",
-    addressCountry: "VN"
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "10.8231",
-    longitude: "106.6297"
+  address: BUSINESS_ADDRESS,
+  geo: BUSINESS_GEO,
+  location: {
+    "@id": `${SITE.url}/#place`
   },
   openingHoursSpecification: [
     {
@@ -160,28 +218,61 @@ export const LOCAL_BUSINESS_SCHEMA = {
         "Tuesday",
         "Wednesday",
         "Thursday",
-        "Friday"
+        "Friday",
+        "Saturday"
       ],
       opens: "08:00",
-      closes: "17:30"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "08:00",
-      closes: "12:00"
+      closes: "17:00"
     }
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "500",
-    bestRating: "5",
-    worstRating: "1"
+  openingHours: "Mo-Sa 08:00-17:00",
+  hasMap: "https://www.google.com/maps?cid=15472956453569700990",
+  sameAs: SOCIAL_PROFILES,
+  hasOfferCatalog: {
+    "@id": `${SITE.url}/#catalog`
   },
-  hasMap: `https://maps.google.com/?q=HAHUTECH`, // Replace with actual Google Maps URL
-  sameAs: [
-    // Add your social media profiles here when available
+  areaServed: {
+    "@type": "Country",
+    name: "Vietnam"
+  },
+  availableLanguage: ["Vietnamese", "English"],
+  contactPoint: CONTACT_POINTS,
+  makesOffer: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Bu lông các loại tiêu chuẩn DIN, JIS, ANSI, ISO"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Ốc vít công nghiệp chất lượng cao"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Phụ kiện nhôm định hình"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Sên xích công nghiệp"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Tán tự giữ và trụ ren tự giữ"
+      }
+    }
   ]
 };
 

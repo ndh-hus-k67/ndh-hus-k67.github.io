@@ -14,18 +14,16 @@ export async function getStaticPaths() {
   });
 
   return productEntries.map((product) => {
-    const productType = product.data.productType?.slug;
     const slug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
 
     return {
-      params: { productType: productType || 'chuyen-dung', slug: slug || '' },
+      params: { slug: slug || '' },
       props: { product },
     };
   });
 }
 
 const { product } = Astro.props;
-const { productType } = Astro.params;
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
@@ -44,7 +42,7 @@ const metaDescription = product.data.seo?.description || product.data.descriptio
 const ogTitle = `${product.data.title} | Trụ ren tự giữ | ${SITE.title}`;
 
 // Generate product URL
-const productUrl = `${SITE.url}/tru-ren-tu-giu/${productType}/${product.data.slug}`;
+const productUrl = `${SITE.url}/tru-ren-tu-giu/${product.data.slug}`;
 
 // Generate image URL if available
 const productImage = imgMainResolved ? `${SITE.url}${imgMainResolved.src}` : undefined;

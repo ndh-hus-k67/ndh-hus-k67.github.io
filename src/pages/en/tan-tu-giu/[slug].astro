@@ -13,18 +13,16 @@ export async function getStaticPaths() {
   });
 
   return productEntries.map((product) => {
-    const productType = product.data.productType?.slug;
     const slug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
 
     return {
-      params: { productType: productType || 'chuyen-dung', slug: slug || '' },
+      params: { slug: slug || '' },
       props: { product },
     };
   });
 }
 
 const { product } = Astro.props;
-const { productType } = Astro.params;
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
@@ -50,7 +48,7 @@ const ogTitle = `${product.data.title} | Self-clinching nuts | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/tan-tu-giu/${productType}/${product.data.slug}`,
+    "@id": `${SITE.url}/en/tan-tu-giu/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
     category: "Self-clinching nuts",
@@ -60,7 +58,7 @@ const ogTitle = `${product.data.title} | Self-clinching nuts | ${SITE.title}`;
     },
     offers: {
       "@type": "Offer",
-      url: `${SITE.url}/en/tan-tu-giu/${productType}/${product.data.slug}`,
+      url: `${SITE.url}/en/tan-tu-giu/${product.data.slug}`,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       seller: {

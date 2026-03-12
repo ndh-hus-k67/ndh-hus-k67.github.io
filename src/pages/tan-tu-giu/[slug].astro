@@ -14,18 +14,16 @@ export async function getStaticPaths() {
   });
 
   return productEntries.map((product) => {
-    const productType = product.data.productType?.slug;
     const slug = product.data.slug || product.id.split('/').pop()?.replace('.md', '');
 
     return {
-      params: { productType: productType || 'chuyen-dung', slug: slug || '' },
+      params: { slug: slug || '' },
       props: { product },
     };
   });
 }
 
 const { product } = Astro.props;
-const { productType } = Astro.params;
 
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
@@ -43,7 +41,7 @@ const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Tán tự giữ | ${SITE.title}`;
 
-const productUrl = `${SITE.url}/tan-tu-giu/${productType}/${product.data.slug}`;
+const productUrl = `${SITE.url}/tan-tu-giu/${product.data.slug}`;
 const productImage = imgMainResolved ? `${SITE.url}${imgMainResolved.src}` : undefined;
 
 const productSchema = generateProductSchema({

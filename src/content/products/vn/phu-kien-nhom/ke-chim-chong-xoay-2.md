@@ -10,7 +10,7 @@ productType:
 seo:
   title: "Ke chìm chống xoay - Kết nối vững chắc"
   description: "Ke chìm chống xoay cho nhôm định hình. Hai đầu ren, kết nối chắc chắn. Răng chống xoay hiệu quả. Vật liệu thép, inox 304, 316."
-  keywords: ["ke chìm chống xoay 2 đầu", "ke chìm hai đầu", "phụ kiện nhôm", "ke chống xoay", "nhôm định hình"]
+  keywords: ["ke chìm chống xoay", "ke chìm hai đầu", "phụ kiện nhôm", "ke chống xoay", "nhôm định hình"]
 main:
   id: 1
   content: |

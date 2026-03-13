@@ -3,7 +3,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
-import { resolveLocalImageOrFallback } from "@/utils/resolveLocalImage";
+import { resolveLocalImageOrFallback, type ImageLike } from "@/utils/resolveLocalImage";
 
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
@@ -37,12 +37,14 @@ const blueprintFirstResolved = product.data.blueprints?.first
   : undefined;
 
 // Resolve all blueprint images if they exist
-const blueprintArray = product.data.blueprints ? Object.values(product.data.blueprints) : [];
+const blueprintArray: ImageLike[] = product.data.blueprints
+  ? (Object.values(product.data.blueprints) as ImageLike[])
+  : [];
 const blueprintsResolved = await Promise.all(
   blueprintArray.map(async (blueprintPath) => {
     if (blueprintPath) {
       return await resolveLocalImageOrFallback(
-        blueprintPath as string,
+        blueprintPath,
         "@/images/blueprint-1.avif"
       );
     }

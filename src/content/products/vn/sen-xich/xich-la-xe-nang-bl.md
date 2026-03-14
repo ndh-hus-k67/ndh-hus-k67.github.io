@@ -72,4 +72,6 @@ tableData:
       - ["Q tối thiểu (kN)", "100.1", "133.4", "48.9", "48.9", "75.6", "97.9"]
       - ["Q0 trung bình (kN)", "125.1", "169.5", "63.6", "63.6", "102.8", "120.9"]
       - ["Khối lượng (kg/m)", "2.8", "3.72", "1.68", "2.04", "2.83", "3.18"]
+blueprints:
+  first: "@/images/products/sen-xich/xich-la-xe-nang-ban-ve.avif"
 ---

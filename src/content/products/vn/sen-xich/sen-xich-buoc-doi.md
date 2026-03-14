@@ -64,6 +64,6 @@ tableData:
       - ["Khối lượng (kg/m)", "2.37", "1.88", "2.92", "3.53", "5.68", "4.75", "7.4"]
       - ["Quy cách (m/hộp)", "3", "3", "3", "3", "3", "3", "3"]
 
-# blueprints:
-  # first: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
+blueprints:
+  first: "@/images/products/sen-xich/sen-xich-buoc-doi-ban-ve.avif"
 ---

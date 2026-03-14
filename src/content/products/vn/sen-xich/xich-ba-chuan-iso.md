@@ -80,4 +80,6 @@ tableData:
       - ["Q tối thiểu (kN/lb)", "950/215909", "1500/340909", "2240/509090", "3000/681820", "3750/852270"]
       - ["Q0 (kN)", "1092.5", "1710", "2240", "3300", "4125"]
       - ["Khối lượng (kg/m)", "48.1", "75", "107.18", "136", "180"]
+blueprints:
+  first: "@/images/products/sen-xich/xich-chuan-iso-ban-ve.avif"
 ---

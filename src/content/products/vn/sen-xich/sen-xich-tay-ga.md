@@ -111,7 +111,7 @@ tableData:
       - ["32B", "50.800", "92.80", "50.800", "101.60", "142.8", "6.00", "31.75", "13.10"]
 
 blueprints:
-  first: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
-  second: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
-  third: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
+  first: "@/images/products/sen-xich/xich-tay-ga-ban-ve-1.avif"
+  second: "@/images/products/sen-xich/xich-tay-ga-ban-ve-2.avif"
+  third: "@/images/products/sen-xich/xich-tay-ga-ban-ve-3.avif"
 ---

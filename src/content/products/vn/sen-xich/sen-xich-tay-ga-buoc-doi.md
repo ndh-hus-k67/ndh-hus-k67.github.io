@@ -14,8 +14,8 @@ seo:
 main:
   id: 1
   content: "Xích tay gá (Attachment Chain) là loại xích công nghiệp được thiết kế gắn thêm các phụ kiện (tay gá, bản lề, chốt, gối đỡ nhỏ) trên mắt xích. Nhờ đó, xích không chỉ làm nhiệm vụ truyền động mà còn có khả năng giữ, đẩy, kẹp hoặc vận chuyển sản phẩm trực tiếp trên băng tải."
-  imgCard: "@/images/products/sen-xich/xich-tay-ga.avif"
-  imgMain: "@/images/products/sen-xich/xich-tay-ga.avif"
+  imgCard: "@/images/products/sen-xich/xich-tay-ga-buoc-doi.avif"
+  imgMain: "@/images/products/sen-xich/xich-tay-ga-buoc-doi.avif"
   imgAlt: "Sên xích tay gá"
 tableData:
   - feature:
@@ -61,6 +61,6 @@ tableData:
       - ["C2100H / C2102H", "63.50", "47.6", "23.8", "28.6", "31.80", "50.4", "8.4", "13.00"]
 
 blueprints:
-  first: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
-  second: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
+  first: "@/images/products/sen-xich/xich-tay-ga-buoc-doi-ban-ve-1.avif"
+  second: "@/images/products/sen-xich/xich-tay-ga-buoc-doi-ban-ve-2.avif"
 ---

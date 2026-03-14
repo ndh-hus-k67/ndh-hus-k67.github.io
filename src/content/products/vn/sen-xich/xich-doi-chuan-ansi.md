@@ -82,4 +82,6 @@ tableData:
       - ["Q min kN/LB", "453.6/103091", "560.5/127386", "707.6/160818", "1020.6/213955"]
       - ["Q0 (kN)", "562.4", "695", "877.4", "1255.3"]
       - ["kg/m", "20.14", "29.22", "32.24", "45.23"]
+blueprints:
+  first: "@/images/products/sen-xich/xich-doi-chuan-ansi-ban-ve.avif"
 ---

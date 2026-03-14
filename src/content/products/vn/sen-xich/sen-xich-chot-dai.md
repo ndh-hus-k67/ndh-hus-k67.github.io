@@ -44,6 +44,6 @@ tableData:
       - ["Khối lượng đính kèm D-3 (kg/m)", "0.0014", "0.0018", "0.0034", "0.006", "0.014", "0.024", "0.040", "0.060", "0.080"]
       - ["Số mắc xích/mét", "320", "240", "192", "160", "120", "96", "80", "68", "60"]
 
-# blueprints:
-  # first: "@/images/products/bu-long/chu-t/ban_ve_bulong_chu_t.avif"
+blueprints:
+  first: "@/images/products/sen-xich/sen-xich-chot-dai-ban-ve.avif"
 ---

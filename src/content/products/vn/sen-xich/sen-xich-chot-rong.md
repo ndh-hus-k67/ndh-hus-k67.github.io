@@ -58,4 +58,7 @@ tableData:
       - ["Lực kéo trung bình (kN)", "13.2", "13.2", "20.6", "20.6", "31.4", "31.4", "53.0", "53.0"]
       - ["Tải trọng max (kN)", "1.77", "1.77", "3.14", "3.14", "4.22", "4.22", "7.65", "7.65"]
       - ["Khối lượng (kg/m)", "0.46", "0.8", "0.76", "1.12", "1.12", "2.32", "3.17", "3.17"]
+
+blueprints:
+  first: "@/images/products/sen-xich/sen-xich-chot-rong-ban-ve.avif"
 ---

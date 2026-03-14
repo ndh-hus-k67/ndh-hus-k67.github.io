@@ -241,35 +241,35 @@ export const LOCAL_BUSINESS_SCHEMA = {
     {
       "@type": "Offer",
       "itemOffered": {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Bu lông các loại tiêu chuẩn DIN, JIS, ANSI, ISO"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Ốc vít công nghiệp chất lượng cao"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Phụ kiện nhôm định hình"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Sên xích công nghiệp"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Tán tự giữ và trụ ren tự giữ"
       }
     }

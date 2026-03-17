@@ -1,9 +1,6 @@
 ---
 title: "Hướng dẫn chọn bu lông ốc vít chuẩn cho người mới bắt đầu – Đừng mua sai"
 description: "Cẩm nang cho người mới: phân biệt bu lông và ốc vít, cách đọc kích thước/tiêu chuẩn DIN-ISO-JIS, tránh sai lầm phổ biến và chọn đúng theo nhu cầu."
-author: "Ngô Ngọc Thu Trang"
-authorImage: "@/images/blog/jacob.avif"
-authorImageAlt: "Ảnh đại diện tác giả"
 pubDate: 2025-10-22
 cardImage: "@/images/blog/post-1.avif"
 cardImageAlt: "Bu lông và ốc vít trong ứng dụng cơ khí"

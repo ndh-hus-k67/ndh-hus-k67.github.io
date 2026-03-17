@@ -2,9 +2,6 @@
 # BẮT BUỘC (theo schema `blog`)
 title: "Tiêu đề bài viết"
 description: "Mô tả ngắn (dùng cho card + SEO)"
-author: "Tên tác giả"
-authorImage: "@/images/blog/jacob.avif" # tạm thời giữ nguyên ảnh để tránh lỗi
-authorImageAlt: "Ảnh đại diện tác giả"
 pubDate: 2026-01-16
 cardImage: "@/images/blog/post-1.avif" # tạm thời giữ nguyên ảnh để tránh lỗi
 cardImageAlt: "Mô tả ảnh cover"

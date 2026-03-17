@@ -1,9 +1,6 @@
 ---
 title: "Hướng dẫn cách đọc ký hiệu bu lông – đai ốc đúng nhất (dễ hiểu cho người mới)"
 description: "Giải thích cấp bền bu lông hệ mét/hệ inch, ý nghĩa ký hiệu dạng XX.X và A2-80, cách chọn đai ốc phù hợp và ví dụ minh hoạ thực tế."
-author: "mktcuongthinh"
-authorImage: "@/images/blog/brad.avif"
-authorImageAlt: "Ảnh đại diện tác giả"
 pubDate: 2023-09-10
 cardImage: "@/images/blog/post-2.avif"
 cardImageAlt: "Minh hoạ bu lông và đai ốc trong ứng dụng thực tế"

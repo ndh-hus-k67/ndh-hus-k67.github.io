@@ -2,9 +2,6 @@
 # REQUIRED (per `blog` schema)
 title: "Post title"
 description: "Short description (used for cards + SEO)"
-author: "Author name"
-authorImage: "@/images/blog/jacob.avif" # keep existing image for now
-authorImageAlt: "Author avatar"
 pubDate: 2026-01-16
 cardImage: "@/images/blog/post-1.avif" # keep existing image for now
 cardImageAlt: "Cover image description"

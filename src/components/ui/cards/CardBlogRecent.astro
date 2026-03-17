@@ -2,8 +2,8 @@
 // Import all required components and utilities
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import { formatDate } from "@utils/utils";
 
 const { blogEntry, recentBlogLocale = "" } = Astro.props;
 
@@ -37,18 +37,13 @@ interface Props {
         {blogEntry.data.description}
       </a>
     </h2>
-    <div class="mt-6 flex items-center sm:mt-10">
-      <AvatarBlogLarge blogEntry={blogEntry} />
-
-      <div class="ms-3 sm:ms-4">
-        <p class="font-bold text-neutral-800 dark:text-neutral-200 sm:mb-1">
-          {blogEntry.data.author}
-        </p>
-        <p class="text-xs text-neutral-500">
-          {blogEntry.data.role}
-        </p>
-      </div>
-    </div>
+    <p class="mt-6 text-sm text-neutral-500 sm:mt-10">
+      {formatDate(blogEntry.data.pubDate)}
+      {" · "}
+      {recentBlogLocale === "en"
+        ? `${blogEntry.data.readTime} min read`
+        : `${blogEntry.data.readTime} phút đọc`}
+    </p>
     <div class="mt-5">
       <PrimaryCTA
         url={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}

@@ -1,7 +1,6 @@
 ---
 // Import necessary components and utilities
 import MainLayout from "@/layouts/MainLayout.astro";
-import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
@@ -73,8 +72,8 @@ const markdownHtml = post.rendered?.html ?? "";
     datePublished: post.data.pubDate.toISOString(),
     dateModified: post.data.pubDate.toISOString(),
     author: {
-      "@type": "Person",
-      name: post.data.author,
+      "@type": "Organization",
+      name: SITE.title,
     },
     publisher: {
       "@type": "Organization",
@@ -95,14 +94,9 @@ const markdownHtml = post.rendered?.html ?? "";
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
         <div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">
-          <AvatarBlogLarge blogEntry={post} />
           <div class="grow">
             <div class="flex items-center justify-between gap-x-2">
               <div>
-                {/* Post metadata and author info */}
-                <span class="font-bold text-neutral-700 dark:text-neutral-300">
-                  {post.data.author}
-                </span>
                 <ul class="text-xs text-neutral-500">
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"

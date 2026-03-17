@@ -35,5 +35,4 @@ tableData:
       - ["M6", "1", "–", "8,7", "10,0"]
 blueprints:
   first: "@/images/products/tan-tru-tu-giu/bit/tan-tru-tu-giu-bit-ban-ve.avif"
-  second: "@/images/product-image-2.avif"
 ---

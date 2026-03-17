@@ -2,10 +2,6 @@
 title: "Cẩm nang về chất liệu bu lông ốc vít: Chọn thép đen, mạ kẽm hay inox cho công trình?"
 description: "Cẩm nang về chất liệu bu lông ốc vít: Chọn thép đen, mạ kẽm hay inox cho công trình?
 "
-author: "mktcuongthinh"
-role: "Kiến thức chuyên ngành"
-authorImage: "@/images/blog/anna.avif"
-authorImageAlt: "Ảnh đại diện tác giả"
 pubDate: 2026-01-16
 cardImage: "@/images/blog/post-3.avif"
 cardImageAlt: "So sánh các chất liệu bu lông và lớp mạ trong ứng dụng thực tế"

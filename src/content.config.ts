@@ -139,19 +139,7 @@ const blogCollection = defineCollection({
   }),
 });
 
-const insightsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/insights/', import.meta.url) }),
-  schema: ({ image }) => z.object ({
-  title: z.string(),
-  description: z.string(),
-  // contents: z.array(z.string()),
-  cardImage: image(),
-  cardImageAlt: z.string(),
-  }),
-});
-
 export const collections = {
   'products': productsCollection,
   'blog': blogCollection,
-  'insights': insightsCollection,
 };

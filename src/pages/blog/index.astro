@@ -3,7 +3,6 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -14,16 +13,10 @@ const vietnameseBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("vn/");
 });
 
-const vietnameseInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("vn/");
-});
-
 const blogPosts: CollectionEntry<"blog">[] = vietnameseBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-// Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = vietnameseInsightsEntries;
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
@@ -33,10 +26,6 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 const title: string = "Cánh cổng dẫn tới sự xuất sắc trong xây dựng";
 const subTitle: string =
   "Khám phá những tin tức mới nhất, mẹo hữu ích và phân tích chuyên sâu từ HAHUTECH để nâng cao hiệu quả cho các dự án cơ khí và công nghiệp của bạn. Từ giới thiệu sản phẩm đến kinh nghiệm triển khai thực tế, blog là nguồn tham khảo dành cho khách hàng và đối tác kỹ thuật.";
-const secondTitle: string = "Góc nhìn chuyên sâu";
-const secondSubTitle: string =
-  "Luôn cập nhật các xu hướng và thay đổi mới nhất trong ngành cơ khí, vật tư công nghiệp và giải pháp liên kết từ đội ngũ HAHUTECH.";
-
 const pageTitle: string = `Blog | ${SITE.title}`;
 const metaDescription =
   "Luôn cập nhật những xu hướng và biến chuyển mới nhất trong ngành cơ khí, vật tư công nghiệp và giải pháp liên kết từ đội ngũ HAHUTECH.";
@@ -102,26 +91,4 @@ const ogTitle = `Blog HAHUTECH | ${SITE.title}`;
     <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="vn" />
   </section>
   )}
-  {/* Insights section */}
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-2xl font-bold text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
-      >
-        {secondTitle}
-      </h2>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {secondSubTitle}
-      </p>
-    </div>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} insightLocale="vn" />
-        ))
-      }
-    </div>
-  </section>
 </MainLayout>

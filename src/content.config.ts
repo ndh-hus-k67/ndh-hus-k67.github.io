@@ -131,10 +131,6 @@ const blogCollection = defineCollection({
   // `contents` is optional to allow writing full Markdown in the file body.
   // If provided, pages will render it as paragraph strings (legacy format).
   contents: z.array(z.string()).optional(),
-  author: z.string(),
-  role: z.string().optional(),
-  authorImage: image(),
-  authorImageAlt: z.string(),
   pubDate: z.date(),
   cardImage: image(),
   cardImageAlt: z.string(),
@@ -143,19 +139,7 @@ const blogCollection = defineCollection({
   }),
 });
 
-const insightsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/insights/', import.meta.url) }),
-  schema: ({ image }) => z.object ({
-  title: z.string(),
-  description: z.string(),
-  // contents: z.array(z.string()),
-  cardImage: image(),
-  cardImageAlt: z.string(),
-  }),
-});
-
 export const collections = {
   'products': productsCollection,
   'blog': blogCollection,
-  'insights': insightsCollection,
 };

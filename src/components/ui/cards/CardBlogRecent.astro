@@ -2,8 +2,8 @@
 // Import all required components and utilities
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import { formatDate } from "@utils/utils";
 
 const { blogEntry, recentBlogLocale = "" } = Astro.props;
 
@@ -34,21 +34,16 @@ interface Props {
         class="outline-hidden ring-zinc-500 transition duration-300 hover:text-orange-400 focus-visible:ring-3 dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-hidden"
         href={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}
       >
-        {blogEntry.data.description}
+        {blogEntry.data.title}
       </a>
     </h2>
-    <div class="mt-6 flex items-center sm:mt-10">
-      <AvatarBlogLarge blogEntry={blogEntry} />
-
-      <div class="ms-3 sm:ms-4">
-        <p class="font-bold text-neutral-800 dark:text-neutral-200 sm:mb-1">
-          {blogEntry.data.author}
-        </p>
-        <p class="text-xs text-neutral-500">
-          {blogEntry.data.role}
-        </p>
-      </div>
-    </div>
+    <p class="mt-6 text-sm text-neutral-500 sm:mt-10">
+      {formatDate(blogEntry.data.pubDate)}
+      {" · "}
+      {recentBlogLocale === "en"
+        ? `${blogEntry.data.readTime} min read`
+        : `${blogEntry.data.readTime} phút đọc`}
+    </p>
     <div class="mt-5">
       <PrimaryCTA
         url={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}

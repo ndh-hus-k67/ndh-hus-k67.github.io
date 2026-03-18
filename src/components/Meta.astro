@@ -12,6 +12,8 @@ const defaultProps = {
   structuredData: WEBSITE_SCHEMA,
   customDescription: null,
   customOgTitle: null,
+  customOgImage: null,
+  ogType: null,
 };
 
 // Extract props with default values assigned from defaultProps. Values can be overridden when the component is used.
@@ -22,6 +24,8 @@ const {
   structuredData = defaultProps.structuredData,
   customDescription = defaultProps.customDescription,
   customOgTitle = defaultProps.customOgTitle,
+  customOgImage = defaultProps.customOgImage,
+  ogType = defaultProps.ogType,
   lang = "vi",
 } = Astro.props;
 
@@ -30,6 +34,7 @@ const description = customDescription || meta;
 // Use custom OG title if provided, otherwise use default OG title
 const ogTitle = customOgTitle || OG.title;
 const ogDescription = customDescription || OG.description;
+const ogTypeResolved = ogType || OG.type;
 
 // Define the metadata for your website and individual pages
 const author = SITE.author;
@@ -37,12 +42,27 @@ const canonical = new URL(
   Astro.url.pathname,
   Astro.site || Astro.url.origin
 ).href;
-const socialImageRes = await getImage({
-  src: OG.image,
-  width: 1200,
-  height: 600,
-});
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
+let socialImage = "";
+
+async function resolveSocialImage(src: any): Promise<string> {
+  if (!src) return "";
+
+  if (typeof src === "string") {
+    return src.startsWith("http")
+      ? src
+      : new URL(src, Astro.site || Astro.url.origin).href;
+  }
+
+  const res = await getImage({
+    src,
+    width: 1200,
+    height: 600,
+    format: "png",
+  });
+  return Astro.url.origin + res.src;
+}
+
+socialImage = await resolveSocialImage(customOgImage || OG.image);
 const twitterDomain = new URL(SITE.url).hostname;
 const currentLang = lang === "en" ? "en" : "vi";
 const ogLocale = currentLang === "en" ? "en_US" : "vi_VN";
@@ -131,7 +151,7 @@ const appleTouchIcon = await getImage({
 {/* Facebook Meta Tags */}
 <meta property="og:locale" content={ogLocale} />
 <meta property="og:url" content={canonical} />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogTypeResolved} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:site_name" content={SITE.title} />
 <meta property="og:description" content={ogDescription} />

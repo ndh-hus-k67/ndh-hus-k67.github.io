@@ -103,7 +103,4 @@ tableData:
       - ["Special features", "Bit mounting, secure fastening, multiple sizes"]
       - ["Corrosion resistance", "High (SUS410, SUS303, aluminum), Medium (steel)"]
       - ["Order", "Per requirement/drawing"]
-blueprints:
-  first: "@/images/product-image-1.avif"
-  second: "@/images/product-image-2.avif"
 ---

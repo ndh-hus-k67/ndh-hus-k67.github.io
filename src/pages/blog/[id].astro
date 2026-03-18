@@ -10,7 +10,11 @@ import { capitalize, formatDate } from "@utils/utils";
 import { getCollection, getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
-import { generateBlogPostingSchema } from "@/utils/schemas";
+import {
+  generateBlogPostingSchema,
+  generateBreadcrumbSchema,
+  generateGraphSchema,
+} from "@/utils/schemas";
 
 // Update getStaticPaths for Vietnamese posts
 export async function getStaticPaths() {
@@ -53,10 +57,10 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
 const markdownHtml = post.rendered?.html ?? "";
 
 // Generate blog post URL
-const blogPostUrl = `${SITE.url}/blog/${id}`;
+const blogPostUrl = new URL(`/blog/${id}/`, SITE.url).href;
 
 // Generate BlogPosting schema
-const blogSchema = generateBlogPostingSchema({
+const blogPostingSchemaWithContext = generateBlogPostingSchema({
   id: blogPostUrl,
   headline: post.data.title,
   description: metaDescription,
@@ -71,7 +75,7 @@ const blogSchema = generateBlogPostingSchema({
   publisher: {
     name: SITE.title,
     logo: {
-      url: `${SITE.url}/social.png`,
+      url: `${SITE.url}/images/social.png`,
       width: "1200",
       height: "630"
     }
@@ -79,13 +83,32 @@ const blogSchema = generateBlogPostingSchema({
   inLanguage: "vi-VN",
   blogSection: "Blog"
 });
+
+// Strip @context to embed into @graph
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { ["@context"]: _blogContext, ...blogPostingNode } =
+  blogPostingSchemaWithContext as any;
+
+const blogIndexUrl = new URL("/blog/", SITE.url).href;
+const breadcrumbSchemaWithContext = generateBreadcrumbSchema([
+  { position: 1, name: "Trang chủ", item: SITE.url },
+  { position: 2, name: "Blog", item: blogIndexUrl },
+  { position: 3, name: post.data.title, item: blogPostUrl },
+]);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
+  breadcrumbSchemaWithContext as any;
+
+const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]);
 ---
 
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  structuredData={blogSchema}
+  customOgImage={post.data.cardImage}
+  ogType="article"
+  structuredData={blogStructuredData}
 >
   <section class="py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-(--breakpoint-xl) px-4 md:px-8">

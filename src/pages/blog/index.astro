@@ -6,6 +6,7 @@ import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { generateBreadcrumbSchema, generateGraphSchema } from "@/utils/schemas";
 
 // Get all blogs post in Vietnamese and sort them based on publish date
 
@@ -23,34 +24,97 @@ const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Cánh cổng dẫn tới sự xuất sắc trong xây dựng";
+const title: string = "Blog bu lông, ốc vít, tắc kê: tiêu chuẩn & thi công";
 const subTitle: string =
-  "Khám phá những tin tức mới nhất, mẹo hữu ích và phân tích chuyên sâu từ HAHUTECH để nâng cao hiệu quả cho các dự án cơ khí và công nghiệp của bạn. Từ giới thiệu sản phẩm đến kinh nghiệm triển khai thực tế, blog là nguồn tham khảo dành cho khách hàng và đối tác kỹ thuật.";
-const pageTitle: string = `Blog | ${SITE.title}`;
+  "Tổng hợp kiến thức kỹ thuật về bu lông, ốc vít, tắc kê và vật tư cơ khí: cách chọn đúng chủng loại, hiểu tiêu chuẩn DIN/ISO, chống gỉ, siết lực và kinh nghiệm thi công bền chắc.";
+const pageTitle: string = `Blog bu lông, ốc vít, tắc kê & tiêu chuẩn | ${SITE.title}`;
 const metaDescription =
-  "Luôn cập nhật những xu hướng và biến chuyển mới nhất trong ngành cơ khí, vật tư công nghiệp và giải pháp liên kết từ đội ngũ HAHUTECH.";
-const ogTitle = `Blog HAHUTECH | ${SITE.title}`;
+  "Kiến thức bu lông, ốc vít, tắc kê: tiêu chuẩn DIN/ISO, cách chọn vật tư, chống gỉ, siết lực và mẹo thi công bền chắc, tối ưu chi phí.";
+const ogTitle = `Blog bu lông, ốc vít, tắc kê & vật tư cơ khí | ${SITE.title}`;
+
+const blogIndexUrl = new URL("/blog/", SITE.url).href;
+const itemListId = `${blogIndexUrl}#itemlist`;
+
+const collectionPageNode = {
+  "@type": "CollectionPage",
+  "@id": blogIndexUrl,
+  url: blogIndexUrl,
+  name: pageTitle,
+  description: metaDescription,
+  isPartOf: {
+    "@id": `${SITE.url}/#website`,
+  },
+  inLanguage: "vi-VN",
+  mainEntity: {
+    "@id": itemListId,
+  },
+};
+
+const itemListNode = {
+  "@type": "ItemList",
+  "@id": itemListId,
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: blogPosts.length,
+  itemListElement: blogPosts.map((entry, index) => {
+    const slug = entry.id.replace(/^vn\//, "");
+    const url = new URL(`/blog/${slug}/`, SITE.url).href;
+    const imageUrl = `${SITE.url}${entry.data.cardImage.src}`;
+
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      url,
+      item: {
+        "@type": "BlogPosting",
+        "@id": url,
+        url,
+        headline: entry.data.title,
+        name: entry.data.title,
+        description: entry.data.description,
+        image: [imageUrl],
+        datePublished: entry.data.pubDate.toISOString(),
+        dateModified: entry.data.pubDate.toISOString(),
+        author: {
+          "@type": "Organization",
+          "@id": `${SITE.url}/#organization`,
+          name: SITE.author,
+          url: SITE.url,
+        },
+        publisher: {
+          "@id": `${SITE.url}/#organization`,
+        },
+        keywords: entry.data.tags?.join(", ") || undefined,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": url,
+        },
+        inLanguage: "vi-VN",
+      },
+    };
+  }),
+};
+
+const breadcrumbSchemaWithContext = generateBreadcrumbSchema([
+  { position: 1, name: "Trang chủ", item: SITE.url },
+  { position: 2, name: "Blog", item: blogIndexUrl },
+]);
+// Breadcrumb helper includes @context; strip it to embed into @graph
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
+  breadcrumbSchemaWithContext as any;
+
+const blogIndexStructuredData = generateGraphSchema([
+  collectionPageNode,
+  itemListNode,
+  breadcrumbNode,
+]);
 ---
 
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${SITE.url}/blog`,
-    url: `${SITE.url}/blog`,
-    name: `Blog | ${SITE.title}`,
-    description: metaDescription,
-    isPartOf: {
-      "@type": "WebSite",
-      url: SITE.url,
-      name: SITE.title,
-      description: SITE.description,
-    },
-    inLanguage: "vi-VN",
-  }}
+  structuredData={blogIndexStructuredData}
 >
   <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"

@@ -15,6 +15,8 @@ const {
   lang = "vi",
   customDescription = null,
   customOgTitle = null,
+  customOgImage = null,
+  ogType = null,
 } = Astro.props;
 
 // Interface to type-check the properties
@@ -25,6 +27,8 @@ interface Props {
   lang?: string;
   customDescription?: string | null;
   customOgTitle?: string | null;
+  customOgImage?: any;
+  ogType?: string | null;
 }
 ---
 
@@ -36,6 +40,8 @@ interface Props {
       structuredData={structuredData}
       customDescription={customDescription}
       customOgTitle={customOgTitle}
+      customOgImage={customOgImage}
+      ogType={ogType}
       lang={lang}
     />
     {/* Define the title of the page */}

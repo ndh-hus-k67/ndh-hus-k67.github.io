@@ -260,7 +260,7 @@ export function generateArticleSchema(options: ArticleSchemaOptions) {
     publisher = {
       name: SITE.title,
       logo: {
-        url: `${SITE.url}/social.png`,
+        url: `${SITE.url}/images/social.png`,
         width: "1200",
         height: "630"
       }

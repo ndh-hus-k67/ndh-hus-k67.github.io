@@ -6,6 +6,7 @@ import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { generateBreadcrumbSchema, generateGraphSchema } from "@/utils/schemas";
 
 // Get all blogs post in English and sort them based on publish date
 
@@ -23,13 +24,89 @@ const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Your Gateway to Construction Excellence";
+const title: string = "Bolts & Fasteners Blog: Standards, Selection, Tips";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from HAHUTECH to support your industrial projects. From product spotlights to application guidance, our blog is a practical resource for bolts, fasteners, and technical accessories.";
-const pageTitle: string = `Blog | ${SITE.title}`;
+  "Practical guides on bolts, screws, nuts and industrial fasteners: ISO/DIN standards, material selection, corrosion resistance, installation best practices, and real-world applications.";
+const pageTitle: string = `Bolts, Screws & Fasteners Blog | ${SITE.title}`;
 const metaDescription =
-  "Stay up-to-date with product insights, application guides, and industrial fastener expertise from HAHUTECH.";
-const ogTitle = `HAHUTECH Blog | ${SITE.title}`;
+  "Fastener knowledge hub: bolts, screws, nuts—ISO/DIN standards, how to choose the right hardware, installation tips, and corrosion-resistant solutions.";
+const ogTitle = `Bolts & Fasteners Blog | ${SITE.title}`;
+
+const blogIndexUrl = new URL("/en/blog/", SITE.url).href;
+const itemListId = `${blogIndexUrl}#itemlist`;
+
+const collectionPageNode = {
+  "@type": "CollectionPage",
+  "@id": blogIndexUrl,
+  url: blogIndexUrl,
+  name: pageTitle,
+  description: metaDescription,
+  isPartOf: {
+    "@id": `${SITE.url}/#website`,
+  },
+  inLanguage: "en-US",
+  mainEntity: {
+    "@id": itemListId,
+  },
+};
+
+const itemListNode = {
+  "@type": "ItemList",
+  "@id": itemListId,
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: blogPosts.length,
+  itemListElement: blogPosts.map((entry, index) => {
+    const slug = entry.id.replace(/^en\//, "");
+    const url = new URL(`/en/blog/${slug}/`, SITE.url).href;
+    const imageUrl = `${SITE.url}${entry.data.cardImage.src}`;
+
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      url,
+      item: {
+        "@type": "BlogPosting",
+        "@id": url,
+        url,
+        headline: entry.data.title,
+        name: entry.data.title,
+        description: entry.data.description,
+        image: [imageUrl],
+        datePublished: entry.data.pubDate.toISOString(),
+        dateModified: entry.data.pubDate.toISOString(),
+        author: {
+          "@type": "Organization",
+          "@id": `${SITE.url}/#organization`,
+          name: SITE.author,
+          url: SITE.url,
+        },
+        publisher: {
+          "@id": `${SITE.url}/#organization`,
+        },
+        keywords: entry.data.tags?.join(", ") || undefined,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": url,
+        },
+        inLanguage: "en-US",
+      },
+    };
+  }),
+};
+
+const breadcrumbSchemaWithContext = generateBreadcrumbSchema([
+  { position: 1, name: "Home", item: SITE.url },
+  { position: 2, name: "Blog", item: blogIndexUrl },
+]);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
+  breadcrumbSchemaWithContext as any;
+
+const blogIndexStructuredData = generateGraphSchema([
+  collectionPageNode,
+  itemListNode,
+  breadcrumbNode,
+]);
 ---
 
 <MainLayout
@@ -37,21 +114,7 @@ const ogTitle = `HAHUTECH Blog | ${SITE.title}`;
   lang="en"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${SITE.url}/en/blog`,
-    url: `${SITE.url}/en/blog`,
-    name: `Blog | ${SITE.title}`,
-    description: metaDescription,
-    isPartOf: {
-      "@type": "WebSite",
-      url: `${SITE.url}/en`,
-      name: SITE.title,
-      description: SITE.description,
-    },
-    inLanguage: "en-US",
-  }}
+  structuredData={blogIndexStructuredData}
 >
   <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"

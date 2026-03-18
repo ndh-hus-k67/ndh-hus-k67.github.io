@@ -34,7 +34,7 @@ interface Props {
         class="outline-hidden ring-zinc-500 transition duration-300 hover:text-orange-400 focus-visible:ring-3 dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-hidden"
         href={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}
       >
-        {blogEntry.data.description}
+        {blogEntry.data.title}
       </a>
     </h2>
     <p class="mt-6 text-sm text-neutral-500 sm:mt-10">

@@ -129,7 +129,7 @@ export const OG = {
   url: SITE.url,
   title: `HAHUTECH - Bu lông ốc vít & vật tư công nghiệp chất lượng cao`,
   description: "HAHUTECH - Công ty hàng đầu chuyên cung cấp bu lông, ốc vít, vật tư công nghiệp. Sản phẩm tiêu chuẩn quốc tế DIN, JIS, ANSI, ISO. Giá cạnh tranh, giao hàng nhanh. Liên hệ HAHUTECH ngay!",
-  image: "/images/social.png",
+  image: "/social.jpg",
 };
 
 // Schema.org Organization and LocalBusiness structured data for better SEO

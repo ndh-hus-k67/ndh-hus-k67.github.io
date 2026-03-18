@@ -100,14 +100,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://hahutech.com.vn" + "/social.webp",
+            content: "https://hahutech.com.vn" + "/social.jpg",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://hahutech.com.vn" + "/social.webp",
+            content: "https://hahutech.com.vn" + "/social.jpg",
           },
         },
       ],

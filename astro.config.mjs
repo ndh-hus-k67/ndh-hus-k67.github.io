@@ -106,8 +106,43 @@ export default defineConfig({
         {
           tag: "meta",
           attrs: {
+            property: "og:image:secure_url",
+            content: "https://hahutech.com.vn" + "/social.jpg",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:type",
+            content: "image/jpeg",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:alt",
+            content: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
             property: "twitter:image",
             content: "https://hahutech.com.vn" + "/social.jpg",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:image:alt",
+            content: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
           },
         },
       ],

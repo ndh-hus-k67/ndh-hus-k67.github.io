@@ -1,5 +1,6 @@
 ---
 import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import { OG, SEO, SITE, WEBSITE_SCHEMA } from "@data/constants";
 import faviconSvgSrc from "@images/icon.svg";
 import faviconSrc from "@images/icon.png";
@@ -13,6 +14,7 @@ const defaultProps = {
   customDescription: null,
   customOgTitle: null,
   customOgImage: null,
+  customOgImageAlt: null,
   ogType: null,
 };
 
@@ -25,6 +27,7 @@ const {
   customDescription = defaultProps.customDescription,
   customOgTitle = defaultProps.customOgTitle,
   customOgImage = defaultProps.customOgImage,
+  customOgImageAlt = defaultProps.customOgImageAlt,
   ogType = defaultProps.ogType,
   lang = "vi",
 } = Astro.props;
@@ -42,15 +45,67 @@ const canonical = new URL(
   Astro.url.pathname,
   Astro.site || Astro.url.origin
 ).href;
-let socialImage = "";
+type ResolvedSocialImage = {
+  url: string;
+  type?: string;
+  width?: number;
+  height?: number;
+};
 
-async function resolveSocialImage(src: any): Promise<string> {
-  if (!src) return "";
+let socialImage: ResolvedSocialImage = { url: "" };
+
+function mimeTypeFromUrl(url: string): string | undefined {
+  const lower = url.toLowerCase();
+  const pathname = lower.split("?")[0].split("#")[0];
+
+  if (pathname.endsWith(".png")) return "image/png";
+  if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) return "image/jpeg";
+  if (pathname.endsWith(".webp")) return "image/webp";
+  if (pathname.endsWith(".avif")) return "image/avif";
+  return undefined;
+}
+
+function mimeTypeFromFormat(format?: string): string | undefined {
+  if (!format) return undefined;
+  const f = format.toLowerCase();
+  if (f === "png") return "image/png";
+  if (f === "jpg" || f === "jpeg") return "image/jpeg";
+  if (f === "webp") return "image/webp";
+  if (f === "avif") return "image/avif";
+  if (f === "gif") return "image/gif";
+  if (f === "svg") return "image/svg+xml";
+  return undefined;
+}
+
+function isImageMetadata(value: unknown): value is ImageMetadata {
+  return (
+    !!value &&
+    typeof value === "object" &&
+    "src" in value &&
+    "width" in value &&
+    "height" in value
+  );
+}
+
+async function resolveSocialImage(src: any): Promise<ResolvedSocialImage> {
+  if (!src) return { url: "" };
 
   if (typeof src === "string") {
-    return src.startsWith("http")
+    const url = src.startsWith("http")
       ? src
       : new URL(src, Astro.site || Astro.url.origin).href;
+
+    return { url, type: mimeTypeFromUrl(url) };
+  }
+
+  if (isImageMetadata(src)) {
+    const url = new URL(src.src, Astro.site || Astro.url.origin).href;
+    return {
+      url,
+      type: mimeTypeFromFormat(src.format) ?? mimeTypeFromUrl(url),
+      width: src.width,
+      height: src.height,
+    };
   }
 
   const res = await getImage({
@@ -59,13 +114,22 @@ async function resolveSocialImage(src: any): Promise<string> {
     height: 600,
     format: "png",
   });
-  return Astro.url.origin + res.src;
+
+  return {
+    url: new URL(res.src, Astro.site || Astro.url.origin).href,
+    type: "image/png",
+    width: 1200,
+    height: 600,
+  };
 }
 
 socialImage = await resolveSocialImage(customOgImage || OG.image);
 const twitterDomain = new URL(SITE.url).hostname;
 const currentLang = lang === "en" ? "en" : "vi";
 const ogLocale = currentLang === "en" ? "en_US" : "vi_VN";
+const ogImageAlt = customOgImageAlt || ogTitle;
+
+const ogLocaleAlternates = ogLocale === "en_US" ? ["vi_VN"] : ["en_US"];
 
 const languages = {
   vi: "",
@@ -150,15 +214,28 @@ const appleTouchIcon = await getImage({
 
 {/* Facebook Meta Tags */}
 <meta property="og:locale" content={ogLocale} />
+{ogLocaleAlternates.map((locale) => (
+  <meta property="og:locale:alternate" content={locale} />
+))}
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={ogTypeResolved} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:site_name" content={SITE.title} />
 <meta property="og:description" content={ogDescription} />
-<meta property="og:image" content={socialImage} />
-<meta content="1200" property="og:image:width" />
-<meta content="600" property="og:image:height" />
-<meta content="image/png" property="og:image:type" />
+{socialImage.url && <meta property="og:image" content={socialImage.url} />}
+{socialImage.url && (
+  <meta property="og:image:secure_url" content={socialImage.url} />
+)}
+{socialImage.url && <meta property="og:image:alt" content={ogImageAlt} />}
+{socialImage.width && (
+  <meta property="og:image:width" content={String(socialImage.width)} />
+)}
+{socialImage.height && (
+  <meta property="og:image:height" content={String(socialImage.height)} />
+)}
+{socialImage.type && (
+  <meta property="og:image:type" content={socialImage.type} />
+)}
 
 {/* Twitter Meta Tags */}
 <meta name="twitter:card" content="summary_large_image" />
@@ -166,7 +243,8 @@ const appleTouchIcon = await getImage({
 <meta property="twitter:url" content={canonical} />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
-<meta name="twitter:image" content={socialImage} />
+{socialImage.url && <meta name="twitter:image" content={socialImage.url} />}
+{socialImage.url && <meta name="twitter:image:alt" content={ogImageAlt} />}
 
 {/* Links to the webmanifest and sitemap */}
 <link rel="manifest" href="/manifest.json" />

@@ -16,6 +16,7 @@ const {
   customDescription = null,
   customOgTitle = null,
   customOgImage = null,
+  customOgImageAlt = null,
   ogType = null,
 } = Astro.props;
 
@@ -28,6 +29,7 @@ interface Props {
   customDescription?: string | null;
   customOgTitle?: string | null;
   customOgImage?: any;
+  customOgImageAlt?: string | null;
   ogType?: string | null;
 }
 ---
@@ -41,6 +43,7 @@ interface Props {
       customDescription={customDescription}
       customOgTitle={customOgTitle}
       customOgImage={customOgImage}
+      customOgImageAlt={customOgImageAlt}
       ogType={ogType}
       lang={lang}
     />

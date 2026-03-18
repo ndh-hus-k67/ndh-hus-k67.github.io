@@ -45,12 +45,15 @@ const ogTitle = `${product.data.title} | Self-clinching studs | ${SITE.title}`;
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={imgMainResolved}
+  ogType="product"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${SITE.url}/en/tan-tru-tu-giu/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
+    image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
     category: "Self-clinching studs",
     brand: {
       "@type": "Brand",

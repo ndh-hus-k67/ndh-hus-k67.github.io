@@ -45,6 +45,8 @@ const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={imgMainResolved}
+  ogType="product"
   structuredData={{
     "@context": "https://schema.org",
     "@graph": [
@@ -53,6 +55,7 @@ const ogTitle = `${product.data.title} | Bu Lông | ${SITE.title}`;
         "@id": `${SITE.url}/bu-long/${product.data.slug}`,
         "name": product.data.title,
         "description": metaDescription,
+        "image": imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
         "category": "Bu lông",
         "brand": {
           "@type": "Brand",

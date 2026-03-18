@@ -45,6 +45,8 @@ const ogTitle = `${product.data.title} | Ốc vít | ${SITE.title}`;
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={imgMainResolved}
+  ogType="product"
   structuredData={{
     "@context": "https://schema.org",
     "@graph": [
@@ -53,6 +55,7 @@ const ogTitle = `${product.data.title} | Ốc vít | ${SITE.title}`;
         "@id": `${SITE.url}/oc-vit/${product.data.slug}`,
         "name": product.data.title,
         "description": metaDescription,
+        "image": imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
         "category": "Ốc vít",
         "brand": {
           "@type": "Brand",

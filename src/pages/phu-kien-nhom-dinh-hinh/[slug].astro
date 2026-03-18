@@ -45,6 +45,8 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={imgMainResolved}
+  ogType="product"
   structuredData={{
     "@context": "https://schema.org",
     "@graph": [
@@ -53,6 +55,7 @@ const ogTitle = `${product.data.title} | Phụ kiện nhôm | ${SITE.title}`;
         "@id": `${SITE.url}/phu-kien-nhom-dinh-hinh/${product.data.slug}`,
         "name": product.data.title,
         "description": metaDescription,
+        "image": imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
         "category": "Phụ kiện nhôm",
         "brand": {
           "@type": "Brand",

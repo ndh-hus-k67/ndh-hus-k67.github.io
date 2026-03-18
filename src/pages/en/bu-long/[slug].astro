@@ -45,12 +45,15 @@ const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={imgMainResolved}
+  ogType="product"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${SITE.url}/en/bu-long/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
+    image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
     category: "Bolts",
     brand: {
       "@type": "Brand",

@@ -1,7 +1,7 @@
 export const SITE = {
-  title: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp chất lượng cao",
+  title: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
   tagline: "Sản xuất và thương mại chất lượng cao",
-  description: "HAHUTECH - Công ty cổ phần sản xuất và thương mại bu lông, ốc vít, vật tư công nghiệp chất lượng cao. Chuyên cung cấp bu lông các loại, ốc vít tiêu chuẩn DIN, JIS, ANSI, ISO. Liên hệ HAHUTECH ngay hôm nay!",
+  description: "HAHUTECH cung cấp bu lông, ốc vít, vật tư công nghiệp tiêu chuẩn DIN/JIS/ANSI/ISO. Giá cạnh tranh, giao nhanh, tư vấn kỹ thuật. Liên hệ ngay.",
   description_short: "HAHUTECH - Chuyên cung cấp bu lông, ốc vít, vật tư công nghiệp chất lượng cao. Tiêu chuẩn quốc tế, giá cạnh tranh.",
   url: "https://hahutech.com.vn",
   author: "HAHUTECH",
@@ -127,7 +127,7 @@ export const OG = {
   locale: "vi_VN",
   type: "website",
   url: SITE.url,
-  title: `HAHUTECH - Bu lông ốc vít & vật tư công nghiệp chất lượng cao`,
+  title: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
   description: "HAHUTECH - Công ty hàng đầu chuyên cung cấp bu lông, ốc vít, vật tư công nghiệp. Sản phẩm tiêu chuẩn quốc tế DIN, JIS, ANSI, ISO. Giá cạnh tranh, giao hàng nhanh. Liên hệ HAHUTECH ngay!",
   image: "/social.jpg",
 };

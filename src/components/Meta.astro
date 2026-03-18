@@ -39,6 +39,28 @@ const ogTitle = customOgTitle || OG.title;
 const ogDescription = customDescription || OG.description;
 const ogTypeResolved = ogType || OG.type;
 
+function normalizeMetaText(value: string): string {
+  return value.replace(/\s+/g, " ").trim();
+}
+
+function clampMetaText(value: string, maxChars: number): string {
+  const normalized = normalizeMetaText(value);
+  const chars = Array.from(normalized);
+
+  if (chars.length <= maxChars) return normalized;
+
+  const cutoff = Math.max(0, maxChars - 1);
+  const sliced = chars.slice(0, cutoff).join("");
+  const lastSpace = sliced.lastIndexOf(" ");
+  const wordBoundary = lastSpace >= Math.floor(cutoff * 0.6) ? sliced.slice(0, lastSpace) : sliced;
+
+  return `${wordBoundary.trim()}…`;
+}
+
+const metaDescriptionContent = clampMetaText(description, 160);
+const ogTitleContent = clampMetaText(ogTitle, 60);
+const ogDescriptionContent = clampMetaText(ogDescription, 160);
+
 // Define the metadata for your website and individual pages
 const author = SITE.author;
 const canonical = new URL(
@@ -95,7 +117,16 @@ async function resolveSocialImage(src: any): Promise<ResolvedSocialImage> {
       ? src
       : new URL(src, Astro.site || Astro.url.origin).href;
 
-    return { url, type: mimeTypeFromUrl(url) };
+    // When the OG image is configured as a string URL/path (e.g. "/social.jpg"),
+    // we can't reliably infer the intrinsic dimensions at build-time.
+    // Default to the common social preview size to ensure og:image:width/height
+    // are always present for platforms that require them.
+    return {
+      url,
+      type: mimeTypeFromUrl(url),
+      width: 1200,
+      height: 630,
+    };
   }
 
   if (isImageMetadata(src)) {
@@ -111,7 +142,7 @@ async function resolveSocialImage(src: any): Promise<ResolvedSocialImage> {
   const res = await getImage({
     src,
     width: 1200,
-    height: 600,
+    height: 630,
     format: "png",
   });
 
@@ -119,12 +150,11 @@ async function resolveSocialImage(src: any): Promise<ResolvedSocialImage> {
     url: new URL(res.src, Astro.site || Astro.url.origin).href,
     type: "image/png",
     width: 1200,
-    height: 600,
+    height: 630,
   };
 }
 
 socialImage = await resolveSocialImage(customOgImage || OG.image);
-const twitterDomain = new URL(SITE.url).hostname;
 const currentLang = lang === "en" ? "en" : "vi";
 const ogLocale = currentLang === "en" ? "en_US" : "vi_VN";
 const ogImageAlt = customOgImageAlt || ogTitle;
@@ -200,7 +230,7 @@ const appleTouchIcon = await getImage({
 <meta charset="utf-8" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow" />
-<meta content={description} name="description" />
+<meta content={metaDescriptionContent} name="description" />
 <meta name="keywords" content={SEO.keywords} />
 <meta name="author" content={author} />
 <meta name="web_author" content={author} />
@@ -219,9 +249,9 @@ const appleTouchIcon = await getImage({
 ))}
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={ogTypeResolved} />
-<meta property="og:title" content={ogTitle} />
+<meta property="og:title" content={ogTitleContent} />
 <meta property="og:site_name" content={SITE.title} />
-<meta property="og:description" content={ogDescription} />
+<meta property="og:description" content={ogDescriptionContent} />
 {socialImage.url && <meta property="og:image" content={socialImage.url} />}
 {socialImage.url && (
   <meta property="og:image:secure_url" content={socialImage.url} />
@@ -236,15 +266,6 @@ const appleTouchIcon = await getImage({
 {socialImage.type && (
   <meta property="og:image:type" content={socialImage.type} />
 )}
-
-{/* Twitter Meta Tags */}
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content={twitterDomain} />
-<meta property="twitter:url" content={canonical} />
-<meta name="twitter:title" content={ogTitle} />
-<meta name="twitter:description" content={ogDescription} />
-{socialImage.url && <meta name="twitter:image" content={socialImage.url} />}
-{socialImage.url && <meta name="twitter:image:alt" content={ogImageAlt} />}
 
 {/* Links to the webmanifest and sitemap */}
 <link rel="manifest" href="/manifest.json" />

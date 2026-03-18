@@ -20,6 +20,24 @@ const {
   ogType = null,
 } = Astro.props;
 
+function normalizeTitle(value: string): string {
+  return value.replace(/\s+/g, " ").trim();
+}
+
+function clampTitle(value: string, maxChars: number): string {
+  const normalized = normalizeTitle(value);
+  const chars = Array.from(normalized);
+  if (chars.length <= maxChars) return normalized;
+
+  const cutoff = Math.max(0, maxChars - 1);
+  const sliced = chars.slice(0, cutoff).join("");
+  const lastSpace = sliced.lastIndexOf(" ");
+  const wordBoundary = lastSpace >= Math.floor(cutoff * 0.6) ? sliced.slice(0, lastSpace) : sliced;
+  return `${wordBoundary.trim()}…`;
+}
+
+const documentTitle = clampTitle(title, 60);
+
 // Interface to type-check the properties
 interface Props {
   title?: string;
@@ -48,7 +66,7 @@ interface Props {
       lang={lang}
     />
     {/* Define the title of the page */}
-    <title>{title}</title>
+    <title>{documentTitle}</title>
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (

@@ -32,7 +32,7 @@ const metaDescription =
   "Kiến thức bu lông, ốc vít, tắc kê: tiêu chuẩn DIN/ISO, cách chọn vật tư, chống gỉ, siết lực và mẹo thi công bền chắc, tối ưu chi phí.";
 const ogTitle = `Blog bu lông, ốc vít, tắc kê & vật tư cơ khí | ${SITE.title}`;
 
-const blogIndexUrl = new URL("/blog/", SITE.url).href;
+const blogIndexUrl = new URL("/bai-viet/", SITE.url).href;
 const itemListId = `${blogIndexUrl}#itemlist`;
 
 const collectionPageNode = {
@@ -57,7 +57,7 @@ const itemListNode = {
   numberOfItems: blogPosts.length,
   itemListElement: blogPosts.map((entry, index) => {
     const slug = entry.id.replace(/^vn\//, "");
-    const url = new URL(`/blog/${slug}/`, SITE.url).href;
+    const url = new URL(`/bai-viet/${slug}/`, SITE.url).href;
     const imageUrl = `${SITE.url}${entry.data.cardImage.src}`;
 
     return {
@@ -96,7 +96,7 @@ const itemListNode = {
 
 const breadcrumbSchemaWithContext = generateBreadcrumbSchema([
   { position: 1, name: "Trang chủ", item: SITE.url },
-  { position: 2, name: "Blog", item: blogIndexUrl },
+  { position: 2, name: "Bài viết", item: blogIndexUrl },
 ]);
 // Breadcrumb helper includes @context; strip it to embed into @graph
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

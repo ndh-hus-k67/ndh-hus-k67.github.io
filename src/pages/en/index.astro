@@ -23,6 +23,8 @@ import ocvitImage from "@images/oc-vit-category.avif";
 import tantugiuImage from "@images/tan-tu-giu-category.avif";
 import tantrutugiuImage from "@images/tan-tru-tu-giu-category.avif";
 import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
+import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
+import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
 import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -43,108 +45,75 @@ const productCategories = [
   {
     slug: "bu-long",
     name: "Bolts",
-    description: "High-quality bolts including stainless, hex, and specialty bolts manufactured to international standards for durability and precision.",
-    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
     image: bulongImage,
     imageAlt: "Collection of high-quality bolts",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "bu-long";
-    }).length,
-    features: [
-      "Stainless steel 304, 316 corrosion resistant",
-      "Sizes M6 - M42",
-      "Strength grades 8.8, 10.9, 12.9"
-    ],
-    highlights: [
-      { label: "Standards", value: "DIN, ASTM" },
-      { label: "Delivery", value: "24h" }
-    ]
+    }).length
   },
   {
     slug: "oc-vit",
     name: "Screws",
-    description: "Self-drilling, self-tapping and stainless screws with various head types suitable for metal, wood and plastic applications.",
-    icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
     image: ocvitImage,
     imageAlt: "Various screw types",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "oc-vit";
-    }).length,
-    features: [
-      "Self-drilling & self-tapping",
-      "Zinc plated for corrosion resistance",
-      "Multiple head styles"
-    ],
-    highlights: [
-      { label: "Size Range", value: "M2.5 - M12" },
-      { label: "Delivery", value: "24h" }
-    ]
+    }).length
   },
   {
     slug: "tan-tu-giu",
-    name: "Rivets (Blind)",
-    description: "Blind rivets for quick installation without threading. Durable for harsh environments and industrial applications.",
-    icon: "M20 7h-7M20 12h-7M20 17h-7M3 7h4M3 12h4M3 17h4",
+    name: "Self-clinching nuts",
     image: tantugiuImage,
-    imageAlt: "High-quality blind rivets",
+    imageAlt: "High-quality self-clinching nuts",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "tan-tu-giu";
-    }).length,
-    features: [
-      "Round and hex head options",
-      "Stainless steel 304, 316",
-      "Quick installation without threads"
-    ],
-    highlights: [
-      { label: "Sizes", value: "M3 - M12" },
-      { label: "Support", value: "24/7" }
-    ]
+    }).length
   },
   {
     slug: "tan-tru-tu-giu",
-    name: "Structural Blind Rivets",
-    description: "Structural blind rivets for industrial and residential applications with anti-vibration properties and easy installation.",
-    icon: "M10 2v4M2 12h20M2 17h20M5 7v10",
+    name: "Self-clinching studs",
     image: tantrutugiuImage,
-    imageAlt: "Structural blind rivets",
+    imageAlt: "High-quality self-clinching studs",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "tan-tru-tu-giu";
-    }).length,
-    features: [
-      "Quick installation without threads",
-      "Good anti-vibration performance",
-      "Available in stainless and steel"
-    ],
-    highlights: [
-      { label: "Sizes", value: "M3 - M16" },
-      { label: "Delivery", value: "24h" }
-    ]
+    }).length
   },
   {
     slug: "tru-ren-tu-giu",
-    name: "Threaded Standoffs",
-    description: "Threaded standoffs with high strength for load-bearing connections and corrosion-resistant surface treatments.",
-    icon: "M12 2L2 7l10 5 10-5-10-5z",
+    name: "Threaded inserts",
     image: trurentugiuImage,
-    imageAlt: "Threaded standoffs",
+    imageAlt: "Threaded inserts",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "tru-ren-tu-giu";
+    }).length
+  },
+  {
+    slug: "sen-xich",
+    name: "Chains & sprockets",
+    image: senxichImage,
+    imageAlt: "Industrial chains and sprockets",
+    count: allProducts.filter((p) => {
+      const categorySlug =
+        typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
+      return categorySlug === "sen-xich";
     }).length,
-    features: [
-      "Forged surface treatments",
-      "High strength",
-      "Suitable for load-bearing structures"
-    ],
-    highlights: [
-      { label: "Standards", value: "DIN" },
-      { label: "Support", value: "24/7" }
-    ]
-  }
+  },
+  {
+    slug: "phu-kien-nhom-dinh-hinh",
+    name: "Aluminum profile accessories",
+    image: phukiennhomImage,
+    imageAlt: "Aluminum profile accessories",
+    count: allProducts.filter((p) => {
+      const categorySlug =
+        typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
+      return categorySlug === "phu-kien-nhom-dinh-hinh";
+    }).length,
+  },
 ];
 
 const avatarSrcs: Array<string> = [
@@ -166,8 +135,8 @@ const avatarSrcs: Array<string> = [
     title=`High-Quality Bolts & Fasteners Solutions from <span
         class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>`
     subTitle="Specialized in trading and manufacturing high-quality bolts, screws, and nuts for all industrial and construction needs."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/en/products"
+    primaryBtn="About Us"
+    primaryBtnURL="/en/about-us"
     secondaryBtn="Contact Sales Team"
     secondaryBtnURL="/en/contact"
     withReview={true}

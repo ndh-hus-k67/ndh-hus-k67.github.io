@@ -98,13 +98,13 @@ const productCategories = [
     }).length
   },
   {
-    slug: "phu-kien-nhom",
+    slug: "phu-kien-nhom-dinh-hinh",
     name: "Phụ Kiện Nhôm Định Hình",
     image: phukiennhomImage,
     imageAlt: "Phụ kiện nhôm định hình chất lượng cao",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
-      return categorySlug === "phu-kien-nhom";
+      return categorySlug === "phu-kien-nhom-dinh-hinh";
     }).length
   }
 ];

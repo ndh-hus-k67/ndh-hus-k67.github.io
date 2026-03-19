@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("vn/") || id.includes("vn\\")) && categorySlug === "bu-long";
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "bu-long";
   });
 
   return productEntries.map((product) => {
@@ -76,7 +76,7 @@ const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
   <section class="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8">
     <nav class="text-sm" aria-label="Breadcrumb">
       <ol class="flex items-center space-x-2">
-        <li><a href="/" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Home</a></li>
+        <li><a href="/en" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Home</a></li>
         <li><span class="text-neutral-400">›</span></li>
         <li><a href="/en/bu-long" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Bolts</a></li>
         <li><span class="text-neutral-400">›</span></li>
@@ -103,9 +103,7 @@ const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
           product.data.main?.content && (
             <div class="mb-8 rounded-lg border border-neutral-200 bg-orange-50 p-6 dark:border-neutral-700 dark:bg-orange-950/20">
               <h2 class="mb-3 text-lg font-semibold text-neutral-900 dark:text-neutral-100">Product Description</h2>
-              <p class="leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {product.data.main.content}
-              </p>
+              <div class="leading-relaxed text-neutral-700 dark:text-neutral-300" set:html={product.data.main.content} />
             </div>
           )
         }

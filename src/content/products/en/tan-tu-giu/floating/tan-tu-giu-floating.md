@@ -1,12 +1,12 @@
 ---
 title: "Floating Self-Clinching Nut"
-slug: "tan-tu-giu-floating"
+slug: "dai-oc-tu-giu"
 description: "Floating self-clinching nuts allow flexible alignment to compensate for installation tolerances."
 updatedDate: 2026-01-20
 category: "tan-tu-giu"
 subcategory: "floating"
 productType:
-  slug: "tan-tu-giu-floating"
+  slug: "dai-oc-tu-giu"
   name: "Floating self-clinching nut"
 filters:
   material: ["inox-304", "inox-410", "thep"]
@@ -42,7 +42,7 @@ breadcrumbs:
   - name: "Floating"
     url: "/en/products/tan-tu-giu/floating"
   - name: "Floating Self-Clinching Nut"
-    url: "/en/products/tan-tu-giu/floating/tan-tu-giu-floating"
+    url: "/en/products/tan-tu-giu/floating/dai-oc-tu-giu"
 relatedCategory:
   - slug: "tan-tu-giu"
     name: "Self-clinching nuts"

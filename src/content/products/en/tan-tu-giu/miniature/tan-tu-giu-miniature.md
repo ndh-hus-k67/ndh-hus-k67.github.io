@@ -1,12 +1,12 @@
 ---
 title: "Miniature Self-Clinching Nuts"
-slug: "tan-tu-giu-miniature"
+slug: "tan-ep-tu-giu-co-nho"
 description: "Miniature self-clinching nuts with ultra-small size and high precision for electronics and fine mechanics."
 updatedDate: 2026-01-20
 category: "tan-tu-giu"
 subcategory: "miniature"
 productType:
-  slug: "tan-tu-giu-miniature"
+  slug: "tan-ep-tu-giu-co-nho"
   name: "Miniature self-clinching nuts"
 filters:
   material: ["inox-304"]
@@ -46,7 +46,7 @@ breadcrumbs:
   - name: "Miniature"
     url: "/en/products/tan-tu-giu/miniature"
   - name: "Miniature Self-Clinching Nuts"
-    url: "/en/products/tan-tu-giu/miniature/tan-tu-giu-miniature"
+    url: "/en/products/tan-tu-giu/miniature/tan-ep-tu-giu-co-nho"
 relatedCategory:
   - slug: "tan-tu-giu"
     name: "Self-clinching nuts"

@@ -1,22 +1,21 @@
 ---
-title: "Self-Clinching Flush Head Stud"
-slug: "tru-ren-tu-giu-flush-head-studs"
-description: "Self-clinching flush head studs for strong fastening and a flat surface. Aluminum/SUS304/steel with multiple sizes."
+title: "External Thread Self-Clinching Stud"
+slug: "tru-tan-ren-ngoai"
+description: "External-thread self-clinching studs (flush head) for strong fastening on sheet metal. Available in aluminum/SUS304/steel with multiple sizes."
 updatedDate: 2026-01-20
 category: "tru-ren-tu-giu"
-subcategory: "flush-head-studs"
 productType:
-  slug: "tru-ren-tu-giu-flush-head-studs"
-  name: "Self-clinching flush head stud"
+  slug: "tru-tan-ren-ngoai"
+  name: "External thread self-clinching stud"
 filters:
   material: ["nhom", "sus304", "thep"]
   diameter: ["M2.5", "M3", "M3.5", "M4", "M5", "M6", "M8", "#2-56", "#4-40", "#6-32", "#8-32", "#10-24", "#10-32", "1/4-20", "5/16-18"]
   application: ["co-khi", "tu-dong-hoa", "che-tao-may", "dien-tu"]
 tags: ["tru-ren-tu-giu", "flush-head-stud", "tru-nhom", "tru-thep", "tru-sus304"]
 seo:
-  title: "Self-Clinching Flush Head Stud - Flat surface fastening"
-  description: "High-quality flush head studs in aluminum/SUS304/steel. Thread sizes M2.5–M8 and #2-56 to 5/16-18. Flat surface, strong fastening."
-  keywords: ["flush head stud", "self-clinching stud", "flush head", "aluminum stud", "steel stud", "sus304 stud"]
+  title: "External Thread Self-Clinching Stud (Flush Head) - Strong, flat-surface fastening"
+  description: "High-quality external-thread self-clinching studs (flush head) in aluminum/SUS304/steel. Multiple sizes, strong fastening, flat surface after installation."
+  keywords: ["external thread self-clinching stud", "flush head stud", "self-clinching stud", "sheet metal fastener", "sus304 stud", "steel stud"]
 variants:
   - sku: "TRTG-FH-M3-NHOM"
     name: "Flush Head Stud M3 Aluminum"
@@ -38,11 +37,9 @@ breadcrumbs:
   - name: "Home"
     url: "/en"
   - name: "Self-clinching studs"
-    url: "/en/products/tru-ren-tu-giu"
-  - name: "Flush head"
-    url: "/en/products/tru-ren-tu-giu/flush-head-studs"
-  - name: "Self-Clinching Flush Head Stud"
-    url: "/en/products/tru-ren-tu-giu/flush-head-studs/tru-ren-tu-giu-flush-head-studs"
+    url: "/en/tru-ren-tu-giu"
+  - name: "External thread stud"
+    url: "/en/tru-ren-tu-giu/tru-tan-ren-ngoai"
 relatedCategory:
   - slug: "tan-tu-giu"
     name: "Self-clinching nuts"
@@ -53,10 +50,12 @@ relatedCategory:
 main:
   id: 1
   content: |
-    Self-clinching flush head studs provide strong fastening with a countersunk head for a perfectly flat surface after installation. Made from aluminum, SUS304, or steel for mechanical, automation, machine-building, and electronics applications. Multiple sizes for easy selection.
+    Self-clinching studs (also known as press-in studs, PEM studs, or external-thread clinching studs) are designed to be pressed into thin sheet metal to create a durable external thread without welding.
+    </br></br>
+    They can be made from carbon steel, steel, or stainless steel (SUS304). Selecting the right size depends on sheet thickness, material, and hardness. Installation is done by stamping/pressing with dedicated tooling, helping reduce processing time and overall cost.
   imgCard: "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai.avif"
   imgMain: "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai.avif"
-  imgAlt: "Self-clinching flush head stud"
+  imgAlt: "External thread self-clinching stud"
 
 tabs:
   - id: "tabs-with-card-item-1"
@@ -91,18 +90,16 @@ specificationsLeft:
   - title: "Features"
     subTitle: "Flush head, flat surface, multiple sizes"
 tableData:
-  - feature: ["Parameter", "Value"]
+  - feature: ["Thread (d × P)", "Length L (mm)", "Sheet thickness T", "Drill hole", "H", "S", "Max mating hole", "Edge distance"]
     description:
-      - ["Material", "Aluminum, SUS304, steel"]
-      - ["Thread size", "#10-24, #10-32, #2-56, #4-40, #6-32, #8-32, 1/4-20, 5/16-18, M2.5, M3, M3.5, M4, M5, M6, M8"]
-      - ["Sheet thickness", "0.04\", 1 mm, 0.062\", 1.6 mm, 0.093\", 2.4 mm"]
-      - ["Hole size", "0.085\", 0.111\", 0.137\", 0.163\", 0.189\", 0.249\", 0.311\", 2.5 mm, 3 mm, 3.5 mm, 4 mm, 5 mm, 6 mm, 8 mm"]
-      - ["H", "0.144\", 0.176\", 0.206\", 0.237\", 0.256\", 0.337\", 0.376\", 4.1 mm, 4.6 mm, 5.3 mm, 5.9 mm, 6.5 mm, 8.2 mm, 9.6 mm"]
-      - ["L", "0.25\", 0.312\", 0.375\", 0.5\", 0.625\", 0.75\", 0.85\", 1\", 1.25\", 1.5\", 6 mm, 8 mm, 10 mm, 12 mm, 15 mm, 18 mm, 20 mm, 25 mm, 30 mm, 35 mm"]
-      - ["Special features", "Flush head, flat surface, secure fastening"]
-      - ["Corrosion resistance", "High (SUS304, aluminum), Medium (steel)"]
-      - ["Order", "Per requirement/drawing"]
+      - ["M2.5 × 0.45", "6 / 8 / 10 / 12 / 15 / 18", "1", "2.5", "4.1", "1.95", "3.1", "5.4"]
+      - ["M3 × 0.5", "6 / 8 / 10 / 12 / 15 / 18 / 20 / 25", "1", "3", "4.6", "2.1", "3.6", "5.6"]
+      - ["M3.5 × 0.6", "6 / 8 / 10 / 12 / 15 / 18 / 20 / 25 / 30", "1", "3.5", "5.3", "2.25", "4.1", "6.4"]
+      - ["M4 × 0.7", "6 / 8 / 10 / 12 / 15 / 18 / 20 / 25 / 30 / 35", "1", "4", "5.9", "2.4", "4.6", "7.2"]
+      - ["M5 × 0.8", "8 / 10 / 12 / 15 / 18 / 20 / 25 / 30 / 35", "1", "5", "6.5", "2.7", "5.6", "7.2"]
+      - ["M6 × 1", "10 / 12 / 15 / 18 / 20 / 25 / 30 / 35", "1.6", "6", "8.2", "3", "6.6", "7.9"]
+      - ["M8 × 1.25", "12 / 15 / 18 / 20 / 25 / 30 / 35", "2.4", "8", "9.6", "3.7", "8.6", "9.6"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/tru-ren-tu-giu/tru-tan-ren-ngoai-ban-ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

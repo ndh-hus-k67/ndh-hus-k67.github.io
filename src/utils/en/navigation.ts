@@ -10,13 +10,19 @@ const footerLinks = [
   {
     section: "Products",
     links: [
-      { name: "About Us", url: "/en/about-us" },
+      { name: "Bolts", url: "/en/bu-long" },
+      { name: "Screws", url: "/en/oc-vit" },
+      { name: "Self-Clinching Nuts", url: "/en/tan-tu-giu" },
+      { name: "Self-Clinching Standoffs", url: "/en/tan-tru-tu-giu" },
+      { name: "Self-Clinching Studs", url: "/en/tru-ren-tu-giu" },
+      { name: "Roller Chain", url: "/en/sen-xich" },
+      { name: "Aluminum Profile Accessories", url: "/en/phu-kien-nhom-dinh-hinh" },
     ],
   },
   {
     section: "Company",
     links: [
-      { name: "About us", url: "#" },
+      { name: "About Us", url: "/en/about-us" },
       { name: "Blog", url: "/en/blog" },
       { name: "Contact", url: "/en/contact" },
     ],

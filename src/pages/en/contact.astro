@@ -6,8 +6,8 @@ import { SITE } from "@data/constants";
 
 const pageTitle: string = `Contact | ${SITE.title}`;
 const metaDescription =
-  "Contact HAHUTECH for product consultation, quotations, and technical support for industrial fasteners and accessories.";
-const ogTitle = `Contact HAHUTECH | ${SITE.title}`;
+  "Contact HAHUTECH for fastener consultation, quotations, and technical support. Our team responds quickly and supports you 24/7.";
+const ogTitle = "Contact HAHUTECH - Fastener Consultation & Quotation";
 ---
 
 <MainLayout
@@ -17,14 +17,14 @@ const ogTitle = `Contact HAHUTECH | ${SITE.title}`;
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "ContactPage",
     "@id": `${SITE.url}/en/contact`,
     url: `${SITE.url}/en/contact`,
     name: `Contact | ${SITE.title}`,
     description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: `${SITE.url}/en`,
+      url: SITE.url,
       name: SITE.title,
       description: SITE.description,
     },

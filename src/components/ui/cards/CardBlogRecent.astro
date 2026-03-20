@@ -32,7 +32,7 @@ interface Props {
     >
       <a
         class="outline-hidden ring-zinc-500 transition duration-300 hover:text-orange-400 focus-visible:ring-3 dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-hidden"
-        href={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}
+        href={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/bai-viet/${blogEntry.id.replace(/^vn\//, '')}/`}
       >
         {blogEntry.data.title}
       </a>
@@ -46,7 +46,7 @@ interface Props {
     </p>
     <div class="mt-5">
       <PrimaryCTA
-        url={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/blog/${blogEntry.id.replace(/^vn\//, '')}/`}
+        url={recentBlogLocale === "en" ? `/en/blog/${blogEntry.id.replace(/^en\//, '')}/` : `/bai-viet/${blogEntry.id.replace(/^vn\//, '')}/`}
         title={recentBlogLocale === "en" ? "Read More" : "Xem thêm"}
         data-astro-prefetch
       />

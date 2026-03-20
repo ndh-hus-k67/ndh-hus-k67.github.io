@@ -5,7 +5,7 @@ description: "Miniature self-clinching nuts with ultra-small size and high preci
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
-  name: "Tán tự giữ"
+  name: "Self-Clinching Nuts"
 productType:
   slug: "tan-ep-tu-giu-co-nho"
   name: "Miniature self-clinching nuts"
@@ -22,11 +22,11 @@ main:
   imgAlt: "Miniature self-clinching nuts"
 
 tableData:
-  - feature: ["Thông số", "M2", "M3", "M4", "M5", "M6"]
+  - feature: ["Specification", "M2", "M3", "M4", "M5", "M6"]
     description:
-      - ["Size ren", "M2×0.4", "M3×0.5", "M4×0.7", "M5×0.8", "M6×1"]
-      - ["Độ dày tấm (mm)", "0.76-0.91", "0.99-1.14", "1.5-1.78", "1.5-1.78", "1.5-1.78"]
-      - ["Lỗ khoan (mm)", "3.61", "4.39", "7.39", "7.39", "8.74"]
+      - ["Thread size", "M2×0.4", "M3×0.5", "M4×0.7", "M5×0.8", "M6×1"]
+      - ["Sheet thickness (mm)", "0.76-0.91", "0.99-1.14", "1.5-1.78", "1.5-1.78", "1.5-1.78"]
+      - ["Hole size (mm)", "3.61", "4.39", "7.39", "7.39", "8.74"]
       - ["A (mm)", "0.79", "1.02", "1.53", "1.53", "1.53"]
       - ["C (mm)", "3.60", "4.37", "7.37", "7.37", "8.72"]
       - ["E (mm)", "4.07", "4.88", "8.17", "8.17", "9.74"]

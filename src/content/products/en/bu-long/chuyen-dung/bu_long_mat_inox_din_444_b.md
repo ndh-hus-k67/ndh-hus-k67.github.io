@@ -5,7 +5,7 @@ description: "DIN 444-B eyebolts for anchoring, lifting, and connections with a 
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-chuyen-dung"
   name: "Specialty bolts"
@@ -27,7 +27,7 @@ main:
 tableData:
   - feature: ["d", "M5", "M6", "M8", "M10", "M12", "M16", "M20", "M24"]
     description:
-      - ["P", "0,8", "1", "1,25", "1,5", "1,75", "2", "2,5", "3"]
+      - ["P", "0.8", "1", "1.25", "1.5", "1.75", "2", "2.5", "3"]
       - ["", "16", "18", "22", "26", "30", "38", "46", "54"]
       - ["b", "–", "–", "28", "32", "36", "44", "52", "60"]
       - ["", "–", "–", "–", "–", "49", "57", "65", "73"]

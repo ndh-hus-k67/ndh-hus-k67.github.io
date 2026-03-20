@@ -4,7 +4,7 @@ slug: "one-end-anti-rotation-hidden-bracket"
 description: "One-end anti-rotation hidden bracket for aluminum profile frames. Helps avoid interference when installing end caps and provides a firm, anti-rotation connection."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
-  name: "Aluminum profile accessories"
+  name: "Aluminum Profile Accessories"
 productType:
   slug: "ke-chim-chong-xoay-1"
   name: "One-end anti-rotation hidden bracket"
@@ -44,5 +44,5 @@ main:
     </ul>
   imgCard: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
   imgMain: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
-  imgAlt: "Ke chìm chống xoay một đầu"
+  imgAlt: "One-End Anti-Rotation Hidden Bracket"
 ---

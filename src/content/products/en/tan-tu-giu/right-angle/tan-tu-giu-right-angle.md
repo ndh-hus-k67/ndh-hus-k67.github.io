@@ -1,31 +1,38 @@
 ---
-title: "Tán góc phải tự giữ"
-slug: "tan-goc-phai-tu-giu"
+title: "Right Angle Self-Clinching Nut"
+description: "Right-angle self-clinching nut for corner fastening in compact assemblies. Aluminum or steel with common thread sizes M3–M4."
+slug: "right-angle-self-clinching-nut"
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
-  name: "Tán tự giữ"
+  name: "Self-Clinching Nuts"
 productType:
   slug: "tan-goc-phai-tu-giu"
-  name: "Tán góc phải tự giữ"
+  description: "Right Angle Self-Clinching Nut with clear specifications, materials, and sizing options for reliable assembly."
+  title: "Right Angle Self-Clinching Nut - Specifications & applications"
+  keywords: ["right angle self-clinching nut","corner nut","self-clinching nut","sheet metal fastener"]
+  name: "Right angle self-clinching nut"
 seo:
-  title: "Tán góc phải tự giữ - Giải pháp liên kết góc vuông"
-  description: "Tán tự giữ góc vuông (Right Angle Nut) chất lượng cao, vật liệu Nhôm/Thép, size ren M3-M4. Đa dạng kích thước, phù hợp cho liên kết tại các vị trí góc."
-  keywords: ["tán góc phải tự giữ", "right angle nut", "tán góc vuông", "tán nhôm", "tán thép", "tán tự giữ M3", "tán tự giữ M4"]
+  title: "Right Angle Self-Clinching Nut - Corner fastening solution"
+  description: "Right-angle self-clinching nuts for corner positions. Saves space and improves rigidity. Available in aluminum or steel with thread sizes M3–M4."
+  imgAlt: "Right angle self-clinching nut"
+  keywords: ["right angle self-clinching nut","corner nut","self-clinching nut","sheet metal fastener"]
 main:
   id: 1
   content: |
-    Tán góc phải tự giữ (góc vuông) là giải pháp liên kết chuyên dụng cho các vị trí góc, giúp tối ưu hóa không gian lắp đặt và tăng độ chắc chắn cho kết cấu. Sản phẩm được sản xuất từ nhôm và thép, phù hợp cho các ứng dụng cơ khí, tự động hóa, chế tạo máy và điện tử. Đa dạng kích thước, dễ dàng lựa chọn cho từng vị trí lắp đặt cụ thể.
+    Right-angle self-clinching nuts are specialized fasteners designed for corner positions, helping optimize installation space and increase structural rigidity.
+    
+    They are available in aluminum or steel and are used in mechanical assemblies, automation, machine-building, and electronics.
   imgCard: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle.avif"
   imgMain: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle.avif"
-  imgAlt: "Tán góc phải tự giữ"
+  imgAlt: "Right angle self-clinching nut"
 
 tableData:
-  - feature: ["Thông số", "M3", "M4"]
+  - feature: ["Specification", "M3", "M4"]
     description:
-      - ["Size ren", "M3×0.5", "M4×0.7"]
-      - ["Vật liệu", "Nhôm, Thép", "Nhôm, Thép"]
-      - ["Độ dày tấm (T)", "1 mm", "1 mm"]
+      - ["Thread size", "M3×0.5", "M4×0.7"]
+      - ["Material", "Aluminum, Steel", "Aluminum, Steel"]
+      - ["Sheet thickness (T)", "1 mm", "1 mm"]
       - ["A (mm)", "7.89", "9.89"]
       - ["C (mm)", "6.35", "8.89"]
       - ["D (mm)", "3.18", "3.18"]
@@ -34,7 +41,7 @@ tableData:
       - ["G (mm)", "9.27-12.19", "9.78-13.21"]
       - ["J (mm)", "2.87-3.56", "3.56-4.06"]
       - ["L (mm)", "2.89-8.89", "3.89-8.89"]
-      - ["Kích thước lỗ (mm)", "8x3 ~ 10x9", "8x4 ~ 10x9"]
+      - ["Hole size (mm)", "8x3 ~ 10x9", "8x4 ~ 10x9"]
 blueprints:
   first: "@/images/products/tan-tu-giu/right-angle/tan-tu-giu-right-angle-ban-ve.avif"
   second: "@/images/blueprint-2.avif"

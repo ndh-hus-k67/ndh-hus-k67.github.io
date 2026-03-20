@@ -5,7 +5,7 @@ description: "Stainless self-drilling flat head screws for fastening structures 
 updatedAt: 2026-01-19
 category:
   slug: "oc-vit"
-  name: "Ốc vít"
+  name: "Screws"
 productType:
   slug: "vit-tu-khoan"
   name: "Self-drilling screws"
@@ -27,8 +27,8 @@ main:
 tableData:
   - feature: ["d", "ST2.9", "ST3.5", "ST3.9", "ST4.2", "ST4.8", "ST5.5"]
     description:
-      - ["P", "–", "1,3", "1,3", "1,4", "1,6", "1,8"]
-      - ["dk", "–", "6,8", "7,5", "8,1", "9,5", "10,8"]
+      - ["P", "–", "1.3", "1.3", "1.4", "1.6", "1.8"]
+      - ["dk", "–", "6.8", "7.5", "8.1", "9.5", "10.8"]
       - ["L1", "–", "5", "6", "7", "8", "10"]
 
 blueprints:

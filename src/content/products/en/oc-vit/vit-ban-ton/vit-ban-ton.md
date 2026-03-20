@@ -5,7 +5,7 @@ description: "Stainless self-drilling roofing screws for fastening sheet metal t
 updatedAt: 2026-01-19
 category:
   slug: "oc-vit"
-  name: "Ốc vít"
+  name: "Screws"
 productType:
   slug: "vit-ban-ton"
   name: "Roofing screws"

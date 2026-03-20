@@ -4,7 +4,7 @@ slug: "double-pitch-roller-chain"
 description: "Double pitch roller chain for long center distances and conveyor drives. Durable, smooth operation, and suitable for slow to medium speeds."
 category:
   slug: "sen-xich"
-  name: "Industrial chains"
+  name: "Industrial Chains"
 productType:
   slug: "sen-xich-buoc-doi"
   name: "Double pitch roller chain"

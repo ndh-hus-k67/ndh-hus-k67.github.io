@@ -5,7 +5,7 @@ description: "Floating self-clinching nuts allow flexible alignment to compensat
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
-  name: "Tán tự giữ"
+  name: "Self-Clinching Nuts"
 productType:
   slug: "dai-oc-tu-giu"
   name: "Floating self-clinching nut"
@@ -22,13 +22,13 @@ main:
   imgAlt: "Floating self-clinching nut"
 
 tableData:
-  - feature: ["Thông số", "M3", "M4", "M5", "M6"]
+  - feature: ["Specification", "M3", "M4", "M5", "M6"]
     description:
       - ["Thread Size", "M3×0.5", "M4×0.7", "M5×0.8", "M6×1"]
-      - ["Vật liệu", "SUS304, SUS410, Thép", "SUS304, SUS410, Thép", "SUS304, SUS410, Thép", "SUS304, SUS410, Thép"]
+      - ["Material", "SUS304, SUS410, Steel", "SUS304, SUS410, Steel", "SUS304, SUS410, Steel", "SUS304, SUS410, Steel"]
       - ["A (mm)", "0.97-1.38", "0.97-1.38", "0.97-1.38", "0.97-1.38"]
-      - ["Độ dày tấm (t)", "0.97-1.38", "0.97-1.38", "0.97-1.38", "0.97-1.38"]
-      - ["Lỗ khoan C (mm)", "7.35-7.37", "9.33-9.35", "10.29-10.31", "13.06-13.08"]
+      - ["Sheet thickness (t)", "0.97-1.38", "0.97-1.38", "0.97-1.38", "0.97-1.38"]
+      - ["Hole size C (mm)", "7.35-7.37", "9.33-9.35", "10.29-10.31", "13.06-13.08"]
       - ["D (mm)", "7.37", "9.28", "10.29", "12.96"]
       - ["E (mm)", "9.14", "11.18", "11.94", "15.24"]
       - ["T (mm)", "3.31-4.32", "3.31-4.32", "4.32-5.34", "4.32-5.34"]

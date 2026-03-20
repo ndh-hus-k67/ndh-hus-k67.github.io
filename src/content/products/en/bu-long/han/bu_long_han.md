@@ -1,27 +1,31 @@
 ---
-title: "Bu lông hàn"
-slug: "bu-long-han"
+title: "Weld Stud"
+description: "Threaded weld studs for fast and strong attachment to metal plates. Manufactured to ISO 13918 / GB/T 902.3 in stainless steel or carbon steel."
+slug: "weld-stud"
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-han"
-  name: "Bu lông hàn"
+  description: "Weld Stud with clear specifications, materials, and sizing options for reliable assembly."
+  title: "Weld Stud - Specifications & applications"
+  keywords: ["weld stud","threaded weld stud","stainless weld stud","ISO 13918","GB/T 902.3"]
+  name: "Weld Stud"
 seo:
-  title: "Bu lông hàn Inox - Vít hàn/đinh hàn có ren GB/T 902.3, ISO 13918"
-  description: "Bu lông hàn inox 201/304/316/316L theo tiêu chuẩn GB/T 902.3, ISO 13918. Hàn trực tiếp lên tấm kim loại, liên kết bền chắc cho kết cấu thép, đóng tàu, chế tạo máy."
-  keywords: ["bu lông hàn", "vít hàn inox", "đinh hàn có ren", "welding stud", "bu lông hàn chập", "bu lông hàn inox 304"]
+  title: "Weld Stud (Threaded) - ISO 13918 / GB/T 902.3"
+  description: "High-quality threaded weld studs for direct welding to metal plates. Available in stainless steel (SUS201/304/316/316L) or carbon steel. ISO 13918 / GB/T 902.3."
+  imgAlt: "Weld stud"
+  keywords: ["weld stud","threaded weld stud","stainless weld stud","ISO 13918","GB/T 902.3"]
 main:
   id: 4
   content: |
-    Bulong hàn là loại bu lông sử dụng máy hàn chuyên dụng để gắn bu lông lên các tấm kim loại mặt phẳng bằng phương pháp hàn chập hàn hồ quang. Bulong hàn có nhiều hình dạng khác nhau có loại có ren có loại không có ren, dưới đế bulong có đinh nhỏ tác dụng định vị vị trí hàn và khi hàn nhiệt nóng chảy sẽ giúp đinh tan ra bám chắc vào bề mặt tấm kim loại.
-    </br></br>
-
-    Bu lông hàn còn có các tên gọi khác như: Vít hàn inox, bulong hàn chập, đinh hàn có ren. Được sản xuất từ vật liệu Inox 304 hoặc thép mạ kẽm, mạ đồng, thông thường được áp dụng tiêu chuẩn GB902.3 (PT) hoặc ISO 13918 (PT) để sản xuất loại bu lông này.
+    Weld studs are fasteners designed to be welded directly onto flat metal plates using dedicated stud-welding equipment. The welded joint provides a strong, permanent connection for steel structures, shipbuilding, machinery, and industrial fabrication.
+    
+    Threaded weld studs (also known as welding bolts) are produced in stainless steel or carbon steel and are commonly manufactured to ISO 13918 or GB/T 902.3.
   imgCard: "@/images/products/bu-long/han/bu-long-han.avif"
   imgMain: "@/images/products/bu-long/han/bu-long-han.avif"
-  imgAlt: "Bu lông hàn inox"
+  imgAlt: "Weld stud"
 
 tableData:
   - feature: ["Nominal Diameter d", "M3", "M4", "M5", "M6", "M8"]

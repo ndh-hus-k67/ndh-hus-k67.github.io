@@ -5,7 +5,7 @@ description: "DIN 7504-N round head self-drilling screws (fish-tail point) for s
 updatedAt: 2026-01-19
 category:
   slug: "oc-vit"
-  name: "Ốc vít"
+  name: "Screws"
 productType:
   slug: "vit-tu-khoan"
   name: "Self-drilling screws"

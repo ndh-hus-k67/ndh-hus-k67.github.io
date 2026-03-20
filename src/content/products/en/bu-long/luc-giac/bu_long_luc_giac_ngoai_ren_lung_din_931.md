@@ -5,7 +5,7 @@ description: "DIN 931 partially threaded hex bolts for mechanical/structural joi
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-luc-giac"
   name: "Hex bolts"

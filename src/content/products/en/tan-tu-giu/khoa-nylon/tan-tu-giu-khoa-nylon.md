@@ -5,7 +5,7 @@ description: "Self-clinching nut with nylon lock for anti-rotation, high durabil
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
-  name: "Tán tự giữ"
+  name: "Self-Clinching Nuts"
 productType:
   slug: "tan-tu-giu-khoa-nylon"
   name: "Nylon lock self-clinching nut"
@@ -22,11 +22,11 @@ main:
   imgAlt: "Nylon lock self-clinching nut"
 
 tableData:
-  - feature: ["Thông số", "M3", "M4", "M5"]
+  - feature: ["Specification", "M3", "M4", "M5"]
     description:
-      - ["Size ren", "M3×0.5", "M4×0.7", "M5×0.8"]
-      - ["Độ dày tấm (mm)", "1", "1", "1"]
-      - ["Lỗ khoan (mm)", "6", "7.5", "8"]
+      - ["Thread size", "M3×0.5", "M4×0.7", "M5×0.8"]
+      - ["Sheet thickness (mm)", "1", "1", "1"]
+      - ["Hole size (mm)", "6", "7.5", "8"]
       - ["A (mm)", "1.53", "1.53", "1.53"]
       - ["C (mm)", "5.98", "7.48", "7.98"]
       - ["E (mm)", "7.01", "8.54", "9"]

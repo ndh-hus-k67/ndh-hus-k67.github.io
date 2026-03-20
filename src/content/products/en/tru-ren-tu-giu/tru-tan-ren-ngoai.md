@@ -5,7 +5,7 @@ description: "External-thread self-clinching studs (flush head) for strong faste
 updatedDate: 2026-01-20
 category:
   slug: "tru-ren-tu-giu"
-  name: "Trụ ren tự giữ"
+  name: "Self-Clinching Studs"
 productType:
   slug: "tru-tan-ren-ngoai"
   name: "External thread self-clinching stud"
@@ -24,7 +24,7 @@ main:
   imgAlt: "External thread self-clinching stud"
 
 tableData:
-  - feature: ["Ren (d x P)", "Chiều dài L (mm)", "Độ dày tấm T", "Lỗ khoan", "H", "S", "Lỗ ghép max", "Khoảng cách cạnh"]
+  - feature: ["Thread (d x P)", "Length L (mm)", "Sheet thickness T", "Hole size", "H", "S", "Max mating hole", "Edge distance"]
     description:
       - ["M2.5 x 0.45", "6 / 8 / 10 / 12 / 15 / 18", "1", "2.5", "4.1", "1.95", "3.1", "5.4"]
       - ["M3 x 0.5", "6 / 8 / 10 / 12 / 15 / 18 / 20 / 25", "1", "3", "4.6", "2.1", "3.6", "5.6"]

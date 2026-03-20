@@ -5,7 +5,7 @@ description: "DIN 6921 flange bolt with hex head and integrated flange to increa
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-chuyen-dung"
   name: "Specialty bolts"
@@ -26,11 +26,11 @@ main:
 tableData:
   - feature: ["d", "M5", "M6", "M8", "M10", "M12", "M14", "M16", "M20"]
     description:
-      - ["P", "0,8", "1", "1,25", "1,5", "1.75", "2", "2", "2.5"]
+      - ["P", "0.8", "1", "1.25", "1.5", "1.75", "2", "2", "2.5"]
       - ["b", "16", "18", "22", "26", "30", "34", "38", "46"]
-      - ["k", "5,40", "6,6", "8,1", "9.2", "11.5", "12.8", "14.4", "17.1"]
+      - ["k", "5.40", "6.6", "8.1", "9.2", "11.5", "12.8", "14.4", "17.1"]
       - ["s", "8", "10", "13", "15", "16", "18", "21", "27"]
-      - ["dc", "11,8", "14,2", "18", "22.3", "26.6", "30.5", "35", "43"]
+      - ["dc", "11.8", "14.2", "18", "22.3", "26.6", "30.5", "35", "43"]
 
 blueprints:
   first: "@/images/products/bu-long/chuyen-dung/bu-long-lien-long-den_ban_ve.avif"

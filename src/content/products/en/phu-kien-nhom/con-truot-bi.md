@@ -4,7 +4,7 @@ slug: "spring-ball-t-nut"
 description: "Spring ball T-nut for aluminum profiles. The spring-loaded ball helps hold the nut in the slot, reducing drop-out during assembly."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
-  name: "Aluminum profile accessories"
+  name: "Aluminum Profile Accessories"
 productType:
   slug: "con-truot-bi"
   name: "Spring ball T-nut"
@@ -47,6 +47,6 @@ main:
     </ul>
   imgCard: "@/images/products/phu-kien-nhom/con-truot-bi.avif"
   imgMain: "@/images/products/phu-kien-nhom/con-truot-bi.avif"
-  imgAlt: "Con trượt bi chất lượng cao"
+  imgAlt: "Spring Ball T-Nut"
 
 ---

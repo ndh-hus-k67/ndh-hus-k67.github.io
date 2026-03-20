@@ -5,7 +5,7 @@ description: "TORX+PIN anti-tamper button head bolts in SS201/304/316/316L or al
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-dau-cau"
   name: "Button head bolts"

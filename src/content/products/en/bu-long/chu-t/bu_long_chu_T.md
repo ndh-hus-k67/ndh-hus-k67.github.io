@@ -5,7 +5,7 @@ description: "T-bolts for aluminum profiles and framing systems."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-chu-t"
   name: "T-Bolt"

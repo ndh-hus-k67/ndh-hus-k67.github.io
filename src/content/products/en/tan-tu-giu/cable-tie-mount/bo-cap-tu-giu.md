@@ -6,7 +6,7 @@ updatedDate: 2026-01-20
 
 category:
   slug: "tan-tu-giu"
-  name: "Tán tự giữ"
+  name: "Self-Clinching Nuts"
 
 productType:
   slug: "bo-cap-tu-giu"
@@ -17,8 +17,8 @@ seo:
   description: "High-quality cable tie mounts in SUS304/steel with multiple sizes for electronics, automation, and machinery cable management."
   keywords:
     - "cable tie mount"
-    - "bộ cáp giữ"
-    - "cố định dây cáp"
+    - "cable tie mount"
+    - "cable fixing"
     - "sus304"
     - "thep"
     - "cable management"
@@ -34,7 +34,7 @@ main:
   imgAlt: "Cable tie mounts"
 
 tableData:
-  - feature: ["Loại", "Chiều rộng (W)", "Chiều dài (L)", "Chiều cao (H)", "Đường kính lỗ (FH)", "Chiều rộng dây max. (G)", "Vật liệu"]
+  - feature: ["Type", "Width (W)", "Length (L)", "Height (H)", "Hole diameter (FH)", "Max cable tie width (G)", "Material"]
     description:
       - ["MB2A", "13.0", "13.0", "4.1", "-", "2.7", "PA66"]
       - ["MB3A", "19.0", "19.0", "3.8", "3.1", "4.1", "PA66"]

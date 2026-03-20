@@ -5,7 +5,7 @@ description: "Self-clinching through-hole standoffs for secure through-hole fast
 updatedDate: 2026-01-20
 category:
   slug: "tan-tru-tu-giu"
-  name: "Tán trụ tự giữ"
+  name: "Self-Clinching Standoffs"
 productType:
   slug: "tan-tru-tu-giu-xuyen-lo"
   name: "Self-clinching through-hole standoff"
@@ -22,7 +22,7 @@ main:
   imgAlt: "Self-clinching through-hole standoff"
 
 tableData:
-  - feature: ["Đường kính lỗ xuyên B", "Vật liệu", "Mã lỗ xuyên", "Chiều dài L (mm)"]
+  - feature: ["Through-hole diameter B", "Material", "Through-hole code", "Length L (mm)"]
     description:
       - ["3.1", "SO / SOS / SOA / SO4", "43.1 / 63.1", "3 / 4 / 6 / 8 / 10 / 12 / 14 / 16 / 18 / 20"]
       - ["3.6", "SO / SOS / SOA / SO4", "63.6 / 83.6", "3 / 4 / 6 / 8 / 10 / 12 / 14 / 16 / 18 / 20"]

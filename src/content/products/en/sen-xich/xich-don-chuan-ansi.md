@@ -4,7 +4,7 @@ slug: "ansi-single-strand-roller-chain"
 description: "ANSI single strand roller chain for industrial power transmission and conveyors. High precision, strong, and available in many sizes."
 category:
   slug: "sen-xich"
-  name: "Industrial chains"
+  name: "Industrial Chains"
 productType:
   slug: "xich-chuan-ansi"
   name: "ANSI standard chain"
@@ -17,15 +17,15 @@ main:
   content: |
     Single strand roller chain is designed to ANSI standards, ensuring consistent dimensions, high durability, and stable power transmission.
     </br></br>  
-    Đây là loại xích thông dụng nhất trong các hệ thống truyền động cơ khí công nghiệp, băng tải công nghiệp, nông nghiệp và nhiều dây chuyền sản xuất tự động.
+    This is one of the most common chains used in industrial power transmission, conveyors, agriculture, and automated production lines.
     </br></br>  
-    Hiện nay, xích đơn 1 dãy ANSI có nhiều kích thước và vật liệu khác nhau: thép hợp kim Mn40, inox 304, đáp ứng đa dạng nhu cầu của từng ngành."
+    Available in various sizes and materials (e.g., Mn40 alloy steel, SUS304 stainless steel) to meet different industry needs.
   imgCard: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgMain: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgAlt: "ANSI single strand roller chain"
 tableData:
   - feature:
-      - "Thông số"
+      - "Specification"
       - "15-1R"
       - "25-1R"
       - "35-1R"
@@ -44,7 +44,7 @@ tableData:
       - ["Q0 (kN)", "2", "4.6", "10.8", "12.6", "17.5"]
       - ["kg/m", "0.08", "0.15", "0.33", "0.41", "0.62"]
   - feature:
-      - "Thông số"
+      - "Specification"
       - "50-1R"
       - "60-1R"
       - "80-1R"
@@ -63,7 +63,7 @@ tableData:
       - ["Q0 (kN)", "29.4", "41.5", "69.4", "109.2", "156.3"]
       - ["kg/m", "1.02", "1.5", "2.6", "3.91", "5.62"]
   - feature:
-      - "Thông số"
+      - "Specification"
       - "140-1R"
       - "160-1R"
       - "180-1R"

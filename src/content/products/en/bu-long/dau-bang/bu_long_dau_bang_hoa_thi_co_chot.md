@@ -5,7 +5,7 @@ description: "Security flat head TORX+PIN screw/bolt for anti-tamper application
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-dau-bang"
   name: "Flat head bolts"

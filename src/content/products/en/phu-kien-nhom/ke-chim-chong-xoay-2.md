@@ -4,7 +4,7 @@ slug: "anti-rotation-hidden-bracket-double-end"
 description: "Double-end anti-rotation hidden bracket for aluminum profile frames. Two threaded ends provide a rigid connection and strong anti-rotation performance."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
-  name: "Aluminum profile accessories"
+  name: "Aluminum Profile Accessories"
 productType:
   slug: "ke-chim-chong-xoay"
   name: "Anti-rotation hidden bracket"

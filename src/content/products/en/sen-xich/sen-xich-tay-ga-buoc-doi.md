@@ -4,7 +4,7 @@ slug: "double-pitch-attachment-chain"
 description: "Double pitch attachment chain for conveying and handling. Attachment design supports product holding/pushing while the double pitch suits longer center distances."
 category:
   slug: "sen-xich"
-  name: "Industrial chains"
+  name: "Industrial Chains"
 productType:
   slug: "sen-xich-tay-ga"
   name: "Attachment chain"
@@ -28,7 +28,7 @@ tableData:
       - "F"
       - "W"
       - "h4"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["C2040 / C2042", "25.4", "19.1", "9.5", "25.4", "39.6", "9.1", "3.4"]
       - ["C2050 / C2052", "31.75", "23.8", "11.9", "31.8", "49.0", "11.1", "5.5"]

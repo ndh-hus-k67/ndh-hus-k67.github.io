@@ -5,7 +5,7 @@ description: "Internal-thread self-clinching standoff (press-in standoff) for th
 updatedDate: 2026-01-20
 category:
   slug: "tan-tru-tu-giu"
-  name: "Tán trụ tự giữ"
+  name: "Self-Clinching Standoffs"
 productType:
   slug: "tru-tan-ren-trong"
   name: "Internal thread self-clinching standoff"
@@ -24,16 +24,16 @@ main:
   imgAlt: "Internal thread self-clinching standoff"
 
 tableData:
-  - feature: ["Đường kính lỗ ren trong d", "Bước ren P", "Chiều dài PEM L", "Đường kính lỗ cắt để ép PEM C", "Đường kính lục giác ngoài H"]
+  - feature: ["Internal thread diameter d", "Thread pitch P", "Standoff length L", "Press-fit hole diameter C", "External hex diameter H"]
     description:
-      - ["M2", "0,4", "–", "4,2", "4,8"]
-      - ["M2,5", "0,45", "6 / 8 / 10 / 12", "4,2", "4,8"]
-      - ["M3", "0,5", "5 / 6 / 7 / 8 / 9 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 25", "4,2", "4,8"]
-      - ["3,5M3", "0,5", "3 / 4 / 5 / 6 / 7 / 8 / 9 / 10 / 11 / 12 / 13 / 14 / 15 / 16 / 17 / 18 / 19 / 20 / 21 / 22 / 23 / 24 / 25 / 26 / 27 / 28 / 29 / 30 / 31 / 32 / 33 / 34 / 35 / 36 / 37 / 38 / 39 / 40", "5,39", "6,4"]
-      - ["M4", "0,7", "6 / 8 / 9 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 25", "5,98", "7,0"]
-      - ["3,5M4", "0,7", "6 / 8 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 22 / 25", "7,12", "7,9"]
-      - ["M5", "0,8", "–", "7,12", "7,9"]
-      - ["M6", "1", "–", "8,7", "10,0"]
+      - ["M2", "0.4", "–", "4.2", "4.8"]
+      - ["M2,5", "0.45", "6 / 8 / 10 / 12", "4.2", "4.8"]
+      - ["M3", "0.5", "5 / 6 / 7 / 8 / 9 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 25", "4.2", "4.8"]
+      - ["3,5M3", "0.5", "3 / 4 / 5 / 6 / 7 / 8 / 9 / 10 / 11 / 12 / 13 / 14 / 15 / 16 / 17 / 18 / 19 / 20 / 21 / 22 / 23 / 24 / 25 / 26 / 27 / 28 / 29 / 30 / 31 / 32 / 33 / 34 / 35 / 36 / 37 / 38 / 39 / 40", "5.39", "6.4"]
+      - ["M4", "0.7", "6 / 8 / 9 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 25", "5.98", "7.0"]
+      - ["3,5M4", "0.7", "6 / 8 / 10 / 12 / 14 / 15 / 16 / 18 / 20 / 22 / 25", "7.12", "7.9"]
+      - ["M5", "0.8", "–", "7.12", "7.9"]
+      - ["M6", "1", "–", "8.7", "10.0"]
 blueprints:
   first: "@/images/products/tan-tru-tu-giu/bit/tan-tru-tu-giu-bit-ban-ve.avif"
 ---

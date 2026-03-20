@@ -5,7 +5,7 @@ description: "Stainless steel anchor bolts for connecting columns/structures to 
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
-  name: "Bu lông"
+  name: "Bolts"
 productType:
   slug: "bu-long-chuyen-dung"
   name: "Specialty bolts"
@@ -24,7 +24,7 @@ main:
   imgAlt: "Stainless steel anchor bolt"
 
 tableData:
-  - feature: ["d", "ds Kich thước", "ds Dung sai", "b Kich thước", "b Dung sai", "L1 Kich thước", "L1 Dung sai"]
+  - feature: ["d", "ds Size", "ds Tolerance", "b Size", "b Tolerance", "L1 Size", "L1 Tolerance"]
     description:
       - ["M10", "10", "±0.4", "25", "±5", "45", "±5"]
       - ["M12", "12", "±0.4", "35", "±6", "56", "±5"]

@@ -4,7 +4,7 @@ slug: "attachment-chain"
 description: "Attachment chain for conveyors. Designed to mount fixtures/attachments on chain links for holding, pushing, clamping, or transporting products."
 category:
   slug: "sen-xich"
-  name: "Industrial chains"
+  name: "Industrial Chains"
 productType:
   slug: "sen-xich-tay-ga"
   name: "Attachment chain"
@@ -28,7 +28,7 @@ tableData:
       - "W"
       - "T"
       - "h4"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "5.6", "13.80", "23.2", "0.80", "4.30", "3.4"]
       - ["06C-35", "9.525", "7.9", "19.00", "28.6", "1.30", "6.35", "3.4"]
@@ -58,7 +58,7 @@ tableData:
       - "C"
       - "F"
       - "T"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "5.6", "7.95", "11.70", "0.80", "3.4"]
       - ["06C-35", "9.525", "7.9", "9.50", "14.55", "1.30", "3.4"]
@@ -88,7 +88,7 @@ tableData:
       - "W"
       - "T"
       - "h4"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "11.41", "6.350", "13.80", "23.2", "0.80", "4.30", "3.40"]
       - ["06C-35", "9.525", "17.32", "9.525", "19.00", "28.6", "1.30", "6.35", "3.40"]

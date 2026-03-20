@@ -1,6 +1,6 @@
 ---
 title: "ANSI Duplex Roller Chain"
-slug: "xich-doi-chuan-ansi"
+slug: "ansi-duplex-roller-chain"
 description: "ANSI duplex (double strand) roller chain for heavy-duty power transmission. Higher load capacity and stable operation."
 category:
   slug: "sen-xich"
@@ -14,12 +14,13 @@ seo:
   keywords: ["ANSI duplex roller chain", "double strand roller chain", "heavy duty chain", "industrial chain"]
 main:
   id: 1
-  content: "ANSI duplex roller chain (double strand) is manufactured to ANSI B29.1 with two parallel strands, providing higher load capacity and durability than single strand chain.
+  content: |
+    ANSI duplex roller chain (double strand) is manufactured to ANSI B29.1 with two parallel strands, providing higher load capacity and durability than single strand chain.
     
     </br></br>
-    It is widely used in heavy industries such as cement, mining, steel, woodworking, agriculture, and precision machinery.
+    Đây là lựa chọn tối ưu trong những ngành công nghiệp nặng như xi măng, khai khoáng, thép, chế biến gỗ, nông nghiệp và sản xuất cơ khí chính xác.
     </br></br>
-    Available in multiple sizes and materials (e.g., alloy steel, SUS304, engineering plastic) to meet different working conditions."
+    Hiện nay, xích đôi 2 dãy tiêu chuẩn ANSI có nhiều kích thước và vật liệu khác nhau: thép hợp kim Mn40, inox 304, xích nhựa công nghiệp, đáp ứng đa dạng nhu cầu của từng ngành."
   imgCard: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgMain: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgAlt: "ANSI duplex roller chain"

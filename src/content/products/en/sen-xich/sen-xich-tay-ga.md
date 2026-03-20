@@ -1,6 +1,6 @@
 ---
 title: "Attachment Chain"
-slug: "sen-xich-tay-ga"
+slug: "attachment-chain"
 description: "Attachment chain for conveyors. Designed to mount fixtures/attachments on chain links for holding, pushing, clamping, or transporting products."
 category:
   slug: "sen-xich"
@@ -14,14 +14,15 @@ seo:
   keywords: ["attachment chain", "conveyor chain", "industrial chain", "chain attachments"]
 main:
   id: 1
-  content: "Attachment chain is an industrial chain designed to mount additional fixtures (attachments, hinges, pins, small supports) on the chain links. This allows the chain not only to transmit motion but also to hold, push, clamp, or transport products directly on the conveyor."
+  content: |
+    Attachment chain is an industrial chain designed to mount additional fixtures (attachments, hinges, pins, small supports) on the chain links. This allows the chain not only to transmit motion but also to hold, push, clamp, or transport products directly on the conveyor.
   imgCard: "@/images/products/sen-xich/xich-tay-ga.avif"
   imgMain: "@/images/products/sen-xich/xich-tay-ga.avif"
   imgAlt: "Attachment chain"
 tableData:
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "F"
       - "W"
@@ -52,7 +53,7 @@ tableData:
       - ["32B", "50.080", "38.1", "101.60", "142.8", "6.00", "31.75", "13.1"]
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "C"
       - "F"
@@ -80,7 +81,7 @@ tableData:
       - ["24B", "38.100", "36.0", "36.00", "61.50", "4.80", "10.5"]
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "L"
       - "F"

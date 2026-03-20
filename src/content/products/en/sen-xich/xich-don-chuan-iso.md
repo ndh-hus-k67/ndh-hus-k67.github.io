@@ -1,6 +1,6 @@
 ---
 title: "ISO Single Strand Roller Chain"
-slug: "xich-don-chuan-iso"
+slug: "iso-single-strand-roller-chain"
 description: "ISO single strand roller chain (ISO 606) for industrial transmission systems. Reliable, durable, and widely available in standard sizes."
 category:
   slug: "sen-xich"
@@ -14,7 +14,8 @@ seo:
   keywords: ["ISO roller chain", "single strand roller chain", "industrial chain", "conveyor chain"]
 main:
   id: 1
-  content: "ISO single strand roller chain (ISO 606) is designed with consistent dimensions, high durability, and stable power transmission. It is widely used in mechanical drives, industrial conveyors, agriculture, and automated production lines. Available in multiple sizes and materials (e.g., alloy steel, SUS304, engineering plastic) to fit different environments."
+  content: |
+    ISO single strand roller chain (ISO 606) is designed with consistent dimensions, high durability, and stable power transmission. It is widely used in mechanical drives, industrial conveyors, agriculture, and automated production lines. Available in multiple sizes and materials (e.g., alloy steel, SUS304, engineering plastic) to fit different environments.
   imgCard: "@/images/products/sen-xich/xich-2-iso.avif"
   imgMain: "@/images/products/sen-xich/xich-2-iso.avif"
   imgAlt: "ISO single strand roller chain"
@@ -38,7 +39,7 @@ tableData:
       - ["T lớn nhất (mm)", "0.6", "0.8", "1.3", "1.6", "1.7", "1.85"]
       - ["Q tối thiểu (kN/lb)", "3/682", "5/1136", "9/2045", "18/4091", "22.4/5091", "29/6591"]
       - ["Q0 (kN)", "3.2", "5.9", "10.4", "19.4", "27.5", "32.2"]
-      - ["Khối lượng (kg/m)", "0.11", "0.2", "0.41", "0.69", "0.93", "1.15"]
+      - ["Weight (kg/m)", "0.11", "0.2", "0.41", "0.69", "0.93", "1.15"]
   - feature:
       - "Thông số"
       - "16B-1R"
@@ -57,7 +58,7 @@ tableData:
       - ["T lớn nhất (mm)", "4.15/3.1", "4.5/3.5", "6/4.8", "7.5/6", "7/6"]
       - ["Q tối thiểu (kN/lb)", "60/13636", "95/21591", "160/36364", "200/45455", "250/56818"]
       - ["Q0 (kN)", "72.8", "106.7", "178.0", "222.0", "277.5"]
-      - ["Khối lượng (kg/m)", "2.71", "3.7", "7.1", "8.5", "10.25"]
+      - ["Weight (kg/m)", "2.71", "3.7", "7.1", "8.5", "10.25"]
   - feature:
       - "Thông số"
       - "40B-1R"
@@ -76,7 +77,7 @@ tableData:
       - ["T lớn nhất (mm)", "8.5/8", "12/10", "13.5/12", "15/13", "17/15"]
       - ["Q tối thiểu (kN/lb)", "355/80682", "560/127272", "850/193180", "1120/254544", "1400/318180"]
       - ["Q0 (kN)", "394", "621.6", "940", "1240", "1550"]
-      - ["Khối lượng (kg/m)", "16.35", "25", "35.78", "46", "60.8"]
+      - ["Weight (kg/m)", "16.35", "25", "35.78", "46", "60.8"]
 blueprints:
   first: "@/images/products/sen-xich/xich-don-chuan-iso-ban-ve.avif"
 ---

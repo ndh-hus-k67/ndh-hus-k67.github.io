@@ -1,6 +1,6 @@
 ---
 title: "ISO Duplex Roller Chain"
-slug: "xich-doi-chuan-iso"
+slug: "iso-duplex-roller-chain"
 description: "ISO duplex (double strand) roller chain for industrial drives and conveyors requiring higher capacity. Manufactured to ISO 606."
 category:
   slug: "sen-xich"
@@ -14,7 +14,10 @@ seo:
   keywords: ["ISO duplex roller chain", "double strand roller chain", "industrial chain", "conveyor chain"]
 main:
   id: 1
-  content: "ISO duplex roller chain (ISO 606) uses two parallel strands to increase load capacity and durability. It is commonly used for transmission systems and conveyors requiring high power and stable operation. Available in various sizes and materials (e.g., alloy steel, SUS304, engineering plastic) to meet industrial needs."
+  content: |
+    ISO duplex roller chain (ISO 606) uses two parallel strands to increase load capacity and durability.
+    It is commonly used for transmission systems and conveyors that require high power, heavy loads, and stable operation.
+    Available in various sizes and materials (e.g., alloy steel, SUS304 stainless steel, engineering plastic) to meet industrial needs.
   imgCard: "@/images/products/sen-xich/xich-2-iso.avif"
   imgMain: "@/images/products/sen-xich/xich-2-iso.avif"
   imgAlt: "ISO duplex roller chain"
@@ -38,7 +41,7 @@ tableData:
       - ["Pt (mm)", "5.64", "10.24", "13.92", "16.59", "19.46"]
       - ["Q tối thiểu (kN/lb)", "7.8/1773", "16.9/3841", "32/7273", "44.5/10114", "57.8/13136"]
       - ["Q0 (kN)", "10.2", "18.7", "38.7", "56.2", "66.1"]
-      - ["Khối lượng (kg/m)", "0.33", "0.77", "1.34", "1.84", "2.31"]
+      - ["Weight (kg/m)", "0.33", "0.77", "1.34", "1.84", "2.31"]
   - feature:
       - "Thông số"
       - "16B-2R"
@@ -58,7 +61,7 @@ tableData:
       - ["Pt (mm)", "31.88", "36.45", "48.36", "59.56", "58.55"]
       - ["Q tối thiểu (kN/lb)", "106/24091", "170/38636", "280/63636", "360/81818", "450/102273"]
       - ["Q0 (kN)", "133", "211.2", "319.2", "406.8", "508.5"]
-      - ["Khối lượng (kg/m)", "5.42", "7.2", "13.4", "16.6", "21"]
+      - ["Weight (kg/m)", "5.42", "7.2", "13.4", "16.6", "21"]
   - feature:
       - "Thông số"
       - "40B-2R"
@@ -78,7 +81,7 @@ tableData:
       - ["Pt (mm)", "72.29", "91.21", "106.6", "119.89", "136.27"]
       - ["Q tối thiểu (kN/lb)", "630/143182", "1000/227272", "1600/363636", "2000/454545", "2500/568180"]
       - ["Q0 (kN)", "711.9", "1130", "1760", "2200", "2750"]
-      - ["Khối lượng (kg/m)", "32", "50", "71.48", "91", "120.4"]
+      - ["Weight (kg/m)", "32", "50", "71.48", "91", "120.4"]
 blueprints:
   first: "@/images/products/sen-xich/xich-chuan-iso-ban-ve.avif"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Double Pitch Attachment Chain"
-slug: "sen-xich-tay-ga-buoc-doi"
+slug: "double-pitch-attachment-chain"
 description: "Double pitch attachment chain for conveying and handling. Attachment design supports product holding/pushing while the double pitch suits longer center distances."
 category:
   slug: "sen-xich"
@@ -14,14 +14,15 @@ seo:
   keywords: ["double pitch attachment chain", "attachment chain", "conveyor chain", "industrial chain"]
 main:
   id: 1
-  content: "Double pitch attachment chain is designed to mount fixtures (attachments, hinges, pins, small supports) on chain links. It supports holding/pushing/clamping and product transport on conveyors, while double pitch construction is ideal for longer center distances."
+  content: |
+    Double pitch attachment chain is designed to mount fixtures (attachments, hinges, pins, small supports) on chain links. It supports holding/pushing/clamping and product transport on conveyors, while double pitch construction is ideal for longer center distances.
   imgCard: "@/images/products/sen-xich/xich-tay-ga-buoc-doi.avif"
   imgMain: "@/images/products/sen-xich/xich-tay-ga-buoc-doi.avif"
   imgAlt: "Double pitch attachment chain"
 tableData:
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "L"
       - "F"
@@ -43,7 +44,7 @@ tableData:
       - ["C2160H / C2162H", "101.60", "76.2", "38.1", "104.7", "151.6", "36.5", "13.1"]
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "L"
       - "C1"

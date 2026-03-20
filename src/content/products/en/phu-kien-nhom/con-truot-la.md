@@ -1,6 +1,6 @@
 ---
 title: "Leaf T-Nut"
-slug: "con-truot-la"
+slug: "leaf-t-nut"
 description: "Leaf-style T-nut for aluminum profiles. Elastic leaf/spring design improves retention in the slot and supports flexible assembly."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
@@ -52,5 +52,5 @@ main:
     </ul>
   imgCard: "@/images/products/phu-kien-nhom/con-truot-la.avif"
   imgMain: "@/images/products/phu-kien-nhom/con-truot-la.avif"
-  imgAlt: "Leaf T-nut"
+  imgAlt: "Con trượt lá"
 ---

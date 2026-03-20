@@ -1,6 +1,6 @@
 ---
 title: "ANSI Single Strand Roller Chain"
-slug: "xich-don-chuan-ansi"
+slug: "ansi-single-strand-roller-chain"
 description: "ANSI single strand roller chain for industrial power transmission and conveyors. High precision, strong, and available in many sizes."
 category:
   slug: "sen-xich"
@@ -14,11 +14,12 @@ seo:
   keywords: ["ANSI roller chain", "single strand roller chain", "industrial chain", "power transmission chain"]
 main:
   id: 1
-  content: "Single strand roller chain is designed to ANSI standards, ensuring consistent dimensions, high durability, and stable power transmission.
+  content: |
+    Single strand roller chain is designed to ANSI standards, ensuring consistent dimensions, high durability, and stable power transmission.
     </br></br>  
-    It is widely used in industrial mechanical drives, conveyors, agriculture, and automated production lines.
+    Đây là loại xích thông dụng nhất trong các hệ thống truyền động cơ khí công nghiệp, băng tải công nghiệp, nông nghiệp và nhiều dây chuyền sản xuất tự động.
     </br></br>  
-    Available in various sizes and materials (e.g., alloy steel, SUS304) to meet different application requirements."
+    Hiện nay, xích đơn 1 dãy ANSI có nhiều kích thước và vật liệu khác nhau: thép hợp kim Mn40, inox 304, đáp ứng đa dạng nhu cầu của từng ngành."
   imgCard: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgMain: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgAlt: "ANSI single strand roller chain"

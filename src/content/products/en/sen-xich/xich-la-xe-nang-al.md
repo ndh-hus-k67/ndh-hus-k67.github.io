@@ -1,6 +1,6 @@
 ---
 title: "Forklift Leaf Chain AL (Attachment Link)"
-slug: "xich-la-xe-nang-al"
+slug: "forklift-leaf-chain-al-attachment-link"
 description: "AL-series forklift leaf chain for mast lift systems. High tensile strength and stable lifting performance for industrial material handling."
 category:
   slug: "sen-xich"
@@ -14,7 +14,8 @@ seo:
   keywords: ["forklift leaf chain AL", "AL leaf chain", "mast lift chain", "material handling chain"]
 main:
   id: 1
-  content: "AL forklift leaf chain is designed to ANSI standards and is commonly used in forklifts and lifting equipment. It consists of multiple leaf plates connected by hardened steel pins, creating a robust structure capable of handling high tensile loads. AL chains are typically installed on forklift mast lift systems to ensure safe and stable lifting."
+  content: |
+    AL forklift leaf chain is designed to ANSI standards and is commonly used in forklifts and lifting equipment. It consists of multiple leaf plates connected by hardened steel pins, creating a robust structure capable of handling high tensile loads. AL chains are typically installed on forklift mast lift systems to ensure safe and stable lifting.
   imgCard: "@/images/products/sen-xich/xich-la-xe-nang.avif"
   imgMain: "@/images/products/sen-xich/xich-la-xe-nang.avif"
   imgAlt: "Forklift leaf chain AL"
@@ -36,7 +37,7 @@ tableData:
       - ["L (mm)", "6.80", "11.60", "8.30", "14.40", "20.50", "11.05"]
       - ["Q tối thiểu (kN)", "9.00", "18.00", "14.10", "28.20", "42.30", "22.00"]
       - ["Q0 trung bình (kN)", "10.20", "20.00", "16.90", "35.20", "52.70", "27.50"]
-      - ["Khối lượng (kg/m)", "0.23", "0.46", "0.39", "0.74", "1.13", "0.64"]
+      - ["Weight (kg/m)", "0.23", "0.46", "0.39", "0.74", "1.13", "0.64"]
   - feature:
       - "Thông số"
       - "AL534"
@@ -54,7 +55,7 @@ tableData:
       - ["L (mm)", "17.00", "19.40", "27.50", "13.00", "22.70", "32.20"]
       - ["Q tối thiểu (kN)", "33.00", "44.00", "66.00", "37.00", "63.70", "100.10"]
       - ["Q0 trung bình (kN)", "46.00", "55.00", "82.50", "44.40", "78.80", "118.60"]
-      - ["Khối lượng (kg/m)", "1.10", "1.25", "1.79", "0.86", "1.76", "2.60"]
+      - ["Weight (kg/m)", "1.10", "1.25", "1.79", "0.86", "1.76", "2.60"]
   - feature:
       - "Thông số"
       - "AL688"
@@ -72,7 +73,7 @@ tableData:
       - ["L (mm)", "42.20", "16.00", "29.40", "44.20", "19.60", "36.40"]
       - ["Q tối thiểu (kN)", "133.40", "56.70", "113.40", "170.00", "88.50", "177.00"]
       - ["Q0 trung bình (kN)", "156.60", "68.60", "135.60", "202.30", "107.10", "203.60"]
-      - ["Khối lượng (kg/m)", "3.49", "1.54", "3.00", "4.46", "2.37", "4.68"]
+      - ["Weight (kg/m)", "3.49", "1.54", "3.00", "4.46", "2.37", "4.68"]
 blueprints:
   first: "@/images/products/sen-xich/xich-la-xe-nang-ban-ve.avif"
 ---

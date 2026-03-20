@@ -1,121 +1,40 @@
 ---
-title: "Stainless Steel Welding Stud"
-slug: "bu-long-han-inox"
-description: "Stainless steel welding studs (weld bolts/threaded studs) per GB/T 902.3 (PT) or ISO 13918 (PT)."
+title: "Bu lông hàn"
+slug: "bu-long-han"
 updatedAt: 2026-01-19
-category: "bu-long"
-subcategory: "han"
+category:
+  slug: "bu-long"
+  name: "Bu lông"
 productType:
   slug: "bu-long-han"
-  name: "Weld bolts"
-filters:
-  material: ["inox-201", "inox-304", "inox-316", "inox-316l", "thep-carbon"]
-  diameter: ["M4", "M5", "M6", "M8"]
-  length_mm: []
-  surface: ["ma-kem", "ma-dong", "khong-xu-ly"]
-  application: ["han-chap", "ket-cau-thep", "dong-tau", "che-tao-may", "dien-dien-tu"]
-tags: ["bu-long-han", "vit-han", "dinh-han-co-ren", "bu-long-han-chap", "bu-long-inox-han", "welding-stud"]
+  name: "Bu lông hàn"
 seo:
-  title: "Stainless Steel Welding Stud - GB/T 902.3, ISO 13918"
-  description: "SS201/304/316/316L welding studs per GB/T 902.3 or ISO 13918. Welded directly to metal plates for strong joints in steel structures, shipbuilding, and machinery."
-  keywords: ["welding stud", "weld bolt", "threaded stud", "stainless welding stud", "stud welding"]
-variants:
-  - sku: "BLH-M6-30-INOX304"
-    name: "Welding Stud M6×30 SS304"
-    material: "inox-304"
-    diameter: "M6"
-    length_mm: 30
-  - sku: "BLH-M8-40-INOX304"
-    name: "Welding Stud M8×40 SS304"
-    material: "inox-304"
-    diameter: "M8"
-    length_mm: 40
-  - sku: "BLH-M6-35-INOX316"
-    name: "Welding Stud M6×35 SS316"
-    material: "inox-316"
-    diameter: "M6"
-    length_mm: 35
-  - sku: "BLH-M8-50-THEP"
-    name: "Welding Stud M8×50 Carbon Steel"
-    material: "thep-carbon"
-    diameter: "M8"
-    length_mm: 50
-breadcrumbs:
-  - name: "Home"
-    url: "/en"
-  - name: "Bolts"
-    url: "/en/products/bu-long"
-  - name: "Weld bolts"
-    url: "/en/products/bu-long/han"
-  - name: "Stainless Steel Welding Stud"
-    url: "/en/products/bu-long/han/bu_long_han"
-relatedCategory:
-  - slug: "luc-giac"
-    name: "Hex bolts"
-  - slug: "dai-oc"
-    name: "Nuts"
-  - slug: "neo-mong"
-    name: "Foundation anchors"
+  title: "Bu lông hàn Inox - Vít hàn/đinh hàn có ren GB/T 902.3, ISO 13918"
+  description: "Bu lông hàn inox 201/304/316/316L theo tiêu chuẩn GB/T 902.3, ISO 13918. Hàn trực tiếp lên tấm kim loại, liên kết bền chắc cho kết cấu thép, đóng tàu, chế tạo máy."
+  keywords: ["bu lông hàn", "vít hàn inox", "đinh hàn có ren", "welding stud", "bu lông hàn chập", "bu lông hàn inox 304"]
 main:
   id: 4
   content: |
-    Stainless welding studs (weld bolts/threaded studs) are welded directly to flat metal plates using specialized stud-welding equipment.
+    Bulong hàn là loại bu lông sử dụng máy hàn chuyên dụng để gắn bu lông lên các tấm kim loại mặt phẳng bằng phương pháp hàn chập hàn hồ quang. Bulong hàn có nhiều hình dạng khác nhau có loại có ren có loại không có ren, dưới đế bulong có đinh nhỏ tác dụng định vị vị trí hàn và khi hàn nhiệt nóng chảy sẽ giúp đinh tan ra bám chắc vào bề mặt tấm kim loại.
+    </br></br>
 
-    They may be threaded or unthreaded; the base often includes a locating pin to position the weld, and the molten weld creates a strong bond to the plate.
+    Bu lông hàn còn có các tên gọi khác như: Vít hàn inox, bulong hàn chập, đinh hàn có ren. Được sản xuất từ vật liệu Inox 304 hoặc thép mạ kẽm, mạ đồng, thông thường được áp dụng tiêu chuẩn GB902.3 (PT) hoặc ISO 13918 (PT) để sản xuất loại bu lông này.
   imgCard: "@/images/products/bu-long/han/bu-long-han.avif"
   imgMain: "@/images/products/bu-long/han/bu-long-han.avif"
-  imgAlt: "Stainless steel welding stud"
-
-tabs:
-  - id: "tabs-with-card-item-1"
-    dataTab: "#tabs-with-card-1"
-    title: "Description"
-  - id: "tabs-with-card-item-2"
-    dataTab: "#tabs-with-card-2"
-    title: "Specifications"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Drawings"
-
-longDescription:
-  title: "Strong Connections for Metal Structures"
-  subTitle: |
-    Stainless welding studs are widely used in construction, steel structures, shipbuilding, machinery, electrical/electronic equipment, and transportation manufacturing.
-    They are typically made to GB/T 902.3 (PT) or ISO 13918 (PT) for consistent dimensions and batch quality control.
-  btnTitle: "Contact sales for consultation"
-  btnURL: "/en/contact"
-
-descriptionList:
-  - title: "Fast installation, strong joints"
-    subTitle: "Stud welding reduces assembly steps and improves joint stability." 
-  - title: "Material options"
-    subTitle: "SS201/304/316/316L or carbon steel depending on environment." 
-  - title: "Surface finishes"
-    subTitle: "Electro-zinc, hot-dip zinc, or copper plating on request." 
-
-specificationsLeft:
-  - title: "Material"
-    subTitle: "SS201/304/316/316L, carbon steel"
-  - title: "Surface finish"
-    subTitle: "Electro-zinc, hot-dip zinc, copper plating"
-  - title: "Applications"
-    subTitle: "Steel structures, shipbuilding, machinery, electrical/electronics, automotive, elevators, medical devices, telecom"
-  - title: "Features"
-    subTitle: "Stud or arc welding to metal plates; threaded or unthreaded; locating pin"
+  imgAlt: "Bu lông hàn inox"
 
 tableData:
-  - feature: ["Parameter", "Value"]
+  - feature: ["Nominal Diameter d", "M3", "M4", "M5", "M6", "M8"]
     description:
-      - ["Name", "Stainless welding stud / weld bolt / threaded stud"]
-      - ["Manufacturing standard", "GB/T 902.3 (PT) or ISO 13918 (PT)"]
-      - ["Shank diameter", "4–8 mm"]
-      - ["Strength class", "4.6–10.9"]
-      - ["Material", "SS201/304/316/316L, SS304, carbon steel"]
-      - ["Surface finish", "Electro-zinc, hot-dip zinc, copper plating"]
-      - ["Origin", "Vietnam / China"]
-      - ["Price", "Contact us for the best quote"]
+      - ["P", "0.5", "0.7", "0.8", "1", "1.25"]
+      - ["dk", "4.5", "5.5", "6.5", "7.5", "9"]
+      - ["dp", "0.6", "0.65", "0.75", "0.75", "0.75"]
+      - ["z", "0.55", "0.55", "0.8", "0.8", "0.85"]
+      - ["h", "0.7~1.4", "0.7~1.4", "0.8~1.4", "0.8~1.4", "0.8~1.4"]
+      - ["n", "1.5", "1.5", "2", "2", "3"]
+      - ["a", "3°", "3°", "3°", "3°", "3°"]
 
 blueprints:
-  first: "@/images/blueprint-1.avif"
+  first: "@/images/products/bu-long/han/bu-long-han_ban_ve.avif"
   second: "@/images/blueprint-2.avif"
 ---

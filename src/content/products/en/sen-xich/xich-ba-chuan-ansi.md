@@ -1,6 +1,6 @@
 ---
 title: "ANSI Triplex Roller Chain"
-slug: "xich-ba-chuan-ansi"
+slug: "ansi-triplex-roller-chain"
 description: "ANSI triplex (triple strand) roller chain for heavy-duty applications. Higher capacity than duplex and single strand chains."
 category:
   slug: "sen-xich"
@@ -14,9 +14,10 @@ seo:
   keywords: ["ANSI triplex roller chain", "triple strand roller chain", "heavy duty chain", "industrial chain"]
 main:
   id: 1
-  content: "ANSI triplex roller chain (triple strand) uses three parallel strands to deliver very high power transmission. It provides excellent durability and long service life, especially suitable for heavy machinery, continuous production lines, and harsh environments.
+  content: |
+    ANSI triplex roller chain (triple strand) uses three parallel strands to deliver very high power transmission. It provides excellent durability and long service life, especially suitable for heavy machinery, continuous production lines, and harsh environments.
     </br></br>  
-    Available in multiple sizes and materials (e.g., alloy steel, SUS304, engineering plastic) to meet different industry requirements."
+    Hiện nay, xích ba dãy tiêu chuẩn ANSI có nhiều kích thước và vật liệu khác nhau: thép hợp kim Mn40, inox 304, xích nhựa công nghiệp, đáp ứng đa dạng nhu cầu của từng ngành."
   imgCard: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgMain: "@/images/products/sen-xich/xich-chuan-ansi.avif"
   imgAlt: "ANSI triplex roller chain"

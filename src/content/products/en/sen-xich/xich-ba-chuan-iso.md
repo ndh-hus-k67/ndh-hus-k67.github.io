@@ -1,6 +1,6 @@
 ---
 title: "ISO Triplex Roller Chain"
-slug: "xich-ba-chuan-iso"
+slug: "iso-triplex-roller-chain"
 description: "ISO triplex (triple strand) roller chain for heavy-duty drives. Strong construction, stable transmission, and multiple standard sizes."
 category:
   slug: "sen-xich"
@@ -14,7 +14,10 @@ seo:
   keywords: ["ISO triplex roller chain", "triple strand roller chain", "heavy duty chain", "industrial chain"]
 main:
   id: 1
-  content: "ISO triplex roller chain uses three parallel strands to provide higher power transmission capacity than single and duplex chains. It is used in heavy-duty industrial drives requiring high power, heavy loads, and continuous stability. Manufactured in various materials such as alloy steel, SUS304, or engineering plastic for different working environments."
+  content: |
+    ISO triplex roller chain uses three parallel strands to provide higher power transmission capacity than single and duplex chains. It is used in heavy-duty industrial drives requiring high power, heavy loads, and continuous stability. Manufactured in various materials such as alloy steel, SUS304, or engineering plastic for different working environments.
+    Loại xích này được ứng dụng trong các hệ thống truyền động công nghiệp nặng, nơi yêu cầu công suất lớn, tải trọng cao và độ ổn định liên tục. 
+    Hiện nay, xích ba dãy ISO được sản xuất bằng nhiều vật liệu như thép hợp kim, inox 304 hoặc nhựa kỹ thuật, phù hợp cho nhiều môi trường làm việc khác nhau."
   imgCard: "@/images/products/sen-xich/xich-2-iso.avif"
   imgMain: "@/images/products/sen-xich/xich-2-iso.avif"
   imgAlt: "ISO triplex roller chain"
@@ -38,7 +41,7 @@ tableData:
       - ["Pt (mm)", "5.64", "10.24", "13.92", "16.59", "19.46"]
       - ["Q tối thiểu (kN/lb)", "11.1/2523", "24.9/5659", "47.5/10795", "66.7/15159", "86.7/19705"]
       - ["Q0 (kN)", "13.8", "30.1", "57.8", "84.5", "101.8"]
-      - ["Khối lượng (kg/m)", "0.48", "1.16", "2.03", "2.77", "3.46"]
+      - ["Weight (kg/m)", "0.48", "1.16", "2.03", "2.77", "3.46"]
   - feature:
       - "Thông số"
       - "16B-3R"
@@ -58,7 +61,7 @@ tableData:
       - ["Pt (mm)", "31.88", "36.45", "48.36", "59.56", "58.55"]
       - ["Q tối thiểu (kN/lb)", "160/36364", "250/56818", "425/96591", "530/120454", "670/152273"]
       - ["Q0 (kN)", "203.7", "290", "493", "609.5", "770.5"]
-      - ["Khối lượng (kg/m)", "8.13", "10.82", "20.1", "24.92", "31.56"]
+      - ["Weight (kg/m)", "8.13", "10.82", "20.1", "24.92", "31.56"]
   - feature:
       - "Thông số"
       - "40B-3R"
@@ -78,7 +81,7 @@ tableData:
       - ["Pt (mm)", "72.29", "91.21", "106.6", "119.89", "136.27"]
       - ["Q tối thiểu (kN/lb)", "950/215909", "1500/340909", "2240/509090", "3000/681820", "3750/852270"]
       - ["Q0 (kN)", "1092.5", "1710", "2240", "3300", "4125"]
-      - ["Khối lượng (kg/m)", "48.1", "75", "107.18", "136", "180"]
+      - ["Weight (kg/m)", "48.1", "75", "107.18", "136", "180"]
 blueprints:
   first: "@/images/products/sen-xich/xich-chuan-iso-ban-ve.avif"
 ---

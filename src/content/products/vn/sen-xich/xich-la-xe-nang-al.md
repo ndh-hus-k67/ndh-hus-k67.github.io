@@ -1,6 +1,7 @@
 ---
 title: "Xích lá xe nâng AL"
 slug: "xich-la-xe-nang-al"
+description: "Xích lá xe nâng AL (Attachment Link) chất lượng cao cho các loại xe nâng. Độ bền vượt trội, chịu tải cao. Phù hợp cho forklift, xe nâng hàng."
 category:
   slug: "sen-xich"
   name: "Xích"

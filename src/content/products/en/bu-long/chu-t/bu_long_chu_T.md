@@ -1,7 +1,7 @@
 ---
 title: "T-Bolt"
 slug: "t-bolt"
-description: "T-bolts for aluminum profiles and framing systems."
+description: "T-bolts for aluminum profiles with high load capacity. Available in M6–M8 sizes, materials include stainless steel 304/316 and plated steel. Ideal for industrial automation."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -11,7 +11,7 @@ productType:
   name: "T-Bolt"
 seo:
   title: "T-Bolt - High-quality accessories for aluminum profiles"
-  description: "T-bolts for aluminum profiles with high load capacity. Available in M6–M8 sizes, materials include stainless steel 304/316 and plated steel. Ideal for industrial automation."
+  description: "T-bolts for aluminum profiles with high load capacity. Available in M6–M8 sizes, materials include stainless steel 304/316 and plated steel. Ideal for…"
   keywords: ["t-bolt", "aluminum profile bolt", "aluminum accessories", "stainless steel bolt", "automation bolt", "t-bolt M6", "t-bolt M8"]
 main:
   id: 1

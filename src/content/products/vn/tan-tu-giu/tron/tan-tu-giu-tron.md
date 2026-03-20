@@ -1,6 +1,7 @@
 ---
 title: "Tán tự giữ tròn"
 slug: "tan-tu-giu-tron"
+description: "Tán tự giữ tròn chất lượng cao, đa dạng vật liệu (Nhôm, Inox 304/410, Thép), size ren từ M2 đến M12 và #2-56 đến 1/2-20. Ứng dụng trong điện tử, cơ khí, tự động hóa."
 updatedAt: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -10,7 +11,7 @@ productType:
   name: "Tán tự giữ tròn"
 seo:
   title: "Tán tự giữ tròn - Giải pháp liên kết chuyên nghiệp"
-  description: "Tán tự giữ tròn chất lượng cao, đa dạng vật liệu (Nhôm, Inox 304/410, Thép), size ren từ M2 đến M12 và #2-56 đến 1/2-20. Ứng dụng trong điện tử, cơ khí, tự động hóa."
+  description: "Tán tự giữ tròn chất lượng cao, đa dạng vật liệu (Nhôm, Inox 304/410, Thép), size ren từ M2 đến M12 và #2-56 đến 1/2-20. Ứng dụng trong điện tử, cơ khí, tự…"
   keywords: ["tán tự giữ tròn", "tán tròn", "tán inox", "tán nhôm", "phụ kiện liên kết", "tán tự giữ M3", "tán tự giữ M4", "tán tự giữ M5"]
 main:
   id: 1

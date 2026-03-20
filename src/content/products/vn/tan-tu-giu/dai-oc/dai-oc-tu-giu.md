@@ -1,6 +1,7 @@
 ---
 title: "Đai ốc tự giữ"
 slug: "dai-oc-tu-giu"
+description: "Đai ốc tự giữ (nổi) cho phép điều chỉnh linh hoạt, bù sai lệch lắp đặt. Vật liệu Inox 304/410, Thép. Size ren từ M3 đến M6 và #4-40 đến 1/4-28. Ứng dụng trong robot, tự động hóa."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -10,7 +11,7 @@ productType:
   name: "Đai ốc tự giữ"
 seo:
   title: "Đai ốc tự giữ - Giải pháp bù sai lệch lắp đặt"
-  description: "Đai ốc tự giữ (nổi) cho phép điều chỉnh linh hoạt, bù sai lệch lắp đặt. Vật liệu Inox 304/410, Thép. Size ren từ M3 đến M6 và #4-40 đến 1/4-28. Ứng dụng trong robot, tự động hóa."
+  description: "Đai ốc tự giữ (nổi) cho phép điều chỉnh linh hoạt, bù sai lệch lắp đặt. Vật liệu Inox 304/410, Thép. Size ren từ M3 đến M6 và #4-40 đến 1/4-28. Ứng dụng trong…"
   keywords: ["Đai ốc tự giữ", "tán nổi", "floating rivet nut", "tán điều chỉnh", "tán tự giữ M4", "tán tự giữ M5", "bù sai số"]
 main:
   id: 1

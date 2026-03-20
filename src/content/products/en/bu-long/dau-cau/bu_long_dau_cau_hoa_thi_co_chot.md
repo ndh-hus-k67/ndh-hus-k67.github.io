@@ -1,7 +1,7 @@
 ---
 title: "Security Button Head TORX+PIN Bolt"
 slug: "security-button-head-torx-pin-bolt"
-description: "TORX+PIN anti-tamper button head bolts in SS201/304/316/316L or alloy steel."
+description: "TORX+PIN button head security bolts in SS201/304/316/316L. Anti-tamper design protects equipment and machinery."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

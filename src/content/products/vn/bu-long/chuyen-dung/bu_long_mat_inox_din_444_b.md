@@ -1,6 +1,7 @@
 ---
 title: "Bu lông mắt Inox DIN 444-B (Eyebolt)"
 slug: "bu-long-mat-inox-din-444-b"
+description: "Bu lông mắt (eyebolt) DIN 444-B inox 201/304/316/316L. Đầu vòng tròn dùng neo móc, treo nâng, cẩu kéo. Kích thước M5-M24, chống ăn mòn tốt."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

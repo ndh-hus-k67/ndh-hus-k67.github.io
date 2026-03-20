@@ -11,7 +11,7 @@ productType:
   name: "Hex bolts"
 seo:
   title: "DIN 931 Partially Threaded Hex Bolt - SS304/SS316"
-  description: "DIN 931 partially threaded hex bolts in SS201/304/316/316L or steel. Smooth shank improves alignment and shear strength. Sizes M4–M72 for structures and machinery."
+  description: "DIN 931 partially threaded hex bolts in SS201/304/316/316L or steel. Smooth shank improves alignment and shear strength. Sizes M4–M72 for structures and…"
   keywords: ["din 931", "partially threaded hex bolt", "hex bolt", "stainless 931", "partial thread bolt"]
 main:
   id: 11

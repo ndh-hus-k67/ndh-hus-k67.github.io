@@ -1,7 +1,7 @@
 ---
 title: "Round Self-Clinching Nut"
 slug: "round-self-clinching-nut"
-description: "High-quality round self-clinching nuts in multiple sizes and materials."
+description: "High-quality round self-clinching nuts in aluminum, SS304/SS410, and steel. Thread sizes M2–M12 and #2-56 to 1/2-20. Used in electronics, mechanics, and automation."
 updatedAt: 2026-01-20
 category:
   slug: "tan-tu-giu"
@@ -11,7 +11,7 @@ productType:
   name: "Round self-clinching nut"
 seo:
   title: "Round Self-Clinching Nut - Professional fastening"
-  description: "High-quality round self-clinching nuts in aluminum, SS304/SS410, and steel. Thread sizes M2–M12 and #2-56 to 1/2-20. Used in electronics, mechanics, and automation."
+  description: "High-quality round self-clinching nuts in aluminum, SS304/SS410, and steel. Thread sizes M2–M12 and #2-56 to 1/2-20. Used in electronics, mechanics, and…"
   keywords: ["round self-clinching nut", "round nut", "stainless nut", "aluminum nut", "self-clinching M3", "self-clinching M4", "self-clinching M5"]
 main:
   id: 1

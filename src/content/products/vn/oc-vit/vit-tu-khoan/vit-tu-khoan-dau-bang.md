@@ -1,6 +1,7 @@
 ---
 title: "VÍT INOX TỰ KHOAN ĐẦU BẰNG"
 slug: "vit-inox-tu-khoan-dau-bang"
+description: "Vít inox tự khoan đầu bằng dùng để liên kết kết cấu với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh bằng súng bắn vít."
 updatedAt: 2026-01-19
 category:
   slug: "oc-vit"

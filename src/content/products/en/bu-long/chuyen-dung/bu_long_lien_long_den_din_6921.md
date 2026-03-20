@@ -11,7 +11,7 @@ productType:
   name: "Specialty bolts"
 seo:
   title: "DIN 6921 Stainless Steel Flange Bolt - Anti-loosening"
-  description: "DIN 6921 flange bolts in SS201/304/316/316L. Hex head with integrated flange increases bearing area and helps prevent loosening. Sizes M5–M20 for mechanical and automotive use."
+  description: "DIN 6921 flange bolts in SS201/304/316/316L. Hex head with integrated flange increases bearing area and helps prevent loosening. Sizes M5–M20 for mechanical…"
   keywords: ["din 6921 bolt", "flange bolt", "stainless flange bolt", "hex flange bolt", "anti-loosening bolt"]
 main:
   id: 17

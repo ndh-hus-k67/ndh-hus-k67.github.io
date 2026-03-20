@@ -1,6 +1,7 @@
 ---
 title: "Bu lông nở Inox"
 slug: "bu-long-no-inox"
+description: "Bu lông nở inox 201/304/316/316L (tắc kê nở) có áo nở giãn khi siết, bám chặt nền bê tông/kim loại. Phù hợp lắp đặt thiết bị, khung giá, kết cấu."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

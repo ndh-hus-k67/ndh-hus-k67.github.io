@@ -1,6 +1,7 @@
 ---
 title: "Xích đôi chuẩn ANSI"
 slug: "xich-doi-chuan-ansi"
+description: "Xích đôi chuẩn ANSI (Duplex Chain) cho ứng dụng tải trọng nặng. Khả năng chịu lực gấp đôi xích đơn, vận hành ổn định. Đa dạng kích thước."
 category:
   slug: "sen-xich"
   name: "Xích"

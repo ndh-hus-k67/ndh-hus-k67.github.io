@@ -1,6 +1,7 @@
 ---
 title: "Tán tự giữ lục giác"
 slug: "tan-tu-giu-luc-giac"
+description: "Tán tự giữ lục giác Nut chất lượng cao, vật liệu Inox 304/410, Thép. Size ren từ M2 đến M8. Thiết kế lục giác chống xoay vượt trội."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"

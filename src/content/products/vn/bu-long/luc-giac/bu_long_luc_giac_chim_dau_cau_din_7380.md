@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox lục giác chìm đầu cầu DIN 7380"
 slug: "bu-long-inox-luc-giac-chim-dau-cau-din-7380"
+description: "Bu lông lục giác chìm đầu cầu DIN 7380 inox 201/304/316/316L. Đầu cầu bo tròn thẩm mỹ, siết bằng lục lăng. Kích thước M3-M20, phù hợp nội thất, cơ khí."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

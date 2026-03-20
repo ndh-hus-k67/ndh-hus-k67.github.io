@@ -1,6 +1,7 @@
 ---
 title: "Bu lông Inox lục giác ngoài ren suốt DIN 933"
 slug: "bu-long-luc-giac-ngoai-ren-suot-din-933"
+description: "Bu lông lục giác ngoài ren suốt DIN 933, vật liệu inox 201/304/316/316L và thép. Kích thước M3-M36, ứng dụng rộng rãi trong kết cấu và cơ khí."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

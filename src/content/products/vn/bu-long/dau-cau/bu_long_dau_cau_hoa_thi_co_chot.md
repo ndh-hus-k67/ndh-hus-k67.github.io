@@ -1,6 +1,7 @@
 ---
 title: "Bu lông đầu cầu hoa thị có chốt"
 slug: "bu-long-dau-cau-hoa-thi-co-chot"
+description: "Bu lông đầu cầu hoa thị có chốt (TORX+PIN) chống trộm, inox 201/304/316/316L. Thiết kế an toàn, ngăn tháo lắp tùy tiện, bảo vệ thiết bị và máy móc."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

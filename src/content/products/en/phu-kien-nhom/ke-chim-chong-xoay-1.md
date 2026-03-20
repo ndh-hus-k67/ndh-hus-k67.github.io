@@ -10,7 +10,7 @@ productType:
   name: "One-end anti-rotation hidden bracket"
 seo:
   title: "One-End Anti-Rotation Hidden Bracket - Flexible assembly solution"
-  description: "One-end anti-rotation hidden bracket for aluminum profiles. Prevents interference when installing end caps, with anti-rotation teeth for a secure fit. Available in steel and SUS304."
+  description: "One-end anti-rotation hidden bracket for aluminum profiles. Prevents interference when installing end caps, with anti-rotation teeth for a secure fit.…"
   keywords: ["anti-rotation hidden bracket", "one-end hidden bracket", "aluminum profile accessories", "aluminum profile bracket", "SUS304 bracket"]
 main:
   id: 1

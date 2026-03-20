@@ -1,6 +1,7 @@
 ---
 title: "Xích đơn chuẩn ISO"
 slug: "xich-don-chuan-iso"
+description: "Xích đơn chuẩn ISO (International Standard) cho máy móc công nghiệp. Chỉnh xác, bền bỉ, thích hợp cho đa số hệ thống truyền động. Nhiều kích thước sẵn có."
 category:
   slug: "sen-xich"
   name: "Xích"

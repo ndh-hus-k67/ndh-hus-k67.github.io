@@ -1,7 +1,7 @@
 ---
 title: "DIN 444-B Stainless Steel Eyebolt"
 slug: "din-444-b-stainless-steel-eyebolt"
-description: "DIN 444-B eyebolts for anchoring, lifting, and connections with a hook point."
+description: "DIN 444-B eyebolts in SS201/304/316/316L. Circular eye for lifting, anchoring, and rigging. Sizes M5–M24 with strong corrosion resistance."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

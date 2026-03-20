@@ -1,6 +1,7 @@
 ---
 title: "Tán góc phải tự giữ"
 slug: "tan-goc-phai-tu-giu"
+description: "Tán tự giữ góc vuông (Right Angle Nut) chất lượng cao, vật liệu Nhôm/Thép, size ren M3-M4. Đa dạng kích thước, phù hợp cho liên kết tại các vị trí góc."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"

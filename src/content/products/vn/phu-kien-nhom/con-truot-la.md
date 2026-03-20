@@ -1,6 +1,7 @@
 ---
 title: "Con trượt lá"
 slug: "con-truot-la"
+description: "Con trượt lá nhôm cho hệ thống profile nhôm. Thiết kế đàn hồi, lắp ráp dễ dàng. Đa dạng kích thước nhôm 30, 40, 50. Giá tốt, giao nhanh."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
   name: "Phụ kiện nhôm định hình"

@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox liền long đen DIN 6921"
 slug: "bu-long-inox-lien-long-den-din-6921"
+description: "Bu lông liền long đen DIN 6921 inox 201/304/316/316L. Đầu lục giác kèm bích liền tăng diện tích tỳ, chống lỏng. Kích thước M5-M20, phù hợp cơ khí, ô tô."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

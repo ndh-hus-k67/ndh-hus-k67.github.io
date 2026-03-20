@@ -1,7 +1,7 @@
 ---
 title: "Security Flat Head TORX+PIN Bolt"
 slug: "security-flat-head-torx-pin-bolt"
-description: "Security flat head TORX+PIN screw/bolt for anti-tamper applications."
+description: "TORX+PIN security flat head bolts in SS304/SS316 or steel. Anti-tamper design protects critical equipment and installations."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

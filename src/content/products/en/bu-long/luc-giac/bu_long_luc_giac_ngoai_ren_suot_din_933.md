@@ -1,7 +1,7 @@
 ---
 title: "DIN 933 Fully Threaded Hex Bolt"
 slug: "din-933-fully-threaded-hex-bolt"
-description: "DIN 933 fully threaded hex bolts available in SS201/304/316/316L or steel."
+description: "DIN 933 fully threaded hex bolts in SS201/304/316/316L or steel. Sizes M3–M36 for structural and mechanical assemblies."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

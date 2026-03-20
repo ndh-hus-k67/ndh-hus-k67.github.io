@@ -1,7 +1,7 @@
 ---
 title: "DIN 912 Socket Head Cap Screw"
 slug: "din-912-socket-head-cap-screw"
-description: "DIN 912 socket head cap screws tightened with a hex key; common sizes M3–M30."
+description: "DIN 912 socket head cap screws in SS201/304/316/316L and steel. Hex key tightening, sizes M3–M30. Suitable for precision mechanical assembly and automation."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

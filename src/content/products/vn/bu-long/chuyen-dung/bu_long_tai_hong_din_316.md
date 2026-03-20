@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox tai hồng (tai chuồn) DIN 316"
 slug: "bu-long-inox-tai-hong-din-316"
+description: "Bu lông tai hồng/tai chuồn DIN 316 inox 201/304/316/316L. Đầu 2 cánh vặn bằng tay, tháo lắp nhanh. Kích thước M3-M24, phù hợp thiết bị cần điều chỉnh thường xuyên."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -10,7 +11,7 @@ productType:
   name: "Bu lông chuyên dụng"
 seo:
   title: "Bu lông inox tai hồng DIN 316 - Wing bolt tháo lắp nhanh"
-  description: "Bu lông tai hồng/tai chuồn DIN 316 inox 201/304/316/316L. Đầu 2 cánh vặn bằng tay, tháo lắp nhanh. Kích thước M3-M24, phù hợp thiết bị cần điều chỉnh thường xuyên."
+  description: "Bu lông tai hồng/tai chuồn DIN 316 inox 201/304/316/316L. Đầu 2 cánh vặn bằng tay, tháo lắp nhanh. Kích thước M3-M24, phù hợp thiết bị cần điều chỉnh thường…"
   keywords: ["bu lông tai hồng", "tai chuồn din 316", "wing bolt", "bu lông cánh chuồn", "bu lông inox tai hồng"]
 main:
   id: 18

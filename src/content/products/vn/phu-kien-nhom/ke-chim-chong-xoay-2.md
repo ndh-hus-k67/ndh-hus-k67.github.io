@@ -1,6 +1,7 @@
 ---
 title: "Ke chìm chống xoay"
 slug: "ke-chim-chong-xoay"
+description: "Ke chìm chống xoay cho nhôm định hình. Hai đầu ren, kết nối chắc chắn. Răng chống xoay hiệu quả. Vật liệu thép, inox 304, 316."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
   name: "Phụ kiện nhôm định hình"

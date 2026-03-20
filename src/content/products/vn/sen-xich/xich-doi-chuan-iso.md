@@ -1,6 +1,7 @@
 ---
 title: "Xích đôi chuẩn ISO"
 slug: "xich-doi-chuan-iso"
+description: "Xích đôi chuẩn ISO (Duplex Chain ISO) cho hệ thống truyền động công suất lớn. Độ bền vượt trội, khả năng chịu tải cao. Phù hợp cho nhiều ngành công nghiệp."
 category:
   slug: "sen-xich"
   name: "Xích"

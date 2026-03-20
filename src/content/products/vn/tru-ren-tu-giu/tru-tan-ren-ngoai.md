@@ -1,6 +1,7 @@
 ---
 title: "Trụ tán ren ngoài"
 slug: "tru-tan-ren-ngoai"
+description: "Trụ ren tự giữ đầu chìm (Flush Head Studs) chất lượng cao, vật liệu Nhôm/SUS304/Thép, size ren từ M2.5-M8 và #2-56 đến 5/16-18. Đa dạng kích thước, bề mặt phẳng, liên kết chắc…"
 updatedDate: 2026-01-20
 category:
   slug: "tru-ren-tu-giu"
@@ -10,7 +11,7 @@ productType:
   name: "Trụ tán ren ngoài"
 seo:
   title: "Trụ ren tự giữ Flush Head Studs - Bề mặt phẳng, liên kết chắc chắn"
-  description: "Trụ ren tự giữ đầu chìm (Flush Head Studs) chất lượng cao, vật liệu Nhôm/SUS304/Thép, size ren từ M2.5-M8 và #2-56 đến 5/16-18. Đa dạng kích thước, bề mặt phẳng, liên kết chắc chắn."
+  description: "Trụ ren tự giữ đầu chìm (Flush Head Studs) chất lượng cao, vật liệu Nhôm/SUS304/Thép, size ren từ M2.5-M8 và #2-56 đến 5/16-18. Đa dạng kích thước, bề mặt…"
   keywords: ["trụ ren tự giữ flush head", "flush head stud", "trụ ren đầu chìm", "trụ nhôm", "trụ thép", "trụ sus304", "trụ tự giữ"]
 main:
   id: 1

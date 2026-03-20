@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox đầu tròn cổ vuông DIN 603"
 slug: "bu-long-inox-dau-tron-co-vuong-din-603"
+description: "Bu lông đầu tròn cổ vuông DIN 603 inox 201/304/316/316L. Cổ vuông chống xoay khi siết, đầu tròn an toàn. Phù hợp gỗ, xây dựng, kết cấu."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

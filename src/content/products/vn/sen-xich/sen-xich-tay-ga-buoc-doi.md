@@ -1,6 +1,7 @@
 ---
 title: "Sên xích tay gá bước đôi"
 slug: "sen-xich-tay-ga-buoc-doi"
+description: "Sên xích tay gá chất lượng cao, độ bền vượt trội cho xe tay gá các loại. Vận hành êm ái, tuổi thọ cao. Liên hệ HAHUTECH để được tư vấn và báo giá."
 category:
   slug: "sen-xich"
   name: "Sên xích"

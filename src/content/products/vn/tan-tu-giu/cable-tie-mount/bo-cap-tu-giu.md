@@ -1,6 +1,7 @@
 ---
 title: "Bó cáp tự giữ"
 slug: "bo-cap-tu-giu"
+description: "Bó cáp tự giữ chất lượng cao, vật liệu SUS304/Thép, đa dạng kích thước, phù hợp cho cố định dây cáp trong điện tử, tự động hóa, chế tạo máy."
 updatedDate: 2026-01-20
 
 category:

@@ -11,7 +11,7 @@ productType:
   name: "Specialty bolts"
 seo:
   title: "Stainless Steel Anchor Bolt - Column/Concrete Connections"
-  description: "SS201/304/316/316L anchor bolts for fixing columns and machine bases to concrete. I/L/J/U/V tails, high corrosion resistance. Ideal for steel structures and workshops."
+  description: "SS201/304/316/316L anchor bolts for fixing columns and machine bases to concrete. I/L/J/U/V tails, high corrosion resistance. Ideal for steel structures and…"
   keywords: ["anchor bolt", "stainless anchor bolt", "foundation bolt", "column base bolt", "concrete anchor bolt"]
 main:
   id: 20

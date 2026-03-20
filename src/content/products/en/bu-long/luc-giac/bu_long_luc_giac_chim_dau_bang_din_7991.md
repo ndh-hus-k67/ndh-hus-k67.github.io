@@ -11,7 +11,7 @@ productType:
   name: "Hex socket bolts"
 seo:
   title: "DIN 7991 Countersunk Socket Head Bolt - Stainless"
-  description: "DIN 7991 countersunk socket head bolts in SS201/304/316/316L. Flat, aesthetic surface; tightened with hex key. Sizes M3–M30 for mechanical and furniture applications."
+  description: "DIN 7991 countersunk socket head bolts in SS201/304/316/316L. Flat, aesthetic surface; tightened with hex key. Sizes M3–M30 for mechanical and furniture…"
   keywords: ["din 7991", "countersunk socket head", "flat head socket screw", "stainless 7991", "countersunk bolt"]
 main:
   id: 13

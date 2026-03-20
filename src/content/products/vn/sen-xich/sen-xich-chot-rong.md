@@ -1,6 +1,7 @@
 ---
 title: "Sên xích chốt rỗng"
 slug: "sen-xich-chot-rong"
+description: "Sên xích chốt rỗng chịu tải cao cho băng tải, máy móc công nghiệp. Thiết kế chốt rỗng đặc biệt, độ bền vượt trội. Giá cạnh tranh, giao hàng nhanh."
 category:
   slug: "sen-xich"
   name: "Sên xích"

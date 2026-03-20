@@ -1,6 +1,7 @@
 ---
 title: "Tán tự giữ khóa nylon"
 slug: "tan-tu-giu-khoa-nylon"
+description: "Tán tự giữ có khóa nylon chống xoay, vật liệu Thép và Inox 303, size ren từ M3 đến M5. Giải pháp lý tưởng cho ứng dụng chống rung động."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"

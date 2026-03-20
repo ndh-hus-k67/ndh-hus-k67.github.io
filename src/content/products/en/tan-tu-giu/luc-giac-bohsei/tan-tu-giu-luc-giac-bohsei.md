@@ -14,7 +14,7 @@ productType:
   name: "Hex self-clinching nut"
 seo:
   title: "Hex Self-Clinching Nut - Superior anti-rotation"
-  description: "High-quality hex self-clinching nuts for sheet metal. Hex profile provides strong resistance to spinning during tightening. Available in SUS304/SUS410 or steel, M2–M8."
+  description: "High-quality hex self-clinching nuts for sheet metal. Hex profile provides strong resistance to spinning during tightening. Available in SUS304/SUS410 or…"
   imgAlt: "Hex self-clinching nut"
   keywords: ["hex self-clinching nut","anti-rotation nut","self-clinching nut","sheet metal fastener","bohsei nut"]
 main:

@@ -14,7 +14,7 @@ productType:
   name: "Flush self-clinching nut"
 seo:
   title: "Flush Self-Clinching Nut - Perfect flush surface"
-  description: "High-quality flush self-clinching nuts for sheet metal. Stainless steel (303 / 400 series), thread sizes M2–M6. Ideal for electronics, aerospace, and medical applications."
+  description: "High-quality flush self-clinching nuts for sheet metal. Stainless steel (303 / 400 series), thread sizes M2–M6. Ideal for electronics, aerospace, and medical…"
   imgAlt: "Flush self-clinching nut"
   keywords: ["flush self-clinching nut","flush head nut","self-clinching nut","sheet metal fastener","M3 self-clinching","M4 self-clinching"]
 main:

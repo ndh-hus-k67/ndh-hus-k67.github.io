@@ -1,7 +1,7 @@
 ---
 title: "DIN 316 Stainless Steel Wing Bolt"
 slug: "din-316-stainless-steel-wing-bolt"
-description: "DIN 316 wing bolts with two wings for quick hand tightening or simple tools."
+description: "DIN 316 wing bolts in SS201/304/316/316L. Two-wing head for hand tightening and quick assembly. Sizes M3–M24 for frequently adjusted equipment."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

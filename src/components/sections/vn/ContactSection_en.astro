@@ -377,7 +377,7 @@ const redirectUrl = new URL("/en/contact", Astro.url.origin).toString();
     const form = document.querySelector('form');
     if (!form) return;
 
-    const inputs = form.querySelectorAll('input:not([type="hidden"])');
+    const inputs = form.querySelectorAll('input:not([type="hidden"]):not([name="protect_spam"])');
 
     // Validation messages in English
     const validationMessages: Record<string, string> = {

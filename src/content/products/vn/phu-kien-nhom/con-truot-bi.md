@@ -1,6 +1,7 @@
 ---
 title: "Con trượt bi"
 slug: "con-truot-bi"
+description: "Con trượt bi chính xác cao cho hệ thống tự động hóa, truyền động tuyến tính. Độ bền cao, vận hành êm ái."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
   name: "Phụ kiện nhôm định hình"

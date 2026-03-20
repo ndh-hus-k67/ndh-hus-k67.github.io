@@ -1,6 +1,139 @@
 ---
 import { languages } from "@utils//ui";
 import Icon from "./icons/Icon.astro";
+import { getCollection } from "astro:content";
+
+type TLanguage = "en" | "vn";
+
+const localizedCategorySlugMap: Record<TLanguage, Record<string, string>> = {
+  en: {
+    "lien-he": "contact",
+    "ve-chung-toi": "about-us",
+    "bai-viet": "blog",
+    "bu-long": "bolts",
+    "oc-vit": "screws",
+    "tan-tu-giu": "self-clinching-nuts",
+    "tan-tru-tu-giu": "self-clinching-standoffs",
+    "tru-ren-tu-giu": "self-clinching-studs",
+    "sen-xich": "chains",
+    "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
+  },
+  vn: {
+    contact: "lien-he",
+    "about-us": "ve-chung-toi",
+    blog: "bai-viet",
+    bolts: "bu-long",
+    screws: "oc-vit",
+    "self-clinching-nuts": "tan-tu-giu",
+    "self-clinching-standoffs": "tan-tru-tu-giu",
+    "self-clinching-studs": "tru-ren-tu-giu",
+    chains: "sen-xich",
+    "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
+  },
+};
+
+function getLangFromContentId(id: string): TLanguage | null {
+  if (id.startsWith("en/")) return "en";
+  if (id.startsWith("vn/")) return "vn";
+  return null;
+}
+
+function entrySlug(entry: any): string {
+  return entry?.data?.slug || entry?.id?.split("/").pop() || "";
+}
+
+function entryCategorySlug(entry: any): string {
+  const c = entry?.data?.category;
+  return typeof c === "string" ? c : c?.slug;
+}
+
+function buildProductPath(lang: TLanguage, categorySlug: string, productSlug: string): string {
+  const prefix = lang === "en" ? "/en" : "";
+  const categorySegment = lang === "en" ? (localizedCategorySlugMap.en[categorySlug] ?? categorySlug) : categorySlug;
+  const path = `${prefix}/${categorySegment}/${productSlug}`.replace(/\/+/g, "/");
+  return path === "" ? "/" : path;
+}
+
+function buildBlogPath(lang: TLanguage, idWithoutLang: string): string {
+  const prefix = lang === "en" ? "/en/blog" : "/bai-viet";
+  const path = `${prefix}/${idWithoutLang}`.replace(/\/+/g, "/");
+  return path === "" ? "/" : path;
+}
+
+// Build a URL translation map for product detail pages.
+// Keyed by the *actual* route paths (e.g. /en/bolts/t-bolt <-> /bu-long/bu-long-chu-t)
+const productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+try {
+  const entries = await getCollection("products");
+  const byKey = new Map<string, Partial<Record<TLanguage, { category: string; slug: string }>>>();
+
+  for (const entry of entries as any[]) {
+    const lang = getLangFromContentId(entry.id);
+    if (!lang) continue;
+
+    const key = entry.id.replace(/^(en|vn)\//, "");
+    const category = entryCategorySlug(entry);
+    const slug = entrySlug(entry);
+    if (!category || !slug) continue;
+
+    const prev = byKey.get(key) ?? {};
+    (prev as any)[lang] = { category, slug };
+    byKey.set(key, prev);
+  }
+
+  for (const pair of byKey.values()) {
+    const en = (pair as any).en as { category: string; slug: string } | undefined;
+    const vn = (pair as any).vn as { category: string; slug: string } | undefined;
+    if (!en || !vn) continue;
+
+    const enPath = buildProductPath("en", en.category, en.slug);
+    const vnPath = buildProductPath("vn", vn.category, vn.slug);
+
+    productPathMap[enPath] = { en: enPath, vn: vnPath };
+    productPathMap[vnPath] = { en: enPath, vn: vnPath };
+  }
+} catch {
+  // If content is unavailable (shouldn't happen in Astro build), fall back to segment translation.
+}
+
+// Build a URL translation map for blog detail pages.
+// Because EN/VN blog slugs may differ, we pair translations via shared cardImage.
+// Keyed by the *actual* route paths (e.g. /en/blog/foo <-> /bai-viet/bar)
+const blogPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+try {
+  const entries = await getCollection("blog");
+  const byCardImage = new Map<string, Partial<Record<TLanguage, { idWithoutLang: string }>>>();
+
+  for (const entry of entries as any[]) {
+    const lang = getLangFromContentId(entry.id);
+    if (!lang) continue;
+
+    const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
+    if (!idWithoutLang) continue;
+
+    const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
+    if (!cardImageSrc) continue;
+
+    const prev = byCardImage.get(cardImageSrc) ?? {};
+    if ((prev as any)[lang]) continue;
+    (prev as any)[lang] = { idWithoutLang };
+    byCardImage.set(cardImageSrc, prev);
+  }
+
+  for (const pair of byCardImage.values()) {
+    const en = (pair as any).en as { idWithoutLang: string } | undefined;
+    const vn = (pair as any).vn as { idWithoutLang: string } | undefined;
+    if (!en || !vn) continue;
+
+    const enPath = buildBlogPath("en", en.idWithoutLang);
+    const vnPath = buildBlogPath("vn", vn.idWithoutLang);
+
+    blogPathMap[enPath] = { en: enPath, vn: vnPath };
+    blogPathMap[vnPath] = { en: enPath, vn: vnPath };
+  }
+} catch {
+  // Fall back to segment translation if anything goes wrong.
+}
 ---
 
 <!-- Desktop: hs-dropdown (hover/click powered by Preline) -->
@@ -84,31 +217,55 @@ import Icon from "./icons/Icon.astro";
   </ul>
 </div>
 
-<script>
-  // Type alias for supported languages
-  type TLanguage = "en" | "vn";
-  // array of supported languages
-  const languages: TLanguage[] = ["en", "vn"];
+<script define:vars={{ __productPathMap: productPathMap, __blogPathMap: blogPathMap }}>
+  // Supported languages (kept in sync with language links)
+  const languages = ["en", "vn"];
 
-  const localizedSlugMap: Record<TLanguage, Record<string, string>> = {
+  // Build-time map injected from content collection.
+  // Example: { "/en/bolts/t-bolt": { en: "/en/bolts/t-bolt", vn: "/bu-long/bu-long-chu-t" }, ... }
+  const productPathMap = __productPathMap;
+  const blogPathMap = __blogPathMap;
+
+  const localizedSlugMap = {
     en: {
       "lien-he": "contact",
       "ve-chung-toi": "about-us",
       "bai-viet": "blog",
+      "bu-long": "bolts",
+      "oc-vit": "screws",
+      "tan-tu-giu": "self-clinching-nuts",
+      "tan-tru-tu-giu": "self-clinching-standoffs",
+      "tru-ren-tu-giu": "self-clinching-studs",
+      "sen-xich": "chains",
+      "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
     },
     vn: {
       contact: "lien-he",
       "about-us": "ve-chung-toi",
       blog: "bai-viet",
+      bolts: "bu-long",
+      screws: "oc-vit",
+      "self-clinching-nuts": "tan-tu-giu",
+      "self-clinching-standoffs": "tan-tru-tu-giu",
+      "self-clinching-studs": "tru-ren-tu-giu",
+      chains: "sen-xich",
+      "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
     },
   };
 
-  function detectLangFromPath(pathname: string): TLanguage {
+  function detectLangFromPath(pathname) {
     const first = pathname.split("/").filter(Boolean)[0];
     return first === "en" ? "en" : "vn";
   }
 
-  function translatePathParts(parts: string[], targetLang: TLanguage): string[] {
+  function normalizePathname(pathname) {
+    if (!pathname) return "/";
+    const normalized = pathname.replace(/\/+/g, "/");
+    if (normalized.length > 1 && normalized.endsWith("/")) return normalized.slice(0, -1);
+    return normalized;
+  }
+
+  function translatePathParts(parts, targetLang) {
     if (parts.length === 0) return parts;
     const first = parts[0];
     const mapped = localizedSlugMap[targetLang][first];
@@ -116,9 +273,9 @@ import Icon from "./icons/Icon.astro";
     return [mapped, ...parts.slice(1)];
   }
 
-  function handleLangLinkClick(link: HTMLAnchorElement) {
+  function handleLangLinkClick(link) {
     const href = link.getAttribute("href") ?? "/";
-    const lang: TLanguage = href.startsWith("/en") ? "en" : "vn";
+    const lang = href.startsWith("/en") ? "en" : "vn";
 
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -126,10 +283,27 @@ import Icon from "./icons/Icon.astro";
       const url = new URL(window.location.href);
 
       const currentLang = detectLangFromPath(url.pathname);
+      const currentPathname = normalizePathname(url.pathname);
+
+      // 1) Exact product-path mapping (fixes slug differences like t-bolt -> bu-long-chu-t)
+      const mapped = productPathMap[currentPathname]?.[lang];
+      if (mapped) {
+        const nextPath = normalizePathname(mapped);
+        window.location.href = `${url.origin}${nextPath}${url.search}`;
+        return;
+      }
+
+      // 2) Exact blog-path mapping (fixes slug differences between EN/VN posts)
+      const blogMapped = blogPathMap[currentPathname]?.[lang];
+      if (blogMapped) {
+        const nextPath = normalizePathname(blogMapped);
+        window.location.href = `${url.origin}${nextPath}${url.search}`;
+        return;
+      }
 
       const pathParts = url.pathname
         .split("/")
-        .filter((part) => part && !languages.includes(part as TLanguage));
+        .filter((part) => part && !languages.includes(part));
 
       const translatedParts =
         lang === currentLang ? pathParts : translatePathParts(pathParts, lang);
@@ -153,11 +327,11 @@ import Icon from "./icons/Icon.astro";
   document.addEventListener("DOMContentLoaded", function () {
     // Desktop dropdown links
     const desktopLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
-    desktopLinks.forEach((el) => handleLangLinkClick(el as HTMLAnchorElement));
+    desktopLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
 
     // Mobile accordion links
     const mobileLinks = document.querySelectorAll("#lang-mobile-list a");
-    mobileLinks.forEach((el) => handleLangLinkClick(el as HTMLAnchorElement));
+    mobileLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
 
     // Mobile accordion toggle
     const toggle = document.getElementById("lang-mobile-toggle");

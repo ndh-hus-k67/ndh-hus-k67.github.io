@@ -1,6 +1,7 @@
 ---
 title: "Xích lá xe nâng LL"
 slug: "xich-la-xe-nang-ll"
+description: "Xích lá xe nâng LL (Lifting Link) chuẩn công nghiệp cho xe nâng hàng. Chịu tải cao, độ bền vượt trội. Phù hợp cho forklift, xe nâng pallet."
 category:
   slug: "sen-xich"
   name: "Xích"

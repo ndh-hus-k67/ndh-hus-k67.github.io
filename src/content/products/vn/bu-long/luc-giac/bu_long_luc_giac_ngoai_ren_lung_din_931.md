@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox lục giác ngoài ren lửng DIN 931"
 slug: "bu-long-inox-luc-giac-ngoai-ren-lung-din-931"
+description: "Bu lông lục giác ngoài ren lửng DIN 931 inox 201/304/316/316L và thép. Thân trơn định vị tốt, chịu lực cắt. Kích thước M4-M72, phù hợp kết cấu, cơ khí."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -9,7 +10,7 @@ productType:
   slug: "bu-long-luc-giac"
   name: "Bu lông lục giác"
 seo:
-  title: "Bu lông lục giác ngoài ren lửng DIN 931 - Inox 304/316 chất lượng cao"
+  title: "Bu lông lục giác ngoài ren lửng DIN 931 - Inox 304/316 chất"
   description: "Bu lông lục giác ngoài ren lửng DIN 931 inox 201/304/316/316L và thép. Thân trơn định vị tốt, chịu lực cắt. Kích thước M4-M72, phù hợp kết cấu, cơ khí."
   keywords: ["bu lông din 931", "bu lông ren lửng", "bu lông lục giác ngoài", "bu lông inox 931", "hex bolt partially threaded"]
 main:

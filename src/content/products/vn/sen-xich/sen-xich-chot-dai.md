@@ -1,6 +1,7 @@
 ---
 title: "Sên xích chốt dài"
 slug: "sen-xich-chot-dai"
+description: "Sên xích chốt dài chuyên dụng cho các ứng dụng truyền động đặc thù. Độ bền cao, chống mài mòn tốt. Đa dạng kích thước theo yêu cầu."
 category:
   slug: "sen-xich"
   name: "Sên xích"

@@ -1,6 +1,7 @@
 ---
 title: "Đai ốc ép chìm"
 slug: "dai-oc-ep-chim"
+description: "Tán tự giữ đầu chìm (flush head) chất lượng cao, vật liệu Inox 303/400 Series, size ren từ M2 đến M6. Bề mặt phẳng hoàn hảo cho ứng dụng điện tử, hàng không."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"

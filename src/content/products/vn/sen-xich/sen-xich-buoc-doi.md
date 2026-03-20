@@ -1,6 +1,7 @@
 ---
 title: "Sên xích bước đôi"
 slug: "sen-xich-buoc-doi"
+description: "Sên xích bước đôi cho hệ thống truyền động tốc độ cao. Giảm rung động, vận hành êm ái, tuổi thọ cao. Phù hợp cho máy móc công nghiệp hiện đại."
 category:
   slug: "sen-xich"
   name: "Sên xích"

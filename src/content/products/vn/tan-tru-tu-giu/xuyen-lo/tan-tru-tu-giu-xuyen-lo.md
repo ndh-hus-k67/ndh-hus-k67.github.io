@@ -1,6 +1,7 @@
 ---
 title: "Tán trụ tự giữ xuyên lỗ"
 slug: "tan-tru-tu-giu-xuyen-lo"
+description: "Tán trụ tự giữ xuyên lỗ chất lượng cao, vật liệu Nhôm/SUS410/SUS303/Thép, size ren từ M3-M5 và #4-40 đến #10-32. Đa dạng kích thước, liên kết xuyên lỗ chắc chắn."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tru-tu-giu"
@@ -10,7 +11,7 @@ productType:
   name: "Tán trụ tự giữ xuyên lỗ"
 seo:
   title: "Tán trụ tự giữ xuyên lỗ - Liên kết xuyên lỗ chắc chắn"
-  description: "Tán trụ tự giữ xuyên lỗ chất lượng cao, vật liệu Nhôm/SUS410/SUS303/Thép, size ren từ M3-M5 và #4-40 đến #10-32. Đa dạng kích thước, liên kết xuyên lỗ chắc chắn."
+  description: "Tán trụ tự giữ xuyên lỗ chất lượng cao, vật liệu Nhôm/SUS410/SUS303/Thép, size ren từ M3-M5 và #4-40 đến #10-32. Đa dạng kích thước, liên kết xuyên lỗ chắc…"
   keywords: ["tán trụ tự giữ xuyên lỗ", "xuyen lo nut", "tán nhôm", "tán thép", "tán sus410", "tán sus303", "tán tự giữ"]
 main:
   id: 1

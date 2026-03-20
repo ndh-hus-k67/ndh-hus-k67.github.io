@@ -1,16 +1,16 @@
 ---
 title: "One-End Anti-Rotation Hidden Bracket"
-slug: "ke-chim-chong-xoay-mot-dau"
+slug: "one-end-anti-rotation-hidden-bracket"
 description: "One-end anti-rotation hidden bracket for aluminum profile frames. Helps avoid interference when installing end caps and provides a firm, anti-rotation connection."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
-  name: "Aluminum profile accessories"
+  name: "Aluminum Profile Accessories"
 productType:
   slug: "ke-chim-chong-xoay-1"
   name: "One-end anti-rotation hidden bracket"
 seo:
-  title: "One-End Anti-Rotation Hidden Bracket - Flexible assembly solution"
-  description: "One-end anti-rotation hidden bracket for aluminum profiles. Prevents interference when installing end caps, with anti-rotation teeth for a secure fit. Available in steel and SUS304."
+  title: "One-End Anti-Rotation Hidden Bracket - Flexible assembly"
+  description: "One-end anti-rotation hidden bracket for aluminum profiles. Prevents interference when installing end caps, with anti-rotation teeth for a secure fit.…"
   keywords: ["anti-rotation hidden bracket", "one-end hidden bracket", "aluminum profile accessories", "aluminum profile bracket", "SUS304 bracket"]
 main:
   id: 1
@@ -44,5 +44,5 @@ main:
     </ul>
   imgCard: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
   imgMain: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
-  imgAlt: "One-end anti-rotation hidden bracket"
+  imgAlt: "One-End Anti-Rotation Hidden Bracket"
 ---

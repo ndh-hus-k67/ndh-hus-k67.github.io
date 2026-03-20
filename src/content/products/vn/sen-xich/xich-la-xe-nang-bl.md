@@ -1,6 +1,7 @@
 ---
 title: "Xích lá xe nâng BL"
 slug: "xich-la-xe-nang-bl"
+description: "Xích lá xe nâng BL (Bearing Link) chính hãng, độ bền cao cho xe nâng. Thiết kế đặc biệt chịu tải nặng, vận hành êm. Phù hợp cho forklift các loại."
 category:
   slug: "sen-xich"
   name: "Xích"

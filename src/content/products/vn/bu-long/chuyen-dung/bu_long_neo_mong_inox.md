@@ -1,6 +1,7 @@
 ---
 title: "Bu lông neo móng Inox"
 slug: "bu-long-neo-mong-inox"
+description: "Bu lông neo móng inox 201/304/316/316L (anchor bolt) liên kết chân cột, đế máy với bê tông. Đuôi uốn I/L/J/U/V, chống ăn mòn. Phù hợp kết cấu thép, nhà xưởng."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

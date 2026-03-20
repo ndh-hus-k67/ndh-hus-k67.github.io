@@ -1,6 +1,7 @@
 ---
 title: "Bu lông hàn"
 slug: "bu-long-han"
+description: "Bu lông hàn inox 201/304/316/316L theo tiêu chuẩn GB/T 902.3, ISO 13918. Hàn trực tiếp lên tấm kim loại, liên kết bền chắc cho kết cấu thép, đóng tàu, chế tạo máy."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"
@@ -10,7 +11,7 @@ productType:
   name: "Bu lông hàn"
 seo:
   title: "Bu lông hàn Inox - Vít hàn/đinh hàn có ren GB/T 902.3, ISO 13918"
-  description: "Bu lông hàn inox 201/304/316/316L theo tiêu chuẩn GB/T 902.3, ISO 13918. Hàn trực tiếp lên tấm kim loại, liên kết bền chắc cho kết cấu thép, đóng tàu, chế tạo máy."
+  description: "Bu lông hàn inox 201/304/316/316L theo tiêu chuẩn GB/T 902.3, ISO 13918. Hàn trực tiếp lên tấm kim loại, liên kết bền chắc cho kết cấu thép, đóng tàu, chế tạo…"
   keywords: ["bu lông hàn", "vít hàn inox", "đinh hàn có ren", "welding stud", "bu lông hàn chập", "bu lông hàn inox 304"]
 main:
   id: 4

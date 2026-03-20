@@ -1,6 +1,7 @@
 ---
 title: "Ke chìm chống xoay một đầu"
 slug: "ke-chim-chong-xoay-mot-dau"
+description: "Ke chìm chống xoay một đầu cho nhôm định hình. Giải quyết va chạm khi lắp bịt đầu. Răng chống xoay, bám chặt vào rãnh nhôm. Vật liệu thép, inox 304."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
   name: "Phụ kiện nhôm định hình"

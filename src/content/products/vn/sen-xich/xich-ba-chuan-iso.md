@@ -1,6 +1,7 @@
 ---
 title: "Xích ba chuẩn ISO"
 slug: "xich-ba-chuan-iso"
+description: "Xích ba chuẩn ISO (Triplex Chain ISO) chịu tải cực cao cho công nghiệp nặng. Kết cấu chắc chắn, truyền động mạnh mẽ. Đa dạng kích thước, giá tốt."
 category:
   slug: "sen-xich"
   name: "Xích"

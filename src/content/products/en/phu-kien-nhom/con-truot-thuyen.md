@@ -1,10 +1,10 @@
 ---
 title: "Boat T-Nut (Diamond Nut)"
-slug: "con-truot-thuyen"
+slug: "boat-t-nut-diamond-nut"
 description: "Boat-style T-nut for aluminum profile slots. Slides smoothly in the channel for fast, flexible assembly in any position."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
-  name: "Aluminum profile accessories"
+  name: "Aluminum Profile Accessories"
 productType:
   slug: "con-truot-thuyen"
   name: "Boat T-nut"
@@ -50,5 +50,5 @@ main:
     </ul>
   imgCard: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
   imgMain: "@/images/products/phu-kien-nhom/con-truot-thuyen.avif"
-  imgAlt: "Boat T-nut"
+  imgAlt: "Boat T-Nut (Diamond Nut)"
 ---

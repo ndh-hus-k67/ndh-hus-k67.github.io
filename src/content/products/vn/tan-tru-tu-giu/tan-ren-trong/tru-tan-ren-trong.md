@@ -1,6 +1,7 @@
 ---
 title: "Trụ tán ren trong"
 slug: "tru-tan-ren-trong"
+description: "Tán trụ tự giữ bit chất lượng cao, vật liệu Nhôm/SUS410/SUS303/Thép, size ren từ M3-M5 và #4-40 đến #10-32. Đa dạng kích thước, liên kết bit chắc chắn."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tru-tu-giu"

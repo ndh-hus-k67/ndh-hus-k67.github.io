@@ -1,6 +1,7 @@
 ---
 title: "Xích ba chuẩn ANSI"
 slug: "xich-ba-chuan-ansi"
+description: "Xích ba chuẩn ANSI (Triplex Chain) cho các ứng dụng công nghiệp nặng. Khả năng chịu tải gấp 3 lần xích đơn, độ bền vượt trội. Phù hợp cho máy móc tải nặng."
 category:
   slug: "sen-xich"
   name: "Xích"

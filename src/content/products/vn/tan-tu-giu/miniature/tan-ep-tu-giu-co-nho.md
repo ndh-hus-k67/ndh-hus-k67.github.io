@@ -1,6 +1,7 @@
 ---
 title: "Tán ép tự giữ cỡ nhỏ"
 slug: "tan-ep-tu-giu-co-nho"
+description: "Tán ép tự giữ cỡ nhỏ chất lượng cao, vật liệu Inox 304, size ren từ M2 đến M6. Độ chính xác cao cho điện tử, cơ khí tinh xảo."
 updatedDate: 2026-01-20
 category:
   slug: "tan-tu-giu"

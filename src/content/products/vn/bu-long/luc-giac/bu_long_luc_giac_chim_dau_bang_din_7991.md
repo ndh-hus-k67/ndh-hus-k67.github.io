@@ -1,6 +1,7 @@
 ---
 title: "Bu lông inox lục giác chìm đầu bằng DIN 7991"
 slug: "bu-long-inox-luc-giac-chim-dau-bang-din-7991"
+description: "Bu lông lục giác chìm đầu bằng/đầu côn DIN 7991 inox 201/304/316/316L. Bề mặt phẳng thẩm mỹ, siết bằng lục lăng. Kích thước M3-M30, phù hợp cơ khí, nội thất."
 updatedAt: 2026-01-19
 category:
   slug: "bu-long"

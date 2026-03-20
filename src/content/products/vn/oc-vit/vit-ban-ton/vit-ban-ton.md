@@ -1,6 +1,7 @@
 ---
 title: "VÍT BẮN TÔN "
 slug: "vit-ban-ton-inox"
+description: "Vít bắn tôn inox (vít tự khoan) dùng để lắp ghép tôn/xà gồ khi chưa có lỗ chờ, thi công nhanh và chắc chắn."
 updatedAt: 2026-01-19
 category:
   slug: "oc-vit"

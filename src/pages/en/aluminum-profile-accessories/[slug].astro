@@ -46,7 +46,7 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
     "@graph": [
       {
         "@type": "Product",
-        "@id": `${SITE.url}/en/phu-kien-nhom-dinh-hinh/${product.data.slug}`,
+        "@id": `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
         name: product.data.title,
         description: metaDescription,
         image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
@@ -61,7 +61,7 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
         },
         offers: {
           "@type": "Offer",
-          url: `${SITE.url}/en/phu-kien-nhom-dinh-hinh/${product.data.slug}`,
+          url: `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
           seller: {
@@ -84,13 +84,13 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
             "@type": "ListItem",
             position: 2,
             name: "Aluminum Profile Accessories",
-            item: `${SITE.url}/en/phu-kien-nhom-dinh-hinh`,
+            item: `${SITE.url}/en/aluminum-profile-accessories`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: product.data.title,
-            item: `${SITE.url}/en/phu-kien-nhom-dinh-hinh/${product.data.slug}`,
+            item: `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
           },
         ],
       },
@@ -105,7 +105,7 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
         <li><span class="text-neutral-400">›</span></li>
         <li>
           <a
-            href="/en/phu-kien-nhom-dinh-hinh"
+            href="/en/aluminum-profile-accessories"
             class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400"
           >
             Aluminum Profile Accessories

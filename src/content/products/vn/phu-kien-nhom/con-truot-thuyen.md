@@ -1,6 +1,7 @@
 ---
 title: "Con trượt thuyền"
 slug: "con-truot-thuyen"
+description: "Con trượt thuyền nhôm (T-Nut) cho profile nhôm định hình. Thiết kế dạng thuyền, lắp ráp nhanh trong rãnh nhôm. Đa dạng kích thước, chất lượng cao."
 category:
   slug: "phu-kien-nhom-dinh-hinh"
   name: "Phụ kiện nhôm định hình"

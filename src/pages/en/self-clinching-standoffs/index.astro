@@ -5,12 +5,12 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Get all self-locking rivets products (English only)
+// Get all self-clinching standoffs products (English only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tu-giu";
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tru-tu-giu";
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
@@ -33,9 +33,8 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Self-Locking Rivets";
-const description = "Explore our collection of high-quality self-locking rivets — diverse types, materials and sizes, suitable for industrial and construction applications.";
-
+const title = "Self-Clinching Standoffs";
+const description = "Explore our collection of high-quality self-clinching standoffs, featuring diverse types suitable for mechanical, assembly, manufacturing and various other applications.";
 const pageTitle = `${title} | ${SITE.title}`;
 ---
 
@@ -73,13 +72,13 @@ const pageTitle = `${title} | ${SITE.title}`;
             allProducts.map(p => {
               const slug = p.data?.slug || p.id?.split('/').pop()?.replace('.md', '');
               const productTypeSlug = typeof p.data.productType === 'string' ? p.data.productType : p.data.productType?.slug || '';
-              const alias = productTypeSlug.replace(/^tan-tu-giu-/, '');
+              const alias = productTypeSlug.replace(/^tan-tru-tu-giu-/, '');
               const dataTypes = `${productTypeSlug} ${alias}`.trim();
               const titleText = p.data?.title ?? slug;
               const imgSrc = p.data?.main?.imgCard || p.data?.main?.imgMain || "@/images/product-default.avif";
               const imgAlt = p.data?.main?.imgAlt || titleText;
               return (
-                <a href={`/en/tan-tu-giu/${slug}`} data-product-type={dataTypes} class="group block product-item">
+                <a href={`/en/self-clinching-standoffs/${slug}`} data-product-type={dataTypes} class="group block product-item">
                   <div class="relative aspect-square overflow-hidden rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl">
                     <Image
                       src={imgSrc}
@@ -110,7 +109,7 @@ const pageTitle = `${title} | ${SITE.title}`;
           d="M20 13V7a2 2 0 00-2-2h-4M4 11V7a2 2 0 012-2h4M4 17v-2m16 2v-2M9 21h6" />
       </svg>
       <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-        Rivet Categories
+        Standoff Categories
       </h4>
     </div>
 
@@ -150,10 +149,9 @@ const pageTitle = `${title} | ${SITE.title}`;
 
     </div>
 
-   
   </div>
 </MainLayout>
- 
+
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-type-btn');

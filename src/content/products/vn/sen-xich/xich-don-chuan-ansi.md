@@ -1,6 +1,7 @@
 ---
 title: "Xích đơn chuẩn ANSI"
 slug: "xich-don-chuan-ansi"
+description: "Xích đơn chuẩn ANSI (American Standard) cho hệ thống truyền động công nghiệp. Độ bền cao, chính xác, đa dạng kích thước từ 25 đến 240. Giá tốt, giao nhanh."
 category:
   slug: "sen-xich"
   name: "Xích"

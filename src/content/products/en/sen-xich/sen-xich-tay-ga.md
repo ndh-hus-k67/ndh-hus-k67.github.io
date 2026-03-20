@@ -1,10 +1,10 @@
 ---
 title: "Attachment Chain"
-slug: "sen-xich-tay-ga"
+slug: "attachment-chain"
 description: "Attachment chain for conveyors. Designed to mount fixtures/attachments on chain links for holding, pushing, clamping, or transporting products."
 category:
   slug: "sen-xich"
-  name: "Industrial chains"
+  name: "Industrial Chains"
 productType:
   slug: "sen-xich-tay-ga"
   name: "Attachment chain"
@@ -14,20 +14,21 @@ seo:
   keywords: ["attachment chain", "conveyor chain", "industrial chain", "chain attachments"]
 main:
   id: 1
-  content: "Attachment chain is an industrial chain designed to mount additional fixtures (attachments, hinges, pins, small supports) on the chain links. This allows the chain not only to transmit motion but also to hold, push, clamp, or transport products directly on the conveyor."
+  content: |
+    Attachment chain is an industrial chain designed to mount additional fixtures (attachments, hinges, pins, small supports) on the chain links. This allows the chain not only to transmit motion but also to hold, push, clamp, or transport products directly on the conveyor.
   imgCard: "@/images/products/sen-xich/xich-tay-ga.avif"
   imgMain: "@/images/products/sen-xich/xich-tay-ga.avif"
   imgAlt: "Attachment chain"
 tableData:
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "F"
       - "W"
       - "T"
       - "h4"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "5.6", "13.80", "23.2", "0.80", "4.30", "3.4"]
       - ["06C-35", "9.525", "7.9", "19.00", "28.6", "1.30", "6.35", "3.4"]
@@ -52,12 +53,12 @@ tableData:
       - ["32B", "50.080", "38.1", "101.60", "142.8", "6.00", "31.75", "13.1"]
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "C"
       - "F"
       - "T"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "5.6", "7.95", "11.70", "0.80", "3.4"]
       - ["06C-35", "9.525", "7.9", "9.50", "14.55", "1.30", "3.4"]
@@ -80,14 +81,14 @@ tableData:
       - ["24B", "38.100", "36.0", "36.00", "61.50", "4.80", "10.5"]
   - feature:
       - "Model"
-      - "Bước xích (P)"
+      - "Pitch (P)"
       - "G"
       - "L"
       - "F"
       - "W"
       - "T"
       - "h4"
-      - "d4 (lỗ)"
+      - "d4 (hole)"
     description:
       - ["04C-25", "6.350", "11.41", "6.350", "13.80", "23.2", "0.80", "4.30", "3.40"]
       - ["06C-35", "9.525", "17.32", "9.525", "19.00", "28.6", "1.30", "6.35", "3.40"]

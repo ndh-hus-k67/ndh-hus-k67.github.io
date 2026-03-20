@@ -7,12 +7,12 @@ import { glob } from 'astro/loaders';
 const productsCollection = defineCollection({
   loader: glob({ 
     pattern: '**/[^_]*.md', 
-    base: new URL('./content/products/', import.meta.url),
+    base: 'src/content/products',
     // Generate unique IDs that include the language path (en/ or vn/)
-    generateId: ({ entry, base }) => {
+    generateId: ({ entry }) => {
       // entry is the relative path from base
       // Remove .md extension and use the full path as ID
-      return entry.replace(/\.md$/, '');
+      return entry.replace(/\.md$/i, '').replace(/\\/g, '/');
     }
   }),
     schema: ({ image }) => z.object({
@@ -124,7 +124,7 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/blog/', import.meta.url) }),
+  loader: glob({ pattern: '**/[^_]*.md', base: 'src/content/blog' }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),

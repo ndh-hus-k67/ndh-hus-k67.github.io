@@ -9,7 +9,7 @@ productType:
   slug: "xich-chuan-iso"
   name: "ISO standard chain"
 seo:
-  title: "ISO Single Strand Roller Chain - International standard, high durability"
+  title: "ISO Single Strand Roller Chain - International standard"
   description: "ISO 606 single strand roller chain for industrial drives and conveyors. Reliable, durable, and suitable for most transmission systems."
   keywords: ["ISO roller chain", "single strand roller chain", "industrial chain", "conveyor chain"]
 main:

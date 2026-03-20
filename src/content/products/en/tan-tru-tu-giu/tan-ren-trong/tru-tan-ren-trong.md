@@ -10,7 +10,7 @@ productType:
   slug: "tru-tan-ren-trong"
   name: "Internal thread self-clinching standoff"
 seo:
-  title: "Internal Thread Self-Clinching Standoff - Strong fastening in sheet metal"
+  title: "Internal Thread Self-Clinching Standoff - Strong fastening"
   description: "Internal-thread self-clinching standoffs for sheet metal enclosures and control boxes. Press-in installation, high durability, and reliable threads."
   keywords: ["self-clinching standoff", "internal thread standoff", "press-in standoff", "PEM standoff", "sheet metal fastener"]
 main:

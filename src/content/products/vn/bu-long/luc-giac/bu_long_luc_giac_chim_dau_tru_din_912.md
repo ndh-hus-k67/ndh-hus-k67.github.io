@@ -10,7 +10,7 @@ productType:
   slug: "bu-long-luc-giac"
   name: "Bu lông lục giác"
 seo:
-  title: "Bu lông lục giác chìm đầu trụ DIN 912 - Socket head cap screw Inox"
+  title: "Bu lông lục giác chìm đầu trụ DIN 912 - Socket head cap screw"
   description: "Bu lông lục giác chìm đầu trụ DIN 912 inox 201/304/316/316L và thép. Siết bằng lục lăng, kích thước M3-M30. Phù hợp lắp ráp cơ khí chính xác, tự động hóa."
   keywords: ["bu lông din 912", "socket head cap screw", "bu lông lục giác chìm", "bu lông đầu trụ", "bu lông inox 912"]
 main:

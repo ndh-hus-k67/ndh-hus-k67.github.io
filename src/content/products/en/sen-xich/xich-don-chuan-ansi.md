@@ -9,7 +9,7 @@ productType:
   slug: "xich-chuan-ansi"
   name: "ANSI standard chain"
 seo:
-  title: "ANSI Single Strand Roller Chain - American standard, high quality"
+  title: "ANSI Single Strand Roller Chain - American standard, high"
   description: "ANSI single strand roller chain for industrial drives and conveyors. High durability, consistent dimensions, and a wide range of sizes."
   keywords: ["ANSI roller chain", "single strand roller chain", "industrial chain", "power transmission chain"]
 main:

@@ -9,7 +9,7 @@ productType:
   slug: "xich-chuan-iso"
   name: "ISO standard chain"
 seo:
-  title: "ISO Duplex Roller Chain - Strong transmission, long service life"
+  title: "ISO Duplex Roller Chain - Strong transmission, long service"
   description: "ISO duplex roller chain for higher-load industrial transmission systems. Durable, stable, and suitable for many industries."
   keywords: ["ISO duplex roller chain", "double strand roller chain", "industrial chain", "conveyor chain"]
 main:

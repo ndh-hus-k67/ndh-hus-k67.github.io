@@ -10,7 +10,7 @@ productType:
   slug: "bu-long-chuyen-dung"
   name: "Specialty bolts"
 seo:
-  title: "Stainless Steel Expansion Bolt - Anchoring for concrete/metal"
+  title: "Stainless Steel Expansion Bolt - Anchoring for"
   description: "SS201/304/316/316L expansion bolts with expanding sleeves that grip concrete/metal. Ideal for equipment installation, frames, and structures."
   keywords: ["expansion bolt", "stainless anchor", "sleeve anchor", "expansion anchor", "SS304 expansion bolt"]
 main:

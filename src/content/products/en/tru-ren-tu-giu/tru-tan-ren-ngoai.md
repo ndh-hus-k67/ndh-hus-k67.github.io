@@ -10,7 +10,7 @@ productType:
   slug: "tru-tan-ren-ngoai"
   name: "External thread self-clinching stud"
 seo:
-  title: "External Thread Self-Clinching Stud (Flush Head) - Strong, flat-surface fastening"
+  title: "External Thread Self-Clinching Stud (Flush Head) - Strong"
   description: "High-quality external-thread self-clinching studs (flush head) in aluminum/SUS304/steel. Multiple sizes, strong fastening, flat surface after installation."
   keywords: ["external thread self-clinching stud", "flush head stud", "self-clinching stud", "sheet metal fastener", "sus304 stud", "steel stud"]
 main:

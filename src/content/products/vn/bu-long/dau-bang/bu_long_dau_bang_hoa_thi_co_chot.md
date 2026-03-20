@@ -10,7 +10,7 @@ productType:
   slug: "bu-long-dau-bang"
   name: "Bu lông đầu bằng"
 seo:
-  title: "Bu lông đầu bằng hoa thị có chốt - Vít chống trộm TORX+PIN chất lượng cao"
+  title: "Bu lông đầu bằng hoa thị có chốt - Vít chống trộm TORX+PIN chất"
   description: "Bu lông đầu bằng hoa thị có chốt (TORX+PIN) chống trộm, inox 304/316 và thép. Thiết kế đặc biệt ngăn tháo lắp tùy tiện, bảo vệ thiết bị quan trọng và công…"
   keywords: ["bu lông chống trộm", "vít chống trộm", "torx pin", "bu lông hoa thị có chốt", "vít đầu bằng chống trộm", "bu lông bảo mật"]
 main:

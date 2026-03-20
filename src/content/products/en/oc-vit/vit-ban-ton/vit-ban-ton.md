@@ -10,7 +10,7 @@ productType:
   slug: "vit-ban-ton"
   name: "Roofing screws"
 seo:
-  title: "Stainless Steel Roofing Screws - High-quality self-drilling screws"
+  title: "Stainless Steel Roofing Screws - High-quality self-drilling"
   description: "Stainless self-drilling roofing screws for fastening sheet metal to purlins without pre-drilled holes."
   keywords: ["roofing screws", "self-drilling screws", "sheet metal screws", "stainless steel screws"]
 main:

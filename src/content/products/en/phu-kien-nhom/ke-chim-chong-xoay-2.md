@@ -9,7 +9,7 @@ productType:
   slug: "ke-chim-chong-xoay"
   name: "Anti-rotation hidden bracket"
 seo:
-  title: "Anti-Rotation Hidden Bracket - Strong aluminum profile connection"
+  title: "Anti-Rotation Hidden Bracket - Strong aluminum profile"
   description: "Anti-rotation hidden bracket for aluminum profiles. Double-end threads for rigid fastening, with anti-rotation teeth for a secure fit. Available in steel and…"
   keywords: ["anti-rotation hidden bracket", "double-end hidden bracket", "aluminum profile accessories", "aluminum profile bracket", "SUS304 bracket"]
 main:

@@ -10,7 +10,7 @@ productType:
   slug: "bu-long-dau-cau"
   name: "Bu lông đầu cầu"
 seo:
-  title: "Bu lông đầu cầu hoa thị có chốt - Vít chống trộm TORX+PIN Inox 201/304/316"
+  title: "Bu lông đầu cầu hoa thị có chốt - Vít chống trộm TORX+PIN Inox"
   description: "Bu lông đầu cầu hoa thị có chốt (TORX+PIN) chống trộm, inox 201/304/316/316L. Thiết kế an toàn, ngăn tháo lắp tùy tiện, bảo vệ thiết bị và máy móc."
   keywords: ["bu lông chống trộm đầu cầu", "vít chống trộm", "torx pin button head", "bu lông hoa thị có chốt", "vít đầu cầu bảo mật", "bu lông inox chống trộm"]
 main:

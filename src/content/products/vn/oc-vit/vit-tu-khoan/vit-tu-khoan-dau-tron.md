@@ -10,7 +10,7 @@ productType:
   slug: "vit-tu-khoan"
   name: "Vít tự khoan"
 seo:
-  title: "VÍT TỰ KHOAN ĐẦU TRÒN DIN 7504 – N - Vít tự khoan chất lượng cao"
+  title: "VÍT TỰ KHOAN ĐẦU TRÒN DIN 7504 - N - Vít tự khoan chất lượng cao"
   description: "Vít tự khoan đầu tròn DIN 7504-N (vít đuôi cá) dùng để liên kết với khung thép/xà gồ khi chưa có lỗ chờ, thi công nhanh."
   keywords: ["vit tu khoan", "vit inox", "vit khoan sat", "vit khoan go"]
 main:

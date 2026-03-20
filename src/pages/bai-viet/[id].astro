@@ -106,6 +106,8 @@ const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
+  customOgImage={post.data.cardImage}
+  customOgImageAlt={post.data.cardImageAlt}
   ogType="article"
   structuredData={blogStructuredData}
 >

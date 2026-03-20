@@ -7,7 +7,7 @@ import { glob } from 'astro/loaders';
 const productsCollection = defineCollection({
   loader: glob({ 
     pattern: '**/[^_]*.md', 
-    base: 'src/content/products',
+    base: new URL('./content/products/', import.meta.url),
     // Generate unique IDs that include the language path (en/ or vn/)
     generateId: ({ entry }) => {
       // entry is the relative path from base
@@ -124,7 +124,7 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: 'src/content/blog' }),
+  loader: glob({ pattern: '**/[^_]*.md', base: new URL('./content/blog/', import.meta.url) }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),

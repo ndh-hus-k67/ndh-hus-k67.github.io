@@ -58,8 +58,8 @@ const redirectUrl = new URL("/contact", Astro.url.origin).toString();
 
             <div class="grid gap-4">
               <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <TextInput id="firstname" label="Tên" name="firstname" />
-                <TextInput id="lastname" label="Họ" name="lastname" />
+                <TextInput id="firstname" label="Tên *" name="firstname" />
+                <TextInput id="lastname" label="Họ *" name="lastname" />
               </div>
               <EmailContactInput id="email" />
               <PhoneInput id="phone" />

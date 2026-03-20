@@ -1,14 +1,14 @@
 ---
-title: "Cable Tie Mounts"
-slug: "bo-cap-giu-cable-tie-mounts"
-description: "Cable tie mounts for professional cable management. SUS304/steel with multiple sizes."
+title: "Self-locking Cable Tie Mount"
+slug: "bo-cap-tu-giu"
+description: "Self-locking cable tie mounts for neat, safe cable management in electronics, automation, and machinery."
 updatedDate: 2026-01-20
 
 category: "tan-tu-giu"
 subcategory: "cable-tie-mount"
 productType:
-  slug: "bo-cap-giu-cable-tie-mounts"
-  name: "Cable tie mounts"
+  slug: "bo-cap-tu-giu"
+  name: "Self-locking cable tie mount"
 
 filters:
   material:
@@ -58,8 +58,8 @@ breadcrumbs:
     url: "/en/products/tan-tu-giu"
   - name: "Cable Tie Mount"
     url: "/en/products/tan-tu-giu/cable-tie-mount"
-  - name: "Cable Tie Mounts"
-    url: "/en/products/tan-tu-giu/cable-tie-mount/bo-cap-giu-cable-tie-mounts"
+  - name: "Self-locking Cable Tie Mount"
+    url: "/en/products/tan-tu-giu/cable-tie-mount/bo-cap-tu-giu"
 relatedCategory:
   - slug: "tan-tu-giu"
     name: "Self-clinching nuts"

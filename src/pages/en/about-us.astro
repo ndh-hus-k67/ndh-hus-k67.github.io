@@ -9,12 +9,12 @@ import FAQ from "@components/sections/misc/FAQ.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 
 // Import necessary images
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
+import blueprints from "@images/quy-trinh-san-xuat-bulong.avif";
+import personWorking from "@images/gia-cong-kim-loai.avif";
+import beforeAfter from "@images/cong-ty-gia-cong-kim-loai-co-khi.avif";
 import constructionWorkers from "@images/construction-workers.avif";
 import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
+import usingTools from "@images/quy-trinh-gia-cong-kim-loai-tam.avif";
 import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
@@ -127,62 +127,62 @@ const partners = [
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Delivering Expert Guidance",
+    title: "Expert Product Consultation",
     subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
+      "HAHUTECH understands that choosing the right bolts and fasteners for each application is critical. Our specialists provide detailed guidance on materials (carbon steel, stainless steel, alloy steel), strength grades (4.8, 8.8, 10.9, 12.9), dimensions, and protective coatings to match technical requirements and operating environments. We support both industrial customers and distributors.",
     single: false,
     imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgOneAlt: "Specialized bolts and fasteners for industrial applications",
     imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
+    imgTwoAlt: "High-quality fasteners manufactured at HAHUTECH",
   },
   {
     isRightSection: false,
-    title: "Transforming Designs into Reality",
+    title: "Custom Bolt & Fastener Manufacturing",
     subTitle:
-      "Our team brings precision and consistency to every industrial supply project. From standard fasteners to custom technical items, HAHUTECH delivers reliable products and support to turn specifications into practical results.",
+      "With modern production lines and experienced engineers, HAHUTECH manufactures bolts, nuts, screws, self-tapping screws, rivets, and custom assembly parts according to customer drawings. We handle everything from small batches to mass production, ensuring dimensional accuracy, thread quality, and compliance with DIN, ISO, ANSI, and JIS standards. Strict quality control ensures every item meets specifications.",
     img: beforeAfter,
-    imgAlt: "Construction site before and after",
+    imgAlt: "Modern machinery and skilled technicians at HAHUTECH",
     // Removed "Learn More" button props
   },
   {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "Fast Supply & Distribution",
     subTitle:
-      "Effective project coordination is at the heart of every successful deployment. HAHUTECH supports planning, sourcing, and delivery control so your team can stay on schedule and keep materials aligned with technical requirements.",
+      "HAHUTECH maintains a large inventory of over 5,000 items—bolts, screws, nuts, and washers—ready for urgent demands. Our optimized logistics help deliver within 24–48 hours in major cities and 3–5 days nationwide. Ordering is flexible (online, phone, email), with competitive pricing for bulk and recurring customers.",
     single: false,
     imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
+    imgOneAlt: "HAHUTECH team supporting fast fulfillment",
     imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
+    imgTwoAlt: "Construction projects using quality fasteners supplied by HAHUTECH",
   },
   {
     isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
+    title: "Quality Inspection & Certification",
     subTitle:
-      "Our commitment does not end after delivery. HAHUTECH continues to support customers with responsive service, product consultation, and follow-up assistance to maintain stable long-term performance.",
+      "Every shipment is thoroughly inspected for dimensions, hardness, tensile strength, and protective coatings before release. We provide complete documentation on request, including certificates of quality (CO), certificates of origin (C/O), material test reports, and traceability records. Products comply with international standards (e.g., ISO 898-1, ASTM) and our quality management follows ISO 9001:2015.",
     img: usingTools,
     imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+      "Modern CNC machining and quality inspection at HAHUTECH",
   },
   {
     isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
+    title: "End-to-End Solutions for Enterprises",
     subTitle:
-      "For enterprise customers, HAHUTECH develops custom supply solutions tailored to specific technical and operational requirements. We work with your team to improve efficiency, control quality, and support business growth.",
+      "HAHUTECH delivers comprehensive fastener supply solutions for manufacturers and assembly businesses in automotive, electronics, shipbuilding, construction, and mechanical engineering. We support long-term supply contracts with flexible terms, VMI (Vendor Managed Inventory), and cost optimization consulting. With stable capacity and a diverse catalog, we help keep your production running smoothly.",
     single: false,
     imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
+    imgOneAlt: "Large-scale projects supported by reliable fastener supply",
     imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgTwoAlt: "Ongoing construction with quality fasteners",
     // Removed "Read more" button props
   },
 ];
 
-const pageTitle: string = `About Us | ${SITE.title}`;
+const pageTitle: string = `Services | ${SITE.title}`;
 const metaDescription =
-  "Learn about HAHUTECH, our product portfolio, and our experience supplying industrial fasteners and technical accessories.";
-const ogTitle = `About HAHUTECH | ${SITE.title}`;
+  "HAHUTECH provides end-to-end solutions for bolts and fasteners: product consultation, custom manufacturing, quality certification, and fast nationwide distribution.";
+const ogTitle = `Bolts & Fasteners Services | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -192,14 +192,14 @@ const ogTitle = `About HAHUTECH | ${SITE.title}`;
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "AboutPage",
     "@id": `${SITE.url}/en/about-us`,
     url: `${SITE.url}/en/about-us`,
-    name: `About Us | ${SITE.title}`,
+    name: `Bolts & Fasteners Services | ${SITE.title}`,
     description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: `${SITE.url}/en`,
+      url: `${SITE.url}`,
       name: SITE.title,
       description: SITE.description,
     },
@@ -208,8 +208,8 @@ const ogTitle = `About HAHUTECH | ${SITE.title}`;
 >
   {/* MainSection is the introductory section of the page, it also contains a CTA button */}
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At HAHUTECH, we provide dependable solutions and responsive service for industrial fasteners, accessories, and technical supply needs. Our team supports your project from initial consultation through delivery and after-sales assistance."
+    title="A Trusted Partner for Bolts & Fasteners"
+    subTitle="HAHUTECH supplies and manufactures high-quality bolts, screws, nuts, washers, and fastening materials for diverse industries. With years of experience and a strong commitment to quality, we deliver end-to-end solutions—from technical consultation and custom manufacturing to fast distribution—tailored to your business needs."
     btnExists={false}
   />
   {/* RightSection and LeftSection contain details about various services along with pertinent imagery.
@@ -248,8 +248,7 @@ const ogTitle = `About HAHUTECH | ${SITE.title}`;
       );
     })
   }
-  {/* FeaturesStats section showcases essential stats valuable to users */}
-  <FeaturesStats
+  <!-- <FeaturesStats
     title="HAHUTECH by Numbers"
     subTitle="HAHUTECH's reputation and quality are confirmed through real numbers. We constantly strive to become a leading supplier of bolts and fasteners, bringing the best value to customers in all industries."
     mainStatTitle="98%"
@@ -268,7 +267,7 @@ const ogTitle = `About HAHUTECH | ${SITE.title}`;
         description: "fast delivery time",
       },
     ]}
-  />
+  /> -->
 
   {/* 5-Step Work Process */}
   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">

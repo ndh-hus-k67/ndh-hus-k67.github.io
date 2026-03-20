@@ -1,8 +1,8 @@
 const navBarLinks = [
   { name: "Trang chủ", url: "/" },
-  { name: "Về chúng tôi", url: "/about-us" },
-  { name: "Bài viết", url: "/blog" },
-  { name: "Liên hệ", url: "/contact" },
+  { name: "Về chúng tôi", url: "/ve-chung-toi" },
+  { name: "Bài viết", url: "/bai-viet" },
+  { name: "Liên hệ", url: "/lien-he" },
 ];
 
 const footerLinks = [
@@ -21,9 +21,9 @@ const footerLinks = [
   {
     section: "Công ty",
     links: [
-      { name: "Về chúng tôi", url: "/about-us" },
-      { name: "Bài Viết", url: "/blog" },
-      { name: "Liên hệ", url: "/contact" },
+      { name: "Về chúng tôi", url: "/ve-chung-toi" },
+      { name: "Bài Viết", url: "/bai-viet" },
+      { name: "Liên hệ", url: "/lien-he" },
     ],
   },
 ];

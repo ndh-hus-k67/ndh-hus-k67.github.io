@@ -98,6 +98,7 @@ const breadcrumbSchemaWithContext = generateBreadcrumbSchema([
   { position: 1, name: "Home", item: SITE.url },
   { position: 2, name: "Blog", item: blogIndexUrl },
 ]);
+// Breadcrumb helper includes @context; strip it to embed into @graph
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
   breadcrumbSchemaWithContext as any;
@@ -140,7 +141,11 @@ const blogIndexStructuredData = generateGraphSchema([
   >
     {/* Blog posts grid */}
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale="en" />)}
+      {
+        otherPosts.map((blogEntry) => (
+          <CardBlog blogEntry={blogEntry} blogLocale="en" />
+        ))
+      }
     </div>
   </section>
   {/* Most recent blog post */}

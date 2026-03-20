@@ -1,7 +1,6 @@
 ---
 // Import necessary components and utilities
 import MainLayout from "@/layouts/MainLayout.astro";
-import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
@@ -39,15 +38,11 @@ if (!post) {
   throw new Error(`Blog post not found: en/${id}`);
 }
 
+// Fetch related posts
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
   ({ id }) => id.startsWith("en/")
 );
-
-// Filter out the current post to get related posts
-// Note: This is a very basic way of choosing related posts, just for the purpose of the example.
-// In a production site, you might want to implement a more robust algorithm, choosing related posts based on tags, categories, dates, authors, or keywords.
-// See example: https://blog.codybrunner.com/2024/adding-related-articles-with-astro-content-collections/
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.id !== post.id
 );
@@ -57,8 +52,13 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 const metaDescription =
   post.data.contents?.[0] || post.data.description || `Read ${post.data.title} on our blog`;
 const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
+
+const markdownHtml = post.rendered?.html ?? "";
+
+// Generate blog post URL
 const blogPostUrl = new URL(`/en/blog/${id}/`, SITE.url).href;
 
+// Generate BlogPosting schema
 const blogPostingSchemaWithContext = generateBlogPostingSchema({
   id: blogPostUrl,
   headline: post.data.title,
@@ -74,13 +74,16 @@ const blogPostingSchemaWithContext = generateBlogPostingSchema({
   publisher: {
     name: SITE.title,
     logo: {
-      url: `${SITE.url}/logo.jpg`,
+      url: `${SITE.url}/images/social.png`,
+      width: "1200",
+      height: "630",
     },
   },
   inLanguage: "en-US",
   blogSection: "Blog",
 });
 
+// Strip @context to embed into @graph
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { ["@context"]: _blogContext, ...blogPostingNode } =
   blogPostingSchemaWithContext as any;
@@ -96,8 +99,6 @@ const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
   breadcrumbSchemaWithContext as any;
 
 const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]);
-
-const markdownHtml = post.rendered?.html ?? "";
 ---
 
 <MainLayout
@@ -108,121 +109,583 @@ const markdownHtml = post.rendered?.html ?? "";
   ogType="article"
   structuredData={blogStructuredData}
 >
-  <section class="mx-auto max-w-3xl px-4 pt-6 pb-12 sm:px-6 lg:px-8 lg:pt-10">
-    <div class="max-w-2xl">
-      <div class="mb-6 flex items-center justify-between">
-        <div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">
-          <div class="grow">
-            <div class="flex items-center justify-between gap-x-2">
-              <div>
-                <ul class="text-xs text-neutral-500">
-                  <li
-                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
-                  >
-                    {formatDate(post.data.pubDate)}
-                  </li>
-                  <li
-                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
-                  >
-                    {post.data.readTime} min read
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Blog post title */}
-      <h2
-        class="mb-3 text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200"
-      >
-        {post.data.title}
-      </h2>
-      {/* Blog post contents */}
-      <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {post.data.contents?.length ? (
-          post.data.contents.map((content: string, index: number) =>
-            index === 1 ? (
-              <>
-                <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
-                  {content}
-                </p>
-                <Image
-                  class="w-full rounded-xl object-cover"
-                  src={post.data.cardImage}
-                  alt={post.data.cardImageAlt}
-                  draggable={"false"}
-                  format={"avif"}
-                />
-              </>
-            ) : (
-              <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
-                {content}
-              </p>
-            )
-          )
-        ) : (
-          <>
+  <section class="py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-(--breakpoint-xl) px-4 md:px-8">
+      <div class="grid gap-8 md:grid-cols-5 lg:gap-12">
+        <div class="md:col-span-2">
+          <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-auto">
             <Image
-              class="w-full rounded-xl object-cover"
+              class="h-full w-full object-cover object-center"
               src={post.data.cardImage}
               alt={post.data.cardImageAlt}
               draggable={"false"}
               format={"avif"}
             />
-            <div class="[&_p]:text-lg [&_p]:text-pretty [&_p]:text-neutral-700 dark:[&_p]:text-neutral-300 [&_p]:leading-relaxed [&_a]:underline">
-              <Fragment set:html={markdownHtml} />
-            </div>
-          </>
-        )}
-      </div>
-      <div
-        class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-      >
-        {/* Blog post tags */}
-        <div
-          class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
-        >
-          {
-            post.data.tags?.map((tag: string) => (
-              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300">
-                {capitalize(tag)}
-              </span>
-            ))
-          }
-        </div>
-        {/* Bookmark and Share buttons */}
-        <div class="flex items-center justify-end gap-x-1.5">
-          <Bookmark />
+          </div>
           <div
-            class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
+            id="progress-mobile"
+            class="fixed top-0 left-0 h-2 w-full bg-linear-to-r from-orange-400/30 to-orange-400 md:hidden"
           >
           </div>
-          <div class="inline-flex">
-            <SocialShare pageTitle={post.data.title} />
+          <div id="pin" class="mt-10 hidden space-y-4 md:block">
+            <div
+              class="h-px w-full overflow-hidden bg-neutral-300 dark:bg-neutral-700"
+            >
+              <div
+                id="progress"
+                class="h-px w-full bg-linear-to-r from-orange-400/30 to-orange-400"
+              >
+              </div>
+            </div>
+            <p class="text-sm text-pretty text-neutral-500">Table of contents:</p>
+            <div id="toc" class="">
+              <ul
+                class="space-y-2 text-base text-pretty text-neutral-700 transition duration-300 dark:text-neutral-400"
+              >
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 md:pt-8">
+          <div class="mb-4">
+            <a
+              href="/en/blog"
+              class="blog-back-btn"
+            >
+              <span aria-hidden="true">←</span>
+              All blog posts
+            </a>
+          </div>
+
+          <ul class="mb-6 text-xs text-neutral-500">
+            <li
+              class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
+            >
+              {formatDate(post.data.pubDate)}
+            </li>
+            <li
+              class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
+            >
+              {post.data.readTime} min read
+            </li>
+          </ul>
+
+          <h1
+            class="mb-4 text-center text-2xl font-bold text-balance text-neutral-800 sm:text-3xl md:mb-6 md:text-left dark:text-neutral-200"
+          >
+            {post.data.title}
+          </h1>
+
+          <article
+            class="markdown-rich text-lg text-pretty text-neutral-700 dark:text-neutral-300"
+          >
+            {post.data.contents?.length ? (
+              post.data.contents.map((content: string) => (
+                <p>{content}</p>
+              ))
+            ) : (
+              <div>
+                <Fragment set:html={markdownHtml} />
+              </div>
+            )}
+          </article>
+
+          <div
+            class="mt-8 mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
+          >
+            <div
+              class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
+            >
+              {
+                post.data.tags?.map((tag: string) => (
+                  <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300">
+                    {capitalize(tag)}
+                  </span>
+                ))
+              }
+            </div>
+
+            <div class="flex items-center justify-end gap-x-1.5">
+              <Bookmark />
+              <div
+                class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
+              >
+              </div>
+              <div class="inline-flex">
+                <SocialShare pageTitle={post.data.title} />
+              </div>
+            </div>
+          </div>
+
+          <PostFeedback
+            title="Was this post helpful?"
+            firstChoice="Yes"
+            secondChoice="No"
+          />
+
+          <div class="mt-8 flex justify-center md:justify-start">
+            <a
+              href="/en/blog"
+              class="blog-back-btn"
+            >
+              <span aria-hidden="true">←</span>
+              All blog posts
+            </a>
           </div>
         </div>
       </div>
-    </div>
-    <PostFeedback
-      title="Was this post helpful?"
-      firstChoice="Yes"
-      secondChoice="No"
-    />
-  </section>
-
-  {/* Related articles section */}
-  <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    <div class="mb-10 max-w-2xl">
-      <h2
-        class="text-2xl font-bold text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
-      >
-        Related articles
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-2 gap-6">
-      {relatedPosts.map((entry) => <CardRelated blogEntry={entry} recentBlogLocale="en" />)}
     </div>
   </section>
 </MainLayout>
+
+<style is:global>
+  :root {
+    --transition-cubic: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .markdown-rich {
+    --md-border: rgb(212 212 216 / 0.75);
+    --md-accent: rgb(249 115 22);
+    --md-muted-bg: rgb(245 245 245 / 0.88);
+    --md-link-highlight: rgb(255 214 170 / 0.75);
+    --md-link-text: rgb(154 52 18);
+    line-height: 1.82;
+  }
+
+  .dark .markdown-rich {
+    --md-border: rgb(63 63 70 / 0.9);
+    --md-muted-bg: rgb(39 39 42 / 0.9);
+    --md-link-highlight: rgb(249 115 22 / 0.45);
+    --md-link-text: rgb(255 237 213);
+  }
+
+  .blog-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 0.5rem;
+    background: rgb(163 163 163 / 0.3);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgb(64 64 64);
+    outline: none;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .blog-back-btn:hover {
+    background: rgb(115 115 115 / 0.35);
+    color: rgb(23 23 23);
+  }
+
+  .dark .blog-back-btn {
+    background: rgb(64 64 64 / 0.6);
+    color: rgb(212 212 212);
+  }
+
+  .dark .blog-back-btn:hover {
+    background: rgb(82 82 82 / 0.8);
+    color: rgb(245 245 245);
+  }
+
+  .markdown-rich h2,
+  .markdown-rich h3,
+  .markdown-rich h4,
+  .markdown-rich h5,
+  .markdown-rich h6 {
+    font-weight: bold;
+    margin-top: 2.4rem;
+    margin-bottom: 0.9rem;
+    scroll-margin-top: 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .markdown-rich h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .markdown-rich h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .markdown-rich h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .markdown-rich h5 {
+    font-size: 1.03rem;
+    line-height: 1.65rem;
+  }
+
+  .markdown-rich h6 {
+    font-size: 0.97rem;
+    line-height: 1.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .markdown-rich h3,
+  .markdown-rich h4,
+  .markdown-rich h5,
+  .markdown-rich h6 {
+    padding-left: 0.7rem;
+    border-left: 2px solid color-mix(in srgb, var(--md-border) 65%, transparent);
+  }
+
+  .markdown-rich h4,
+  .markdown-rich h5,
+  .markdown-rich h6 {
+    margin-left: 0.9rem;
+  }
+
+  .markdown-rich h5,
+  .markdown-rich h6 {
+    margin-left: 1.4rem;
+  }
+
+  .markdown-rich h6 {
+    margin-left: 2rem;
+  }
+
+  .markdown-rich p {
+    margin-top: 1.1rem;
+    color: inherit;
+  }
+
+  .markdown-rich ul,
+  .markdown-rich ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.4rem;
+  }
+
+  .markdown-rich ul {
+    list-style: disc;
+  }
+
+  .markdown-rich ol {
+    list-style: decimal;
+  }
+
+  .markdown-rich li {
+    margin-top: 0.45rem;
+    line-height: 1.75;
+  }
+
+  .markdown-rich li::marker {
+    color: var(--md-accent);
+    font-weight: 600;
+  }
+
+  .markdown-rich a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--md-accent) 65%, transparent);
+    transition: color 180ms ease;
+  }
+
+  .markdown-rich a:hover {
+    color: var(--md-accent);
+  }
+
+  .markdown-rich a[href^="/"],
+  .markdown-rich a[href^="#"],
+  .markdown-rich a[href^="https://hahutech.com"],
+  .markdown-rich a[href^="https://www.hahutech.com"],
+  .markdown-rich a[href^="http://hahutech.com"],
+  .markdown-rich a[href^="http://www.hahutech.com"] {
+    text-decoration: none;
+    color: var(--md-link-text);
+    font-weight: 600;
+    background-image: linear-gradient(
+      to top,
+      var(--md-link-highlight) 0.92em,
+      transparent 0.92em
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 0.2rem;
+    padding: 0 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition:
+      color 180ms ease,
+      background-image 180ms ease;
+  }
+
+  .markdown-rich a[href^="/"]:hover,
+  .markdown-rich a[href^="#"]:hover,
+  .markdown-rich a[href^="https://hahutech.com"]:hover,
+  .markdown-rich a[href^="https://www.hahutech.com"]:hover,
+  .markdown-rich a[href^="http://hahutech.com"]:hover,
+  .markdown-rich a[href^="http://www.hahutech.com"]:hover {
+    color: color-mix(in srgb, var(--md-link-text) 88%, black);
+    background-image: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--md-link-highlight) 86%, white) 1em,
+      transparent 1em
+    );
+  }
+
+  .markdown-rich blockquote {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    border-left: 4px solid var(--md-accent);
+    background: var(--md-muted-bg);
+    border-radius: 0.4rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .markdown-rich hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: var(--md-border);
+  }
+
+  .markdown-rich :not(pre) > code {
+    font-size: 0.92em;
+    background: var(--md-muted-bg);
+    border: 1px solid var(--md-border);
+    border-radius: 0.4rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .markdown-rich pre {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    border: 1px solid var(--md-border);
+    border-radius: 0.7rem;
+    padding: 0.95rem 1rem;
+    overflow-x: auto;
+    background: var(--md-muted-bg);
+  }
+
+  .markdown-rich pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .markdown-rich table {
+    width: 100%;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    border-collapse: collapse;
+    border: 1px solid var(--md-border);
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+
+  .markdown-rich th,
+  .markdown-rich td {
+    border-bottom: 1px solid var(--md-border);
+    padding: 0.7rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .markdown-rich thead th {
+    background: var(--md-muted-bg);
+    font-weight: 700;
+  }
+
+  .markdown-rich tr:last-child td {
+    border-bottom: none;
+  }
+
+  .markdown-rich img {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--md-border);
+  }
+
+  @media (max-width: 768px) {
+    .markdown-rich {
+      line-height: 1.74;
+    }
+
+    .markdown-rich h2 {
+      font-size: 1.35rem;
+      line-height: 1.9rem;
+    }
+
+    .markdown-rich h3 {
+      font-size: 1.17rem;
+      line-height: 1.68rem;
+    }
+  }
+
+  #toc li {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 300ms var(--transition-cubic);
+  }
+
+  #toc li.toc-level-h3 {
+    margin-left: 0.75rem;
+    font-size: 0.95em;
+  }
+
+  #toc li.toc-level-h4 {
+    margin-left: 1.5rem;
+    font-size: 0.9em;
+  }
+
+  #toc li.toc-level-h5 {
+    margin-left: 2.25rem;
+    font-size: 0.86em;
+  }
+
+  #toc li.toc-level-h6 {
+    margin-left: 3rem;
+    font-size: 0.82em;
+    letter-spacing: 0.01em;
+  }
+
+  #toc li.selected {
+    opacity: 1;
+  }
+
+  #toc li svg {
+    width: 0;
+    height: 0;
+    transition:
+      height 400ms var(--transition-cubic),
+      width 400ms var(--transition-cubic);
+  }
+
+  #toc li.selected svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.3rem;
+  }
+</style>
+
+<script>
+  const onScroll = (): void => {
+    const article = document.querySelector("article");
+    if (!article) return;
+
+    const articleHeight = article.offsetHeight;
+    const articleOffsetTop = article.offsetTop;
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (articleHeight && articleOffsetTop && scrollTop) {
+      const progress =
+        ((scrollTop - articleOffsetTop) /
+          (articleHeight - window.innerHeight)) *
+        100;
+
+      const progressBar = document.getElementById("progress");
+      const progressBarMobile = document.getElementById("progress-mobile");
+
+      if (progressBar && progressBarMobile) {
+        progressBar.style.width = `${progress}%`;
+        progressBarMobile.style.width = `${progress}%`;
+      }
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    window.onscroll = onScroll;
+
+    const progressBar = document.getElementById("progress");
+    const progressBarMobile = document.getElementById("progress-mobile");
+
+    if (progressBar && progressBarMobile) {
+      progressBar.style.width = "0%";
+      progressBarMobile.style.width = "0%";
+    }
+  });
+</script>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({
+    scrollTrigger: {
+      scrub: 1,
+      pin: true,
+      trigger: "#pin",
+      start: "top 20%",
+      endTrigger: "footer",
+      end: "top 80%",
+    },
+  });
+
+  const SVG_HTML_STRING =
+    '<svg class="w-0 h-0 flex-none" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fa5a15"><path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>';
+
+  function setActiveLinkById(id: string | null) {
+    const listItems = document.querySelectorAll("#toc li");
+    listItems.forEach((item) => item.classList.remove("selected"));
+
+    if (!id) return;
+
+    const activeLink = document.querySelector(`#toc a[href="#${id}"]`);
+    if (!activeLink) return;
+
+    const listItem = activeLink.parentElement;
+    listItem?.classList.add("selected");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const article: HTMLElement | null = document.querySelector("article");
+    const tocList: HTMLElement | null = document.querySelector("#toc ul");
+
+    const headings: NodeListOf<HTMLElement> | [] = article
+      ? article.querySelectorAll("h1, h2, h3, h4, h5, h6")
+      : [];
+
+    headings.forEach((heading, i) => {
+      if (heading instanceof HTMLElement) {
+        if (!heading.id) {
+          heading.id = `toc-heading-${i + 1}`;
+        }
+
+        const listItem = document.createElement("li");
+        listItem.className = "toc-level-" + heading.tagName.toLowerCase();
+
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = SVG_HTML_STRING;
+
+        const svg = tempDiv.firstChild;
+        listItem.appendChild(svg as Node);
+
+        const link = document.createElement("a");
+        link.href = "#" + heading.id;
+        link.textContent = heading.textContent;
+        listItem.appendChild(link);
+
+        tocList?.appendChild(listItem);
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 20%",
+            end: () =>
+              `bottom top+=${i === headings.length - 1 ? 0 : (headings[i + 1] as HTMLElement).getBoundingClientRect().height}`,
+            onEnter: () => setActiveLinkById(heading.id),
+            onLeaveBack: () =>
+              setActiveLinkById((headings[i - 1] as HTMLElement)?.id),
+          },
+        });
+      }
+    });
+  });
+</script>

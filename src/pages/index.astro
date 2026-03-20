@@ -98,13 +98,13 @@ const productCategories = [
     }).length
   },
   {
-    slug: "phu-kien-nhom",
+    slug: "phu-kien-nhom-dinh-hinh",
     name: "Phụ Kiện Nhôm Định Hình",
     image: phukiennhomImage,
     imageAlt: "Phụ kiện nhôm định hình chất lượng cao",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
-      return categorySlug === "phu-kien-nhom";
+      return categorySlug === "phu-kien-nhom-dinh-hinh";
     }).length
   }
 ];
@@ -167,9 +167,9 @@ const homepageStructuredData = {
     title=`Bu lông ốc vít chất lượng cao HAHU<span class="text-yellow-500 dark:text-yellow-400">TECH</span>`
     subTitle="Giải pháp liên kết cho công nghiệp và xây dựng"
     primaryBtn="Về chúng tôi"
-    primaryBtnURL="/about-us"
+    primaryBtnURL="/ve-chung-toi"
     secondaryBtn="Liên hệ"
-    secondaryBtnURL="/contact"
+    secondaryBtnURL="/lien-he"
     src={heroImage}
     alt="Sản phẩm bu lông ốc vít HAHUTECH"
   />

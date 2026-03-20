@@ -90,21 +90,51 @@ import Icon from "./icons/Icon.astro";
   // array of supported languages
   const languages: TLanguage[] = ["en", "vn"];
 
+  const localizedSlugMap: Record<TLanguage, Record<string, string>> = {
+    en: {
+      "lien-he": "contact",
+      "ve-chung-toi": "about-us",
+      "bai-viet": "blog",
+    },
+    vn: {
+      contact: "lien-he",
+      "about-us": "ve-chung-toi",
+      blog: "bai-viet",
+    },
+  };
+
+  function detectLangFromPath(pathname: string): TLanguage {
+    const first = pathname.split("/").filter(Boolean)[0];
+    return first === "en" ? "en" : "vn";
+  }
+
+  function translatePathParts(parts: string[], targetLang: TLanguage): string[] {
+    if (parts.length === 0) return parts;
+    const first = parts[0];
+    const mapped = localizedSlugMap[targetLang][first];
+    if (!mapped) return parts;
+    return [mapped, ...parts.slice(1)];
+  }
+
   function handleLangLinkClick(link: HTMLAnchorElement) {
-    const lang = link
-      .getAttribute("href")
-      ?.replace("/", "")
-      .replace("/", "") as TLanguage;
+    const href = link.getAttribute("href") ?? "/";
+    const lang: TLanguage = href.startsWith("/en") ? "en" : "vn";
 
     link.addEventListener("click", function (event) {
       event.preventDefault();
 
       const url = new URL(window.location.href);
 
-      const currentPath = url.pathname
+      const currentLang = detectLangFromPath(url.pathname);
+
+      const pathParts = url.pathname
         .split("/")
-        .filter((part) => part && !languages.includes(part as TLanguage))
-        .join("/");
+        .filter((part) => part && !languages.includes(part as TLanguage));
+
+      const translatedParts =
+        lang === currentLang ? pathParts : translatePathParts(pathParts, lang);
+
+      const currentPath = translatedParts.join("/");
 
       let newPath = "";
       if (lang && lang !== "vn") {

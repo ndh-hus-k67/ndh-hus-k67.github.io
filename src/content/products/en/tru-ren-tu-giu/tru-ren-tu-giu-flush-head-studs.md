@@ -37,9 +37,9 @@ breadcrumbs:
   - name: "Home"
     url: "/en"
   - name: "Self-clinching studs"
-    url: "/en/tru-ren-tu-giu"
+    url: "/en/self-clinching-studs"
   - name: "External thread stud"
-    url: "/en/tru-ren-tu-giu/tru-tan-ren-ngoai"
+    url: "/en/self-clinching-studs/tru-tan-ren-ngoai"
 relatedCategory:
   - slug: "tan-tu-giu"
     name: "Self-clinching nuts"

@@ -3,7 +3,6 @@ import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { OG, SEO, SITE, WEBSITE_SCHEMA } from "@data/constants";
 import faviconSvgSrc from "@images/icon.svg";
-import faviconSrc from "@images/icon.png";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -166,11 +165,49 @@ const languages = {
   en: "en",
 } as const;
 
+const localizedSlugMap = {
+  en: {
+    "lien-he": "contact",
+    "ve-chung-toi": "about-us",
+    "bai-viet": "blog",
+    "bu-long": "bolts",
+    "oc-vit": "screws",
+    "tan-tu-giu": "self-clinching-nuts",
+    "tan-tru-tu-giu": "self-clinching-standoffs",
+    "tru-ren-tu-giu": "self-clinching-studs",
+    "sen-xich": "chains",
+    "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
+  },
+  vi: {
+    contact: "lien-he",
+    "about-us": "ve-chung-toi",
+    blog: "bai-viet",
+    bolts: "bu-long",
+    screws: "oc-vit",
+    "self-clinching-nuts": "tan-tu-giu",
+    "self-clinching-standoffs": "tan-tru-tu-giu",
+    "self-clinching-studs": "tru-ren-tu-giu",
+    chains: "sen-xich",
+    "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
+  },
+} as const;
+
 const cleanPath = Astro.url.pathname.replace(/^\/en(?=\/|$)/, "") || "/";
-const englishPendingPrefixes = ["/sen-xich", "/phu-kien-nhom-dinh-hinh"];
+const englishPendingPrefixes: string[] = [];
 const skipEnglishAlternate = englishPendingPrefixes.some(
   (prefix) => cleanPath === prefix || cleanPath.startsWith(`${prefix}/`)
 );
+
+function translatePath(clean: string, targetLang: "vi" | "en"): string {
+  const parts = clean.split("/").filter(Boolean);
+  if (parts.length === 0) return clean;
+
+  const first = parts[0];
+  const mapped = localizedSlugMap[targetLang][first as keyof (typeof localizedSlugMap)[typeof targetLang]];
+  if (!mapped) return clean;
+
+  return `/${[mapped, ...parts.slice(1)].join("/")}`;
+}
 
 function createHref(prefix: string, path: string): string {
   const normalizedPath = path === "/" ? "/" : path.replace(/\/$/, "");
@@ -188,7 +225,9 @@ function createHref(prefix: string, path: string): string {
 const alternateLanguageLinks: string = Object.entries(languages)
   .filter(([language]) => !(language === "en" && skipEnglishAlternate))
   .map(([language, prefix]) => {
-    const href = createHref(prefix, cleanPath);
+    const targetLang = language === "en" ? "en" : "vi";
+    const translatedPath = translatePath(cleanPath, targetLang);
+    const href = createHref(prefix, translatedPath);
 
     return `<link rel="alternate" hreflang="${language}" href="${href}" />`;
   })
@@ -212,6 +251,7 @@ const appleTouchIcon = await getImage({
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data */}{
   structuredData && (
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />

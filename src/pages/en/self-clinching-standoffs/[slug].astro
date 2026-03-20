@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
     const normalizedId = id.replace(/\\/g, "/");
-    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "oc-vit";
+    return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tru-tu-giu";
   });
 
   return productEntries.map((product) => {
@@ -38,7 +38,7 @@ const blueprintFirstResolved = product.data.blueprints?.first
 
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Screws | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Self-clinching studs | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -50,18 +50,18 @@ const ogTitle = `${product.data.title} | Screws | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/en/oc-vit/${product.data.slug}`,
+    "@id": `${SITE.url}/en/self-clinching-standoffs/${product.data.slug}`,
     name: product.data.title,
     description: metaDescription,
     image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
-    category: "Screws",
+    category: "Self-clinching studs",
     brand: {
       "@type": "Brand",
       name: SITE.title,
     },
     offers: {
       "@type": "Offer",
-      url: `${SITE.url}/en/oc-vit/${product.data.slug}`,
+      url: `${SITE.url}/en/self-clinching-standoffs/${product.data.slug}`,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       seller: {
@@ -78,7 +78,7 @@ const ogTitle = `${product.data.title} | Screws | ${SITE.title}`;
       <ol class="flex items-center space-x-2">
         <li><a href="/en" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Home</a></li>
         <li><span class="text-neutral-400">›</span></li>
-        <li><a href="/en/oc-vit" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Screws</a></li>
+        <li><a href="/en/self-clinching-standoffs" class="text-neutral-600 hover:text-orange-500 dark:text-neutral-400">Self-clinching studs</a></li>
         <li><span class="text-neutral-400">›</span></li>
         <li class="font-medium text-orange-500 dark:text-orange-400">{product.data.title}</li>
       </ol>

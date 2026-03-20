@@ -10,7 +10,7 @@ tags: ["socket head cap screw", "button head socket screw", "countersunk socket 
 
 Socket head cap screws (hex socket, cylindrical head) are among the most reliable precision fasteners today. Thanks to the internal hex drive and a shank optimized for load, they support high tightening torque, deliver a clean aesthetic, and perform consistently in demanding environments.
 
-If you’re looking for related product groups, you can also explore: [bolts](/en/bu-long), [screws](/en/oc-vit), [self-clinching nuts](/en/tan-tu-giu), [self-clinching standoffs](/en/tan-tru-tu-giu), and [self-clinching studs](/en/tru-ren-tu-giu).
+If you’re looking for related product groups, you can also explore: [bolts](/en/bolts), [screws](/en/screws), [self-clinching nuts](/en/self-clinching-nuts), [self-clinching standoffs](/en/self-clinching-standoffs), and [self-clinching studs](/en/self-clinching-studs).
 
 ## 1. Technical basics
 

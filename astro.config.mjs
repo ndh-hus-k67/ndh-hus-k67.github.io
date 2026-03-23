@@ -5,10 +5,38 @@ import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 import mdx from "@astrojs/mdx";
 
+const SITE_ORIGIN = "https://hahutech.com.vn";
+const NON_INDEXABLE_PATHS = new Set([
+  "/404",
+  "/404/",
+  "/404.html",
+  "/robots.txt",
+  "/manifest.json",
+]);
+
+function isCanonicalSitemapUrl(page) {
+  const url = new URL(page);
+  const siteOrigin = new URL(SITE_ORIGIN).origin;
+
+  // Keep only URLs on the configured canonical origin.
+  if (url.origin !== siteOrigin) return false;
+
+  // Exclude non-indexable/special routes.
+  if (NON_INDEXABLE_PATHS.has(url.pathname)) return false;
+  if (url.pathname.startsWith("/_astro/")) return false;
+  if (url.pathname.startsWith("/sitemap")) return false;
+
+  // Canonical URLs in this project do not carry params/fragments.
+  if (url.search || url.hash) return false;
+
+  // Canonical page URLs are root or trailing-slash paths.
+  return url.pathname === "/" || url.pathname.endsWith("/");
+}
+
 // https://astro.build/config
 export default defineConfig({
   // 1. CẬP NHẬT TÊN MIỀN CỦA BẠN
-  site: "https://hahutech.com.vn",
+  site: SITE_ORIGIN,
   
   output: "static",
   
@@ -27,6 +55,7 @@ export default defineConfig({
           en: "en",
         },
       },
+      filter: isCanonicalSitemapUrl,
     }),
 
     starlight({

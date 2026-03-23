@@ -336,8 +336,35 @@ export function generateBlogPostingSchema(options: BlogPostingSchemaOptions) {
  * Generate a complete @graph with multiple schemas
  */
 export function generateGraphSchema(schemas: any[]) {
+  const graph: any[] = [];
+
+  function stripContext(node: any) {
+    if (!node || typeof node !== "object") return node;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { ["@context"]: _context, ...rest } = node as any;
+    return rest;
+  }
+
+  for (const schema of schemas) {
+    if (!schema) continue;
+
+    if (
+      typeof schema === "object" &&
+      "@graph" in schema &&
+      Array.isArray((schema as any)["@graph"])
+    ) {
+      for (const nested of (schema as any)["@graph"]) {
+        if (nested) graph.push(stripContext(nested));
+      }
+      continue;
+    }
+
+    graph.push(stripContext(schema));
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": schemas
+    "@graph": graph,
   };
 }

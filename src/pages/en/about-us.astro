@@ -18,6 +18,10 @@ import usingTools from "@images/quy-trinh-gia-cong-kim-loai-tam.avif";
 import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
+import {
+  generateBreadcrumbSchema,
+  generateGraphSchema,
+} from "@/utils/schemas";
 
 interface Article {
   isRightSection: boolean;
@@ -183,6 +187,30 @@ const pageTitle: string = `Services | ${SITE.title}`;
 const metaDescription =
   "HAHUTECH provides end-to-end solutions for bolts and fasteners: product consultation, custom manufacturing, quality certification, and fast nationwide distribution.";
 const ogTitle = `Bolts & Fasteners Services | ${SITE.title}`;
+
+const aboutUrl = new URL("/en/about-us/", SITE.url).href;
+
+const aboutPageNode = {
+  "@type": "AboutPage",
+  "@id": aboutUrl,
+  url: aboutUrl,
+  name: `Bolts & Fasteners Services | ${SITE.title}`,
+  description: metaDescription,
+  isPartOf: {
+    "@id": `${SITE.url}/#website`,
+  },
+  inLanguage: "en-US",
+};
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { position: 1, name: "Home", item: SITE.url },
+  { position: 2, name: "About us", item: aboutUrl },
+]);
+
+const structuredData = generateGraphSchema([
+  aboutPageNode,
+  breadcrumbSchema,
+]);
 ---
 
 <MainLayout
@@ -190,21 +218,7 @@ const ogTitle = `Bolts & Fasteners Services | ${SITE.title}`;
   lang="en"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "@id": `${SITE.url}/en/about-us`,
-    url: `${SITE.url}/en/about-us`,
-    name: `Bolts & Fasteners Services | ${SITE.title}`,
-    description: metaDescription,
-    isPartOf: {
-      "@type": "WebSite",
-      url: `${SITE.url}`,
-      name: SITE.title,
-      description: SITE.description,
-    },
-    inLanguage: "en-US",
-  }}
+  structuredData={structuredData}
 >
   {/* MainSection is the introductory section of the page, it also contains a CTA button */}
   <MainSection

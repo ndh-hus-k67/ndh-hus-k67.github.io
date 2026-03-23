@@ -17,6 +17,11 @@ import aerialView from "@images/aerial-view.avif";
 import usingTools from "@images/quy-trinh-gia-cong-kim-loai-tam.avif";
 import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
+import { SITE } from "@data/constants";
+import {
+  generateBreadcrumbSchema,
+  generateGraphSchema,
+} from "@/utils/schemas";
 
 interface Article {
   isRightSection: boolean;
@@ -178,27 +183,35 @@ const partners = [
     href: "#"
   }
 ];
+
+const aboutUrl = new URL("/ve-chung-toi/", SITE.url).href;
+const aboutPageNode = {
+  "@type": "AboutPage",
+  "@id": aboutUrl,
+  url: aboutUrl,
+  name: "Dịch vụ Cung cấp & Sản xuất Bu lông Ốc vít | HAHUTECH",
+  description:
+    "HAHUTECH - Đối tác tin cậy trong lĩnh vực thương mại và sản xuất bu lông, ốc vít chất lượng cao. Cung cấp giải pháp toàn diện từ tư vấn, sản xuất theo yêu cầu đến phân phối nhanh chóng cho các doanh nghiệp công nghiệp.",
+  isPartOf: {
+    "@id": `${SITE.url}/#website`,
+  },
+  inLanguage: "vi-VN",
+};
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { position: 1, name: "Trang chủ", item: SITE.url },
+  { position: 2, name: "Về chúng tôi", item: aboutUrl },
+]);
+
+const structuredData = generateGraphSchema([
+  aboutPageNode,
+  breadcrumbSchema,
+]);
 ---
 
 <MainLayout
   title="Dịch vụ | HAHUTECH"
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "@id": "https://hahutech.com.vn/ve-chung-toi",
-    url: "https://hahutech.com.vn/ve-chung-toi",
-    name: "Dịch vụ Cung cấp & Sản xuất Bu lông Ốc vít | HAHUTECH",
-    description:
-      "HAHUTECH - Đối tác tin cậy trong lĩnh vực thương mại và sản xuất bu lông, ốc vít chất lượng cao. Cung cấp giải pháp toàn diện từ tư vấn, sản xuất theo yêu cầu đến phân phối nhanh chóng cho các doanh nghiệp công nghiệp.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://hahutech.com.vn",
-      name: "HAHUTECH",
-      description:
-        "HAHUTECH chuyên cung cấp và sản xuất bu lông, ốc vít, vật tư lắp ráp chất lượng cao phục vụ đa ngành công nghiệp.",
-    },
-    inLanguage: "vi-VN",
-  }}
+  structuredData={structuredData}
 >
   {/* MainSection is the introductory section of the page, it also contains a CTA button */}
   <MainSection

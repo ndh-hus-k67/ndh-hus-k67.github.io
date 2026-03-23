@@ -1,8 +1,18 @@
 ---
 import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
-import { OG, SEO, SITE, WEBSITE_SCHEMA } from "@data/constants";
+import {
+  LOCAL_BUSINESS_SCHEMA,
+  OG,
+  ORGANIZATION_SCHEMA,
+  PLACE_SCHEMA,
+  PRODUCT_OFFER_CATALOG_SCHEMA,
+  SEO,
+  SITE,
+  WEBSITE_SCHEMA,
+} from "@data/constants";
 import faviconSvgSrc from "@images/icon.svg";
+import { generateGraphSchema } from "@/utils/schemas";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -245,15 +255,56 @@ const appleTouchIcon = await getImage({
   height: 180,
   format: "png",
 });
+
+function stripContext(node: any) {
+  if (!node || typeof node !== "object") return node;
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { ["@context"]: _context, ...rest } = node as any;
+  return rest;
+}
+
+function extractGraphNodes(data: any): any[] {
+  if (!data) return [];
+
+  if (typeof data === "object" && "@graph" in data && Array.isArray((data as any)["@graph"])) {
+    return (data as any)["@graph"].filter(Boolean).map(stripContext);
+  }
+
+  return [stripContext(data)];
+}
+
+function nodeKey(node: any): string {
+  if (!node || typeof node !== "object") return String(node);
+  if (typeof node["@id"] === "string" && node["@id"].trim()) return `@id:${node["@id"]}`;
+  if (typeof node.url === "string" && node.url.trim()) return `url:${node["@type"] || ""}:${node.url}`;
+  if (typeof node.name === "string" && node.name.trim()) return `name:${node["@type"] || ""}:${node.name}`;
+  return `json:${JSON.stringify(node)}`;
+}
+
+const baselineNodes = [
+  WEBSITE_SCHEMA,
+  ORGANIZATION_SCHEMA,
+  LOCAL_BUSINESS_SCHEMA,
+  PLACE_SCHEMA,
+  PRODUCT_OFFER_CATALOG_SCHEMA,
+].map(stripContext);
+
+const pageNodes = extractGraphNodes(structuredData);
+const merged = new Map<string, any>();
+for (const node of baselineNodes) merged.set(nodeKey(node), node);
+for (const node of pageNodes) merged.set(nodeKey(node), node);
+
+const finalStructuredData = generateGraphSchema(Array.from(merged.values()));
 ---
 
 {/*  Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data */}{
-  structuredData && (
+  finalStructuredData && (
     <script
       is:inline
       type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
+      set:html={JSON.stringify(finalStructuredData)}
     />
   )
 }

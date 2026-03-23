@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Get all self-locking rivets products (English only)
+// Get all self-clinching nuts products (English only)
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id, data }) => {
     const categorySlug = typeof data.category === 'string' ? data.category : data.category?.slug;
@@ -33,8 +33,8 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Self-Locking Rivets";
-const description = "Explore our collection of high-quality self-locking rivets — diverse types, materials and sizes, suitable for industrial and construction applications.";
+const title = "Self-Clinching Nuts";
+const description = "Explore our collection of high-quality self-clinching nuts — diverse types, materials and sizes, suitable for industrial and construction applications.";
 
 const pageTitle = `${title} | ${SITE.title}`;
 ---

@@ -48,7 +48,7 @@ const tableData = product.data.tableData ?? [];
 const shouldInterleaveBlueprints = blueprintsResolved.length >= 2 && tableData.length > 0;
 const interleavedItemCount = Math.max(blueprintsResolved.length, tableData.length);
 
-const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
+const pageTitle: string = product.data.seo?.title || `${product.data.title} | Industrial Chains | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Industrial Chains | ${SITE.title}`;
 ---

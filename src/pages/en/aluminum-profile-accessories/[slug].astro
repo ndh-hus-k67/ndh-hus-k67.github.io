@@ -30,7 +30,7 @@ const blueprintFirstResolved = product.data.blueprints?.first
   ? await resolveLocalImageOrFallback(product.data.blueprints.first, "@/images/blueprint-1.avif")
   : undefined;
 
-const pageTitle: string = product.data.seo?.title || `${product.data.title} | ${SITE.title}`;
+const pageTitle: string = product.data.seo?.title || `${product.data.title} | Aluminum Profile Accessories | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.title}`;
 ---

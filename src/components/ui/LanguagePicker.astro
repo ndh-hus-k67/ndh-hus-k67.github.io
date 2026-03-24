@@ -93,6 +93,9 @@ const isEnBlogDetail = parts.length >= 3 && parts[0] === "en" && parts[1] === "b
 
 const needsExactMaps = isVnProductDetail || isVnBlogDetail || isEnProductDetail || isEnBlogDetail;
 
+const pickerId = `lang-${Math.random().toString(36).slice(2, 9)}`;
+const desktopMenuId = `${pickerId}-desktop-menu`;
+
 // Build a URL translation map for product detail pages.
 // Keyed by the *actual* route paths (e.g. /en/bolts/t-bolt <-> /bu-long/bu-long-chu-t)
 let productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
@@ -175,18 +178,21 @@ if (needsExactMaps) {
 }
 ---
 
-<!-- Desktop: hs-dropdown (hover/click powered by Preline) -->
-<div class="hs-dropdown relative hidden md:inline-flex">
+<!-- Desktop dropdown (independent of Preline; fixes flaky first-interaction when Preline is lazy-loaded) -->
+<div class="relative hidden md:inline-flex" data-language-picker>
   <button
-    id="hs-dropdown-default"
     type="button"
+    data-lang-desktop-toggle
+    aria-controls={desktopMenuId}
+    aria-expanded="false"
     aria-label="Change language"
     title="Change language"
-    class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg px-1.5 py-1.5 text-sm font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-orange-300 dark:focus:outline-hidden"
+    class="inline-flex items-center gap-x-2 rounded-lg px-2 py-2 text-sm font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-orange-300 dark:focus:outline-hidden"
   >
     <Icon name="earth" />
     <svg
-      class="size-4 hs-dropdown-open:rotate-180"
+      data-lang-desktop-arrow
+      class="size-4 transition-transform"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -199,13 +205,16 @@ if (needsExactMaps) {
   </button>
 
   <div
-    class="hs-dropdown-menu duration left-[20%]! top-[98%]! mt-2 hidden transform-none! rounded-lg bg-neutral-50 p-2 opacity-0 shadow-md transition-[opacity,margin] before:absolute before:-top-4 before:start-0 before:h-4 before:w-full after:absolute after:-bottom-4 after:start-0 after:h-4 after:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800 md:left-[90%]! md:top-[80%]!"
-    aria-labelledby="hs-dropdown-hover-event"
+    id={desktopMenuId}
+    data-lang-desktop-menu
+    class="absolute right-0 top-full z-50 mt-2 hidden min-w-28 rounded-lg border border-neutral-200 bg-white p-1 opacity-0 shadow-sm transition-[opacity,margin] dark:border-neutral-700 dark:bg-neutral-800"
   >
     {
       Object.entries(languages).map(([lang, label]) => (
         <a
-          class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-hidden dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+          class="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-hidden dark:text-neutral-200 dark:hover:bg-neutral-700 dark:hover:text-neutral-100 dark:focus:bg-neutral-700"
+          data-lang-link
+          data-lang={lang}
           href={`/${lang === "vn" ? "" : lang}`}
         >
           {label}
@@ -216,15 +225,15 @@ if (needsExactMaps) {
 </div>
 
 <!-- Mobile: accordion (same style as products dropdown) -->
-<div class="md:hidden">
+<div class="md:hidden" data-language-picker>
   <button
     type="button"
-    id="lang-mobile-toggle"
+    data-lang-mobile-toggle
     class="flex items-center gap-x-1 font-medium text-neutral-600 outline-none transition duration-300 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
   >
     <Icon name="earth" />
     <svg
-      id="lang-mobile-arrow"
+      data-lang-mobile-arrow
       class="h-4 w-4 shrink-0 transition-transform duration-200"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -240,12 +249,14 @@ if (needsExactMaps) {
     </svg>
   </button>
 
-  <ul id="lang-mobile-list" class="hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
+  <ul data-lang-mobile-list class="hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
     {
       Object.entries(languages).map(([lang, label]) => (
         <li>
           <a
             href={`/${lang === "vn" ? "" : lang}`}
+            data-lang-link
+            data-lang={lang}
             class="block py-2 text-sm text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
           >
             {label}
@@ -315,82 +326,142 @@ if (needsExactMaps) {
 
   function handleLangLinkClick(link) {
     const href = link.getAttribute("href") ?? "/";
-    const lang = href.startsWith("/en") ? "en" : "vn";
+    const rawLang = (link.dataset && link.dataset.lang) || (href.startsWith("/en") ? "en" : "vn");
+    const lang = rawLang === "en" ? "en" : "vn";
 
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
+    const url = new URL(window.location.href);
 
-      const url = new URL(window.location.href);
+    const currentLang = detectLangFromPath(url.pathname);
+    const currentPathname = normalizePathname(url.pathname);
 
-      const currentLang = detectLangFromPath(url.pathname);
-      const currentPathname = normalizePathname(url.pathname);
+    // 1) Exact product-path mapping (fixes slug differences like t-bolt -> bu-long-chu-t)
+    const mapped = productPathMap?.[currentPathname]?.[lang];
+    if (mapped) {
+      const nextPath = normalizePathname(mapped);
+      window.location.href = `${url.origin}${nextPath}${url.search}`;
+      return;
+    }
 
-      // 1) Exact product-path mapping (fixes slug differences like t-bolt -> bu-long-chu-t)
-      const mapped = productPathMap[currentPathname]?.[lang];
-      if (mapped) {
-        const nextPath = normalizePathname(mapped);
-        window.location.href = `${url.origin}${nextPath}${url.search}`;
-        return;
-      }
+    // 2) Exact blog-path mapping (fixes slug differences between EN/VN posts)
+    const blogMapped = blogPathMap?.[currentPathname]?.[lang];
+    if (blogMapped) {
+      const nextPath = normalizePathname(blogMapped);
+      window.location.href = `${url.origin}${nextPath}${url.search}`;
+      return;
+    }
 
-      // 2) Exact blog-path mapping (fixes slug differences between EN/VN posts)
-      const blogMapped = blogPathMap[currentPathname]?.[lang];
-      if (blogMapped) {
-        const nextPath = normalizePathname(blogMapped);
-        window.location.href = `${url.origin}${nextPath}${url.search}`;
-        return;
-      }
+    const pathParts = url.pathname
+      .split("/")
+      .filter((part) => part && !languages.includes(part));
 
-      const pathParts = url.pathname
-        .split("/")
-        .filter((part) => part && !languages.includes(part));
+    const translatedParts =
+      lang === currentLang ? pathParts : translatePathParts(pathParts, lang);
 
-      const translatedParts =
-        lang === currentLang ? pathParts : translatePathParts(pathParts, lang);
+    const currentPath = translatedParts.join("/");
 
-      const currentPath = translatedParts.join("/");
+    let newPath = "";
+    if (lang && lang !== "vn") {
+      newPath = `/${lang}/${currentPath}`;
+    } else {
+      newPath = `/${currentPath}`;
+    }
 
-      let newPath = "";
-      if (lang && lang !== "vn") {
-        newPath = `/${lang}/${currentPath}`;
-      } else {
-        newPath = `/${currentPath}`;
-      }
+    newPath = newPath.replace(/\/+?/g, "/");
+    if (newPath === "") newPath = "/";
 
-      newPath = newPath.replace(/\/+/g, "/");
-      if (newPath === "") newPath = "/";
-
-      window.location.href = `${url.origin}${newPath}${url.search}`;
-    });
+    window.location.href = `${url.origin}${newPath}${url.search}`;
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Desktop dropdown links
-    const desktopLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
-    desktopLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
+  function initLanguagePickerRoot(root) {
+    if (!root || root.dataset.langInit === "1") return;
+    root.dataset.langInit = "1";
 
-    // Mobile accordion links
-    const mobileLinks = document.querySelectorAll("#lang-mobile-list a");
-    mobileLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
+    // Event delegation for language links (works even if dropdown wasn't initialized yet)
+    root.addEventListener("click", (event) => {
+      const target = event.target;
+      const link = target?.closest?.("a[data-lang-link]");
+      if (!link) return;
+      event.preventDefault();
+      handleLangLinkClick(link);
+    });
 
-    // Mobile accordion toggle
-    const toggle = document.getElementById("lang-mobile-toggle");
-    const list = document.getElementById("lang-mobile-list");
-    const arrow = document.getElementById("lang-mobile-arrow");
+    // Desktop dropdown toggle (if present)
+    const desktopToggle = root.querySelector("[data-lang-desktop-toggle]");
+    const desktopMenu = root.querySelector("[data-lang-desktop-menu]");
+    const desktopArrow = root.querySelector("[data-lang-desktop-arrow]");
 
-    if (toggle && list) {
-      toggle.addEventListener("click", () => {
-        const isOpen = !list.classList.contains("hidden");
+    const setDesktopOpen = (open) => {
+      if (!desktopToggle || !desktopMenu) return;
+      desktopToggle.setAttribute("aria-expanded", open ? "true" : "false");
+
+      if (open) {
+        desktopMenu.classList.remove("hidden");
+        desktopMenu.classList.remove("opacity-0");
+        desktopMenu.classList.add("opacity-100");
+        if (desktopArrow) desktopArrow.classList.add("rotate-180");
+      } else {
+        desktopMenu.classList.add("hidden");
+        desktopMenu.classList.remove("opacity-100");
+        desktopMenu.classList.add("opacity-0");
+        if (desktopArrow) desktopArrow.classList.remove("rotate-180");
+      }
+    };
+
+    if (desktopToggle && desktopMenu) {
+      desktopToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        const expanded = desktopToggle.getAttribute("aria-expanded") === "true";
+        setDesktopOpen(!expanded);
+      });
+
+      document.addEventListener("click", (event) => {
+        const expanded = desktopToggle.getAttribute("aria-expanded") === "true";
+        if (!expanded) return;
+        if (root.contains(event.target)) return;
+        setDesktopOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const expanded = desktopToggle.getAttribute("aria-expanded") === "true";
+        if (expanded) setDesktopOpen(false);
+      });
+    }
+
+    // Mobile accordion toggle (if present)
+    const mobileToggle = root.querySelector("[data-lang-mobile-toggle]");
+    const mobileList = root.querySelector("[data-lang-mobile-list]");
+    const mobileArrow = root.querySelector("[data-lang-mobile-arrow]");
+
+    if (mobileToggle && mobileList) {
+      mobileToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        const isOpen = !mobileList.classList.contains("hidden");
         if (isOpen) {
-          list.classList.add("hidden");
-          list.classList.remove("flex");
-          if (arrow) arrow.style.transform = "";
+          mobileList.classList.add("hidden");
+          mobileList.classList.remove("flex");
+          if (mobileArrow) mobileArrow.style.transform = "";
         } else {
-          list.classList.remove("hidden");
-          list.classList.add("flex");
-          if (arrow) arrow.style.transform = "rotate(180deg)";
+          mobileList.classList.remove("hidden");
+          mobileList.classList.add("flex");
+          if (mobileArrow) mobileArrow.style.transform = "rotate(180deg)";
         }
       });
     }
-  });
+  }
+
+  function initAllLanguagePickers() {
+    document
+      .querySelectorAll("[data-language-picker]")
+      .forEach((root) => initLanguagePickerRoot(root));
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAllLanguagePickers, { once: true });
+  } else {
+    initAllLanguagePickers();
+  }
+
+  // If view transitions are enabled anywhere, this ensures re-init after client-side navigations.
+  document.addEventListener?.("astro:page-load", initAllLanguagePickers);
 </script>

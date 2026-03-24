@@ -60,79 +60,118 @@ function buildBlogPath(lang: TLanguage, idWithoutLang: string): string {
   return path === "" ? "/" : path;
 }
 
+// Exact path translation (product/blog detail pages) can be very large.
+// To protect INP, only generate and inject these maps when we're on a detail page.
+const pathname = Astro.url?.pathname ?? "/";
+const parts = pathname.split("/").filter(Boolean);
+
+const VN_CATEGORIES = [
+  "bu-long",
+  "oc-vit",
+  "tan-tu-giu",
+  "tan-tru-tu-giu",
+  "tru-ren-tu-giu",
+  "sen-xich",
+  "phu-kien-nhom-dinh-hinh",
+] as const;
+
+const EN_CATEGORIES = [
+  "bolts",
+  "screws",
+  "self-clinching-nuts",
+  "self-clinching-standoffs",
+  "self-clinching-studs",
+  "chains",
+  "aluminum-profile-accessories",
+] as const;
+
+const isVnProductDetail = parts.length >= 2 && (VN_CATEGORIES as readonly string[]).includes(parts[0]);
+const isVnBlogDetail = parts.length >= 2 && parts[0] === "bai-viet";
+const isEnProductDetail =
+  parts.length >= 3 && parts[0] === "en" && (EN_CATEGORIES as readonly string[]).includes(parts[1]);
+const isEnBlogDetail = parts.length >= 3 && parts[0] === "en" && parts[1] === "blog";
+
+const needsExactMaps = isVnProductDetail || isVnBlogDetail || isEnProductDetail || isEnBlogDetail;
+
 // Build a URL translation map for product detail pages.
 // Keyed by the *actual* route paths (e.g. /en/bolts/t-bolt <-> /bu-long/bu-long-chu-t)
-const productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
-try {
-  const entries = await getCollection("products");
-  const byKey = new Map<string, Partial<Record<TLanguage, { category: string; slug: string }>>>();
+let productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+if (needsExactMaps) {
+  try {
+    const entries = await getCollection("products");
+    const byKey = new Map<string, Partial<Record<TLanguage, { category: string; slug: string }>>>();
 
-  for (const entry of entries as any[]) {
-    const lang = getLangFromContentId(entry.id);
-    if (!lang) continue;
+    for (const entry of entries as any[]) {
+      const lang = getLangFromContentId(entry.id);
+      if (!lang) continue;
 
-    const key = entry.id.replace(/^(en|vn)\//, "");
-    const category = entryCategorySlug(entry);
-    const slug = entrySlug(entry);
-    if (!category || !slug) continue;
+      const key = entry.id.replace(/^(en|vn)\//, "");
+      const category = entryCategorySlug(entry);
+      const slug = entrySlug(entry);
+      if (!category || !slug) continue;
 
-    const prev = byKey.get(key) ?? {};
-    (prev as any)[lang] = { category, slug };
-    byKey.set(key, prev);
+      const prev = byKey.get(key) ?? {};
+      (prev as any)[lang] = { category, slug };
+      byKey.set(key, prev);
+    }
+
+    for (const pair of byKey.values()) {
+      const en = (pair as any).en as { category: string; slug: string } | undefined;
+      const vn = (pair as any).vn as { category: string; slug: string } | undefined;
+      if (!en || !vn) continue;
+
+      const enPath = buildProductPath("en", en.category, en.slug);
+      const vnPath = buildProductPath("vn", vn.category, vn.slug);
+
+      productPathMap[enPath] = { en: enPath, vn: vnPath };
+      productPathMap[vnPath] = { en: enPath, vn: vnPath };
+    }
+  } catch {
+    // If content is unavailable (shouldn't happen in Astro build), fall back to segment translation.
+    productPathMap = {};
   }
-
-  for (const pair of byKey.values()) {
-    const en = (pair as any).en as { category: string; slug: string } | undefined;
-    const vn = (pair as any).vn as { category: string; slug: string } | undefined;
-    if (!en || !vn) continue;
-
-    const enPath = buildProductPath("en", en.category, en.slug);
-    const vnPath = buildProductPath("vn", vn.category, vn.slug);
-
-    productPathMap[enPath] = { en: enPath, vn: vnPath };
-    productPathMap[vnPath] = { en: enPath, vn: vnPath };
-  }
-} catch {
-  // If content is unavailable (shouldn't happen in Astro build), fall back to segment translation.
 }
 
 // Build a URL translation map for blog detail pages.
 // Because EN/VN blog slugs may differ, we pair translations via shared cardImage.
 // Keyed by the *actual* route paths (e.g. /en/blog/foo <-> /bai-viet/bar)
-const blogPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
-try {
-  const entries = await getCollection("blog");
-  const byCardImage = new Map<string, Partial<Record<TLanguage, { idWithoutLang: string }>>>();
+let blogPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+if (needsExactMaps) {
+  try {
+    const entries = await getCollection("blog");
+    const byCardImage = new Map<string, Partial<Record<TLanguage, { idWithoutLang: string }>>>();
 
-  for (const entry of entries as any[]) {
-    const lang = getLangFromContentId(entry.id);
-    if (!lang) continue;
+    for (const entry of entries as any[]) {
+      const lang = getLangFromContentId(entry.id);
+      if (!lang) continue;
 
-    const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
-    if (!idWithoutLang) continue;
+      const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
+      if (!idWithoutLang) continue;
 
-    const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
-    if (!cardImageSrc) continue;
+      const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
+      if (!cardImageSrc) continue;
 
-    const prev = byCardImage.get(cardImageSrc) ?? {};
-    if ((prev as any)[lang]) continue;
-    (prev as any)[lang] = { idWithoutLang };
-    byCardImage.set(cardImageSrc, prev);
+      const prev = byCardImage.get(cardImageSrc) ?? {};
+      if ((prev as any)[lang]) continue;
+      (prev as any)[lang] = { idWithoutLang };
+      byCardImage.set(cardImageSrc, prev);
+    }
+
+    for (const pair of byCardImage.values()) {
+      const en = (pair as any).en as { idWithoutLang: string } | undefined;
+      const vn = (pair as any).vn as { idWithoutLang: string } | undefined;
+      if (!en || !vn) continue;
+
+      const enPath = buildBlogPath("en", en.idWithoutLang);
+      const vnPath = buildBlogPath("vn", vn.idWithoutLang);
+
+      blogPathMap[enPath] = { en: enPath, vn: vnPath };
+      blogPathMap[vnPath] = { en: enPath, vn: vnPath };
+    }
+  } catch {
+    // Fall back to segment translation if anything goes wrong.
+    blogPathMap = {};
   }
-
-  for (const pair of byCardImage.values()) {
-    const en = (pair as any).en as { idWithoutLang: string } | undefined;
-    const vn = (pair as any).vn as { idWithoutLang: string } | undefined;
-    if (!en || !vn) continue;
-
-    const enPath = buildBlogPath("en", en.idWithoutLang);
-    const vnPath = buildBlogPath("vn", vn.idWithoutLang);
-
-    blogPathMap[enPath] = { en: enPath, vn: vnPath };
-    blogPathMap[vnPath] = { en: enPath, vn: vnPath };
-  }
-} catch {
-  // Fall back to segment translation if anything goes wrong.
 }
 ---
 
@@ -217,7 +256,8 @@ try {
   </ul>
 </div>
 
-<script define:vars={{ __productPathMap: productPathMap, __blogPathMap: blogPathMap }}>
+<script is:inline define:vars={{ __productPathMap: productPathMap, __blogPathMap: blogPathMap }}>
+  // @ts-nocheck
   // Supported languages (kept in sync with language links)
   const languages = ["en", "vn"];
 

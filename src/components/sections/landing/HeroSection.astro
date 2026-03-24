@@ -86,7 +86,11 @@ interface Props {
         class="w-full h-auto object-contain max-h-[36rem]"
         draggable={false}
         loading="eager"
+        decoding="async"
+        fetchpriority="high"
         format="avif"
+        widths={[640, 960, 1280]}
+        sizes="(min-width: 1024px) 640px, 100vw"
   />
   }
     </div>

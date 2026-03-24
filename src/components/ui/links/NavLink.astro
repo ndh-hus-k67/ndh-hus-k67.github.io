@@ -2,6 +2,15 @@
 // Destructure the properties from Astro.props
 const { url, name } = Astro.props;
 
+const normalizePathname = (value: string): string => {
+  const normalized = value.replace(/\/+$/, "");
+  return normalized === "" ? "/" : normalized;
+};
+
+const currentPathname = normalizePathname(Astro.url.pathname);
+const targetPathname = normalizePathname(url);
+const isActive = currentPathname === targetPathname;
+
 // Define TypeScript interface for the properties
 interface Props {
   url: string;
@@ -19,33 +28,13 @@ If URL is '/' (home page), assign ID as 'home'
   id={url === "/" ? "home" : url.replace("/", "")}
   href={url}
   data-astro-prefetch
-  class="rounded-lg text-base font-medium text-neutral-600 outline-hidden ring-zinc-500 hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base"
+  aria-current={isActive ? "page" : undefined}
+  class:list={[
+    "rounded-lg text-base font-medium outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base",
+    isActive
+      ? "text-orange-400 dark:text-orange-300"
+      : "text-neutral-600 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-500",
+  ]}
 >
   {name}
 </a>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const url = window.location.pathname;
-    let navId;
-
-    if (url === "/") {
-      navId = "home";
-    } else {
-      navId = url.replace("/", "");
-    }
-
-    const nav = document.getElementById(navId);
-
-    if (nav) {
-      nav.classList.remove(
-        "text-neutral-600",
-        "dark:text-neutral-400",
-        "hover:text-neutral-500",
-        "dark:hover:text-neutral-500"
-      );
-      nav.classList.add("text-orange-400", "dark:text-orange-300");
-      nav.setAttribute("aria-current", "page");
-    }
-  });
-</script>

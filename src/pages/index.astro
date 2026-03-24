@@ -28,6 +28,7 @@ import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.a
 import { partnersData, SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { getImage } from "astro:assets";
 
 // Lấy tất cả sản phẩm để đếm số lượng theo danh mục (Vietnamese only)
 const allProducts: CollectionEntry<"products">[] = await getCollection("products", ({ id }) => {
@@ -160,9 +161,41 @@ const homepageStructuredData = {
     }
   ]
 };
+
+// Preload the LCP hero image (must match HeroSection widths/sizes)
+const HERO_WIDTHS = [640, 960, 1280] as const;
+const HERO_SIZES = "(min-width: 1024px) 640px, 100vw";
+
+const heroCandidates = await Promise.all(
+  HERO_WIDTHS.map((width) =>
+    getImage({
+      src: heroImage,
+      width,
+      format: "avif",
+    }),
+  ),
+);
+
+const heroSrcset = heroCandidates
+  .map((img, i) => `${img.src} ${HERO_WIDTHS[i]}w`)
+  .join(", ");
+
+const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
 ---
 
 <MainLayout structuredData={homepageStructuredData}>
+  <Fragment slot="head">
+    {heroPreloadHref && (
+      <link
+        rel="preload"
+        as="image"
+        href={heroPreloadHref}
+        imagesrcset={heroSrcset}
+        imagesizes={HERO_SIZES}
+        type="image/avif"
+      />
+    )}
+  </Fragment>
   <HeroSection
     title=`Bu lông ốc vít chất lượng cao HAHU<span class="text-yellow-500 dark:text-yellow-400">TECH</span>`
     subTitle="Giải pháp liên kết cho công nghiệp và xây dựng"

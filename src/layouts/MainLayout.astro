@@ -67,6 +67,7 @@ interface Props {
     />
     {/* Define the title of the page */}
     <title>{documentTitle}</title>
+    <slot name="head" />
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
@@ -78,9 +79,6 @@ interface Props {
       } else {
         document.documentElement.classList.remove("dark");
       }
-    </script>
-    <script>
-      import "@scripts/lenisSmoothScroll.js";
     </script>
   </head>
   <body
@@ -141,40 +139,76 @@ interface Props {
     <FooterSection />
     <FloatingContactButtons />
     <script>
+      // @ts-nocheck
       // https://preline.co
-      import "preline/preline.js";
+      // Lazy-load Preline to reduce initial main-thread work (better INP).
+      let __prelineLoaded = false;
+      const __loadPreline = async () => {
+        if (__prelineLoaded) return;
+        __prelineLoaded = true;
+        await import("preline/preline.js");
+      };
+
+      // Load soon-ish, but not at the expense of initial render.
+      if ("requestIdleCallback" in window) {
+        // @ts-ignore - requestIdleCallback is not in lib.dom by default.
+        requestIdleCallback(__loadPreline, { timeout: 800 });
+      } else {
+        window.addEventListener("load", __loadPreline, { once: true });
+      }
+
+      // Ensure it is available before first interaction.
+      window.addEventListener("pointerdown", __loadPreline, {
+        once: true,
+        passive: true,
+        capture: true,
+      });
+      window.addEventListener("keydown", __loadPreline, {
+        once: true,
+        capture: true,
+      });
     </script>
     <script>
-      // GA4 Global Tracking for Email Links
-      document.addEventListener('DOMContentLoaded', () => {
-        // Track all email links (mailto:) across the entire website
-        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-        emailLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'click_email', {
-                'event_category': 'Contact',
-                'event_label': 'Email Link - Global',
-                'email': link.getAttribute('href')?.replace('mailto:', '') || ''
-              });
-            }
-          });
-        });
+      // GA4 Global Tracking (delegated) for email/phone links
+      document.addEventListener(
+        "click",
+        (e) => {
+          const target = e.target;
+          if (!(target instanceof Element)) return;
 
-        // Track all phone links (tel:) across the entire website
-        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-        phoneLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'click_call', {
-                'event_category': 'Contact',
-                'event_label': 'Phone Link - Global',
-                'phone_number': link.getAttribute('href')?.replace('tel:', '') || ''
+          const link = target.closest("a");
+          if (!(link instanceof HTMLAnchorElement)) return;
+
+          const href = link.getAttribute("href") || "";
+          if (!href) return;
+
+          if (href.startsWith("mailto:")) {
+            if (typeof gtag !== "undefined") {
+              gtag("event", "click_email", {
+                event_category: "Contact",
+                event_label: "Email Link - Global",
+                email: href.replace("mailto:", ""),
               });
             }
-          });
-        });
-      });
+            return;
+          }
+
+          if (href.startsWith("tel:")) {
+            if (typeof gtag !== "undefined") {
+              gtag("event", "click_call", {
+                event_category: "Contact",
+                event_label: "Phone Link - Global",
+                phone_number: href.replace("tel:", ""),
+              });
+            }
+          }
+        },
+        { capture: true },
+      );
+    </script>
+    <script>
+      // Smooth scrolling (Lenis) - delay init to protect INP
+      import "@scripts/lenisSmoothScroll.js";
     </script>
     <style>
       /* CSS rules for the page scrollbar */

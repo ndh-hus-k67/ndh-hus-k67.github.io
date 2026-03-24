@@ -122,6 +122,11 @@ const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]
               alt={post.data.cardImageAlt}
               draggable={"false"}
               format={"avif"}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              widths={[640, 960, 1280]}
+              sizes="(min-width: 768px) 40vw, 100vw"
             />
           </div>
           <div

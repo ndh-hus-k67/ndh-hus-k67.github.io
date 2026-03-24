@@ -184,6 +184,11 @@ const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
                   class="w-full rounded"
                   alt={product.data.main?.imgAlt || product.data.title}
                   format={"avif"}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  widths={[360, 480, 640]}
+                  sizes="(min-width: 1024px) 360px, 100vw"
                 />
               </div>
             )

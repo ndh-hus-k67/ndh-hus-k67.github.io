@@ -10,7 +10,7 @@ tags: ["socket head cap screw", "button head socket screw", "countersunk socket 
 
 Socket head cap screws (hex socket, cylindrical head) are among the most reliable precision fasteners today. Thanks to the internal hex drive and a shank optimized for load, they support high tightening torque, deliver a clean aesthetic, and perform consistently in demanding environments.
 
-If you’re looking for related product groups, you can also explore: [bolts](/en/bolts), [screws](/en/screws), [self-clinching nuts](/en/self-clinching-nuts), [self-clinching standoffs](/en/self-clinching-standoffs), and [self-clinching studs](/en/self-clinching-studs).
+[See product datasheet](/en/bolts/din-912-socket-head-cap-screw)
 
 ## 1. Technical basics
 
@@ -98,5 +98,7 @@ Correct installation requires calibrated torque tools and periodic inspection—
 ## 8. Need help selecting the right socket screw?
 
 From high-strength cap screws to specialized set screws, HAHUTECH provides a full range of hex socket fasteners. Our technical team can help you select the right strength grade, material, and tightening torque for your real working conditions.
+
+[See product category](/en/bolts)
 
 Contact us for technical datasheets, installation guidance, and volume quotes.

@@ -173,7 +173,7 @@ Nhiều dòng JCB có chứng chỉ vật liệu, nhiệt luyện và truy xuấ
 
 Tại **HAHUTECH**, chúng tôi cung cấp bu lông cho máy công trình đạt yêu cầu của nhà sản xuất thiết bị gốc (OEM), kèm tài liệu kỹ thuật đầy đủ và chính sách giá tốt cho bảo trì số lượng lớn.
 
-[Xem thông số kỹ thuật sản phẩm](/bu-long/bu-long-luc-giac-chim-dau-tru-inox)
+[Xem danh mục sản phẩm](/bu-long)
 
 ## 8. Tư vấn chọn bu lông lục giác chìm đầu trụ đúng kỹ thuật
 

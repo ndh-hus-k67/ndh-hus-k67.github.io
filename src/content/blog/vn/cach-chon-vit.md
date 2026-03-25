@@ -44,7 +44,7 @@ Kiểu rãnh ảnh hưởng trực tiếp đến hiệu quả truyền lực:
 
 Với các vị trí quan trọng, nên ưu tiên loại rãnh ổn định hơn rãnh bake để giảm hỏng đầu vít trong quá trình lắp đặt và bảo trì.
 
-[Xem danh mục sản phẩm](/oc-vit)
+[Vít đầu dù](/oc-vit/vit-inox-tu-khoan-dau-du)
 
 ## 4. Chọn chiều dài và đường kính vít phù hợp tải trọng
 

@@ -25,6 +25,8 @@ It is a machine screw with a Phillips (cross) recess, designed to be driven with
 
 Choosing the correct PH size improves torque transfer and reduces cam-out.
 
+[See product datasheet](/en/screws/stainless-self-drilling-pan-head-screw-din-7504t)
+
 ## 2. Four common head types
 
 ### Pan head
@@ -39,9 +41,12 @@ Best when you need a flush surface and clean aesthetics. Countersink to the corr
 
 Wider bearing area, suitable for thin sheet metal, soft plastics, and easily deformed parts.
 
+
 ### Flanged pan head
 
 The integrated flange works like a built-in washer, enabling faster installation and improved vibration resistance.
+
+[See product category](/en/screws)
 
 ## 3. Choose the material by environment
 

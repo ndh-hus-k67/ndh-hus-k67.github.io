@@ -22,6 +22,7 @@ The base material is the first thing to identify.
 
 **Quick tip**: decide by base material first, then optimize head type and size.
 
+[See product category](/en/screws)
 ## 2. Choose the screw head for the surface requirement
 
 Each head type fits a different goal:
@@ -37,6 +38,8 @@ If access is limited, choose a head/drive combination that works with the tools 
 The drive type directly impacts torque transfer:
 
 - **Phillips (cross)**: common and easy to find bits for, but more likely to cam-out at high torque.
+
+[Pan head screws](/en/screws/stainless-self-drilling-pan-head-screw-din-7504t)
 - **Torx or hex socket**: better torque transfer and lower risk of stripping.
 - **Security drives**: for locations where tamper resistance is required.
 
@@ -75,6 +78,8 @@ Don’t choose by price first—choose for the real environment so you don’t r
 ## 7. Need help choosing screws for a specific application?
 
 If you’re not sure which screw fits best, the HAHUTECH team can help you select by load, environment, and installation method.
+
+[See product category](/en/screws)
 
 Contact us for technical advice and recommended fasteners for your project.
 

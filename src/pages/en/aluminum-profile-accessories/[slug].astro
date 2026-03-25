@@ -197,7 +197,17 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
           {
             imgMainResolved && (
               <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
-                <Image src={imgMainResolved} class="w-full rounded" alt={product.data.main?.imgAlt || product.data.title} format={"avif"} />
+                <Image
+                  src={imgMainResolved}
+                  class="w-full rounded"
+                  alt={product.data.main?.imgAlt || product.data.title}
+                  format={"avif"}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  widths={[360, 480, 640]}
+                  sizes="(min-width: 1024px) 360px, 100vw"
+                />
               </div>
             )
           }
@@ -208,7 +218,7 @@ const ogTitle = `${product.data.title} | Aluminum Profile Accessories | ${SITE.t
             <p class="mb-5 text-sm text-neutral-600 dark:text-neutral-400">Contact us for consultation and detailed quotation.</p>
             <div class="space-y-3">
               <a
-                href="tel:0347741638"
+                href="tel:0393430464"
                 class="flex items-center justify-center gap-2 w-full rounded-lg bg-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-orange-600 transition"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

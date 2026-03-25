@@ -60,94 +60,139 @@ function buildBlogPath(lang: TLanguage, idWithoutLang: string): string {
   return path === "" ? "/" : path;
 }
 
+// Exact path translation (product/blog detail pages) can be very large.
+// To protect INP, only generate and inject these maps when we're on a detail page.
+const pathname = Astro.url?.pathname ?? "/";
+const parts = pathname.split("/").filter(Boolean);
+
+const VN_CATEGORIES = [
+  "bu-long",
+  "oc-vit",
+  "tan-tu-giu",
+  "tan-tru-tu-giu",
+  "tru-ren-tu-giu",
+  "sen-xich",
+  "phu-kien-nhom-dinh-hinh",
+] as const;
+
+const EN_CATEGORIES = [
+  "bolts",
+  "screws",
+  "self-clinching-nuts",
+  "self-clinching-standoffs",
+  "self-clinching-studs",
+  "chains",
+  "aluminum-profile-accessories",
+] as const;
+
+const isVnProductDetail = parts.length >= 2 && (VN_CATEGORIES as readonly string[]).includes(parts[0]);
+const isVnBlogDetail = parts.length >= 2 && parts[0] === "bai-viet";
+const isEnProductDetail =
+  parts.length >= 3 && parts[0] === "en" && (EN_CATEGORIES as readonly string[]).includes(parts[1]);
+const isEnBlogDetail = parts.length >= 3 && parts[0] === "en" && parts[1] === "blog";
+
+const needsExactMaps = isVnProductDetail || isVnBlogDetail || isEnProductDetail || isEnBlogDetail;
+
+const pickerId = `lang-${Math.random().toString(36).slice(2, 9)}`;
+const desktopMenuId = `${pickerId}-desktop-menu`;
+
 // Build a URL translation map for product detail pages.
 // Keyed by the *actual* route paths (e.g. /en/bolts/t-bolt <-> /bu-long/bu-long-chu-t)
-const productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
-try {
-  const entries = await getCollection("products");
-  const byKey = new Map<string, Partial<Record<TLanguage, { category: string; slug: string }>>>();
+let productPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+if (needsExactMaps) {
+  try {
+    const entries = await getCollection("products");
+    const byKey = new Map<string, Partial<Record<TLanguage, { category: string; slug: string }>>>();
 
-  for (const entry of entries as any[]) {
-    const lang = getLangFromContentId(entry.id);
-    if (!lang) continue;
+    for (const entry of entries as any[]) {
+      const lang = getLangFromContentId(entry.id);
+      if (!lang) continue;
 
-    const key = entry.id.replace(/^(en|vn)\//, "");
-    const category = entryCategorySlug(entry);
-    const slug = entrySlug(entry);
-    if (!category || !slug) continue;
+      const key = entry.id.replace(/^(en|vn)\//, "");
+      const category = entryCategorySlug(entry);
+      const slug = entrySlug(entry);
+      if (!category || !slug) continue;
 
-    const prev = byKey.get(key) ?? {};
-    (prev as any)[lang] = { category, slug };
-    byKey.set(key, prev);
+      const prev = byKey.get(key) ?? {};
+      (prev as any)[lang] = { category, slug };
+      byKey.set(key, prev);
+    }
+
+    for (const pair of byKey.values()) {
+      const en = (pair as any).en as { category: string; slug: string } | undefined;
+      const vn = (pair as any).vn as { category: string; slug: string } | undefined;
+      if (!en || !vn) continue;
+
+      const enPath = buildProductPath("en", en.category, en.slug);
+      const vnPath = buildProductPath("vn", vn.category, vn.slug);
+
+      productPathMap[enPath] = { en: enPath, vn: vnPath };
+      productPathMap[vnPath] = { en: enPath, vn: vnPath };
+    }
+  } catch {
+    // If content is unavailable (shouldn't happen in Astro build), fall back to segment translation.
+    productPathMap = {};
   }
-
-  for (const pair of byKey.values()) {
-    const en = (pair as any).en as { category: string; slug: string } | undefined;
-    const vn = (pair as any).vn as { category: string; slug: string } | undefined;
-    if (!en || !vn) continue;
-
-    const enPath = buildProductPath("en", en.category, en.slug);
-    const vnPath = buildProductPath("vn", vn.category, vn.slug);
-
-    productPathMap[enPath] = { en: enPath, vn: vnPath };
-    productPathMap[vnPath] = { en: enPath, vn: vnPath };
-  }
-} catch {
-  // If content is unavailable (shouldn't happen in Astro build), fall back to segment translation.
 }
 
 // Build a URL translation map for blog detail pages.
 // Because EN/VN blog slugs may differ, we pair translations via shared cardImage.
 // Keyed by the *actual* route paths (e.g. /en/blog/foo <-> /bai-viet/bar)
-const blogPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
-try {
-  const entries = await getCollection("blog");
-  const byCardImage = new Map<string, Partial<Record<TLanguage, { idWithoutLang: string }>>>();
+let blogPathMap: Record<string, Partial<Record<TLanguage, string>>> = {};
+if (needsExactMaps) {
+  try {
+    const entries = await getCollection("blog");
+    const byCardImage = new Map<string, Partial<Record<TLanguage, { idWithoutLang: string }>>>();
 
-  for (const entry of entries as any[]) {
-    const lang = getLangFromContentId(entry.id);
-    if (!lang) continue;
+    for (const entry of entries as any[]) {
+      const lang = getLangFromContentId(entry.id);
+      if (!lang) continue;
 
-    const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
-    if (!idWithoutLang) continue;
+      const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
+      if (!idWithoutLang) continue;
 
-    const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
-    if (!cardImageSrc) continue;
+      const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
+      if (!cardImageSrc) continue;
 
-    const prev = byCardImage.get(cardImageSrc) ?? {};
-    if ((prev as any)[lang]) continue;
-    (prev as any)[lang] = { idWithoutLang };
-    byCardImage.set(cardImageSrc, prev);
+      const prev = byCardImage.get(cardImageSrc) ?? {};
+      if ((prev as any)[lang]) continue;
+      (prev as any)[lang] = { idWithoutLang };
+      byCardImage.set(cardImageSrc, prev);
+    }
+
+    for (const pair of byCardImage.values()) {
+      const en = (pair as any).en as { idWithoutLang: string } | undefined;
+      const vn = (pair as any).vn as { idWithoutLang: string } | undefined;
+      if (!en || !vn) continue;
+
+      const enPath = buildBlogPath("en", en.idWithoutLang);
+      const vnPath = buildBlogPath("vn", vn.idWithoutLang);
+
+      blogPathMap[enPath] = { en: enPath, vn: vnPath };
+      blogPathMap[vnPath] = { en: enPath, vn: vnPath };
+    }
+  } catch {
+    // Fall back to segment translation if anything goes wrong.
+    blogPathMap = {};
   }
-
-  for (const pair of byCardImage.values()) {
-    const en = (pair as any).en as { idWithoutLang: string } | undefined;
-    const vn = (pair as any).vn as { idWithoutLang: string } | undefined;
-    if (!en || !vn) continue;
-
-    const enPath = buildBlogPath("en", en.idWithoutLang);
-    const vnPath = buildBlogPath("vn", vn.idWithoutLang);
-
-    blogPathMap[enPath] = { en: enPath, vn: vnPath };
-    blogPathMap[vnPath] = { en: enPath, vn: vnPath };
-  }
-} catch {
-  // Fall back to segment translation if anything goes wrong.
 }
 ---
 
-<!-- Desktop: hs-dropdown (hover/click powered by Preline) -->
-<div class="hs-dropdown relative hidden md:inline-flex">
+<!-- Desktop dropdown (independent of Preline; fixes flaky first-interaction when Preline is lazy-loaded) -->
+<div class="relative hidden md:inline-flex" data-language-picker>
   <button
-    id="hs-dropdown-default"
     type="button"
+    data-lang-desktop-toggle
+    aria-controls={desktopMenuId}
+    aria-expanded="false"
     aria-label="Change language"
     title="Change language"
-    class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg px-1.5 py-1.5 text-sm font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-orange-300 dark:focus:outline-hidden"
+    class="inline-flex items-center gap-x-2 rounded-lg px-2 py-2 text-sm font-medium text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-orange-300 dark:focus:outline-hidden"
   >
     <Icon name="earth" />
     <svg
-      class="size-4 hs-dropdown-open:rotate-180"
+      data-lang-desktop-arrow
+      class="size-4 transition-transform"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -160,13 +205,16 @@ try {
   </button>
 
   <div
-    class="hs-dropdown-menu duration left-[20%]! top-[98%]! mt-2 hidden transform-none! rounded-lg bg-neutral-50 p-2 opacity-0 shadow-md transition-[opacity,margin] before:absolute before:-top-4 before:start-0 before:h-4 before:w-full after:absolute after:-bottom-4 after:start-0 after:h-4 after:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800 md:left-[90%]! md:top-[80%]!"
-    aria-labelledby="hs-dropdown-hover-event"
+    id={desktopMenuId}
+    data-lang-desktop-menu
+    class="absolute right-0 top-full z-50 mt-2 hidden min-w-28 rounded-lg border border-neutral-200 bg-white p-1 opacity-0 shadow-sm transition-[opacity,margin] dark:border-neutral-700 dark:bg-neutral-800"
   >
     {
       Object.entries(languages).map(([lang, label]) => (
         <a
-          class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-hidden dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+          class="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-hidden dark:text-neutral-200 dark:hover:bg-neutral-700 dark:hover:text-neutral-100 dark:focus:bg-neutral-700"
+          data-lang-link
+          data-lang={lang}
           href={`/${lang === "vn" ? "" : lang}`}
         >
           {label}
@@ -177,15 +225,15 @@ try {
 </div>
 
 <!-- Mobile: accordion (same style as products dropdown) -->
-<div class="md:hidden">
+<div class="md:hidden" data-language-picker>
   <button
     type="button"
-    id="lang-mobile-toggle"
+    data-lang-mobile-toggle
     class="flex items-center gap-x-1 font-medium text-neutral-600 outline-none transition duration-300 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
   >
     <Icon name="earth" />
     <svg
-      id="lang-mobile-arrow"
+      data-lang-mobile-arrow
       class="h-4 w-4 shrink-0 transition-transform duration-200"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -201,12 +249,14 @@ try {
     </svg>
   </button>
 
-  <ul id="lang-mobile-list" class="hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
+  <ul data-lang-mobile-list class="hidden mt-1 flex-col gap-y-0 border-l-2 border-yellow-300/60 pl-3 dark:border-neutral-600">
     {
       Object.entries(languages).map(([lang, label]) => (
         <li>
           <a
             href={`/${lang === "vn" ? "" : lang}`}
+            data-lang-link
+            data-lang={lang}
             class="block py-2 text-sm text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-orange-300"
           >
             {label}
@@ -217,140 +267,14 @@ try {
   </ul>
 </div>
 
-<script define:vars={{ __productPathMap: productPathMap, __blogPathMap: blogPathMap }}>
-  // Supported languages (kept in sync with language links)
-  const languages = ["en", "vn"];
+<script
+  is:inline
+  type="application/json"
+  data-lang-picker-maps
+  set:html={JSON.stringify({ productPathMap, blogPathMap })}
+/>
 
-  // Build-time map injected from content collection.
-  // Example: { "/en/bolts/t-bolt": { en: "/en/bolts/t-bolt", vn: "/bu-long/bu-long-chu-t" }, ... }
-  const productPathMap = __productPathMap;
-  const blogPathMap = __blogPathMap;
-
-  const localizedSlugMap = {
-    en: {
-      "lien-he": "contact",
-      "ve-chung-toi": "about-us",
-      "bai-viet": "blog",
-      "bu-long": "bolts",
-      "oc-vit": "screws",
-      "tan-tu-giu": "self-clinching-nuts",
-      "tan-tru-tu-giu": "self-clinching-standoffs",
-      "tru-ren-tu-giu": "self-clinching-studs",
-      "sen-xich": "chains",
-      "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
-    },
-    vn: {
-      contact: "lien-he",
-      "about-us": "ve-chung-toi",
-      blog: "bai-viet",
-      bolts: "bu-long",
-      screws: "oc-vit",
-      "self-clinching-nuts": "tan-tu-giu",
-      "self-clinching-standoffs": "tan-tru-tu-giu",
-      "self-clinching-studs": "tru-ren-tu-giu",
-      chains: "sen-xich",
-      "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
-    },
-  };
-
-  function detectLangFromPath(pathname) {
-    const first = pathname.split("/").filter(Boolean)[0];
-    return first === "en" ? "en" : "vn";
-  }
-
-  function normalizePathname(pathname) {
-    if (!pathname) return "/";
-    const normalized = pathname.replace(/\/+/g, "/");
-    if (normalized.length > 1 && normalized.endsWith("/")) return normalized.slice(0, -1);
-    return normalized;
-  }
-
-  function translatePathParts(parts, targetLang) {
-    if (parts.length === 0) return parts;
-    const first = parts[0];
-    const mapped = localizedSlugMap[targetLang][first];
-    if (!mapped) return parts;
-    return [mapped, ...parts.slice(1)];
-  }
-
-  function handleLangLinkClick(link) {
-    const href = link.getAttribute("href") ?? "/";
-    const lang = href.startsWith("/en") ? "en" : "vn";
-
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const url = new URL(window.location.href);
-
-      const currentLang = detectLangFromPath(url.pathname);
-      const currentPathname = normalizePathname(url.pathname);
-
-      // 1) Exact product-path mapping (fixes slug differences like t-bolt -> bu-long-chu-t)
-      const mapped = productPathMap[currentPathname]?.[lang];
-      if (mapped) {
-        const nextPath = normalizePathname(mapped);
-        window.location.href = `${url.origin}${nextPath}${url.search}`;
-        return;
-      }
-
-      // 2) Exact blog-path mapping (fixes slug differences between EN/VN posts)
-      const blogMapped = blogPathMap[currentPathname]?.[lang];
-      if (blogMapped) {
-        const nextPath = normalizePathname(blogMapped);
-        window.location.href = `${url.origin}${nextPath}${url.search}`;
-        return;
-      }
-
-      const pathParts = url.pathname
-        .split("/")
-        .filter((part) => part && !languages.includes(part));
-
-      const translatedParts =
-        lang === currentLang ? pathParts : translatePathParts(pathParts, lang);
-
-      const currentPath = translatedParts.join("/");
-
-      let newPath = "";
-      if (lang && lang !== "vn") {
-        newPath = `/${lang}/${currentPath}`;
-      } else {
-        newPath = `/${currentPath}`;
-      }
-
-      newPath = newPath.replace(/\/+/g, "/");
-      if (newPath === "") newPath = "/";
-
-      window.location.href = `${url.origin}${newPath}${url.search}`;
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Desktop dropdown links
-    const desktopLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
-    desktopLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
-
-    // Mobile accordion links
-    const mobileLinks = document.querySelectorAll("#lang-mobile-list a");
-    mobileLinks.forEach((el) => handleLangLinkClick(/** @type {HTMLAnchorElement} */ (el)));
-
-    // Mobile accordion toggle
-    const toggle = document.getElementById("lang-mobile-toggle");
-    const list = document.getElementById("lang-mobile-list");
-    const arrow = document.getElementById("lang-mobile-arrow");
-
-    if (toggle && list) {
-      toggle.addEventListener("click", () => {
-        const isOpen = !list.classList.contains("hidden");
-        if (isOpen) {
-          list.classList.add("hidden");
-          list.classList.remove("flex");
-          if (arrow) arrow.style.transform = "";
-        } else {
-          list.classList.remove("hidden");
-          list.classList.add("flex");
-          if (arrow) arrow.style.transform = "rotate(180deg)";
-        }
-      });
-    }
-  });
+<script>
+  import { initLanguagePickersFromDom } from "@scripts/languagePicker";
+  initLanguagePickersFromDom();
 </script>

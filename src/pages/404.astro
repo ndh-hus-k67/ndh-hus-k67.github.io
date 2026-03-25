@@ -23,14 +23,14 @@ const translations: Translations = {
     subTitle: "Oops! The page you're looking for doesn't exist.",
     content:
       "The product or page you're trying to reach may have been moved or is no longer available. Let's get you back to our catalog.",
-    btnTitle: "Go Back",
+    btnTitle: "Home",
   },
   vn: {
     pageTitle: `Không tìm thấy trang | ${SITE.title}`,
     subTitle: "Rất tiếc! Trang bạn đang tìm kiếm không tồn tại.",
     content:
       "Sản phẩm hoặc trang bạn đang tìm có thể đã được di chuyển hoặc không còn khả dụng. Hãy quay lại danh mục sản phẩm của chúng tôi.",
-    btnTitle: "Quay lại",
+    btnTitle: "Trang chủ",
   },
 };
 
@@ -65,18 +65,11 @@ const { pageTitle, subTitle, content, btnTitle } = translations[lang];
         >
           {content}
         </p>
-        <!-- Display a button that navigates user back to the previous page -->
-        <Btn404 title={btnTitle} id="go-back" />
+        <!-- Display a button that navigates user back to the homepage -->
+        <Btn404 title={btnTitle} href="/" />
       </div>
     </div>
   </section>
 </MainLayout>
 
-<!-- JavaScript code to handle going back to the previous page -->
-<script>
-  const goBackButton = document.getElementById("go-back") as HTMLButtonElement;
-
-  goBackButton.addEventListener("click", () => {
-    history.back();
-  });
-</script>
+<!-- No client script required for homepage navigation -->

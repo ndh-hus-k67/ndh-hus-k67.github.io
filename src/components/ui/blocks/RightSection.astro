@@ -59,6 +59,10 @@ interface Props {
           src={imgOne}
           alt={imgOneAlt}
           format={"avif"}
+          loading={"lazy"}
+          decoding={"async"}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 1024px) 50vw, 100vw"
         />
       </div>
     ) : (
@@ -70,6 +74,10 @@ interface Props {
           alt={imgOneAlt}
           draggable={"false"}
           format={"avif"}
+          loading={"lazy"}
+          decoding={"async"}
+          widths={[480, 800]}
+          sizes="(min-width: 1024px) 50vw, 50vw"
         />
         <!-- Second image in a two-image layout -->
         <Image
@@ -78,6 +86,10 @@ interface Props {
           alt={imgTwoAlt}
           draggable={"false"}
           format={"avif"}
+          loading={"lazy"}
+          decoding={"async"}
+          widths={[480, 800]}
+          sizes="(min-width: 1024px) 25vw, 50vw"
         />
       </div>
     )

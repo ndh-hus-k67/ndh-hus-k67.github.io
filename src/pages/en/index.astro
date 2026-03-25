@@ -28,6 +28,7 @@ import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.a
 import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { getImage } from "astro:assets";
 
 // Get all products to count by category (prefer EN, fallback to VN)
 const fetchProductsByLang = async (lang: "en" | "vn") =>
@@ -122,9 +123,41 @@ const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
   "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
 ];
+
+// Preload the LCP hero image (must match HeroSection widths/sizes)
+const HERO_WIDTHS = [640, 960, 1280] as const;
+const HERO_SIZES = "(min-width: 1024px) 640px, 100vw";
+
+const heroCandidates = await Promise.all(
+  HERO_WIDTHS.map((width) =>
+    getImage({
+      src: heroImage,
+      width,
+      format: "avif",
+    }),
+  ),
+);
+
+const heroSrcset = heroCandidates
+  .map((img, i) => `${img.src} ${HERO_WIDTHS[i]}w`)
+  .join(", ");
+
+const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
 ---
 
 <MainLayout lang="en">
+  <Fragment slot="head">
+    {heroPreloadHref && (
+      <link
+        rel="preload"
+        as="image"
+        href={heroPreloadHref}
+        imagesrcset={heroSrcset}
+        imagesizes={HERO_SIZES}
+        type="image/avif"
+      />
+    )}
+  </Fragment>
   <!-- <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"

@@ -22,7 +22,10 @@ interface Props {
         alt={blogEntry.data.cardImageAlt}
         draggable={"false"}
         loading={"eager"}
+        decoding={"async"}
         format={"avif"}
+        widths={[640, 960, 1280]}
+        sizes="(min-width: 640px) 50vw, 100vw"
       />
     </div>
   </div>

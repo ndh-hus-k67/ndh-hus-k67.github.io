@@ -8,7 +8,7 @@ User-agent: *
 ${disallowedPaths.map((path) => `Disallow: ${path}`).join('\n')}
 Allow: /
 
-Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
+Sitemap: ${new URL('sitemap-groups.xml', import.meta.env.SITE).href}
 `.trim();
 
 export const GET: APIRoute = () => {

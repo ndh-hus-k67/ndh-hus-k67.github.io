@@ -52,7 +52,7 @@ interface Props {
 }
 ---
 
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="scrollbar-hide scroll-pt-16">
   <head>
     {/* Adding metadata to the HTML document */}
     <Meta
@@ -67,6 +67,7 @@ interface Props {
     />
     {/* Define the title of the page */}
     <title>{documentTitle}</title>
+    <slot name="head" />
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
@@ -78,9 +79,6 @@ interface Props {
       } else {
         document.documentElement.classList.remove("dark");
       }
-    </script>
-    <script>
-      import "@scripts/lenisSmoothScroll.js";
     </script>
   </head>
   <body
@@ -97,7 +95,13 @@ interface Props {
           <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
-                Giải pháp sản xuất và thương mại chất lượng cao, đáng tin cậy cho mọi dự án.
+                <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {
+                    Astro.currentLocale === "en"
+                      ? "High-quality, reliable manufacturing and trading solutions for every project."
+                      : "Giải pháp sản xuất và thương mại chất lượng cao, đáng tin cậy cho mọi dự án."
+                  }
+                </p>
               </div>
               <div class="contact-strip  lg:flex md:flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200 lg:gap-6">
                 <a href="mailto:sales@hahutech.com.vn" class="flex items-center gap-2 hover:underline">
@@ -116,11 +120,11 @@ interface Props {
                   <span>08:00 - 17:00</span>
                 </div>
 
-                <a href="tel:0347741638" class="flex items-center gap-2 font-semibold hover:underline">
+                <a href="tel:0393430464" class="flex items-center gap-2 font-semibold hover:underline">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                   </svg>
-                  <span>Hotline: 0347.741.638</span>
+                  <span>Hotline: 0393.430.464</span>
                 </a>
 
                 <a href="https://www.facebook.com/hahutech.com.vn" class="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
@@ -142,50 +146,61 @@ interface Props {
     <FloatingContactButtons />
     <script>
       // https://preline.co
+      // Load Preline immediately to guarantee first-interaction works.
       import "preline/preline.js";
     </script>
     <script>
-      // GA4 Global Tracking for Email Links
-      document.addEventListener('DOMContentLoaded', () => {
-        // Track all email links (mailto:) across the entire website
-        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-        emailLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'click_email', {
-                'event_category': 'Contact',
-                'event_label': 'Email Link - Global',
-                'email': link.getAttribute('href')?.replace('mailto:', '') || ''
-              });
-            }
-          });
-        });
+      // GA4 Global Tracking (delegated) for email/phone links
+      document.addEventListener(
+        "click",
+        (e) => {
+          const target = e.target;
+          if (!(target instanceof Element)) return;
 
-        // Track all phone links (tel:) across the entire website
-        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-        phoneLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'click_call', {
-                'event_category': 'Contact',
-                'event_label': 'Phone Link - Global',
-                'phone_number': link.getAttribute('href')?.replace('tel:', '') || ''
+          const link = target.closest("a");
+          if (!(link instanceof HTMLAnchorElement)) return;
+
+          const href = link.getAttribute("href") || "";
+          if (!href) return;
+
+          if (href.startsWith("mailto:")) {
+            if (typeof gtag !== "undefined") {
+              gtag("event", "click_email", {
+                event_category: "Contact",
+                event_label: "Email Link - Global",
+                email: href.replace("mailto:", ""),
               });
             }
-          });
-        });
-      });
+            return;
+          }
+
+          if (href.startsWith("tel:")) {
+            if (typeof gtag !== "undefined") {
+              gtag("event", "click_call", {
+                event_category: "Contact",
+                event_label: "Phone Link - Global",
+                phone_number: href.replace("tel:", ""),
+              });
+            }
+          }
+        },
+        { capture: true },
+      );
     </script>
-    <style>
-      /* CSS rules for the page scrollbar */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
+    <script>
+      // Smooth scrolling (Lenis) - lazy-load on idle, and skip for reduced-motion users.
+      const w = window;
+      const __prefersReducedMotion =
+        w.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+      if (!__prefersReducedMotion) {
+        const __loadLenis = () => import("@scripts/lenisSmoothScroll.js");
+        if ("requestIdleCallback" in w) {
+          (w as any).requestIdleCallback(__loadLenis, { timeout: 2000 });
+        } else {
+          (w as any).addEventListener("load", __loadLenis, { once: true });
+        }
       }
-    </style>
+    </script>
   </body>
 </html>

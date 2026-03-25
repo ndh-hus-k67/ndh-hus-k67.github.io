@@ -1,6 +1,6 @@
 ---
-title: "VÍT INOX TỰ KHOAN ĐẦU DÙ DIN 7504T"
-slug: "vit-inox-tu-khoan-dau-du-din-7504t"
+title: "VÍT INOX TỰ KHOAN ĐẦU DÙ"
+slug: "vit-inox-tu-khoan-dau-du"
 description: "Vít inox tự khoan đầu dù DIN 7504T dùng cho các mối ghép chưa có lỗ chờ, thi công nhanh trong xây dựng và cơ khí."
 updatedAt: 2026-01-19
 category:

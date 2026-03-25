@@ -22,6 +22,8 @@ Vật liệu nền là yếu tố đầu tiên cần xác định.
 
 **Mẹo nhanh**: luôn chọn đúng theo vật liệu trước, sau đó mới tối ưu theo đầu vít và kích thước.
 
+[Xem danh mục sản phẩm](/oc-vit)
+
 ## 2. Chọn kiểu đầu vít theo yêu cầu bề mặt
 
 Mỗi kiểu đầu vít phù hợp với một mục tiêu khác nhau:
@@ -41,6 +43,8 @@ Kiểu rãnh ảnh hưởng trực tiếp đến hiệu quả truyền lực:
 - **Rãnh chống tháo**: phù hợp với các vị trí cần hạn chế can thiệp trái phép.
 
 Với các vị trí quan trọng, nên ưu tiên loại rãnh ổn định hơn rãnh bake để giảm hỏng đầu vít trong quá trình lắp đặt và bảo trì.
+
+[Xem danh mục sản phẩm](/oc-vit)
 
 ## 4. Chọn chiều dài và đường kính vít phù hợp tải trọng
 
@@ -64,6 +68,8 @@ Môi trường sử dụng quyết định tuổi thọ của vít:
 
 Đừng chọn theo giá trước—hãy chọn theo môi trường làm việc thực tế để tránh phải thay thế sớm.
 
+[Xem danh mục sản phẩm](/oc-vit)
+
 ## 6. Checklist chọn vít nhanh trước khi mua
 
 - Xác định vật liệu nền: gỗ, kim loại, tôn, nhựa.
@@ -77,6 +83,8 @@ Môi trường sử dụng quyết định tuổi thọ của vít:
 Nếu bạn chưa chắc loại vít nào phù hợp, đội ngũ ScrewBazar có thể hỗ trợ lựa chọn theo tải trọng, môi trường và phương pháp lắp đặt thực tế.
 
 Liên hệ để nhận tư vấn kỹ thuật và đề xuất vật tư phù hợp cho công trình của bạn.
+
+[Xem danh mục sản phẩm](/oc-vit)
 
 ## 8. Câu hỏi thường gặp khi chọn vít
 

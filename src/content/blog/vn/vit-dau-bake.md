@@ -25,6 +25,8 @@ Nếu chọn sai loại đầu vít hoặc vật liệu, mối ghép dễ gặp 
 
 Chọn đúng cỡ PH giúp truyền mô-men tốt hơn và giảm trượt đầu vít.
 
+[Xem thông số kỹ thuật sản phẩm](/oc-vit/vit-inox-tu-khoan-dau-du)
+
 ## 2. Bốn kiểu đầu vít phổ biến
 
 ### Đầu dù
@@ -50,7 +52,9 @@ Vành rộng tích hợp như long đen liền, giúp lắp nhanh và giảm run
 - Inox 316: phù hợp môi trường biển, hóa chất.
 - Đồng hoặc nhựa kỹ thuật: dùng cho nhu cầu đặc thù như dẫn điện hoặc cách điện.
 
-## 5. Bảng chọn nhanh
+[Xem thông số kỹ thuật sản phẩm](/oc-vit/vit-inox-tu-khoan-dau-du)
+
+## 4. Bảng chọn nhanh
 
 | Nhu cầu | Loại phù hợp |
 |---|---|

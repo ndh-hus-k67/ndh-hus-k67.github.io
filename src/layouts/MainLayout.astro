@@ -140,31 +140,8 @@ interface Props {
     <FloatingContactButtons />
     <script>
       // https://preline.co
-      // Lazy-load Preline to reduce initial main-thread work (better INP).
-      let __prelineLoaded = false;
-      const __loadPreline = async () => {
-        if (__prelineLoaded) return;
-        __prelineLoaded = true;
-        await import("preline/preline.js");
-      };
-
-      // Load soon-ish, but not at the expense of initial render.
-      if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(__loadPreline, { timeout: 800 });
-      } else {
-        (window as any).addEventListener("load", __loadPreline, { once: true });
-      }
-
-      // Ensure it is available before first interaction.
-      window.addEventListener("pointerdown", __loadPreline, {
-        once: true,
-        passive: true,
-        capture: true,
-      });
-      window.addEventListener("keydown", __loadPreline, {
-        once: true,
-        capture: true,
-      });
+      // Load Preline immediately to guarantee first-interaction works.
+      import "preline/preline.js";
     </script>
     <script>
       // GA4 Global Tracking (delegated) for email/phone links

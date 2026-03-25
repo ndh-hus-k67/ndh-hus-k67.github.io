@@ -10,7 +10,7 @@ tags: ["bu lông lục giác chìm đầu trụ", "bu lông đầu dù", "bu lô
 
 Bu lông lục giác chìm đầu trụ là một trong những chuẩn liên kết chính xác và đáng tin cậy nhất hiện nay. Nhờ thiết kế hốc lục giác chìm trong đầu bu lông và thân bu lông tối ưu cho chịu lực, dòng sản phẩm này cho khả năng truyền mô-men siết cao, thẩm mỹ gọn gàng và hiệu năng ổn định trong môi trường làm việc khắc nghiệt. Bài viết này đi sâu toàn bộ nhóm sản phẩm tại **HAHUTECH**, từ bu lông đầu trụ tiêu chuẩn đến vít hãm không đầu và bu lông chuyên dụng cho máy công trình.
 
-Nếu bạn đang tìm đúng dòng theo nhu cầu lắp đặt, có thể xem thêm các nhóm sản phẩm liên quan: [bu lông](https://www.hahutech.com/bu-long), [ốc vít](https://www.hahutech.com/oc-vit), [tán tự giữ](https://www.hahutech.com/tan-tu-giu), [tán trụ tự giữ](https://www.hahutech.com/tan-tru-tu-giu), [trụ ren tự giữ](https://www.hahutech.com/tru-ren-tu-giu).
+[Xem thông số kỹ thuật sản phẩm](/bu-long-luc-giac-chim-dau-tru-inox)
 
 ## 1. Nền tảng kỹ thuật của bu lông lục giác chìm đầu trụ
 
@@ -54,6 +54,7 @@ Mô-men siết tham khảo với cấp bền 8.8:
 
 Luôn dùng chìa lục giác đúng cỡ; đầu chìa mòn dễ gây tòe hốc lục giác. Nên kết hợp long đen, đai ốc khóa hoặc keo khóa ren nếu có rung động.
 
+[Xem thông số kỹ thuật sản phẩm](/bu-long-luc-giac-chim-dau-tru-inox)
 
 ## 3. Bu lông đầu dù lục giác chìm - Đầu thấp, đẹp và gọn
 

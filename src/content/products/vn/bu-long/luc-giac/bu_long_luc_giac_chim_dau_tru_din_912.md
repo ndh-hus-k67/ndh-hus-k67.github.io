@@ -1,6 +1,6 @@
 ---
-title: "Bu lông lục giác chìm đầu trụ Inox DIN 912"
-slug: "bu-long-luc-giac-chim-dau-tru-inox-din-912"
+title: "Bu lông lục giác chìm đầu trụ"
+slug: "bu-long-luc-giac-chim-dau-tru-inox"
 description: "Bu lông lục giác chìm đầu trụ DIN 912 inox 201/304/316/316L và thép. Siết bằng lục lăng, kích thước M3-M30. Phù hợp lắp ráp cơ khí chính xác, tự động hóa."
 updatedAt: 2026-01-19
 category:

@@ -31,6 +31,10 @@ const imageClass =
     draggable={"false"}
     class={imageClass}
     format={"avif"}
+    widths={[640, 960, 1280]}
+    sizes="(min-width: 768px) 50vw, 100vw"
+    loading="lazy"
+    decoding="async"
   />
   <!-- This container includes a gradient overlay over the product's image -->
   <div

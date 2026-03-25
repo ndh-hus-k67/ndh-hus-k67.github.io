@@ -52,7 +52,7 @@ interface Props {
 }
 ---
 
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="scrollbar-hide scroll-pt-16">
   <head>
     {/* Adding metadata to the HTML document */}
     <Meta
@@ -207,19 +207,20 @@ interface Props {
       );
     </script>
     <script>
-      // Smooth scrolling (Lenis) - delay init to protect INP
-      import "@scripts/lenisSmoothScroll.js";
-    </script>
-    <style>
-      /* CSS rules for the page scrollbar */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
+      // Smooth scrolling (Lenis) - lazy-load on idle, and skip for reduced-motion users.
+      // @ts-nocheck
+      const w = window;
+      const __prefersReducedMotion =
+        w.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+      if (!__prefersReducedMotion) {
+        const __loadLenis = () => import("@scripts/lenisSmoothScroll.js");
+        if ("requestIdleCallback" in w) {
+          w.requestIdleCallback(__loadLenis, { timeout: 2000 });
+        } else {
+          w.addEventListener("load", __loadLenis, { once: true });
+        }
       }
-    </style>
+    </script>
   </body>
 </html>

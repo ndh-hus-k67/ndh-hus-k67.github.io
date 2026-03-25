@@ -8,8 +8,6 @@
   <a
     href="tel:+84347741638"
     class="contact-btn phone-btn group"
-    aria-label="Gọi điện thoại"
-    title="Gọi điện thoại"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +28,6 @@
     target="_blank"
     rel="noopener noreferrer"
     class="contact-btn message-btn group"
-    aria-label="Nhắn tin"
-    title="Nhắn tin"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -303,6 +299,29 @@
 <script>
   // GA4 Conversion Tracking for Floating Contact Buttons
   document.addEventListener('DOMContentLoaded', () => {
+    // Localize phone tooltip for English pages
+    try {
+      const htmlLang = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
+      const pathIsEn = window.location.pathname.startsWith('/en');
+      const lang = pathIsEn ? 'en' : (htmlLang || (navigator.language || '').slice(0, 2).toLowerCase());
+
+      // Phone tooltip
+      const phoneTooltip = document.querySelector('.phone-btn .contact-tooltip');
+      if (phoneTooltip) {
+        phoneTooltip.textContent = lang === 'en' ? 'Call now' : 'Gọi ngay';
+      }
+
+      // Message tooltip + accessibility labels
+      const messageTooltip = document.querySelector('.message-btn .contact-tooltip');
+      const messageAnchor = document.querySelector('.message-btn');
+      if (messageTooltip) {
+        messageTooltip.textContent = lang === 'en' ? 'Inbox now' : 'Nhắn tin';
+        messageTooltip.setAttribute('aria-hidden', 'true');
+      }
+    } catch (e) {
+      // ignore errors and keep defaults
+    }
+
     // Track phone button clicks
     const phoneBtn = document.querySelector('.phone-btn');
     if (phoneBtn) {

@@ -7,7 +7,19 @@ import VtbotStarlight from "astro-vtbot/components/starlight/Base.astro";
 <VtbotStarlight {...Astro.props} viewTransitionsFallback="animate">
   <StarlightHead {...Astro.props}><slot /></StarlightHead>
   <script>
-    import "@scripts/lenisSmoothScroll.js";
+    // @ts-nocheck
+    const w = window;
+    const __prefersReducedMotion =
+      w.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+    if (!__prefersReducedMotion) {
+      const __loadLenis = () => import("@scripts/lenisSmoothScroll.js");
+      if ("requestIdleCallback" in w) {
+        w.requestIdleCallback(__loadLenis, { timeout: 2000 });
+      } else {
+        w.addEventListener("load", __loadLenis, { once: true });
+      }
+    }
   </script>
 </VtbotStarlight>
 

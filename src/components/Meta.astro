@@ -505,13 +505,40 @@ const finalStructuredData = generateGraphSchema(Array.from(merged.values()));
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 <link rel="dns-prefetch" href="//www.google-analytics.com" />
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2KG357SQ8D"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  // eslint-disable-next-line prefer-rest-params
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2KG357SQ8D');
+<script is:inline type="module">
+  const GA_ID = "G-2KG357SQ8D";
+
+  const loadGtag = () =>
+    new Promise((resolve) => {
+      const src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) return resolve(null);
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = src;
+      s.onload = () => resolve(null);
+      document.head.appendChild(s);
+    });
+
+  const initGA = async () => {
+    await loadGtag();
+    window.dataLayer = window.dataLayer || [];
+    const dataLayer = window.dataLayer;
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", GA_ID);
+  };
+
+  if ("requestIdleCallback" in window) {
+    // @ts-ignore
+    requestIdleCallback(initGA, { timeout: 2000 });
+  } else {
+    window.addEventListener("load", initGA, { once: true });
+  }
 </script>
 {/* Define the character set, description, author, and viewport settings */}
 <meta charset="utf-8" />

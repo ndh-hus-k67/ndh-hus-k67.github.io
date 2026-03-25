@@ -7,8 +7,7 @@ import VtbotStarlight from "astro-vtbot/components/starlight/Base.astro";
 <VtbotStarlight {...Astro.props} viewTransitionsFallback="animate">
   <StarlightHead {...Astro.props}><slot /></StarlightHead>
   <script>
-    // @ts-nocheck
-    const w = window;
+    const w: any = window;
     const __prefersReducedMotion =
       w.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 

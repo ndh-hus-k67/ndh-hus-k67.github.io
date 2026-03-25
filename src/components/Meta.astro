@@ -534,7 +534,7 @@ const finalStructuredData = generateGraphSchema(Array.from(merged.values()));
   };
 
   if ("requestIdleCallback" in window) {
-    // @ts-ignore
+    // @ts-expect-error - requestIdleCallback may not be in TypeScript lib.dom typings here
     requestIdleCallback(initGA, { timeout: 2000 });
   } else {
     window.addEventListener("load", initGA, { once: true });

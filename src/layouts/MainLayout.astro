@@ -139,7 +139,6 @@ interface Props {
     <FooterSection />
     <FloatingContactButtons />
     <script>
-      // @ts-nocheck
       // https://preline.co
       // Lazy-load Preline to reduce initial main-thread work (better INP).
       let __prelineLoaded = false;
@@ -151,10 +150,9 @@ interface Props {
 
       // Load soon-ish, but not at the expense of initial render.
       if ("requestIdleCallback" in window) {
-        // @ts-ignore - requestIdleCallback is not in lib.dom by default.
-        requestIdleCallback(__loadPreline, { timeout: 800 });
+        (window as any).requestIdleCallback(__loadPreline, { timeout: 800 });
       } else {
-        window.addEventListener("load", __loadPreline, { once: true });
+        (window as any).addEventListener("load", __loadPreline, { once: true });
       }
 
       // Ensure it is available before first interaction.
@@ -208,7 +206,6 @@ interface Props {
     </script>
     <script>
       // Smooth scrolling (Lenis) - lazy-load on idle, and skip for reduced-motion users.
-      // @ts-nocheck
       const w = window;
       const __prefersReducedMotion =
         w.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
@@ -216,9 +213,9 @@ interface Props {
       if (!__prefersReducedMotion) {
         const __loadLenis = () => import("@scripts/lenisSmoothScroll.js");
         if ("requestIdleCallback" in w) {
-          w.requestIdleCallback(__loadLenis, { timeout: 2000 });
+          (w as any).requestIdleCallback(__loadLenis, { timeout: 2000 });
         } else {
-          w.addEventListener("load", __loadLenis, { once: true });
+          (w as any).addEventListener("load", __loadLenis, { once: true });
         }
       }
     </script>

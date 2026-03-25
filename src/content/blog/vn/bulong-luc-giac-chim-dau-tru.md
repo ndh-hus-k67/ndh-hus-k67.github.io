@@ -54,7 +54,7 @@ Mô-men siết tham khảo với cấp bền 8.8:
 
 Luôn dùng chìa lục giác đúng cỡ; đầu chìa mòn dễ gây tòe hốc lục giác. Nên kết hợp long đen, đai ốc khóa hoặc keo khóa ren nếu có rung động.
 
-[Xem thông số kỹ thuật sản phẩm](/bu-long-luc-giac-chim-dau-tru-inox)
+[Xem thông số kỹ thuật sản phẩm](/bu-long/bu-long-luc-giac-chim-dau-tru-inox)
 
 ## 3. Bu lông đầu dù lục giác chìm - Đầu thấp, đẹp và gọn
 

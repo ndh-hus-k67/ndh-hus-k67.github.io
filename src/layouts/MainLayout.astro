@@ -95,7 +95,13 @@ interface Props {
           <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
-                Giải pháp sản xuất và thương mại chất lượng cao, đáng tin cậy cho mọi dự án.
+                <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {
+                    Astro.currentLocale === "en"
+                      ? "High-quality, reliable manufacturing and trading solutions for every project."
+                      : "Giải pháp sản xuất và thương mại chất lượng cao, đáng tin cậy cho mọi dự án."
+                  }
+                </p>
               </div>
               <div class="contact-strip  lg:flex md:flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200 lg:gap-6">
                 <a href="mailto:sales@hahutech.com.vn" class="flex items-center gap-2 hover:underline">

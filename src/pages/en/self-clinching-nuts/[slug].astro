@@ -2,6 +2,8 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
 import { SITE } from "@data/constants";
 import { resolveLocalImageOrFallback } from "@/utils/resolveLocalImage";
 
@@ -39,6 +41,37 @@ const blueprintFirstResolved = product.data.blueprints?.first
 const pageTitle: string = product.data.seo?.title || `${product.data.title} | Self-Clinching Nuts | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Self-clinching nuts | ${SITE.title}`;
+
+const productCollection: CollectionEntry<"products">[] = await getCollection("products", ({ id, data }) => {
+  const categorySlug = typeof data.category === "string" ? data.category : data.category?.slug;
+  const normalizedId = id.replace(/\\/g, "/");
+  return (normalizedId.includes("en/") || id.includes("en\\")) && categorySlug === "tan-tu-giu";
+});
+
+function shuffleArray<T>(arr: T[]): T[] {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const relatedProducts: CollectionEntry<"products">[] = shuffleArray(
+  productCollection.filter((p) => {
+    const slug = p.data.slug || p.id.split("/").pop()?.replace(".md", "");
+    return slug !== (product.data.slug || product.id.split("/").pop()?.replace(".md", ""));
+  })
+).slice(0, 4);
+
+type RelatedResolved = { entry: CollectionEntry<"products">; img: ImageMetadata; slug: string };
+
+const relatedResolved: RelatedResolved[] = await Promise.all(
+  relatedProducts.map(async (entry) => {
+    const slug = (entry.data.slug ?? entry.id.split("/").pop()?.replace(".md", "")) ?? "";
+    const img: ImageMetadata = await resolveLocalImageOrFallback(entry.data.main?.imgMain, "@/images/product-default.avif");
+    return { entry, img, slug };
+  })
+);
 ---
 
 <MainLayout
@@ -220,4 +253,21 @@ const ogTitle = `${product.data.title} | Self-clinching nuts | ${SITE.title}`;
       </div>
     </div>
   </section>
+  {
+      relatedResolved && relatedResolved.length > 0 && (
+        <section class="mx-auto max-w-[85rem] px-4 pb-16 sm:px-6 lg:px-8">
+          <h2 class="mb-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Related products</h2>
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {relatedResolved.map(({ entry, img, slug }) => (
+              <a href={`/en/self-clinching-nuts/${slug}`} class="block rounded-lg border border-neutral-200 bg-white p-3 text-center hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+                {img && (
+                  <Image src={img} alt={entry.data.main?.imgAlt || entry.data.title} class="mx-auto mb-3 h-28 w-auto object-contain" format={"avif"} />
+                )}
+                <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">{entry.data.title}</div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
 </MainLayout>

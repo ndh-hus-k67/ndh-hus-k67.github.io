@@ -100,6 +100,16 @@ const { ["@context"]: _breadcrumbContext, ...breadcrumbNode } =
   breadcrumbSchemaWithContext as any;
 
 const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]);
+
+function shuffleArray<T>(arr: T[]): T[] {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const relatedToShow: CollectionEntry<"blog">[] = shuffleArray(relatedPosts).slice(0, 4);
 ---
 
 <MainLayout
@@ -244,8 +254,27 @@ const blogStructuredData = generateGraphSchema([blogPostingNode, breadcrumbNode]
       </div>
     </div>
   </section>
+  {
+    relatedToShow && relatedToShow.length > 0 && (
+      <section class="mx-auto max-w-[85rem] px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 class="mb-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Bài viết liên quan</h2>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {relatedToShow.map((entry) => {
+            const href = `/bai-viet/${entry.id.replace(/^vn\//, "")}`;
+            return (
+              <a href={href} class="block rounded-lg border border-neutral-200 bg-white p-3 text-center hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+                {entry.data.cardImage && (
+                  <Image src={entry.data.cardImage} alt={entry.data.cardImageAlt || entry.data.title} class="mx-auto mb-3 h-28 w-full object-cover rounded" format={"avif"} />
+                )}
+                <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">{entry.data.title}</div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
 </MainLayout>
-
 <style is:global>
   :root {
     --transition-cubic: cubic-bezier(0.165, 0.84, 0.44, 1);

@@ -34,6 +34,29 @@ const imgMainResolved = await resolveLocalImageOrFallback(
   "@/images/product-default.avif"
 );
 
+// Related products (EN): same category, exclude current, only en/ entries, random 4
+const relatedProducts = await getCollection("products").then((all) => {
+  const categorySlug = typeof product.data.category === 'string' ? product.data.category : product.data.category?.slug;
+  const currentSlug = product.data.slug || product.id?.split('/').pop()?.replace('.md', '');
+  const filtered = all.filter((p) => {
+    const normalizedId = p.id.replace(/\\/g, "/");
+    const pCategory = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+    const pSlug = p.data.slug || p.id.split('/').pop()?.replace('.md', '');
+    return normalizedId.includes("en/") && pCategory === categorySlug && pSlug !== currentSlug;
+  });
+  for (let i = filtered.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+  }
+  return filtered.slice(0, 4);
+});
+
+const relatedResolved = await Promise.all(relatedProducts.map(async (p) => {
+  const img = await resolveLocalImageOrFallback(p.data.main?.imgMain, "@/images/product-default.avif");
+  const slug = p.data.slug || p.id.split('/').pop()?.replace('.md', '');
+  return { entry: p, img, slug };
+}));
+
 const blueprintFirstResolved = product.data.blueprints?.first
   ? await resolveLocalImageOrFallback(
       product.data.blueprints.first,
@@ -225,4 +248,21 @@ const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
       </div>
     </div>
   </section>
+  {
+    relatedResolved && relatedResolved.length > 0 && (
+      <section class="mx-auto max-w-[85rem] px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 class="mb-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Related products</h2>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {relatedResolved.map(({ entry, img, slug }) => (
+            <a href={`/en/bolts/${slug}`} class="block rounded-lg border border-neutral-200 bg-white p-3 text-center hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+              {img && (
+                <Image src={img} alt={entry.data.main?.imgAlt || entry.data.title} class="mx-auto mb-3 h-28 w-auto object-contain" format={"avif"} />
+              )}
+              <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">{entry.data.title}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
 </MainLayout>

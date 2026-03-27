@@ -15,7 +15,8 @@ const footerLinks = [
       { name: "Trụ Ren Tự Giữ", url: "/tru-ren-tu-giu" },
       { name: "Tán Trụ Tự Giữ", url: "/tan-tru-tu-giu" },
       { name: "Sên Xích", url: "/sen-xich" },
-    { name: "Phụ Kiện Nhôm Định Hình", url: "/phu-kien-nhom-dinh-hinh" },
+      { name: "Phụ Kiện Nhôm Định Hình", url: "/phu-kien-nhom-dinh-hinh" },
+      { name: "Bản Lề", url: "/ban-le" },
     ],
   },
   {
@@ -38,6 +39,7 @@ const productsNav = {
     { name: "Trụ Ren Tự Giữ", url: "/tru-ren-tu-giu" },
     { name: "Sên Xích", url: "/sen-xich" },
     { name: "Phụ Kiện Nhôm Định Hình", url: "/phu-kien-nhom-dinh-hinh" },
+    { name: "Bản Lề", url: "/ban-le" },
   ],
 };
 

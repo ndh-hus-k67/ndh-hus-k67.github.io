@@ -17,6 +17,7 @@ const footerLinks = [
       { name: "Self-Clinching Studs", url: "/en/self-clinching-studs" },
       { name: "Roller Chain", url: "/en/chains" },
       { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
+      { name: "Hinges", url: "/en/hinges" },
     ],
   },
   {
@@ -38,6 +39,8 @@ const productsNav = {
     { name: "Self-Clinching Studs", url: "/en/self-clinching-studs" },
     { name: "Roller Chain", url: "/en/chains" },
     { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
+    { name: "Hinges", url: "/en/hinges" },
+
   ],
 };
 

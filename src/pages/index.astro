@@ -25,6 +25,7 @@ import tantrutugiuImage from "@images/tan-tru-tu-giu-category.avif";
 import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
+import banleImage from "@/images/products/ban-le/ban-le-la.avif";
 import { partnersData, SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -107,6 +108,15 @@ const productCategories = [
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "phu-kien-nhom-dinh-hinh";
     }).length
+  },{
+    slug: "ban-le",
+    name: "Bản Lề",
+    image: banleImage,
+    imageAlt: "Bản lề chất lượng cao",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "ban-le";
+    }).length
   }
 ];
 
@@ -117,7 +127,8 @@ const categoryUrlMap: Record<string, string> = {
   "tan-tru-tu-giu": `${SITE.url}/tan-tru-tu-giu`,
   "tru-ren-tu-giu": `${SITE.url}/tru-ren-tu-giu`,
   "sen-xich": `${SITE.url}/sen-xich`,
-  "phu-kien-nhom": `${SITE.url}/phu-kien-nhom-dinh-hinh`
+  "phu-kien-nhom": `${SITE.url}/phu-kien-nhom-dinh-hinh`,
+  "ban-le": `${SITE.url}/ban-le`
 };
 
 const homepageStructuredData = {

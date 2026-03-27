@@ -116,6 +116,12 @@ const productsCollection = defineCollection({
         description: z.array(z.array(z.string())),
       })
     ).optional(),
+    faq: z.array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    ).optional(),
     blueprints: z.object({
       first: image().optional(),
       second: image().optional(),

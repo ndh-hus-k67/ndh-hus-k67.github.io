@@ -25,6 +25,7 @@ import tantrutugiuImage from "@images/tan-tru-tu-giu-category.avif";
 import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
+import banleImage from "@/images/products/ban-le/ban-le-la.avif";
 import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -113,6 +114,17 @@ const productCategories = [
       const categorySlug =
         typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
       return categorySlug === "phu-kien-nhom-dinh-hinh";
+    }).length,
+  },
+  {
+    slug: "hinges",
+    name: "Hinges",
+    image: banleImage,
+    imageAlt: "High-quality industrial hinges",
+    count: allProducts.filter((p) => {
+      const categorySlug =
+        typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
+      return categorySlug === "ban-le";
     }).length,
   },
 ];

@@ -27,6 +27,7 @@ const localizedSlugMap: Record<Language, Record<string, string>> = {
     "tru-ren-tu-giu": "self-clinching-studs",
     "sen-xich": "chains",
     "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
+    "ban-le": "hinges",
   },
   vn: {
     contact: "lien-he",
@@ -39,6 +40,7 @@ const localizedSlugMap: Record<Language, Record<string, string>> = {
     "self-clinching-studs": "tru-ren-tu-giu",
     chains: "sen-xich",
     "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
+    "hinges": "ban-le",
   },
 };
 

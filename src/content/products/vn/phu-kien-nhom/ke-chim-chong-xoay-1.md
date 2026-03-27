@@ -42,7 +42,7 @@ main:
       <li><strong>Hợp kim nhôm:</strong> Ke chìm chống xoay có thể sản xuất từ hợp kim nhôm, cho khả năng chống ăn mòn nhẹ. Hợp kim nhôm thường được sử dụng trong việc cần giảm trọng lượng như ngành hàng không, máy bay, ô tô.</li>
       <li><strong>Đồng:</strong> Đôi khi do yêu cầu đặc thù của công việc, ke chìm chống xoay cũng có thể được làm từ ĐỒNG hoặc hợp kim đồng vì đồng có tính chất dẻo dễ gia công, sử dụng nhiều trong ngành điện tử hoặc trong môi trường có yêu cầu đặc biệt như chống tĩnh điện.</li>
     </ul>
-  imgCard: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
-  imgMain: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
+  imgCard: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay-mot-dau.avif"
+  imgMain: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay-mot-dau.avif"
   imgAlt: "Ke chìm chống xoay một đầu"
 ---

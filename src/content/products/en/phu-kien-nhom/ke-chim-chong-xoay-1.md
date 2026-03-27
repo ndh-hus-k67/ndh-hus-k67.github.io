@@ -42,7 +42,7 @@ main:
       <li><strong>Aluminum alloy:</strong> lightweight with mild corrosion resistance; useful when weight reduction matters (aviation, automotive, etc.).</li>
       <li><strong>Copper:</strong> sometimes required for special applications (electronics or anti-static requirements) due to good ductility and machinability.</li>
     </ul>
-  imgCard: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
-  imgMain: "@/images/products/phu-kien-nhom/ke_chim_chong_xoay_1_dau.avif"
+  imgCard: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay-mot-dau.avif"
+  imgMain: "@/images/products/phu-kien-nhom/ke-chim-chong-xoay-mot-dau.avif"
   imgAlt: "One-End Anti-Rotation Hidden Bracket"
 ---

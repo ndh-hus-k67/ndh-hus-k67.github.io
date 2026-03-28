@@ -18,6 +18,7 @@ const footerLinks = [
       { name: "Roller Chain", url: "/en/chains" },
       { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
       { name: "Hinges", url: "/en/hinges" },
+      { name: "Toggle Latches", url: "/en/toggle-latches" },
     ],
   },
   {
@@ -40,7 +41,7 @@ const productsNav = {
     { name: "Roller Chain", url: "/en/chains" },
     { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
     { name: "Hinges", url: "/en/hinges" },
-
+    { name: "Toggle Latches", url: "/en/toggle-latches" },
   ],
 };
 

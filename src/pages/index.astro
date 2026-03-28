@@ -26,6 +26,7 @@ import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
 import banleImage from "@/images/products/ban-le/ban-le-la.avif";
+import khoagaiImage from "@/images/products/khoa-gai/khoa-mo-vit.avif";
 import { partnersData, SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -117,6 +118,16 @@ const productCategories = [
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "ban-le";
     }).length
+  },{
+    slug: "khoa-gai",
+    name: "Khóa Gài",
+    image: khoagaiImage,
+    imageAlt: "Khóa gài chất lượng cao",
+    count: allProducts.filter(p => {
+      const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
+      return categorySlug === "khoa-gai";
+    }).length
+
   }
 ];
 
@@ -128,7 +139,8 @@ const categoryUrlMap: Record<string, string> = {
   "tru-ren-tu-giu": `${SITE.url}/tru-ren-tu-giu`,
   "sen-xich": `${SITE.url}/sen-xich`,
   "phu-kien-nhom": `${SITE.url}/phu-kien-nhom-dinh-hinh`,
-  "ban-le": `${SITE.url}/ban-le`
+  "ban-le": `${SITE.url}/ban-le`,
+  "khoa-gai": `${SITE.url}/khoa-gai`
 };
 
 const homepageStructuredData = {

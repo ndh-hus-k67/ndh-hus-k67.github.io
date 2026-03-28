@@ -18,19 +18,21 @@ const localizedCategorySlugMap: Record<TLanguage, Record<string, string>> = {
     "sen-xich": "chains",
     "phu-kien-nhom-dinh-hinh": "aluminum-profile-accessories",
     "ban-le": "hinges",
+    "khoa-gai": "toggle-latches",
   },
   vn: {
-    contact: "lien-he",
+    "contact": "lien-he",
     "about-us": "ve-chung-toi",
-    blog: "bai-viet",
-    bolts: "bu-long",
-    screws: "oc-vit",
+    "blog": "bai-viet",
+    "bolts": "bu-long",
+    "screws": "oc-vit",
     "self-clinching-nuts": "tan-tu-giu",
     "self-clinching-standoffs": "tan-tru-tu-giu",
     "self-clinching-studs": "tru-ren-tu-giu",
-    chains: "sen-xich",
+    "chains": "sen-xich",
     "aluminum-profile-accessories": "phu-kien-nhom-dinh-hinh",
     "hinges": "ban-le",
+    "toggle-latches": "khoa-gai",
 
   },
 };
@@ -77,6 +79,7 @@ const VN_CATEGORIES = [
   "sen-xich",
   "phu-kien-nhom-dinh-hinh",
   "ban-le",
+  "khoa-gai",
 ] as const;
 
 const EN_CATEGORIES = [
@@ -88,6 +91,7 @@ const EN_CATEGORIES = [
   "chains",
   "aluminum-profile-accessories",
   "hinges",
+  "toggle-latches"
 ] as const;
 
 const isVnProductDetail = parts.length >= 2 && (VN_CATEGORIES as readonly string[]).includes(parts[0]);

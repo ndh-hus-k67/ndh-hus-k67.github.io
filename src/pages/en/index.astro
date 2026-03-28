@@ -26,6 +26,7 @@ import trurentugiuImage from "@images/tru-ren-tu-giu-category.avif";
 import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
 import banleImage from "@/images/products/ban-le/ban-le-la.avif";
+import khoagaiImage from "@/images/products/khoa-gai/khoa-mo-vit.avif";
 import { partnersData } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -127,6 +128,17 @@ const productCategories = [
       return categorySlug === "ban-le";
     }).length,
   },
+  {
+    slug: "toggle-latches",
+    name: "Toggle Latches",
+    image: khoagaiImage,
+    imageAlt: "High-quality toggle latches",
+    count: allProducts.filter((p) => {
+      const categorySlug =
+        typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
+      return categorySlug === "khoa-gai";
+    }).length,
+  }
 ];
 
 const avatarSrcs: Array<string> = [

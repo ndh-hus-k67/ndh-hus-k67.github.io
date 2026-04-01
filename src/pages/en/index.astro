@@ -27,7 +27,7 @@ import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
 import banleImage from "@/images/products/ban-le/ban-le-la.avif";
 import khoagaiImage from "@/images/products/khoa-gai/khoa-mo-vit.avif";
-import { partnersData } from "@/data_files/constants";
+import { SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
@@ -141,6 +141,79 @@ const productCategories = [
   }
 ];
 
+const categoryUrlMap: Record<string, string> = {
+  "bolts": `${SITE.url}/en/bolts`,
+  "screws": `${SITE.url}/en/screws`,
+  "self-clinching-nuts": `${SITE.url}/en/self-clinching-nuts`,
+  "self-clinching-standoffs": `${SITE.url}/en/self-clinching-standoffs`,
+  "self-clinching-studs": `${SITE.url}/en/self-clinching-studs`,
+  "chains": `${SITE.url}/en/chains`,
+  "aluminum-profile-accessories": `${SITE.url}/en/aluminum-profile-accessories`,
+  "hinges": `${SITE.url}/en/hinges`,
+  "toggle-latches": `${SITE.url}/en/toggle-latches`
+};
+
+const HOME_TITLE_EN = "Industrial Aluminum Profile Accessories | Ball Slide, Latch Slide | HAHUTECH";
+const HOME_DESCRIPTION_EN =
+  "HAHUTECH specializes in industrial aluminum profile accessories, including ball slides (truot bi), latch slides (truot lay), anti-rotation hidden brackets, and related components with fast delivery and technical support.";
+
+const faqPageSchema = {
+  "@type": "FAQPage",
+  "@id": `${SITE.url}/en#faq`,
+  inLanguage: "en-US",
+  mainEntity: faqs.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    WEBSITE_SCHEMA,
+    PLACE_SCHEMA,
+    ORGANIZATION_SCHEMA,
+    LOCAL_BUSINESS_SCHEMA,
+    PRODUCT_OFFER_CATALOG_SCHEMA,
+    {
+      "@type": "CollectionPage",
+      "@id": `${SITE.url}/en#homepage`,
+      url: `${SITE.url}/en`,
+      name: HOME_TITLE_EN,
+      description: HOME_DESCRIPTION_EN,
+      inLanguage: "en-US",
+      isPartOf: {
+        "@id": `${SITE.url}/#website`
+      },
+      about: {
+        "@id": `${SITE.url}/#catalog`
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        name: "HAHUTECH product categories",
+        numberOfItems: productCategories.length,
+        itemListElement: productCategories.map((category, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: category.name,
+          url: categoryUrlMap[category.slug],
+          item: {
+            "@type": "CollectionPage",
+            name: category.name,
+            url: categoryUrlMap[category.slug],
+            numberOfItems: category.count
+          }
+        }))
+      }
+    },
+    faqPageSchema
+  ]
+};
+
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
   "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -169,7 +242,14 @@ const heroSrcset = heroCandidates
 const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
 ---
 
-<MainLayout lang="en">
+<MainLayout
+  lang="en"
+  title={HOME_TITLE_EN}
+  customDescription={HOME_DESCRIPTION_EN}
+  customOgTitle={HOME_TITLE_EN}
+  customOgImageAlt="Industrial aluminum profile accessories by HAHUTECH"
+  structuredData={homepageStructuredData}
+>
   <Fragment slot="head">
     {heroPreloadHref && (
       <link
@@ -189,8 +269,8 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
   /> -->
 
   <HeroSection
-    title="High-Quality Bolts & Fasteners Solutions from <span class='text-yellow-500 dark:text-yellow-400'>HAHUTECH</span>"
-    subTitle="Specialized in trading and manufacturing high-quality bolts, screws, and nuts for all industrial and construction needs."
+    title="Industrial Aluminum Profile Accessories by <span class='text-yellow-500 dark:text-yellow-400'>HAHUTECH</span>"
+    subTitle="Focused on ball slides (truot bi), latch slides (truot lay), anti-rotation hidden brackets, and precision accessories for automation and machine-frame systems."
     primaryBtn="About Us"
     primaryBtnURL="/en/about-us"
     secondaryBtn="Contact Sales Team"
@@ -201,7 +281,7 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
     starCount={4}
     reviews="From Over <span class='font-bold'>12.8k</span> Reviews"
     src={heroImage}
-    alt="High-quality bolts and fasteners products from HAHUTECH"
+    alt="Industrial aluminum profile accessories from HAHUTECH"
   />
 
   <!-- <ClientsSection
@@ -212,45 +292,45 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
 
   <ProductCategoriesSection
     title="Explore Product Categories"
-    subTitle="HAHUTECH offers a wide range of high-quality bolts, screws, and accessories for all industrial and construction needs."
+    subTitle="Explore aluminum profile accessories and mechanical components, with key focus on ball slides and latch slides for industrial assembly systems."
     categories={productCategories}
     lang="en"
   />
 
   <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At HAHUTECH, we specialize in supplying and manufacturing high-quality bolts, screws, and nuts. With years of experience and modern technology, we are committed to providing optimal solutions for all industrial and construction projects."
+    title="Specialized Solutions for Aluminum Profile Systems"
+    subTitle="HAHUTECH focuses on industrial aluminum profile accessories, especially ball slides and latch slides, helping customers build stable, precise, and scalable machine structures for manufacturing lines."
     features={features}
   />
 
   <FeaturesNavs
-    title=`<span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>'s bolts and fasteners solutions perfectly meet all your industrial and construction needs.`
+    title=`<span class="text-yellow-500 dark:text-yellow-400">HAHUTECH</span>'s aluminum profile accessories are optimized for industrial assembly.`
     tabs={[
       {
         heading: "High-Quality Manufacturing",
         content:
-          "Manufacturing bolts and fasteners with international quality standards. HAHUTECH uses modern technology and strict production processes to ensure the highest durability and precision for each product.",
+          "Manufacturing aluminum profile accessories with stable tolerances and durable finishes. HAHUTECH applies strict quality control to ensure every ball slide and latch slide performs consistently in industrial environments.",
         svg: "tools",
         src: tools,
-        alt: "High-precision, high-quality fabrication of aluminum profile accessories.",
+        alt: "High-precision manufacturing of aluminum profile accessories",
         first: true,
       },
       {
         heading: "Diverse Product Range",
         content:
-          "Supplying a wide variety of bolts, screws, and nuts in various sizes and strength grades. HAHUTECH maintains a rich inventory to quickly meet all requirements from small projects to large constructions.",
+          "Supplying a comprehensive range of aluminum profile accessories: ball slides, latch slides, anti-rotation hidden brackets, nuts, and connectors for multiple profile standards and assembly requirements.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Diverse inventory of bolts and fasteners products",
+        alt: "Diverse inventory of aluminum profile accessories",
         second: true,
       },
       {
         heading: "Professional Services",
         content:
-          "In-depth technical consultation and dedicated customer support. HAHUTECH's team is always ready to advise on the right product selection and provide optimal solutions for your specific project needs.",
+          "From specification matching to assembly guidance, HAHUTECH provides practical technical support so you can select the right aluminum profile accessories for each machine and production-line application.",
         svg: "house",
         src: construction,
-        alt: "Professional technical consulting and support services",
+        alt: "Technical consulting for aluminum profile accessory selection",
       },
     ]}
   />

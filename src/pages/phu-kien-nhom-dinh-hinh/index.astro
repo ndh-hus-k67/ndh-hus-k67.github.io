@@ -32,15 +32,17 @@ const productsByType = (() => {
     .filter(t => t.count > 0);
 })();
 
-const title = "Phụ Kiện Nhôm HAHUTECH - Ke Chìm Chống Xoay";
-const description = "HAHUTECH chuyên cung cấp phụ kiện nhôm định hình: ke chìm chống xoay, thanh nhôm, con trượt thuyền, hạt tán nhôm. Chất lượng cao, gia công chính xác. Giải pháp hoàn hảo cho hệ profile nhôm.";
+const title = "Phụ kiện nhôm định hình công nghiệp - Trượt bi, trượt lẫy, ke chìm chống xoay";
+const description = "HAHUTECH cung cấp phụ kiện nhôm định hình công nghiệp: trượt bi, trượt lẫy, ke chìm chống xoay, con trượt thuyền, hạt tán nhôm. Hàng sẵn kho, tư vấn kỹ thuật và giao nhanh toàn quốc.";
 
-const pageTitle = `Phụ Kiện Nhôm - Ke Chìm Chống Xoay | HAHUTECH`;
+const pageTitle = "Phụ kiện nhôm định hình công nghiệp | HAHUTECH";
 ---
 
 <MainLayout
   title={pageTitle}
   customDescription={description}
+  customOgTitle={pageTitle}
+  customOgImageAlt="Phụ kiện nhôm định hình công nghiệp HAHUTECH"
   structuredData={{
     "@context": "https://schema.org",
     "@graph": [

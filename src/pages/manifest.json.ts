@@ -45,8 +45,8 @@ export const GET: APIRoute = async () => {
 
   const manifest = {
     short_name: "HAHUTECH",
-    name: "HAHUTECH - Bu lông, ốc vít & vật tư công nghiệp",
-    description: "Chuyên cung cấp bu lông, ốc vít, vật tư công nghiệp chất lượng cao",
+    name: "HAHUTECH - Phụ kiện nhôm định hình công nghiệp",
+    description: "Chuyên cung cấp phụ kiện nhôm định hình: trượt bi, trượt lẫy và chi tiết lắp ráp công nghiệp",
     icons,
     display: "minimal-ui",
     id: "/",

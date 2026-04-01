@@ -44,7 +44,7 @@ const productCategories = [
     slug: "bu-long",
     name: "Bu Lông",
     image: bulongImage,
-    imageAlt: "Bộ sưu tập bu lông chất lượng cao",
+    imageAlt: "Chi tiết liên kết cơ khí cho hệ nhôm định hình",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "bu-long";
@@ -54,7 +54,7 @@ const productCategories = [
     slug: "oc-vit",
     name: "Ốc Vít",
     image: ocvitImage,
-    imageAlt: "Các loại ốc vít đa dạng",
+    imageAlt: "Phụ kiện lắp ráp đa dạng cho hệ nhôm định hình",
     count: allProducts.filter(p => {
       const categorySlug = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
       return categorySlug === "oc-vit";
@@ -138,9 +138,27 @@ const categoryUrlMap: Record<string, string> = {
   "tan-tru-tu-giu": `${SITE.url}/tan-tru-tu-giu`,
   "tru-ren-tu-giu": `${SITE.url}/tru-ren-tu-giu`,
   "sen-xich": `${SITE.url}/sen-xich`,
-  "phu-kien-nhom": `${SITE.url}/phu-kien-nhom-dinh-hinh`,
+  "phu-kien-nhom-dinh-hinh": `${SITE.url}/phu-kien-nhom-dinh-hinh`,
   "ban-le": `${SITE.url}/ban-le`,
   "khoa-gai": `${SITE.url}/khoa-gai`
+};
+
+const HOME_TITLE = "Phụ kiện nhôm định hình công nghiệp | Trượt bi, trượt lẫy, ke chìm chống xoay | HAHUTECH";
+const HOME_DESCRIPTION =
+  "HAHUTECH chuyên phụ kiện nhôm định hình công nghiệp: trượt bi, trượt lẫy, ke chìm chống xoay, con trượt thuyền và hạt tán nhôm. Hàng sẵn kho, giao nhanh, tư vấn kỹ thuật.";
+
+const faqPageSchema = {
+  "@type": "FAQPage",
+  "@id": `${SITE.url}/#faq`,
+  inLanguage: "vi-VN",
+  mainEntity: faqs.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
 };
 
 const homepageStructuredData = {
@@ -153,10 +171,10 @@ const homepageStructuredData = {
     PRODUCT_OFFER_CATALOG_SCHEMA,
     {
       "@type": "CollectionPage",
-      "@id": SITE.url,
+      "@id": `${SITE.url}/#homepage`,
       url: SITE.url,
-      name: SITE.title,
-      description: SITE.description,
+      name: HOME_TITLE,
+      description: HOME_DESCRIPTION,
       inLanguage: "vi-VN",
       isPartOf: {
         "@id": `${SITE.url}/#website`
@@ -181,7 +199,8 @@ const homepageStructuredData = {
           }
         }))
       }
-    }
+    },
+    faqPageSchema
   ]
 };
 
@@ -206,7 +225,13 @@ const heroSrcset = heroCandidates
 const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
 ---
 
-<MainLayout structuredData={homepageStructuredData}>
+<MainLayout
+  title={HOME_TITLE}
+  customDescription={HOME_DESCRIPTION}
+  customOgTitle={HOME_TITLE}
+  customOgImageAlt="Phụ kiện nhôm định hình công nghiệp HAHUTECH"
+  structuredData={homepageStructuredData}
+>
   <Fragment slot="head">
     {heroPreloadHref && (
       <link
@@ -220,14 +245,14 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
     )}
   </Fragment>
   <HeroSection
-    title="Bu lông ốc vít chất lượng cao HAHU<span class='text-yellow-500 dark:text-yellow-400'>TECH</span>"
-    subTitle="Giải pháp liên kết cho công nghiệp và xây dựng"
+    title="Phụ kiện nhôm định hình công nghiệp HAHU<span class='text-yellow-500 dark:text-yellow-400'>TECH</span>"
+    subTitle="Nổi bật trượt bi, trượt lẫy, ke chìm chống xoay cho hệ nhôm định hình công nghiệp"
     primaryBtn="Về chúng tôi"
     primaryBtnURL="/ve-chung-toi"
     secondaryBtn="Liên hệ"
     secondaryBtnURL="/lien-he"
     src={heroImage}
-    alt="Sản phẩm bu lông ốc vít HAHUTECH"
+    alt="Phụ kiện nhôm định hình công nghiệp HAHUTECH"
   />
 
   <!-- <ClientsSection
@@ -237,19 +262,19 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
   /> -->
 
   <ProductCategoriesSection
-    title="Danh mục sản phẩm"
-    subTitle="Đa dạng sản phẩm bu lông, ốc vít và phụ kiện chất lượng cao"
+    title="Danh mục sản phẩm (nổi bật phụ kiện nhôm định hình)"
+    subTitle="Tập trung trượt bi, trượt lẫy, ke chìm chống xoay cùng nhiều phụ kiện nhôm định hình chất lượng cao"
     categories={productCategories}
   />
 
   <FeaturesGeneral
-    title="Tại sao chọn HAHUTECH?"
-    subTitle="Chuyên cung cấp và sản xuất bu lông, ốc vít với tiêu chuẩn chất lượng quốc tế, công nghệ hiện đại và cam kết mang đến giải pháp tối ưu cho mọi dự án."
+    title="Giải pháp phụ kiện nhôm định hình tại HAHUTECH"
+    subTitle="Chúng tôi chuyên cung cấp phụ kiện nhôm định hình công nghiệp với trọng tâm trượt bi, trượt lẫy, ke chìm chống xoay. Sản phẩm đạt tiêu chuẩn chất lượng, độ chính xác cao và sẵn sàng cho các hệ khung máy, băng tải, tủ kỹ thuật."
     features={features}
   />
 
   <FeaturesNavs
-    title="<span class='text-yellow-500 dark:text-yellow-400'>HAHUTECH</span> - Giải pháp hoàn hảo cho dự án của bạn"
+    title="<span class='text-yellow-500 dark:text-yellow-400'>HAHUTECH</span> - Chuyên sâu phụ kiện nhôm định hình công nghiệp"
     tabs={[
       {
         heading: "Chất lượng đảm bảo",
@@ -270,12 +295,12 @@ const heroPreloadHref = heroCandidates[1]?.src ?? heroCandidates[0]?.src;
         second: true,
       },
       {
-        heading: "Dịch vụ chuyên nghiệp",
+        heading: "Tư vấn ứng dụng theo dự án",
         content:
-          "Tư vấn kỹ thuật chuyên sâu và hỗ trợ tận tâm. Đội ngũ luôn sẵn sàng tư vấn lựa chọn sản phẩm phù hợp và cung cấp giải pháp tối ưu.",
+          "Đội ngũ kỹ thuật hỗ trợ lựa chọn trượt bi, trượt lẫy, ke chìm chống xoay phù hợp từng mô hình sản xuất, tối ưu hiệu suất và chi phí triển khai.",
         svg: "house",
         src: construction,
-        alt: "Dịch vụ tư vấn chuyên nghiệp",
+        alt: "Tư vấn kỹ thuật phụ kiện nhôm định hình",
       },
     ]}
   />

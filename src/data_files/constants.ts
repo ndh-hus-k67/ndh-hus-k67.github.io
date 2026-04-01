@@ -29,7 +29,7 @@ const BUSINESS_GEO = {
 const CONTACT_POINTS = [
   {
     "@type": "ContactPoint",
-    telephone: "+84393430464",
+    telephone: "+84347741638",
     email: "sales@hahutech.com.vn",
     contactType: "Dịch vụ khách hàng",
     areaServed: "VN",
@@ -37,7 +37,7 @@ const CONTACT_POINTS = [
   },
   {
     "@type": "ContactPoint",
-    telephone: "+84393430464",
+    telephone: "+84347741638",
     email: "sales@hahutech.com.vn",
     contactType: "Bán hàng",
     areaServed: "VN",
@@ -158,7 +158,7 @@ export const ORGANIZATION_SCHEMA = {
   slogan: SITE.tagline,
   foundingDate: "2015",
   email: "sales@hahutech.com.vn",
-  telephone: "+84393430464",
+  telephone: "+84347741638",
   address: BUSINESS_ADDRESS,
   sameAs: SOCIAL_PROFILES,
   contactPoint: CONTACT_POINTS,
@@ -195,7 +195,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
     LOGO_URL
   ],
   url: SITE.url,
-  telephone: "+84393430464",
+  telephone: "+84347741638",
   email: "sales@hahutech.com.vn",
   description: "HAHUTECH là đơn vị cung cấp bu lông, ốc vít, vật tư cơ khí và nhôm định hình công nghiệp.",
   priceRange: "$$",

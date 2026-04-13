@@ -17,6 +17,7 @@ const viCategoryToPath: Record<string, string> = {
   "sen-xich": "/sen-xich/",
   "phu-kien-nhom-dinh-hinh": "/phu-kien-nhom-dinh-hinh/",
   "ban-le": "/ban-le/",
+  "khoa-gai": "/khoa-gai/",
 };
 
 const enCategoryToPath: Record<string, string> = {
@@ -28,6 +29,7 @@ const enCategoryToPath: Record<string, string> = {
   "sen-xich": "/en/chains/",
   "phu-kien-nhom-dinh-hinh": "/en/aluminum-profile-accessories/",
   "ban-le": "/en/hinges/",
+  "khoa-gai": "/en/toggle-latches/",
 };
 
 const staticPaths = ["/", "/ve-chung-toi/", "/lien-he/"];

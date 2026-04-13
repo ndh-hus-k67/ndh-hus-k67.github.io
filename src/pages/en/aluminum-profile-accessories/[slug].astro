@@ -26,6 +26,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop()?.replace(".md", "") || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(product.data.main.imgMain, "@/images/product-default.avif");
 
 const blueprintFirstResolved = product.data.blueprints?.first
@@ -53,7 +55,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 const relatedProducts: CollectionEntry<"products">[] = shuffleArray(
   productCollection.filter((p) => {
     const slug = p.data.slug || p.id.split("/").pop()?.replace(".md", "");
-    return slug !== product.data.slug;
+    return slug !== productSlug;
   })
 ).slice(0, 4);
 
@@ -79,28 +81,18 @@ const relatedResolved: RelatedResolved[] = await Promise.all(
     "@graph": [
       {
         "@type": "Product",
-        "@id": `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
+        "@id": `${SITE.url}/en/aluminum-profile-accessories/${productSlug}`,
         name: product.data.title,
         description: metaDescription,
         image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
         category: "Aluminum Profile Accessories",
         brand: {
           "@type": "Brand",
-          name: SITE.title,
+          name: "HAHUTECH",
         },
         manufacturer: {
           "@type": "Organization",
-          name: SITE.title,
-        },
-        offers: {
-          "@type": "Offer",
-          url: `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          seller: {
-            "@type": "Organization",
-            name: "HAHUTECH",
-          },
+          name: "HAHUTECH",
         },
         inLanguage: "en-US",
       },
@@ -123,7 +115,7 @@ const relatedResolved: RelatedResolved[] = await Promise.all(
             "@type": "ListItem",
             position: 3,
             name: product.data.title,
-            item: `${SITE.url}/en/aluminum-profile-accessories/${product.data.slug}`,
+            item: `${SITE.url}/en/aluminum-profile-accessories/${productSlug}`,
           },
         ],
       },

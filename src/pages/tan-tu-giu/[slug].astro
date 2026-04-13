@@ -25,6 +25,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop() || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
   "@/images/product-default.avif"
@@ -64,7 +66,7 @@ const pageTitle: string = product.data.seo?.title || `${product.data.title} | T�
 const metaDescription = product.data.seo?.description || product.data.description;
 const ogTitle = `${product.data.title} | Tán tự giữ | ${SITE.title}`;
 
-const productUrl = `${SITE.url}/tan-tu-giu/${product.data.slug}`;
+const productUrl = `${SITE.url}/tan-tu-giu/${productSlug}`;
 const productImage = imgMainResolved ? `${SITE.url}${imgMainResolved.src}` : undefined;
 
 const productSchema = generateProductSchema({
@@ -75,11 +77,6 @@ const productSchema = generateProductSchema({
   category: "Tán tự giữ",
   brand: "HAHUTECH",
   manufacturer: "HAHUTECH",
-  offers: {
-    url: productUrl,
-    priceCurrency: "VND",
-    availability: "https://schema.org/InStock"
-  },
   inLanguage: "vi-VN"
 });
 

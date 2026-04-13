@@ -29,6 +29,8 @@ type Props = {
 
 const { product } = Astro.props as Props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop()?.replace(".md", "") || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
   "@/images/product-default.avif"
@@ -64,9 +66,9 @@ const blueprintFirstResolved = product.data.blueprints?.first
     )
   : undefined;
 
-const pageTitle: string = product.data.seo?.title || `${product.data.title} | Bolts | ${SITE.title}`;
+const pageTitle: string = product.data.seo?.title || `${product.data.title} | Hinges | ${SITE.title}`;
 const metaDescription = product.data.seo?.description || product.data.description;
-const ogTitle = `${product.data.title} | Bolts | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Hinges | ${SITE.title}`;
 const faqSchema = Array.isArray(product.data.faq) && product.data.faq.length > 0
   ? {
       "@type": "FAQPage",
@@ -91,24 +93,14 @@ const faqSchema = Array.isArray(product.data.faq) && product.data.faq.length > 0
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/en/hinges/${product.data.slug}`,
+    "@id": `${SITE.url}/en/hinges/${productSlug}`,
     name: product.data.title,
     description: metaDescription,
     image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
     category: "Hinges",
     brand: {
       "@type": "Brand",
-      name: SITE.title,
-    },
-    offers: {
-      "@type": "Offer",
-      url: `${SITE.url}/en/hinges/${product.data.slug}`,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: "HAHUTECH"
-      }
+      name: "HAHUTECH",
     },
     inLanguage: "en-US",
   }}

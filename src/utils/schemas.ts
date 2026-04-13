@@ -192,7 +192,9 @@ export function generateProductSchema(options: ProductSchemaOptions) {
   }
 
   // Add offers
-  if (offers) {
+  const hasOfferPrice = typeof offers?.price === "string" && offers.price.trim().length > 0;
+
+  if (offers && hasOfferPrice) {
     schema.offers = {
       "@type": "Offer",
       "url": offers.url || id,

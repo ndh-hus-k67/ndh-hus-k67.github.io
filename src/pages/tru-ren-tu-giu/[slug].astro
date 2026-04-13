@@ -25,6 +25,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop() || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
   "@/images/product-default.avif"
@@ -65,7 +67,7 @@ const metaDescription = product.data.seo?.description || product.data.descriptio
 const ogTitle = `${product.data.title} | Trụ ren tự giữ | ${SITE.title}`;
 
 // Generate product URL
-const productUrl = `${SITE.url}/tru-ren-tu-giu/${product.data.slug}`;
+const productUrl = `${SITE.url}/tru-ren-tu-giu/${productSlug}`;
 
 // Generate image URL if available
 const productImage = imgMainResolved ? `${SITE.url}${imgMainResolved.src}` : undefined;
@@ -79,11 +81,6 @@ const productSchema = generateProductSchema({
   category: "Trụ ren tự giữ",
   brand: "HAHUTECH",
   manufacturer: "HAHUTECH",
-  offers: {
-    url: productUrl,
-    priceCurrency: "VND",
-    availability: "https://schema.org/InStock"
-  },
   inLanguage: "vi-VN"
 });
 

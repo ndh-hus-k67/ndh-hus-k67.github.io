@@ -2,7 +2,7 @@
 title: "So Sánh Trượt Bi Và Trượt Lẫy Nhôm Định Hình: Chọn Loại Nào Cho Đúng Ứng Dụng?"
 description: "Trượt bi và trượt lẫy đều dùng cho cơ cấu trượt trên nhôm định hình nhưng tối ưu cho nhu cầu khác nhau. Bài viết so sánh theo tiêu chí chuyển động, khóa vị trí, độ êm và tần suất thao tác."
 pubDate: 2026-04-08
-cardImage: "@/images/blog/con-truot-lay.avif"
+cardImage: "@/images/blog/so-sanh-truot-lay-va-truot-bi.avif"
 cardImageAlt: "So sánh trượt bi và trượt lẫy nhôm định hình trong ứng dụng khung máy"
 readTime: 9
 tags: ["trượt bi", "trượt lẫy", "phụ kiện nhôm định hình", "nhôm định hình", "hướng dẫn chọn phụ kiện"]

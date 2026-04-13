@@ -26,6 +26,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop()?.replace(".md", "") || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
   "@/images/product-default.avif"
@@ -83,24 +85,14 @@ const relatedResolved: RelatedResolved[] = await Promise.all(
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/en/self-clinching-nuts/${product.data.slug}`,
+    "@id": `${SITE.url}/en/self-clinching-nuts/${productSlug}`,
     name: product.data.title,
     description: metaDescription,
     image: imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
     category: "Self-clinching nuts",
     brand: {
       "@type": "Brand",
-      name: SITE.title,
-    },
-    offers: {
-      "@type": "Offer",
-      url: `${SITE.url}/en/self-clinching-nuts/${product.data.slug}`,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: "HAHUTECH"
-      }
+      name: "HAHUTECH",
     },
     inLanguage: "en-US",
   }}

@@ -12,13 +12,16 @@ const {
   title = SITE.title,
   meta,
   structuredData,
-  lang = "vi",
+  lang: langProp,
   customDescription = null,
   customOgTitle = null,
   customOgImage = null,
   customOgImageAlt = null,
   ogType = null,
 } = Astro.props;
+
+const langFromPath = Astro.url?.pathname?.startsWith("/en") ? "en" : "vi";
+const lang = (typeof langProp === "string" && langProp.trim() ? langProp.trim() : langFromPath);
 
 function normalizeTitle(value: string): string {
   return value.replace(/\s+/g, " ").trim();

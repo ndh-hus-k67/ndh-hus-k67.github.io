@@ -2,7 +2,7 @@
 title: "Ball Slider vs. Latch Slider for Aluminum Profiles: Which One Fits Your Application?"
 description: "Both ball sliders and latch sliders move in aluminum profile slots, but they solve different problems. Compare them by motion feel, locking needs, maintenance, and adjustment frequency."
 pubDate: 2026-04-08
-cardImage: "@/images/blog/con-truot-lay.avif"
+cardImage: "@/images/blog/so-sanh-truot-lay-va-truot-bi.avif"
 cardImageAlt: "Comparison of ball slider and latch slider for aluminum profile applications"
 readTime: 9
 tags: ["ball slider", "latch slider", "aluminum profile accessories", "how to choose", "t-slot"]

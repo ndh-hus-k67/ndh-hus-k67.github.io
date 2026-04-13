@@ -24,6 +24,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 
+const productSlug = product.data.slug || product.id?.split("/").pop() || "";
+
 const imgMainResolved = await resolveLocalImageOrFallback(
   product.data.main.imgMain,
   "@/images/product-default.avif"
@@ -32,7 +34,7 @@ const imgMainResolved = await resolveLocalImageOrFallback(
 // Related products: same category (exclude current), limit 4
 const relatedProducts = await getCollection("products").then((all) => {
   const categorySlug = typeof product.data.category === 'string' ? product.data.category : product.data.category?.slug;
-  const currentSlug = product.data.slug || product.id?.split('/').pop()?.replace('.md', '');
+  const currentSlug = productSlug;
   const filtered = all.filter((p) => {
     const normalizedId = p.id.replace(/\\/g, "/");
     const pCategory = typeof p.data.category === 'string' ? p.data.category : p.data.category?.slug;
@@ -90,7 +92,7 @@ const faqSchema = Array.isArray(product.data.faq) && product.data.faq.length > 0
     "@graph": [
       {
         "@type": "Product",
-        "@id": `${SITE.url}/khoa-gai/${product.data.slug}`,
+        "@id": `${SITE.url}/khoa-gai/${productSlug}`,
         "name": product.data.title,
         "description": metaDescription,
         "image": imgMainResolved ? [`${SITE.url}${imgMainResolved.src}`] : undefined,
@@ -102,16 +104,6 @@ const faqSchema = Array.isArray(product.data.faq) && product.data.faq.length > 0
         "manufacturer": {
           "@type": "Organization",
           "name": "HAHUTECH",
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": `${SITE.url}/khoa-gai/${product.data.slug}`,
-          "priceCurrency": "VND",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "HAHUTECH"
-          }
         },
         "inLanguage": "vi-VN",
       },
@@ -134,7 +126,7 @@ const faqSchema = Array.isArray(product.data.faq) && product.data.faq.length > 0
             "@type": "ListItem",
             "position": 3,
             "name": product.data.title,
-            "item": `${SITE.url}/khoa-gai/${product.data.slug}`
+            "item": `${SITE.url}/khoa-gai/${productSlug}`
           }
         ]
       },

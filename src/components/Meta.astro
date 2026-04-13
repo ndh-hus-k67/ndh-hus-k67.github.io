@@ -40,6 +40,7 @@ const {
   customOgImageAlt = defaultProps.customOgImageAlt,
   ogType = defaultProps.ogType,
   lang = "vi",
+  robots = null,
 } = Astro.props;
 
 // Use custom description if provided, otherwise use default meta
@@ -85,6 +86,14 @@ const canonical = new URL(
   resolveCanonicalPath(Astro.url.pathname),
   Astro.site || Astro.url.origin
 ).href;
+
+const is404Path = Astro.url.pathname === "/404/" || Astro.url.pathname === "/404" || Astro.url.pathname === "/404.html";
+const robotsContent =
+  typeof robots === "string" && robots.trim()
+    ? robots.trim()
+    : is404Path
+      ? "noindex, follow"
+      : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 type ResolvedSocialImage = {
   url: string;
   type?: string;
@@ -422,7 +431,9 @@ if (resolvedAlternates.vi) {
 if (resolvedAlternates.en) {
   const href = resolvedAlternates.en.startsWith("http")
     ? resolvedAlternates.en
-    : createHref("en", resolvedAlternates.en);
+    : resolvedAlternates.en.startsWith("/en")
+      ? createHref("", resolvedAlternates.en)
+      : createHref("en", resolvedAlternates.en);
   alternateEntries.push({ hreflang: "en", href });
 }
 
@@ -546,8 +557,8 @@ const finalStructuredData = generateGraphSchema(Array.from(merged.values()));
 </script>
 {/* Define the character set, description, author, and viewport settings */}
 <meta charset="utf-8" />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="googlebot" content="index, follow" />
+<meta name="robots" content={robotsContent} />
+<meta name="googlebot" content={robotsContent} />
 <meta content={metaDescriptionContent} name="description" />
 <meta name="keywords" content={SEO.keywords} />
 <meta name="author" content={author} />
@@ -585,6 +596,13 @@ const finalStructuredData = generateGraphSchema(Array.from(merged.values()));
 {socialImage.type && (
   <meta property="og:image:type" content={socialImage.type} />
 )}
+
+{/* Twitter Meta Tags */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitleContent} />
+<meta name="twitter:description" content={ogDescriptionContent} />
+{socialImage.url && <meta name="twitter:image" content={socialImage.url} />}
+{socialImage.url && <meta name="twitter:image:alt" content={ogImageAlt} />}
 
 {/* Links to the webmanifest and sitemap */}
 <link rel="manifest" href="/manifest.json" />

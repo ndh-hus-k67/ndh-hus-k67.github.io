@@ -134,6 +134,15 @@ const blogCollection = defineCollection({
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
+  seoTitle: z.string().optional(),
+  seoDescription: z.string().optional(),
+  translationKey: z.string().optional(),
+  faq: z.array(
+    z.object({
+      question: z.string(),
+      answer: z.string(),
+    })
+  ).optional(),
   // `contents` is optional to allow writing full Markdown in the file body.
   // If provided, pages will render it as paragraph strings (legacy format).
   contents: z.array(z.string()).optional(),

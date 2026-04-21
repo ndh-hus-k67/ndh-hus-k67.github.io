@@ -320,7 +320,9 @@ async function buildBlogPathMap(): Promise<Record<string, LocalizedPathPair>> {
 
   try {
     const entries = await getCollection("blog");
+    const byTranslationKey = new Map<string, Partial<Record<LanguageKey, { idWithoutLang: string }>>>();
     const byCardImage = new Map<string, Partial<Record<LanguageKey, { idWithoutLang: string }>>>();
+    const cardImageCounts = new Map<string, number>();
 
     for (const entry of entries as any[]) {
       const lang = getLangFromContentId(entry.id);
@@ -329,8 +331,20 @@ async function buildBlogPathMap(): Promise<Record<string, LocalizedPathPair>> {
       const idWithoutLang = entry.id.replace(/^(en|vn)\//, "");
       if (!idWithoutLang) continue;
 
+      const translationKey = String(entry?.data?.translationKey ?? "").trim();
+      if (translationKey) {
+        const pair = byTranslationKey.get(translationKey) ?? {};
+        if (!pair[lang]) {
+          pair[lang] = { idWithoutLang };
+          byTranslationKey.set(translationKey, pair);
+        }
+        continue;
+      }
+
       const cardImageSrc = String(entry?.data?.cardImage?.src ?? entry?.data?.cardImage ?? "");
       if (!cardImageSrc) continue;
+
+      cardImageCounts.set(cardImageSrc, (cardImageCounts.get(cardImageSrc) ?? 0) + 1);
 
       const pair = byCardImage.get(cardImageSrc) ?? {};
       if (pair[lang]) continue;
@@ -338,7 +352,22 @@ async function buildBlogPathMap(): Promise<Record<string, LocalizedPathPair>> {
       byCardImage.set(cardImageSrc, pair);
     }
 
-    for (const pair of byCardImage.values()) {
+    for (const pair of byTranslationKey.values()) {
+      const en = pair.en;
+      const vi = pair.vi;
+      if (!en || !vi) continue;
+
+      const enPath = buildBlogPath("en", en.idWithoutLang);
+      const viPath = buildBlogPath("vi", vi.idWithoutLang);
+
+      result[enPath] = { en: enPath, vi: viPath };
+      result[viPath] = { en: enPath, vi: viPath };
+    }
+
+    for (const [cardImageSrc, pair] of byCardImage.entries()) {
+      const count = cardImageCounts.get(cardImageSrc) ?? 0;
+      if (count !== 2) continue;
+
       const en = pair.en;
       const vi = pair.vi;
       if (!en || !vi) continue;

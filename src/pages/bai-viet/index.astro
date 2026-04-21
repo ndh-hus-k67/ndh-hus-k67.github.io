@@ -10,6 +10,8 @@ import { generateBreadcrumbSchema, generateGraphSchema } from "@/utils/schemas";
 
 // Get all blogs post in Vietnamese and sort them based on publish date
 
+const PAGE_SIZE = 8;
+
 const vietnameseBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("vn/");
 });
@@ -20,8 +22,12 @@ const blogPosts: CollectionEntry<"blog">[] = vietnameseBlogEntries.sort(
 );
 
 // Separate the most recent post from others
-const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
-const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
+const mostRecentPost: CollectionEntry<"blog"> | null = blogPosts[0] ?? null;
+const postsWithoutRecent: CollectionEntry<"blog">[] = mostRecentPost
+  ? blogPosts.slice(1)
+  : blogPosts;
+const initialPosts: CollectionEntry<"blog">[] = postsWithoutRecent.slice(0, PAGE_SIZE);
+const hasMore: boolean = postsWithoutRecent.length > PAGE_SIZE;
 
 // Define variables for page content
 const title: string = "Bài viết phụ kiện nhôm định hình: trượt bi, trượt lẫy & ứng dụng";
@@ -34,6 +40,10 @@ const ogTitle = `Bài viết phụ kiện nhôm định hình công nghiệp | $
 
 const blogIndexUrl = new URL("/bai-viet/", SITE.url).href;
 const itemListId = `${blogIndexUrl}#itemlist`;
+
+const displayedPosts: CollectionEntry<"blog">[] = mostRecentPost
+  ? [mostRecentPost, ...initialPosts]
+  : initialPosts;
 
 const collectionPageNode = {
   "@type": "CollectionPage",
@@ -54,8 +64,8 @@ const itemListNode = {
   "@type": "ItemList",
   "@id": itemListId,
   itemListOrder: "https://schema.org/ItemListOrderDescending",
-  numberOfItems: blogPosts.length,
-  itemListElement: blogPosts.map((entry, index) => {
+  numberOfItems: displayedPosts.length,
+  itemListElement: displayedPosts.map((entry, index) => {
     const slug = entry.id.replace(/^vn\//, "");
     const url = new URL(`/bai-viet/${slug}/`, SITE.url).href;
     const imageUrl = `${SITE.url}${entry.data.cardImage.src}`;
@@ -135,24 +145,60 @@ const blogIndexStructuredData = generateGraphSchema([
     </div>
   </section>
 
+  {/* Most recent blog post */}
+  {mostRecentPost && (
+    <section
+      class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    >
+      <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="vn" />
+    </section>
+  )}
+
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     {/* Blog posts grid */}
-    <div class="grid gap-6 lg:grid-cols-2">
+    <div id="blog-grid" class="grid gap-6 lg:grid-cols-2">
       {
-        otherPosts.map((blogEntry) => (
-          <CardBlog blogEntry={blogEntry} blogLocale="vn" />
+        postsWithoutRecent.map((blogEntry, index) => (
+          <div data-post-card class:list={[index >= PAGE_SIZE ? "hidden" : ""]}>
+            <CardBlog blogEntry={blogEntry} blogLocale="vn" />
+          </div>
         ))
       }
     </div>
+
+    {hasMore && (
+      <div class="mt-10 flex items-center justify-center">
+        <button
+          id="load-more"
+          type="button"
+          data-page-size={String(PAGE_SIZE)}
+          class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm font-semibold text-neutral-800 outline-hidden ring-zinc-500 transition hover:bg-neutral-50 focus-visible:ring-3 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:ring-zinc-200 dark:hover:bg-neutral-800"
+        >
+          Tải thêm bài viết
+        </button>
+      </div>
+    )}
   </section>
-  {/* Most recent blog post */}
-  {mostRecentPost && (
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="vn" />
-  </section>
-  )}
+
+  <script is:inline>
+    (() => {
+      const button = document.getElementById("load-more");
+      if (!(button instanceof HTMLButtonElement)) return;
+
+      const pageSize = Number.parseInt(button.dataset.pageSize || "10", 10) || 10;
+      const cards = Array.from(document.querySelectorAll("[data-post-card]"));
+
+      const revealMore = () => {
+        const hidden = cards.filter((el) => el.classList.contains("hidden"));
+        hidden.slice(0, pageSize).forEach((el) => el.classList.remove("hidden"));
+        if (cards.every((el) => !el.classList.contains("hidden"))) {
+          button.remove();
+        }
+      };
+
+      button.addEventListener("click", revealMore);
+    })();
+  </script>
 </MainLayout>

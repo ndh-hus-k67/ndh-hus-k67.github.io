@@ -1,11 +1,9 @@
 ---
-// Import section components
-import MainLayout from "@/layouts/MainLayout.astro";
 import Btn404 from "@components/ui/buttons/Btn404.astro";
 import { SITE } from "@data/constants";
 
-// Define types for translations
 type TranslationKeys = "en" | "vn";
+
 type Translations = {
   [key in TranslationKeys]: {
     pageTitle: string;
@@ -15,8 +13,8 @@ type Translations = {
   };
 };
 
-// Define variables for page content
 const defaultLang: TranslationKeys = "vn";
+
 const translations: Translations = {
   en: {
     pageTitle: `Page Not Found | ${SITE.title}`,
@@ -34,7 +32,6 @@ const translations: Translations = {
   },
 };
 
-// Determine language from the URL
 const urlPath = Astro.url.pathname;
 const langCodeMatch = urlPath.match(/^\/(en|vn)\//);
 const lang: TranslationKeys = langCodeMatch
@@ -44,32 +41,39 @@ const lang: TranslationKeys = langCodeMatch
 const { pageTitle, subTitle, content, btnTitle } = translations[lang];
 ---
 
-<MainLayout title={pageTitle}>
-  <section class="grid h-svh place-content-center">
-    <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-8 lg:px-6 lg:py-16">
-      <div class="mx-auto max-w-(--breakpoint-sm) text-center">
-        <h1
-          class="text-dark mb-4 text-7xl font-extrabold text-yellow-500 dark:text-yellow-400 lg:text-9xl"
-        >
-          404
-        </h1>
-        <p
-          id="subtitle"
-          class="mb-4 text-balance text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 md:text-4xl"
-        >
-          {subTitle}
-        </p>
-        <p
-          id="content"
-          class="mb-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
-        >
-          {content}
-        </p>
-        <!-- Display a button that navigates user back to the homepage -->
-        <Btn404 title={btnTitle} href="/" />
-      </div>
-    </div>
-  </section>
-</MainLayout>
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
 
-<!-- No client script required for homepage navigation -->
+  <body>
+    <main class="grid h-svh place-content-center">
+      <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-8 lg:px-6 lg:py-16">
+        <div class="mx-auto max-w-(--breakpoint-sm) text-center">
+          <h1
+            class="mb-4 text-7xl font-extrabold text-yellow-500 dark:text-yellow-400 lg:text-9xl"
+          >
+            404
+          </h1>
+
+          <p
+            class="mb-4 text-balance text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 md:text-4xl"
+          >
+            {subTitle}
+          </p>
+
+          <p
+            class="mb-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+          >
+            {content}
+          </p>
+
+          <Btn404 title={btnTitle} href="/" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

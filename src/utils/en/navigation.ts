@@ -19,6 +19,7 @@ const footerLinks = [
       { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
       { name: "Hinges", url: "/en/hinges" },
       { name: "Toggle Latches", url: "/en/toggle-latches" },
+      { name: "Plastic Accessories", url: "/en/plastic-accessories" },
     ],
   },
   {
@@ -42,6 +43,7 @@ const productsNav = {
     { name: "Aluminum Profile Accessories", url: "/en/aluminum-profile-accessories" },
     { name: "Hinges", url: "/en/hinges" },
     { name: "Toggle Latches", url: "/en/toggle-latches" },
+    { name: "Plastic Accessories", url: "/en/plastic-accessories" },
   ],
 };
 

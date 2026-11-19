@@ -27,6 +27,7 @@ import senxichImage from "@/images/products/sen-xich/xich-chot-rong.avif";
 import phukiennhomImage from "@/images/products/phu-kien-nhom/con-truot-thuyen.avif";
 import banleImage from "@/images/products/ban-le/ban-le-la.avif";
 import khoagaiImage from "@/images/products/khoa-gai/khoa-mo-vit.avif";
+import phukiennhuaImage from "@/images/products/phu-kien-nhua/coc-nhua-duc-cai.jpg";
 import { SITE, WEBSITE_SCHEMA, PLACE_SCHEMA, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, PRODUCT_OFFER_CATALOG_SCHEMA } from "@/data_files/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -138,6 +139,17 @@ const productCategories = [
         typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
       return categorySlug === "khoa-gai";
     }).length,
+  },
+  {
+    slug: "plastic-accessories",
+    name: "Plastic Accessories",
+    image: phukiennhuaImage,
+    imageAlt: "High-quality industrial plastic accessories",
+    count: allProducts.filter((p) => {
+      const categorySlug =
+        typeof p.data.category === "string" ? p.data.category : p.data.category?.slug;
+      return categorySlug === "phu-kien-nhua";
+    }).length,
   }
 ];
 
@@ -150,7 +162,8 @@ const categoryUrlMap: Record<string, string> = {
   "chains": `${SITE.url}/en/chains`,
   "aluminum-profile-accessories": `${SITE.url}/en/aluminum-profile-accessories`,
   "hinges": `${SITE.url}/en/hinges`,
-  "toggle-latches": `${SITE.url}/en/toggle-latches`
+  "toggle-latches": `${SITE.url}/en/toggle-latches`,
+  "plastic-accessories": `${SITE.url}/en/plastic-accessories`
 };
 
 const HOME_TITLE_EN = "Industrial Aluminum Profile Accessories | Ball Slide, Latch Slide | HAHUTECH";

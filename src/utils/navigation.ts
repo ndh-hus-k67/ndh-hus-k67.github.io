@@ -18,6 +18,7 @@ const footerLinks = [
       { name: "Phụ Kiện Nhôm Định Hình", url: "/phu-kien-nhom-dinh-hinh" },
       { name: "Bản Lề", url: "/ban-le" },
       { name: "Khóa Gài", url: "/khoa-gai" },
+      { name: "Phụ Kiện Nhựa", url: "/phu-kien-nhua" },
     ],
   },
   {
@@ -42,6 +43,7 @@ const productsNav = {
     { name: "Phụ Kiện Nhôm Định Hình", url: "/phu-kien-nhom-dinh-hinh" },
     { name: "Bản Lề", url: "/ban-le" },
     { name: "Khóa Gài", url: "/khoa-gai" },
+    { name: "Phụ Kiện Nhựa", url: "/phu-kien-nhua" },
   ],
 };
 

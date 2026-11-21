@@ -9,7 +9,7 @@ category:
   name: "Phụ kiện nhựa"
 
 productType:
-  slug: "coc-nhua-duc-cai"
+  slug: "coc-nhua-duc-cai-m3x15+6"
   name: "Cọc nhựa đực cái"
 
 seo:

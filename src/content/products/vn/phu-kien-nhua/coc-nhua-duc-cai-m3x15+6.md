@@ -1,6 +1,6 @@
 ---
 title: "Cọc nhựa đực cái"
-slug: "coc-nhua-duc-cai"
+slug: "coc-nhua-duc-cai-m3x15+6"
 description: "Thông số kỹ thuật cọc nhựa đực cái (trụ nhựa lục giác đực cái PA66): đầy đủ kích thước ren M2, M2.5, M3, M4, M5, M6, chiều dài 5mm - 50mm, cách điện tốt cho bo mạch PCB và tủ điện."
 updatedAt: 2026-11-19
 
